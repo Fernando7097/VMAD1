@@ -1,0 +1,1871 @@
+---
+format: 
+  revealjs:
+    embed-resources: true
+    math: mathjax
+    theme: sky
+    css: custom.css
+    slide-number: true
+    transition: fade
+    incremental: true
+    center-title-slide: false
+    backgroundTransition: fade
+highlight-style: a11y
+code-link: true
+height: 1080
+width: 1600
+execute: 
+  eval: true
+  echo: true
+---
+
+<div style="text-align: center; margin-top: 100px;">
+
+<h1 style="font-size: 3em; color: #003366;">
+
+Análisis Demográfico 1
+
+</h1>
+
+<hr>
+
+<h3 style="font-size: 2em; margin-top: 0.5em;">
+
+Dr. Víctor Manuel García Guerrero
+
+</h3>
+
+<p style="font-size: 1.5em; text-transform: lowercase;">
+
+vmgarcia\@colmex.mx
+
+</p>
+
+</div>
+
+![](Input/LogoCEDUA.png){.absolute top="585" left="1200" width="450"} ![](Input/colmex.png){.absolute top="610" left="600" width="450"} ![](Input/logo_colmex.png){.absolute top="600" left="70" width="450"}
+
+## `¿Qué es la demografía?`
+
+::: {.callout-tip .centered-callout title=""}
+La **demografía** es la ciencia que tiene por objeto el estudio de la poblaciones humanas tratando, desde un punto de vista principalmente cuantitativo, su dimensión, estructura, evolución y características generales.
+:::
+
+## `Población`
+
+::: {.callout-tip .centered-callout title=""}
+-   Colección de personas vivas en un punto determinado en el tiempo que cumplen con ciertos criterios.
+    -   La población de Guatemala de 1 de julio del 2010
+    -   La población de mujeres indígenas en edad reproductiva en el sureste mexicano al 1 de enero de 2011
+-   Colectividad que persiste a lo largo del tiempo auqnue sus miembros estén en continuo cambio.
+    -   La población de Mexico
+:::
+
+## `¿Qué es la demografía?`
+
+::: {.callout-tip .centered-callout title=""}
+“\[...\] en definitiva puede considerarse que las investigaciones realizadas en el marco restringido del análisis demográfico constituyen el ‘nucleo’ de la demografía como ciencia, bien entendido que tales investigaciones conciernen exclusivamente al estudio del tamaño, distribución territorial y composición de la población como así también a sus cambios y a los componentes de tales cambios”
+:::
+
+::: r-stack
+![](Input/demografia.png){.absolute top="50" left="50" width="1500"}
+
+![](Input/demog_google.png){.fragment top="50" left="50" width="1500"}
+
+![](Input/demog_google_esp.png){.fragment width="2500"}
+
+![](Input/bio_socio.png){.fragment top="100" left="50" width="1500"}
+
+![](Input/bio_socio_esp.png){.fragment top="100" left="50" width="1500"}
+
+![](Input/components.png){.fragment top="100" left="50" width="1500"}
+
+![](Input/components_esp.png){.fragment top="100" left="50" width="1500"}
+:::
+
+## 
+
+::: r-stack
+![](Input/demo1.png){.absolute top="50" left="50" width="1500"}
+
+![](Input/demo2.png){.fragment top="10" left="50" width="1500"}
+
+![](Input/demo3.png){.fragment top="50" left="50" width="500"}
+
+![](Input/demo4.png){.fragment top="50" left="50" width="1500"}
+
+![](Input/demo5.png){.fragment top="50" left="50" width="1500"}
+
+![](Input/demo6.png){.fragment top="50" left="50" width="1500"}
+
+![](Input/demo7.png){.fragment top="50" left="50" width="1500"}
+:::
+
+## `¿Qué es la demografía?`
+
+::: {.callout-tip .centered-callout title=""}
+-   Conceptos basicos y medidad
+-   Fuentes de información en demografía (evaluación y corrección )
+-   Tasas por edad específica y probabilidad
+-   Procesos de decremento simple: La tabla de mortalidad
+-   Procesos de decremento múltiple
+-   Fecundidad y reproducción
+-   Modelación de los patrones por edad de los eventos vitales
+:::
+
+## `Bibliografía`
+
+::: r-stack
+![](Input/whydemographymatters.jpg){.absolute top="50" left="415" width="700"}
+
+![](Input/proyeccionesypoliticas.jpg){.fragment top="50" left="415" width="700"} ![](Input/appliedmathematical.jpg){.fragment top="50" left="415" width="700"}
+
+![](Input/tools.png){.fragment top="50" left="415" width="700"}
+
+![](Input/preston.jpg){.fragment top="50" left="415" width="700"}
+
+![](Input/rowland.jpg){.fragment top="50" left="415" width="700"}
+
+![](Input/swanson.jpg){.fragment top="50" left="415" width="700"}
+
+![](Input/biodemography.jpg){.fragment top="50" left="415" width="700"} ![](Input/salgueiro.jpg){.fragment top="50" left="415" width="700"}
+
+![](Input/watcher.jpg){.fragment top="50" left="415" width="700"}
+
+![](Input/poston.jpg){.fragment top="50" left="415" width="700"}
+
+![](Input/human.png){.fragment top="50" left="415" width="700"}
+:::
+
+## `Evaluación`
+
+::: {.callout-tip .centered-callout title=""}
+-   2 tareas examen 30%
+-   1 examen final 50%
+-   Tareas 20%
+:::
+
+## Materiales
+
+::: {.callout-tip .centered-callout title=""}
+-   Computadora (con R y RStudio instalado)
+-   Pluma y lápiz
+-   Cuaderno carta cuadro chico (obligatorio)
+:::
+
+## `Fuentes de información en demografía`
+
+::: {.callout-tip .centered-callout title=""}
+-   Censos (de facto, de jure)
+-   Estadísticas Vitales
+-   Encuestas
+-   Fuentes secundarias( estimaciones y proyecciones, repositorios estadarizados)
+:::
+
+## `Fuentes de información en demografía`
+
+::: {.callout-tip .centered-callout title="Censo de facto"}
+Es un método de conteo de individuos basado en dónde se encuentran físicamente en el momento del censo, independientemente de su lugar de residencia habitual. Puede ser particularmente útil para ciertas necesidades de recopilación de datos a corto plazo, pero puede no siempre proporcionar la imagen más precisa para la planificación y asignación de recursos a largo plazo. \* Presencia física \* Instantánea en el tiempo \* Enumeración simplificada
+:::
+
+## `Fuentes de información en demografía`
+
+::: {.callout-tip .centered-callout title="Ventajas de un censo de facto"}
+-   Simplicidad: Más fácil de administrar porque solo considera d ́onde están las personas el día del censo.
+-   Reducción del doble conteo: Minimiza el riesgo de contar a los individuos más de una vez, especialmente aquellos con múltiples residencias.
+-   Eficiente para Poblaciones Temporales: Captura datos sobre poblaciones temporales como turistas, viajeros de negocios y trabajadores estacionales.
+-   Recopilación de datos inmediata: Facilita una recopilación de datos más rápida ya que no implica rastrear residencias habituales o patrones de migración.
+:::
+
+## `Fuentes de información en demografía`
+
+::: {.callout-tip .centered-callout title="Desventajas de un censo de facto"}
+-   Sesgo temporal: Puede no representar con precisión a la población residente habitual, particularmente en áreas con alta población de turistas o transitoria.
+-   Inexactitud para la asignación de recursos: Puede llevar a inexactitudes en la asignación de recursos y la planificación de políticas, ya que no refleja dónde viven y usan servicios las personas habitualmente.
+-   Sobrerrepresentación de ciertas áreas: Las áreas con eventos o grandes poblaciones temporales (por ejemplo, convenciones, festivales) pueden estar sobrerrepresentadas.
+-   Desconsideración de la residencia habitual: Ignora dónde residen típicamente los individuos y contribuyen a la vida comunitaria.
+:::
+
+## `Fuentes de información en demografía`
+
+::: {.callout-tip .centered-callout title="Censo de jure"}
+Es un método de conteo de individuos basado en su lugar de residencia habitual, independientemente de dónde se encuentren físicamente en el momento del censo. Un censo de jure es esencial para obtener una visión precisa y estable de la población residente, crucial para una planificación efectiva y la asignación de recursos a largo plazo.
+
+-   Lugar de residencia habitual.
+-   Reflejo de la residencia permanente.
+-   Complejidad de enumeración.
+:::
+
+## `Fuentes de información en demografía`
+
+::: {.callout-tip .centered-callout title="Ventajas de un censo de jure"}
+-   Precisión en la planificación de recursos: Proporciona datos más precisos para la asignaci ́on de recursos y la planificaci ́on de pol ́ıticas pu ́blicas, reflejando la residencia permanente de la poblaci ́on.
+-   Representaci ́on exacta: Mejora la precisión en la representación política y distribución de distritos electorales.
+-   Datos estables: Ayuda a obtener una imagen m ́as estable y menos fluctuante de la población , útil para la planificación a largo plazo.
+-   Adecuado para políticas sociales: Proporciona información relevante para servicios sociales, infraestructura y desarrollo comunitario, basada en la residencia habitual de las personas.
+:::
+
+## `Fuentes de información en demografía`
+
+::: {.callout-tip .centered-callout title="Desventajas de un censo de jure"}
+-   Complejidad y costos: Más difícil ıcil y costoso de administrar debido a la necesidad de verificar la residencia habitual.
+-   Riesgo de doble conteo: Puede haber problemas con individuos que tienen múltiples residencias o migran frecuentemente, lo que puede llevar a errores o doble conteo.
+-   Subnotificación: Algunos individuos pueden no ser contados si no se encuentran en su residencia habitual el día del censo o si no se reportan correctamente.
+-   Desafíos de enumeración: Puede ser difícil rastrear y contar a personas sin hogar, nómadas, o aquellos en situaciones de vivienda inestables.
+:::
+
+## `Fuentes de información en demografía`
+
+::: {.callout-tip .centered-callout title="En resumen"}
+-   Censo De Jure: Cuenta a los individuos según su lugar de residencia habitual, proporcionando datos sobre donde la población vive y usa servicios regularmente.
+-   Censo De Facto: Cuenta a los individuos según su ubicación física el día del censo, ofreciendo una instantánea de la población en un momento específico.
+:::
+
+## `Fuentes de información en demografía`
+
+::: {.callout-tip .centered-callout title="Ventajas de los censos"}
+-   Datos Completos
+-   Precisión
+-   Referencia
+-   Asignación de recursos Análisis de tendencias
+:::
+
+## `Fuentes de información en demografía`
+
+::: {.callout-tip .centered-callout title="Limitaciones de los censos"}
+-   Costo
+-   Consumo de tiempo
+-   Desafiós logísticos
+-   Frecuencia
+-   Preocupaciones de privacidad
+-   No respuesta (subcobertura)
+-   Mala declaración de edad y sexo
+:::
+
+## `Fuentes de información en demografía`
+
+::: {.callout-tip .centered-callout title="Mala declaración de edad y sexo"}
+-   Inexactitud de datos
+-   Tendencias demográficas distorsionadas
+-   Mala asignación de recursos
+-   Implicaciones políticas
+-   Integridad del censo
+:::
+
+## `Fuentes de información en demografía`
+
+::: {.callout-tip .centered-callout title="Mitigación de la mala declaración de edad y sexo"}
+-   Capacitación de enumeradores.
+-   Campañas de concientizacin pú́blica
+-   Uso de tecnología.
+-   Verificación cruzada.
+:::
+
+## `Fuentes de información en demografía`
+
+::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
+Evaluación
+:::
+
+![](Input/piramide1.png){.absolute top="150" left="100" width="1390"}
+
+## `Fuentes de información en demografía`
+
+::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
+Evaluación
+:::
+
+::: {.callout-note title="Prorrateo de no especificado"}
+$$
+\begin{aligned}
+N^*_x = N_x + N_{ne} \frac{N_x}{\sum_{x=0}^w N_x}
+\end{aligned}
+$$
+:::
+
+## `Fuentes de información en demografía`
+
+::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
+Evaluación
+:::
+
+::: {.callout-note .centered-callout title="Índice de Whipple (preferencia por dígitos 0 y 5)"}
+$$
+\begin{aligned}
+W = 5\frac{N_{25}+N_{30}+N_{35}+...+N_{55}+N_{60}}{N_{23}+N_{24}+N_{25}+...+N_{55}+N_{62}}
+\end{aligned}
+$$ $W\in[1,5]$ donde 1 indica no prefencia de dígitos y 5 una alta preferencia.
+:::
+
+## `Fuentes de información en demografía`
+
+::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
+Evaluación
+:::
+
+::: {.callout-tip .centered-callout title="Índice de Myers"}
+Myers (1940) desarrolló un índice “combinado” para medir la preferencia de los 10 dígitos (Myers 1954). El método determina la proporción de la población cuya edad termina en cada d ́ıgito terminal (0-9), variando también la edad de inicio particular para cualquier grupo de edad de 10 años. Se basa en el principio de que, en ausencia de redondeo de edades, la población agregada en cada dígito terminal 0-9 debería representar aproximadamente el 10 por ciento de la población total. Su valor oscila entre 0 (no concentración de edades) a 90 (total concentración en una edad)
+:::
+
+## `Fuentes de información en demografía`
+
+::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
+Evaluación
+:::
+
+::: {.callout-tip .centered-callout tittle="Índice de Myers"}
+El método implica 5 pasos principales (Siegel Jacob y Swanson David 2004):
+
+-   Sumar las poblaciones que terminan en cada dígito sobre todo el rango, comenzando con el límite inferior del rango (por ejemplo, 10,20,30,...,80; 11,21,31,...,81).
+
+-   Determinar la suma excluyendo la primera población en cada grupo del paso 1 (por ejemplo, 20,30,...,80; 21,31,...,81).
+
+-   Ponderar las sumas de los pasos 1 y 2 y sumar los resultados para obtener una población combinada (por ejemplo, pesos 1 y 9 para el d ́ıgito 0; pesos 2 y 8 para el dígito 1).
+
+-   Convertir la distribución del paso 3 en porcentajes.
+
+-   Tomar la mitad de la suma de las desviaciones absolutas de cada porcentaje en el paso 4.
+:::
+
+## `Fuentes de información en demografía`
+
+::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
+Evaluación
+:::
+
+::: {.callout-tip .centered-callout tittle="Otros indicadores"}
+-   Bachi 1951
+-   Noumbissi 1992
+-   Spoorenberg 2007
+-   Coale-Li 1991
+-   Jdanov 2008
+:::
+
+## `Fuentes de información en demografía`
+
+::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
+Corrección
+:::
+
+-   Agrupar por edades quinquenales
+-   Utilizar algún método de graduación ( degradación en edades simples)
+
+## `Fuentes de información en demografía`
+
+::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
+Corrección
+:::
+
+![](Input/piramide2.png){.absolute top="150" left="100" width="1390"}
+
+## `Fuentes de información en demografía`
+
+::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
+Corrección
+:::
+
+::: {.callout-tip .centered-callout tittle="Métodos de graduación"}
+-   Sprague 1880
+-   Beers 1945
+-   Spline monótono (Fritsch and Carlson 1980)\
+-   PCLM (Rizzi, Gampe and Eilers 2015)
+:::
+
+## `Fuentes de información en demografía`
+
+::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
+Corrección
+:::
+
+![](Input/piramide3.png){.absolute top="150" left="100" width="1390"}
+
+## `Fuentes de información en demografía`
+
+::: {.callout-tip .centered-callout tittle="Métodos de graduación"}
+-   Registro tardío
+-   Mala declaración de edad.
+-   Sesgos
+:::
+
+## `Fuentes de información en demografía`
+
+::: {.callout-tip .centered-callout tittle="Problemas en las escuestas"}
+-   Error de muestreo
+-   Representatividad
+:::
+
+## `Conceptos básicos`
+
+::: {.callout-note .centered-callout tittle="Otros indicadores"}
+-   $proporción = \frac{Núm. \,de\, elementos\, de \,un\, subconjunto}{Núm.\, de\, elementos\, del\, total}$
+-   $razón = \frac{Núm. \,de\, elementos\, de\, un\, subconjunto}{Núm. \,de\, elementos\, de \,otro \,subconjunto}$
+-   $tasa  = \frac{Núm.\, de \,veces\, que\, ocurre \,un\, evento}{Años-persona\, de\, exposición\, al\, riesgo}$
+-   $probabilidad  = \frac{Núm.\, de\, veces \,que \,ocurre\, un\, evento}{Núm.\, de \,casos\, igualmente \,factibles}$
+:::
+
+## `Conceptos básicos`
+
+::: {.callout-note .centered-callout tittle="Otros indicadores"}
+-   $proporción = \frac{Núm.\, de\, elementos\, de\, un\, subconjunto}{Núm.\, de\, elementos\, del \,total}$
+:::
+
+## `Tasas de periodo y años-persona`
+
+::: {.callout-note .centered-callout tittle="Otros indicadores"}
+-   $tasa[0,T] = \frac{Núm.\, de\, veces\, que\, ocurre\, un \, evento\, entre\,0 \,y\,T}{Años-persona\, vividos\, por\, la \,población \,entre\,0\,y\,T}$
+:::
+
+## `Tasas de periodo y años-persona`
+
+![](Input/años-persona%20.png){.absolute top="150" left="100" width="1390"}
+
+## `Tasas de periodo y años-persona` {auto-animate="true"}
+
+::: {style="text-align: center; font-size: 2.5em; margin-top:250px;"}
+$AP[t_1,t_2]= \sum_{i=t_1}^{t_2}N_i\Delta_i$
+:::
+
+##  {auto-animate="true"}
+
+::: {style="text-align: center; font-size: 2.5em; margin-top:250px;"}
+$AP[t_1,t_2]= \sum_{i=t_1}^{t_2}N_i\Delta_i$
+:::
+
+::: {style="text-align: center; font-size: 2.5em; margin-top: 150px;"}
+$AP[t_1,t_2]= \int_{t_1}^{t_2}N(t)dt$
+:::
+
+## `Tasas de crecimiento` {auto-animate="true"}
+
+::: {style="text-align: center; font-size: 2em; margin-top:50px;"}
+$r(t_1,t_2)=\frac{N(t_2)-N(t_1)}{AP[t_1,t_2]}$
+:::
+
+## `Tasas de crecimiento` {auto-animate="true"}
+
+::: {style="text-align: center; font-size: 2em; margin-top:50px;"}
+$r(t_1,t_2)=\frac{N(t_2)-N(t_1)}{AP[t_1,t_2]}$
+:::
+
+::: {style="text-align: center; font-size: 1.5em; margin-top: 150px;"}
+$r(t)=\color{red}{\lim_{\Delta t \to 0}\frac{\Delta N(t)}{N(t)\Delta t}}$
+:::
+
+::: callout-important
+-   Pues se tiene que los años-persona $AP[t_1,t_2] = N(t)(t_2 - t_1)= N(t)\Delta t$.
+-   Además, al buscar el cambio instantaneo, hacemos $t_1 \to t_2$, que se entiende como $t_1$ toma valores cada vez parecidos a $t_2$. En este sentido $\Delta t=t_2-t_1 \to 0$, que se entiende que el cambio entre el tiempo $t_1$ y $t_2$ tiende a 0, toma valores cada vez mas cercanos a cero.
+:::
+
+## `Tasas de crecimiento` {auto-animate="true"}
+
+::: {style="text-align: center; font-size: 2em; margin-top:50px;"}
+$r(t_1,t_2)=\frac{N(t_2)-N(t_1)}{AP[t_1,t_2]}$
+:::
+
+::: {style="text-align: center; font-size: 1.5em; margin-top: 150px;"}
+$r(t)=\lim_{\Delta t \to 0}\frac{\Delta N(t)}{N(t)\Delta t}=\lim_{\Delta t \to 0}\color{red}{\frac{\frac{\Delta N(t)}{\Delta t}}{\frac{N(t)}{1}}}$
+:::
+
+::: callout-important
+Por la ley del "Sándwich". Es decir, para $a,b,c,d$ números reales,tenemos que $\frac{\frac{a}{b}}{\frac{c}{d}} = \frac{a.d}{b.c}$
+:::
+
+## `Tasas de crecimiento` {auto-animate="true"}
+
+::: {style="text-align: center; font-size: 2em; margin-top:50px;"}
+$r(t_1,t_2)=\frac{N(t_2)-N(t_1)}{AP[t_1,t_2]}$
+:::
+
+::: {style="text-align: center; font-size: 1.5em; margin-top: 90px;"}
+$r(t)=\lim_{\Delta t \to 0}\frac{\Delta N(t)}{N(t)\Delta t}=\color{red}{\frac{\lim_{\Delta t \to 0}\frac{\Delta N(t)}{\Delta t}}{N(t)}}$
+:::
+
+::: callout-important
+-   Por la ley de cocientes para los límites $\lim_{t\to           a}\frac{f(t)}{g(t)}=\frac{\lim_{t\to a}f(t)}{\lim_{t\to        a}g(t)}$
+-   En nuestro caso especifico tenemos que $f(t)=\frac{\Delta N(t)}{\Delta t}$ y $g(t)=\frac{N(t)}{1}$
+-   Notemos que $\lim_{\Delta \to 0}N(t)= N(t)$, pues $N(t)$ no depende de $\Delta t$, es decir, no depende del cambio entre $t_1$ y $t_2$.
+:::
+
+## `Tasas de crecimiento` {auto-animate="true"}
+
+::: {style="text-align: center; font-size: 2em; margin-top:50px;"}
+$r(t_1,t_2)=\frac{N(t_2)-N(t_1)}{AP[t_1,t_2]}$
+:::
+
+::: {style="text-align: center; font-size: 1.5em; margin-top: 90px;"}
+$r(t)=\lim_{\Delta t \to 0}\frac{\Delta N(t)}{N(t)\Delta t}=\frac{\lim_{\Delta t \to 0}\frac{\Delta N(t)}{\Delta t}}{N(t)}=\color{red}{\frac{N^{'}(t)}{N(t)}}$
+:::
+
+::: callout-important
+Por la definición de la derivada en un punto $t$: $N^{'}(t)=\frac{dN(t)}{dt}=\lim_{\Delta t \to 0}\frac{N(t_2)-N(t_1)}{t_2-t_1}=\lim_{\Delta t\to 0}\frac{\Delta N(t)}{\Delta t}$
+:::
+
+## `Tasas de crecimiento` {auto-animate="true"}
+
+::: {style="text-align: center; font-size: 2em; margin-top:50px;"}
+$r(t_1,t_2)=\frac{N(t_2)-N(t_1)}{AP[t_1,t_2]}$
+:::
+
+::: {style="text-align: center; font-size: 1.5em; margin-top: 90px;"}
+$r(t)=\lim_{\Delta t \to 0}\frac{\Delta N(t)}{N(t)\Delta t}=\frac{\lim_{\Delta t \to 0}\frac{\Delta N(t)}{\Delta t}}{N(t)}=\frac{N^{'}(t)}{N(t)}=\color{red}{\frac{d In(N(t))}{dt}}$
+:::
+
+::: callout-important
+Por la derivada de $In(t)$ en un punto $t$: $\frac{d}{dt}In(t)=\frac{1}{t}$.
+
+\par
+
+Y más en general, para cualquier función derivable $f(t)$ $\frac{d}{dt}In[f(t)]=\frac{f^{'}(t)}{f(t)}$
+:::
+
+## `Tasas de crecimiento` {auto-animate="true"}
+
+::: {style="text-align: center; font-size: 2em; margin-top:50px;"}
+$r(t_1,t_2)=\frac{N(t_2)-N(t_1)}{AP[t_1,t_2]}$
+:::
+
+::: {style="text-align: center; font-size: 1.5em; margin-top: 90px;"}
+$r(t)=\lim_{\Delta t \to 0}\frac{\Delta N(t)}{N(t)\Delta t}=\frac{\lim_{\Delta t \to 0}\frac{\Delta N(t)}{\Delta t}}{N(t)}=\frac{N^{'}(t)}{N(t)}=\frac{d In(N(t))}{dt}$
+:::
+
+::: {style="text-align: center; font-size: 1.5em; margin-top:50px;"}
+$\color{red}{\int_{t_1}^{t_2}r(t)dt=\int_{t_1}^{t_2}\frac{d}{dt}In(t)dt}$
+:::
+
+::: callout-important
+Integrando por ambos lados de la ecuación sobre el intervalo $(t_1,t_2)$
+:::
+
+## `Tasas de crecimiento` {auto-animate="true"}
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$r(t_1,t_2)=\frac{N(t_2)-N(t_1)}{AP[t_1,t_2]}$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top: 150px;"}
+$r(t)=\lim_{\Delta t \to 0}\frac{\Delta N(t)}{N(t)\Delta t}=\frac{\lim_{\Delta t \to 0}\frac{\Delta N(t)}{\Delta t}}{N(t)}=\frac{N^{'}(t)}{N(t)}=\frac{d In(N(t))}{dt}$
+:::
+
+::: {style="text-align: center; font-size: 1m; margin-top:50px;"}
+$\int_{t_1}^{t_2}r(t)dt=\int_{t_1}^{t_2}\frac{d}{dt}In(t)=\color{red}{In[N(t_2)]-In[N(t1)]}$
+:::
+
+::: callout-important
+Por teorema fundamental del cálculo. En esencia, lo que nos dice el teorema, es que la derivada y la integral son operaciones inversas.
+:::
+
+## `Tasas de crecimiento` {auto-animate="true"}
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$r(t_1,t_2)=\frac{N(t_2)-N(t_1)}{AP[t_1,t_2]}$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top: 90px;"}
+$r(t)=\lim_{\Delta t \to 0}\frac{\Delta N(t)}{N(t)\Delta t}=\frac{\lim_{\Delta t \to 0}\frac{\Delta N(t)}{\Delta t}}{N(t)}=\frac{N^{'}(t)}{N(t)}=\frac{d In(N(t))}{dt}$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$\int_{t_1}^{t_2}r(t)dt=\int_{t_1}^{t_2}\frac{d}{dt}In(t)dt=In[N(t_2)]-In[N(t1)]=\color{red}{In[\frac{N(t_2)}{N(t_1)}]}$
+:::
+
+::: callout-important
+Por leyes de los logaritmos. Para cualquiera números $a$ y $b$ se satisface $In(\frac{a}{b})=In(a)-In(b)$
+:::
+
+## `Tasas de crecimiento` {auto-animate="true"}
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$r(t_1,t_2)=\frac{N(t_2)-N(t_1)}{AP[t_1,t_2]}$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top: 90px;"}
+$r(t)=\lim_{\Delta t \to 0}\frac{\Delta N(t)}{N(t)\Delta t}=\frac{\lim_{\Delta t \to 0}\frac{\Delta N(t)}{\Delta t}}{N(t)}=\frac{N^{'}(t)}{N(t)}=\frac{d In(N(t))}{dt}$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$\int_{t_1}^{t_2}r(t)dt=\int_{t_1}^{t_2}\frac{d}{dt}In(t)dt=In[N(t_2)]-In[N(t1)]=\color{red}{In[\frac{N(t_2)}{N(t_1)}]}$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$\color{red}{e^{\int_{t_1}^{t_2}r(t)dt}=e^{In[\frac{N(t_2)}{N(t_1)}]}}$
+:::
+
+::: callout-important
+Aplicando la exponencial a ambos lados de la ecuación $e^x$
+:::
+
+## `Tasas de crecimiento` {auto-animate="true"}
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$r(t_1,t_2)=\frac{N(t_2)-N(t_1)}{AP[t_1,t_2]}$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top: 50px;"}
+$r(t)=\lim_{\Delta t \to 0}\frac{\Delta N(t)}{N(t)\Delta t}=\frac{\lim_{\Delta t \to 0}\frac{\Delta N(t)}{\Delta t}}{N(t)}=\frac{N^{'}(t)}{N(t)}=\frac{d In(N(t))}{dt}$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$\int_{t_1}^{t_2}r(t)dt=\int_{t_1}^{t_2}\frac{d}{dt}In(t)dt=In[N(t_2)]-In[N(t1)]=\color{red}{In[\frac{N(t_2)}{N(t_1)}]}$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$e^{\int_{t_1}^{t_2}r(t)dt}=\color{red}{\frac{N(t_2)}{N(t_1)}}$
+:::
+
+::: callout-important
+Esto es, pues, la exponencial, $e^x$, y el logaritmo natural, $In(x)$, son operaciones inversas Esto es $e^{In(x)}=x$
+:::
+
+::: callout-warning
+Ojo: $In(e^x)=x$ si y solo si $x>0$
+:::
+
+## `Tasas de crecimiento` {auto-animate="true"}
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$r(t_1,t_2)=\frac{N(t_2)-N(t_1)}{AP[t_1,t_2]}$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top: 50px;"}
+$r(t)=\lim_{\Delta t \to 0}\frac{\Delta N(t)}{N(t)\Delta t}=\frac{\lim_{\Delta t \to 0}\frac{\Delta N(t)}{\Delta t}}{N(t)}=\frac{N^{'}(t)}{N(t)}=\frac{d In(N(t))}{dt}$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$\int_{t_1}^{t_2}r(t)dt=\int_{t_1}^{t_2}\frac{d}{dt}In(t)dt=In[N(t_2)]-In[N(t1)]=\color{red}{In[\frac{N(t_2)}{N(t_1)}]}$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$e^{\int_{t_1}^{t_2}r(t)dt}=\frac{N(t_2)}{N(t_1)}$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$N(t_2)= \color{red}{N(t_1)e^{\int_{t_1}^{t_2}r(t)dt}}$
+:::
+
+::: callout-important
+Despejando $N(t_2)$
+:::
+
+## `Tasas de crecimiento` {auto-animate="true"}
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$r(t_1,t_2)=\frac{N(t_2)-N(t_1)}{AP[t_1,t_2]}$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top: 50px;"}
+$r(t)=\lim_{\Delta t \to 0}\frac{\Delta N(t)}{N(t)\Delta t}=\frac{\lim_{\Delta t \to 0}\frac{\Delta N(t)}{\Delta t}}{N(t)}=\frac{N^{'}(t)}{N(t)}=\frac{d In(N(t))}{dt}$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$\int_{t_1}^{t_2}r(t)dt=\int_{t_1}^{t_2}\frac{d}{dt}In(t)dt=In[N(t_2)]-In[N(t1)]=In[\frac{N(t_2)}{N(t_1)}]$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$e^{\int_{t_1}^{t_2}r(t)dt}=\frac{N(t_2)}{N(t_1)}$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$N(t_2)= N(t_1)e^{\int_{t_1}^{t_2}r(t)dt}$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$\color{red}{\overline{r}(t_1,t_2)=\frac{\int_{t_1}^{t_2}r(t)dt}{t_2-t_1}=\frac{In[\frac{N(t_1)}{N(t_2)}]}{t_2-t_1}}$
+:::
+
+::: callout-important
+-   Si $r(t)=\overline{r}(t_1,t_2)$, entonces $r(t)$ ya no depende de $t$ y es ahora una constante.
+-   Por lo tanto $\int_{t_1}^{t_2}\overline{r}(t_1,t_2)dt=\overline{r}(t_1,t_2)\int_{t_1}^{t_2}dt$
+-   Por lo tanto $\int_{t_1}^{t_2}\overline{r}(t_1,t_2)dt=\overline{r}(t_1,t_2)\int_{t_1}^{t_2}dt=\overline{r}(t_1,t_2)(t_2-t_1)$
+:::
+
+## `Aproximación a los AP` {auto-animate="true"}
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$AP[t_1,t_2]=\frac{N(t_2)-N(t_1)}{\overline{r}(t_1,t_2)}$
+:::
+
+## `Aproximación a los AP` {auto-animate="true"}
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$AP[t_1,t_2]=\frac{N(t_2)-N(t_1)}{\overline{r}(t_1,t_2)}$
+
+\par
+
+$\hspace{5.5cm}\color{red}{=\frac{N(t_2)-N(t_1)}{\frac{In[\frac{N(t_2)}{N(t_1)}]}{t_2-t_1}}}$
+:::
+
+::: callout-important
+Por lo el resultado anterior cuando $r(t)=\overline{r}(t_1,t_2)=\frac{In[\frac{N(t_2)}{N(t_1)}]}{t_2-t_1}$
+:::
+
+## `Aproximación a los AP` {auto-animate="true"}
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$AP[t_1,t_2]=\frac{N(t_2)-N(t_1)}{\overline{r}(t_1,t_2)}$
+
+\par
+
+$\hspace{5cm}=\frac{N(t_2)-N(t_1)}{\frac{In[\frac{N(t_2)}{N(t_1)}]}{t_2-t_1}}$
+
+\par
+
+$\hspace{5cm}\color{red}{=\frac{N(t_2)-N(t_1).[t_2-t_1]}{In[\frac{N(t_2)}{N(t_1)}]}}$
+:::
+
+::: callout-important
+Por la ley del "Sandwich"
+:::
+
+## `Diagrama de Lexis`
+
+![](Input/diagrama_de_lexis1.png){.absolute top="150" left="100" width="1390"}\
+
+## `Diagrama de Lexis`
+
+![](Input/diagrama_de_lexis2.png){.absolute top="150" left="100" width="1390"}
+
+## `Diagrama de Lexis`
+
+![](Input/diagrama_de_lexis3.png){.absolute top="150" left="100" width="1390"}
+
+## `Diagrama de Lexis-Probabilidades cohorte por edad`
+
+::: {style="text-align: center; font-size: 2em; margin-top:200px;"}
+${}_1q_0^{\text{C1980}} = \frac{{}_1D_0^{\text{C1980}}}{B_0^{\text{C1980}}}$
+:::
+
+::: {style="text-align: center; font-size: 2em; margin-top:50px;"}
+${}_5q_{25}^{\text{C1980}} = \frac{{}_5D_{25}^{\text{C1980}}}{{}_5N_{25}^{\text{C1980}}}$
+:::
+
+## `Tasa especificas por edad de periodo`
+
+::: {style="text-align: center; font-size: 2em; margin-top:200px;"}
+${}_nM_x[t_1,t_2]=\frac{{}_nD_x[t_1,t_2]}{{}_nAP_x[t_1,t_2]}=\frac{{}_nD_x[t_1,t_2]}{(t_2-t_1){}_nN_x}$
+:::
+
+::: {.callout-tip title="Nota"}
+Usualmente $t_2 - t_1 = n$
+:::
+
+## `Estandarización`
+
+::: {.callout-tip title="Recordando"}
+::: {style="text-align: center; font-size: 2em; margin-top:100px;"}
+1.  $tbm_{\text{Europa}}(2005,2010) = 11.3$
+2.  $tbm_{\text{Africa}}(2005,2010) = 11.8$
+3.  $tbm_{\text{Mundo}}(2005,2010) = 8.1$
+4.  $tbm_{\text{Latam}}(2005,2010) = 5.8$
+:::
+:::
+
+## `Estandarización`{auto-animate="true"}
+
+::: {style="text-align: center; font-size: 1.2em; margin-top:100px;"}
+$\text{tbm}=\frac{D}{N}=\frac{\sum_{x=0}^\omega {}_nD_x}{N}$
+:::
+
+## `Estandarización`{auto-animate="true"}
+
+::: {style="text-align: center; font-size: 1.2em; margin-top:100px;"}
+$\text{tbm}=\frac{D}{N}=\frac{\sum_{x=0}^\omega {}_nD_x}{N}$
+:::
+
+::: {style="text-align: center; font-size: 1.2em; margin-top:100px;"}
+$\hspace{3.5cm}= \sum_{x=0}^{\omega}\frac{{}_nD_x}{N}\frac{{}_nN_x}{{}_nN_x}$
+:::
+
+## `Estandarización`{auto-animate="true"}
+
+::: {style="text-align: center; font-size: 1.2em; margin-top:100px;"}
+$\text{tbm}=\frac{D}{N}=\frac{\sum_{x=0}^\omega {}_nD_x}{N}$
+:::
+
+::: {style="text-align: center; font-size: 1.2em; margin-top:100px;"}
+$=\hspace{3.5cm}\sum_{x=0}^{\omega}\frac{{}_nD_x}{N}\frac{{}_nN_x}{{}_nN_x}$
+:::
+
+::: {style="text-align: center; font-size: 1.2em; margin-top:100px;"}
+$=\hspace{3.5cm} \sum_{x=0}^{\omega} \frac{{}_nD_x}{{}_nN_x} \frac{{}_nN_x}{N}$
+:::
+
+::: {style="text-align: center; font-size: 1.2em; margin-top:100px;"}
+$=\hspace{3.5cm}\sum_{x=0}^{\omega} {}_nM_x \hspace{0.5cm} {}_nC_x$
+:::
+
+::: {.callout-note title="donde"}
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$\sum_{x=0}^{\omega} {}_nC_x = \frac{\sum_{x=0}^{\omega +} {}_nN_x}{N}=1$
+:::
+:::
+
+## `Estandarización`{auto-animate="true"}
+
+::: {.callout-note title="Tomando la ${}_nC_x de Europa$"}
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$tbm^*=\sum_{x=0}^{\omega} {}_nM^{Africa}_x \hspace{0.5cm} {}_nC^{Europa}_x$
+:::
+:::
+
+## `Estandarización`{auto-animate="true"}
+
+::: {.callout-note title="Tomando la ${}_nC_x$ de Europa"}
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$tbm^*=\sum_{x=0}^{\omega} {}_nM^{Africa}_x \hspace{0.5cm} {}_nC^{Europa}_x$
+:::
+:::
+
+::: {.callout-note title="En general"}
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$ASCDR^j= \sum_{x=0}^{\omega}  {}_nM_x^{j}\,{}_nC_x^S$
+:::
+:::
+
+para $j=A,B$ y
+
+::: {style="text-align: center; font-size: 1.5em; margin-top:50px;"}
+${}_nC_x^S = \frac{{}_nC_x^A+{}_nC_x^B}{2}$
+:::
+
+## `La Tabla de Mortalidad`{auto-animate="true"}
+
+::: {.callout-note title="Datos observados"}
+${}_nN_x$ es la población a la mitad de año entre las edades $x$ y $x+n$
+
+${}_nD_x$ son las defunciones totales que ocurridas entre las edades $x$ y $x+n$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+${}_nm_x = \frac{{}_nd_x}{{}_nL_x}\simeq \frac{{}_nD_x}{{}_nN_x}$
+:::
+
+## `La Tabla de Mortalidad`{auto-animate="true"}
+
+::: {.callout-note title="Datos observados"}
+${}_nN_x$ es la población a la mitad de año entre las edades $x$ y $x+n$
+
+${}_nD_x$ son las defunciones totales que ocurridas entre las edades $x$ y $x+n$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+${}_nm_x = \frac{{}_nd_x}{{}_nL_x}\simeq \frac{{}_nD_x}{{}_nN_x}$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+${}_nd_x = l_x-l_{x+n}=l_x\hspace{0.2cm}{}_nq_x$
+:::
+
+## `La Tabla de Mortalidad`{auto-animate="true"}
+
+::: {.callout-note title="Datos observados"}
+${}_nN_x$ es la población a la mitad de año entre las edades $x$ y $x+n$
+
+${}_nD_x$ son las defunciones totales que ocurridas entre las edades $x$ y $x+n$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+${}_nm_x = \frac{{}_nd_x}{{}_nL_x}\simeq \frac{{}_nD_x}{{}_nN_x}$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+${}_nd_x = l_x-l_{x+n}=l_x\hspace{0.2cm}{}_nq_x$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+${}_nq_x = \frac{{}_nd_x}{l_x}$
+:::
+
+## `La Tabla de Mortalidad`{auto-animate="true"}
+
+::: {.callout-note title="Datos observados"}
+${}_nN_x$ es la población a la mitad de año entre las edades $x$ y $x+n$
+
+${}_nD_x$ son las defunciones totales que ocurridas entre las edades $x$ y $x+n$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+${}_nm_x = \frac{{}_nd_x}{{}_nL_x}\simeq \frac{{}_nD_x}{{}_nN_x}$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+${}_nd_x = l_x-l_{x+n}=l_x\hspace{0.2cm}{}_nq_x$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+${}_nq_x = \frac{{}_nd_x}{l_x}$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+${}_nL_x=nl_{x+n}+{}_nA_x=nl_{x+n}+{}_na_x/,{}_nd_x$
+:::
+
+## `Tabla de Mortalidad` {
+
+![](Input/tabla.png){fig-align="center"}
+
+## `Método de Greville y Chiang para el cálculo de $L_x$`
+
+<!-- Primer bloque -->
+
+Entonces:
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+${}_nL_x=n(l_x-{}_nd_x)+{}_na_x\hspace{0.2cm}{}_nd_x$
+:::
+
+## `Método de Greville y Chiang para el cálculo de $L_x$`{auto-animate="true"}
+
+<!-- Segundo bloque -->
+
+Entonces:
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+${}_nL_x=n(l_x-{}_nd_x)+{}_na_x\hspace{0.2cm}{}_nd_x$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+${}_nL_x=\color{red}{nl_x-n{}_nd_x}+{}_na_x\hspace{0.2cm}{}_nd_x$
+:::
+
+::: {.callout-warning title="Ojo"}
+Por **propiedad distributiva**, es decir, para cualesquiera $a,x,y$ números se satisface: $a*(x+y)=a*x+b*y$
+:::
+
+## `Método de Greville y Chiang para el cálculo de $L_x$`{auto-animate="true"}
+
+<!-- Tercer bloque -->
+
+Entonces:
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+${}_nL_x=n(l_x-{}_nd_x)+{}_na_x\hspace{0.2cm}{}_nd_x$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+${}_nL_x=\color{red}{nl_x-n{}_nd_x}+{}_na_x\hspace{0.2cm}{}_nd_x$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$nl_x={}_nL_x+(n-{}_na_x){}_nd_x$
+:::
+
+::: {.callout-warning title="La trampa esta en los pormenores "}
+**Despejando** $nl_x$. Asi pues:
+
+-   ${}_nL_x=nl_x-n{}_nd_x+{}_na_x\hspace{0.2cm}{}_nd_x$
+
+-   ${}_nl_x={}_nL_x+n{}_nd_x-{}_na_x\hspace{0.2cm}{}_nd_x$ despejando $nl_x$
+
+-   ${}_nl_x={}_nL_x+\color{red}{(n-{}_na_x){}_nd_x}$, por **propiedad distributiva**
+:::
+
+## `Método de Greville y Chiang para el cálculo de $L_x$`{auto-animate="true"}
+
+<!-- Cuarto bloque -->
+
+Entonces:
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+${}_nL_x=n(l_x-{}_nd_x)+{}_na_x\hspace{0.2cm}{}_nd_x$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+${}_nL_x=nl_x-n{}_nd_x+{}_na_x\hspace{0.2cm}{}_nd_x$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$nl_x={}_nL_x+(n-{}_na_x){}_nd_x$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$l_x=\color{red}{\frac{1}{n}[{}_nL_x+(n-{}_na_x){}_nd_x]}$
+:::
+
+::: {.callout-warning title="La trampa esta en los pormenores "}
+**Despejando** $l_x$
+:::
+
+## `Método de Greville y Chiang para el cálculo de $L_x$`{auto-animate="true"}
+
+<!-- Quinto bloque -->
+
+Entonces:
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+${}_nL_x=n(l_x-{}_nd_x)+{}_na_x\hspace{0.2cm}{}_nd_x$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+${}_nL_x=nl_x-n{}_nd_x+{}_na_x\hspace{0.2cm}{}_nd_x$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$nl_x={}_nL_x+(n-{}_na_x){}_nd_x$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$l_x=\frac{1}{n}[{}_nL_x+(n-{}_na_x){}_nd_x]$
+:::
+
+Recordemos que:
+
+::: {style="text-align: left; font-size: 1em; margin-top:50px;"}
+$\color{red}{{}_nq_x=\frac{{}_nd_x}{l_x}}$
+:::
+
+## `Método de Greville y Chiang para el cálculo de $L_x$`{auto-animate="true"}
+
+<!-- Sexto bloque -->
+
+Entonces:
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+${}_nL_x=n(l_x-{}_nd_x)+{}_na_x\hspace{0.2cm}{}_nd_x$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+${}_nL_x=nl_x-n{}_nd_x+{}_na_x\hspace{0.2cm}{}_nd_x$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$nl_x={}_nL_x+(n-{}_na_x){}_nd_x$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$l_x=\frac{1}{n}[{}_nL_x+(n-{}_na_x){}_nd_x]$
+:::
+
+Recordemos que:
+
+::: {style="text-align: left; font-size: 1em; margin-top:50px;"}
+${}_nq_x=\frac{{}_nd_x}{l_x} =\color{red}{ \frac{n\hspace{0.3cm}{}_nd_x}{{}_nL_x+(n-{}_na_x){}_nd_x}}$
+:::
+
+::: {.callout-warning title="La trampa esta en los pormenores "}
+**Sustituyendo** ${}_nl_x$ en ${}_nq_x$. Asi tenemos que:
+
+-   ${}_nq_x = \color{red}{\frac{{}_nd_x}{\frac{1}{n}[{}_nL_x+(n-{}_na_x){}_nd_x]}}$
+:::
+
+## `Método de Greville y Chiang para el cálculo de $L_x$`{auto-animate="true"}
+
+<!-- Septimo bloque -->
+
+Entonces:
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+${}_nL_x=n(l_x-{}_nd_x)+{}_na_x\hspace{0.2cm}{}_nd_x$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+${}_nL_x=nl_x-n{}_nd_x+{}_na_x\hspace{0.2cm}{}_nd_x$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$nl_x={}_nL_x+(n-{}_na_x){}_nd_x$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$l_x=\frac{1}{n}[{}_nL_x+(n-{}_na_x){}_nd_x]$
+:::
+
+Recordemos que:
+
+::: {style="text-align: left; font-size: 1em; margin-top:50px;"}
+${}_nq_x=\frac{{}_nd_x}{l_x} =\color{red}{ \frac{n\hspace{0.3cm}{}_nd_x}{{}_nL_x+(n-{}_na_x){}_nd_x}}$
+:::
+
+::: {.callout-warning title="La trampa esta en los pormenores "}
+**Sustituyendo** ${}_nl_x$ en ${}_nq_x$. Asi tenemos que:
+
+-   ${}_nq_x = \frac{{}_nd_x}{\frac{1}{n}[{}_nL_x+(n-{}_na_x){}_nd_x]} = \color{red}{\frac{n\hspace{0.3cm}{}_nd_x}{{}_nL_x+(n-{}_na_x){}_nd_x}}$
+:::
+
+## `Método de Greville y Chiang para el cálculo de $L_x$`{auto-animate="true"}
+
+<!-- Octavo bloque -->
+
+Entonces:
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+${}_nL_x=n(l_x-{}_nd_x)+{}_na_x\hspace{0.2cm}{}_nd_x$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+${}_nL_x=nl_x-n{}_nd_x+{}_na_x\hspace{0.2cm}{}_nd_x$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$nl_x={}_nL_x+(n-{}_na_x){}_nd_x$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$l_x=\frac{1}{n}[{}_nL_x+(n-{}_na_x){}_nd_x]$
+:::
+
+Recordemos que:
+
+::: {style="text-align: left; font-size: 1em; margin-top:50px;"}
+${}_nq_x=\frac{{}_nd_x}{l_x}= \frac{n\hspace{0.3cm}{}_nd_x}{{}_nL_x+(n-{}_na_x){}_nd_x} = \color{red}{\frac{\frac{n\hspace{0.3cm}{}_nd_x}{{}_nL_x}}{\frac{({}_nL_x+(n-{}_na_x){}_nd_x)}{{}_nL_x}}}$
+:::
+
+::: {.callout-warning title="La trampa esta en los pormenores "}
+Tomando en cuenta que
+
+$\frac{\frac{n\hspace{0.3cm}{}_nd_x}{{}_nL_x}}{\frac{({}_nL_x+(n-{}_na_x){}_nd_x)}{{}_nL_x}} = \frac{n\hspace{0.3cm}{}_nd_x\hspace{0.2cm}{}_nL_x}{({}_nL_x+(n-{}_na_x){}_nd_x){}_nL_x} = \frac{n\hspace{0.3cm}{}_nd_x}{{}_nL_x+(n-{}_na_x){}_nd_x}$ aplicando la **ley del sandwich**
+:::
+
+## `Método de Greville y Chiang para el cálculo de $L_x$`{auto-animate="true"}
+
+<!-- Noveno bloque -->
+
+Entonces:
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+${}_nL_x=n(l_x-{}_nd_x)+{}_na_x\hspace{0.2cm}{}_nd_x$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+${}_nL_x=nl_x-n{}_nd_x+{}_na_x\hspace{0.2cm}{}_nd_x$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$nl_x={}_nL_x+(n-{}_na_x){}_nd_x$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$l_x=\frac{1}{n}[{}_nL_x+(n-{}_na_x){}_nd_x]$
+:::
+
+Recordemos que:
+
+::: {style="text-align: left; font-size: 1em; margin-top:50px;"}
+${}_nq_x=\frac{{}_nd_x}{l_x}= \frac{n\hspace{0.3cm}{}_nd_x}{{}_nL_x+(n-{}_na_x){}_nd_x} = \frac{\frac{n\hspace{0.3cm}{}_nd_x}{{}_nL_x}}{\frac{({}_nL_x+(n-{}_na_x){}_nd_x)}{{}_nL_x}} = \frac{n\hspace{0.2cm}{}_nm_x}{1+(n-{}_na_x){}_nm_x}$
+:::
+
+## `Repaso de la Tabla de Mortalidad`
+
+<!-- Primer bloque -->
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+${}_na_x=\frac{-\frac{n}{24}{}_nd_{x-n}+\frac{n}{2}{}_nd_x+\frac{n}{24}{}_nd_{x+n}}{{}_nd_x}$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+Pero cuando $n=1$ entonces ${}_na_x=0.5$
+:::
+
+## `Repaso de la Tabla de Mortalidad`{auto-animate="true"}
+
+<!-- Segundo bloque -->
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+${}_na_x=\frac{-\frac{n}{24}{}_nd_{x-n}+\frac{n}{2}{}_nd_x+\frac{n}{24}{}_nd_{x+n}}{{}_nd_x}$
+:::
+
+::: {style="text-align: left; font-size: 1em; margin-top:50px;"}
+Pero cuando $n=1$ entonces ${}_na_x=0.5$
+:::
+
+::: {style="text-align: left; font-size: 1em; margin-top:50px;"}
+Para el último grupo de edad:
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+${}_{\infty}q_x = 1$
+:::
+
+## `Repaso de la Tabla de Mortalidad`{auto-animate="true"}
+
+<!-- Tercer bloque -->
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+${}_na_x=\frac{-\frac{n}{24}{}_nd_{x-n}+\frac{n}{2}{}_nd_x+\frac{n}{24}{}_nd_{x+n}}{{}_nd_x}$
+:::
+
+::: {style="text-align: left; font-size: 1em; margin-top:50px;"}
+Pero cuando $n=1$ entonces ${}_na_x=0.5$
+:::
+
+::: {style="text-align: left; font-size: 1em; margin-top:50px;"}
+Para el último grupo de edad:
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+${}_{\infty}q_x = 1$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+${}_{\infty}L_x = \frac{l_x}{{}_{\infty}m_x}$
+:::
+
+## `Repaso de la Tabla de Mortalidad`{auto-animate="true"}
+
+<!-- Cuarto bloque -->
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+${}_na_x=\frac{-\frac{n}{24}{}_nd_{x-n}+\frac{n}{2}{}_nd_x+\frac{n}{24}{}_nd_{x+n}}{{}_nd_x}$
+:::
+
+::: {style="text-align: left; font-size: 1em; margin-top:50px;"}
+Pero cuando $n=1$ entonces ${}_na_x=0.5$
+:::
+
+::: {style="text-align: left; font-size: 1em; margin-top:50px;"}
+Para el último grupo de edad:
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+${}_{\infty}q_x = 1$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+${}_{\infty}L_x = \frac{l_x}{{}_{\infty}m_x}$
+:::
+
+::: {style="text-align: left; font-size: 1em; margin-top:50px;"}
+Finalmente se calculan
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$T_x = \sum_{a=x}^{\infty}{}_nL_a$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$e_x^0=\frac{T_x}{l_x}$
+:::
+
+## `Relaciones básicas de la mortalidad`{auto-animate="true"}
+
+<!-- Primer bloque bloque -->
+
+::: {.callout-note title="Tasa instantánea de mortalidad"}
+$\mu(x)= \lim_{n\to 0}{}_nm_x$
+:::
+
+## `Relaciones básicas de la mortalidad`{auto-animate="true"}
+
+<!-- Segundo bloque bloque -->
+
+::: {.callout-note title="Tasa instantánea de mortalidad"}
+$\mu(x)= \lim_{n\to 0}{}_nm_x = \lim_{n\to 0}\frac{{}_nd_x}{{}_nL_x}$
+:::
+
+## `Relaciones básicas de la mortalidad`{auto-animate="true"}
+
+::: {.callout-note title="Tasa instantánea de mortalidad"}
+$\mu(x)= \lim_{n\to 0}{}_nm_x = \lim_{n\to 0}\frac{{}_nd_x}{{}_nL_x} = \lim_{n\to 0}\frac{l_x-l_{x+n}}{nL_x}$
+:::
+
+## `Relaciones básicas de la mortalidad`{auto-animate="true"}
+
+<!-- Tercer bloque  -->
+
+::: {.callout-note title="Tasa instantánea de mortalidad"}
+$\mu(x)= \lim_{n\to 0}{}_nm_x = \lim_{n\to 0}\frac{{}_nd_x}{{}_nL_x} = \lim_{n\to 0}\frac{l_x-l_{x+n}}{nL_x}=\color{red}{-\frac{dl(x)}{l(x)dx}}$
+:::
+
+::: {.callout-warning title="La trampa esta en los pormenores "}
+Aplicamos la definición de la **derivada**:
+
+$\lim_{n\to 0}\frac{l_x - l_{x+n}}{nl_x}=\lim_{n\to 0}-\frac{l_{x+n}-l_x}{nl_x}$
+:::
+
+## `Relaciones básicas de la mortalidad`{auto-animate="true"}
+
+<!-- Cuarto bloque  -->
+
+::: {.callout-note title="Tasa instantánea de mortalidad"}
+$\mu(x)= \lim_{n\to 0}{}_nm_x = \lim_{n\to 0}\frac{{}_nd_x}{{}_nL_x} = \lim_{n\to 0}\frac{l_x-l_{x+n}}{nL_x}=\color{red}{-\frac{dl(x)}{l(x)dx}}$
+:::
+
+::: {.callout-warning title="La trampa esta en los pormenores "}
+Aplicamos la definición de la **derivada**:
+
+$\lim_{n\to 0}\frac{l_x - l_{x+n}}{nl_x}=\lim_{n\to 0}-\frac{l_{x+n}-l_x}{nl_x}$ factorizando un signo negativo
+:::
+
+## `Relaciones básicas de la mortalidad`{auto-animate="true"}
+
+<!-- Quinto bloque  -->
+
+::: {.callout-note title="Tasa instantánea de mortalidad"}
+$\mu(x)= \lim_{n\to 0}{}_nm_x = \lim_{n\to 0}\frac{{}_nd_x}{{}_nL_x} = \lim_{n\to 0}\frac{l_x-l_{x+n}}{nL_x}=\color{red}{-\frac{dl(x)}{l(x)dx}}$
+:::
+
+::: {.callout-warning title="La trampa esta en los pormenores "}
+Aplicamos la definición de la **derivada**:
+
+$\lim_{n\to 0}\frac{l_x - l_{x+n}}{nl_x}=\lim_{n\to 0}-\frac{l_{x+n}-l_x}{nl_x}= -\frac{1}{l_x}\lim_{x\to 0}\frac{l_{x+n-l_x}}{n}$ pues el factor $-\frac{1}{l_x}$ no depende de n y lo podemos sacar del límite.
+:::
+
+## `Relaciones básicas de la mortalidad`{auto-animate="true"}
+
+<!-- Sexto bloque  -->
+
+::: {.callout-note title="Tasa instantánea de mortalidad"}
+$\mu(x)= \lim_{n\to 0}{}_nm_x = \lim_{n\to 0}\frac{{}_nd_x}{{}_nL_x} = \lim_{n\to 0}\frac{l_x-l_{x+n}}{nL_x}=\color{red}{-\frac{dl(x)}{l(x)dx}}$
+:::
+
+::: {.callout-warning title="La trampa esta en los pormenores "}
+Aplicamos la definición de la **derivada**:
+
+$\lim_{n\to 0}\frac{l_x - l_{x+n}}{nl_x}=\lim_{n\to 0}-\frac{l_{x+n}-l_x}{nl_x}= -\frac{1}{l_x}\lim_{x\to 0}\frac{l_{x+n-l_x}}{n}=-\frac{1}{l(x)}\frac{d}{dx}l(x)$ aplicando la definición de la **derivada**
+:::
+
+## `Relaciones básicas de la mortalidad`{auto-animate="true"}
+
+<!-- Septimo bloque  -->
+
+::: {.callout-note title="Tasa instantánea de mortalidad"}
+$\mu(x)= \lim_{n\to 0}{}_nm_x = \lim_{n\to 0}\frac{{}_nd_x}{{}_nL_x} = \lim_{n\to 0}\frac{l_x-l_{x+n}}{nL_x}=-\frac{dl(x)}{l(x)dx}=\color{red}{-\frac{dInl(x)}{dx}}$
+:::
+
+::: {.callout-warning title="La trampa esta en los pormenores "}
+Recordemos que:
+
+$\frac{d}{dx}In[l(x)]=\frac{\frac{d}{dx}l(x)}{l(x)}=\frac{dl(x)}{l(x)dx}$
+:::
+
+## `Relaciones básicas de la mortalidad`{auto-animate="true"}
+
+<!-- Octavo bloque  -->
+
+::: {.callout-note title="Tasa instantánea de mortalidad"}
+$\mu(x)= \lim_{n\to 0}{}_nm_x = \lim_{n\to 0}\frac{{}_nd_x}{{}_nL_x} = \lim_{n\to 0}\frac{l_x-l_{x+n}}{nL_x}=-\frac{dl(x)}{l(x)dx}=\color{red}{-\frac{dInl(x)}{dx}}$
+:::
+
+::: {.callout-note title="Función de supervivencia"}
+$-\int_y^z\mu(x)dx=$
+:::
+
+## `Relaciones básicas de la mortalidad`{auto-animate="true"}
+
+<!-- Noveno bloque  -->
+
+::: {.callout-note title="Tasa instantánea de mortalidad"}
+$\mu(x)= \lim_{n\to 0}{}_nm_x = \lim_{n\to 0}\frac{{}_nd_x}{{}_nL_x} = \lim_{n\to 0}\frac{l_x-l_{x+n}}{nL_x}=-\frac{dl(x)}{l(x)dx}=\color{red}{-\frac{dInl(x)}{dx}}$
+:::
+
+::: {.callout-note title="Función de supervivencia"}
+$-\int_y^z\mu(x)dx=\int_y^z\frac{d}{dx}In[l(x)]dx$
+:::
+
+::: {.callout-warning title="La trampa esta en los pormenores "}
+Sustituyendo $\mu(x)$ del bloque de **Tasa instantánea de mortalidad**
+:::
+
+## `Relaciones básicas de la mortalidad`{auto-animate="true"}
+
+<!-- Noveno bloque  -->
+
+::: {.callout-note title="Tasa instantánea de mortalidad"}
+$\mu(x)= \lim_{n\to 0}{}_nm_x = \lim_{n\to 0}\frac{{}_nd_x}{{}_nL_x} = \lim_{n\to 0}\frac{l_x-l_{x+n}}{nL_x}=-\frac{dl(x)}{l(x)dx}=\color{red}{-\frac{dInl(x)}{dx}}$
+:::
+
+::: {.callout-note title="Función de supervivencia"}
+$-\int_y^z\mu(x)dx=\int_y^z\frac{d}{dx}In[l(x)]dx=In[l(z)]-In[l(y)]$
+:::
+
+::: {.callout-warning title="La trampa esta en los pormenores "}
+Por **Teorema Fundamental del Cálculo**
+:::
+
+## `Relaciones básicas de la mortalidad`{auto-animate="true"}
+
+<!-- Decimo bloque  -->
+
+::: {.callout-note title="Tasa instantánea de mortalidad"}
+$\mu(x)= \lim_{n\to 0}{}_nm_x = \lim_{n\to 0}\frac{{}_nd_x}{{}_nL_x} = \lim_{n\to 0}\frac{l_x-l_{x+n}}{nL_x}=-\frac{dl(x)}{l(x)dx}=\color{red}{-\frac{dInl(x)}{dx}}$
+:::
+
+::: {.callout-note title="Función de supervivencia"}
+$-\int_y^z\mu(x)dx=\int_y^z\frac{d}{dx}In[l(x)]dx=In[l(z)]-In[l(y)] = In[\frac{l(z)}{l(y)}]$
+:::
+
+::: {.callout-warning title="La trampa esta en los pormenores "}
+Por **Leyes de los logaritmos**. Para cualquiera números $a,b$, tenemos que $In[\frac{a}{b}]=In(a)-In(b)$
+:::
+
+## `Relaciones básicas de la mortalidad`{auto-animate="true"}
+
+<!-- Onceavo bloque  -->
+
+::: {.callout-note title="Tasa instantánea de mortalidad"}
+$\mu(x)= \lim_{n\to 0}{}_nm_x = \lim_{n\to 0}\frac{{}_nd_x}{{}_nL_x} = \lim_{n\to 0}\frac{l_x-l_{x+n}}{nL_x}=-\frac{dl(x)}{l(x)dx}=-\frac{dInl(x)}{dx}$
+:::
+
+::: {.callout-note title="Función de supervivencia"}
+$-\int_y^z\mu(x)dx=\int_y^z\frac{d}{dx}In[l(x)]dx=In[l(z)]-In[l(y)] = In[\frac{l(z)}{l(y)}]$
+
+$\implies \color{red}{l(z)=l(y)e^{-\int_y^z\mu(z)dx}}$
+:::
+
+::: {.callout-warning title="La trampa esta en los pormenores "}
+Despejando $l(z)$:
+
+-   $e^{-\int_y^z\mu(x)dx}=e^{In[\frac{l(z)}{l(y)}]}$ aplicando $e^x$ para todo $x$
+
+-   $e^{-\int_y^z\mu(x)dx}=\frac{l(z)}{l(y)}$ pues $e^{In(x)}=x$ para todo $x$
+
+-   $l(z)=l(y)e^{-\int_y^z\mu(x)dx}$
+:::
+
+## `Relaciones básicas de la mortalidad`{auto-animate="true"}
+
+<!-- Doceavo bloque  -->
+
+::: {.callout-note title="Tasa instantánea de mortalidad"}
+$\mu(x)= \lim_{n\to 0}{}_nm_x = \lim_{n\to 0}\frac{{}_nd_x}{{}_nL_x} = \lim_{n\to 0}\frac{l_x-l_{x+n}}{nL_x}=-\frac{dl(x)}{l(x)dx}=-\frac{dInl(x)}{dx}$
+:::
+
+::: {.callout-note title="Función de supervivencia"}
+$-\int_y^z\mu(x)dx=\int_y^z\frac{d}{dx}In[l(x)]dx=In[l(z)]-In[l(y)] = In[\frac{l(z)}{l(y)}]$
+
+$\implies \color{red}{l(z)=l(y)e^{-\int_y^z\mu(z)dx}}$
+
+Entonces: $l(x)=l(0)e^{-\int_0^x\mu(t)dt}$
+:::
+
+::: {.callout-warning title="La trampa esta en los pormenores "}
+Si tomamos en cuenta $y=x$ y $z=0$
+:::
+
+## `Relaciones básicas de la mortalidad`{auto-animate="true"}
+
+<!-- 13 bloque  -->
+
+::: {.callout-note title="Tasa instantánea de mortalidad"}
+$\mu(x)= \lim_{n\to 0}{}_nm_x = \lim_{n\to 0}\frac{{}_nd_x}{{}_nL_x} = \lim_{n\to 0}\frac{l_x-l_{x+n}}{nL_x}=-\frac{dl(x)}{l(x)dx}=-\frac{dInl(x)}{dx}$
+:::
+
+::: {.callout-note title="Función de supervivencia"}
+$-\int_y^z\mu(x)dx=\int_y^z\frac{d}{dx}In[l(x)]dx=In[l(z)]-In[l(y)] = In[\frac{l(z)}{l(y)}]$
+
+$\implies \color{red}{l(z)=l(y)e^{-\int_y^z\mu(z)dx}}$
+
+Entonces: $l(x)=l(0)e^{-\int_0^x\mu(t)dt}$
+
+Si tomamos $l(0)=1$, obtenemos:
+
+$l(x)=e^{-\int_0^x\mu(t)dt}$
+:::
+
+## `Relaciones básicas de la mortalidad (otra perspectiva)`{auto-animate="true"}
+
+<!-- 1 bloque  -->
+
+Definamos a $X$ como al evento de que una persona muere en un tiempo $t$. Entoces tenemos que:
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$q(X)= \lim_{\Delta t \to 0}\frac{P(X\in(x,x+\Delta))}{\Delta t}$
+:::
+
+es una **función de densidad**. Y
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$Q(x)=P(X\leq x)= \int q(x)dx$
+:::
+
+es una **función de distribución**
+
+::: {.callout-warning title="La trampa esta en los pormenores "}
+Vayamos con calma en este bloque. Una **función de densidad** o **función de probabilidad**,$f$,es una función que cumple con las siguinetes tres propiedades.
+
+-   $f(x)>0$, es decir, es positiva para todo $x$ en su dominio o sus valores permitidos.
+
+-   $\int_{Dom(x)}f(x)=1$, es decir, la integral sobre todo el dominio de la función $f$ es 1.
+
+-   $f(x)\leq 1$ es decir, es menor o igual a 1
+:::
+
+## `Relaciones básicas de la mortalidad (otra perspectiva)`{auto-animate="true"}
+
+<!-- 2 bloque  -->
+
+Definamos a $X$ como al evento de que una persona muere en un tiempo $t$. Entoces tenemos que:
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$q(X)= \lim_{\Delta t \to 0}\frac{P(X\in(x,x+\Delta t))}{\Delta t}$
+:::
+
+es una **función de densidad**. Y
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$Q(x)=P(X\leq x)= \int q(x)dx$
+:::
+
+es una **función de distribución**
+
+::: {.callout-warning title="La trampa esta en los pormenores "}
+Porque son importantes las **funciones de probabilidad**?
+
+-   Como su nombre lo sugiere, estas funciones nos permitirán calcular probabilidades de nuestros eventos.
+-   f(x)=P(X=x) se lee como, la probabilidad de que X sea igual al evento x.
+-   En nuestro contexto, se lee como la probabilidad de que una persona muera en el tiempo determinado $x$.
+:::
+
+## `Relaciones básicas de la mortalidad (otra perspectiva)`{auto-animate="true"}
+
+<!-- 3 bloque  -->
+
+Definamos a $X$ como al evento de que una persona muere en un tiempo $t$. Entoces tenemos que:
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$q(X)= \lim_{\Delta t \to 0}\frac{P(X\in(x,x+\Delta t))}{\Delta t}$
+:::
+
+es una **función de densidad**. Y
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$Q(x)=P(X\leq x)= \int q(x)dx$
+:::
+
+es una **función de distribución**
+
+::: {.callout-note title="Tasa instantanea de mortalidad"}
+$\mu(X)= \lim_{\Delta x \to0} \frac{P(X\in (x,x+\Delta x)|Se\,llegó\, con \,vida\, al\, tiempo\,x )}{\Delta x}$
+:::
+
+::: {.callout-warning title="El diablo esta en los detalles"}
+$\mu(X)= \lim_{\Delta x \to0} \frac{P(X\in (x,x+\Delta x)|Se\,llegó\, con \,vida\, al\, tiempo\,x )}{\Delta x}$
+:::
+
+<!-- Explicacion de la probabilidad condicional un bloque-->
+
+## `Relaciones básicas de la mortalidad (otra perspectiva)`{auto-animate="true"}
+
+<!-- 4 bloque  -->
+
+Definamos a $X$ como al evento de que una persona muere en un tiempo $t$. Entoces tenemos que:
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$q(X)= \lim_{\Delta t \to 0}\frac{P(X\in(x,x+\Delta t))}{\Delta t}$
+:::
+
+es una **función de densidad**. Y
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$Q(x)=P(X\leq x)= \int q(x)dx$
+:::
+
+es una **función de distribución**
+
+::: {.callout-note title="Tasa instantanea de mortalidad"}
+$\mu(X)= \lim_{\Delta x \to0} \frac{P(X\in (x,x+\Delta x)|Se\,llegó\, con \,vida\, al\, tiempo\,x )}{\Delta x}$
+:::
+
+::: {.callout-warning title="El diablo esta en los detalles"}
+$\mu(X)= \lim_{\Delta x \to0} \frac{P(X\in (x,x+\Delta x)|Se\,llegó\, con \,vida\, al\, tiempo\,x )}{\Delta x}$
+
+$\frac{q(X)}{1-Q(X)}=\frac{q(X)}{l(X)}$
+:::
+
+<!-- Explicar el cociente y la funcion de supervivencia  -->
+
+## `Relaciones básicas de la mortalidad (otra perspectiva)`{auto-animate="true"}
+
+<!-- 1 bloque  -->
+
+::: {.callout-note title="Función de sobrevivencia"}
+Como $q(X)$ es una función de densidad, entonces:
+
+$q(X) = \frac{dQ(X)}{dx}=\frac{d[1-l(X)]}{dx}=-\frac{dl(X)}{dx}$ <!-- Explicar la derivada de una constante 1 bloque  -->
+:::
+
+## `Relaciones básicas de la mortalidad (otra perspectiva)`{auto-animate="true"}
+
+<!-- 2 bloque  -->
+
+::: {.callout-note title="Función de sobrevivencia"}
+Como $q(X)$ es una función de densidad, entonces:
+
+$q(X) = \frac{dQ(X)}{dx}=\frac{d[1-l(X)]}{dx}=-\frac{dl(X)}{dx}$
+
+por lo que
+
+$\mu(X)=\frac{q(X)}{l(X)}=-\frac{dl(X)}{l(X)dx}=-\frac{dIn[l(X)]}{dx}$
+:::
+
+## `Relaciones básicas de la mortalidad (otra perspectiva)`{auto-animate="true"}
+
+<!-- 3 bloque  -->
+
+::: {.callout-note title="Función de sobrevivencia"}
+Como $q(X)$ es una función de densidad, entonces:
+
+$q(X) = \frac{dQ(X)}{dx}=\frac{d[1-l(X)]}{dx}=-\frac{dl(X)}{dx}$
+
+por lo que
+
+$\mu(X)=\frac{q(X)}{l(X)}=-\frac{dl(X)}{l(X)dx}=-\frac{dIn[l(X)]}{dx}$
+
+de lo que se sigue que:
+
+$l(x)=e^{-\int_0^x \mu(t)dt}$
+:::
+
+## `Relaciones básicas de la mortalidad (resumen)`{auto-animate="true"}
+
+<!-- 1 bloque  -->
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+-   $\mu(x)=-\frac{dIn[l(x)]}{dx}$
+-   $l(x)=e^{-\int_0^x\mu(t)dt}$
+-   $q(x)=\mu(x)e^{-\int_0^x\mu(t)dt}$
+:::
+
+## `Patrones modelo de la mortalidad`{auto-animate="true"}
+
+<!-- 1 bloque  -->
+
+::: {.callout-note title="Modelo de Gompertz"}
+$\mu(x)=BC^x$
+:::
+
+## `Patrones modelo de la mortalidad`{auto-animate="true"}
+
+<!-- 2 bloque  -->
+
+::: {.callout-note title="Modelo de Gompertz"}
+$\mu(x)=BC^x$
+:::
+
+::: {.callout-note title="Modelo de Gompertz-Makeham"}
+$\mu(x)=A+BC^x$
+:::
+
+## `Patrones modelo de la mortalidad`{auto-animate="true"}
+
+<!-- 3 bloque  -->
+
+::: {.callout-note title="Modelo de Gompertz"}
+$\mu(x)=BC^x$
+:::
+
+::: {.callout-note title="Modelo de Gompertz-Makeham"}
+$\mu(x)=A+BC^x$
+:::
+
+::: {.callout-note title="Modelo de Weibull"}
+$\mu(x)=kx^n$
+:::
+
+## `Patrones modelo de la mortalidad`{auto-animate="true"}
+
+<!-- 3 bloque  -->
+
+::: {.callout-note title="Modelo de Gompertz"}
+$\mu(x)=BC^x$
+:::
+
+::: {.callout-note title="Modelo de Gompertz-Makeham"}
+$\mu(x)=A+BC^x$
+:::
+
+::: {.callout-note title="Modelo de Weibull"}
+$\mu(x)=kx^n$
+:::
+
+::: {.callout-note title="Modelo de Heligman y Pollard"}
+$\mu(x)=A^{(x+B)^C}+De^{-E(In(x)-In(F)^2)}+GH^x$
+:::
+
+## `Patrones modelo de la mortalidad`{auto-animate="true"}
+
+![](Input/mortalidad.png)
+
+## `Otras relaciones en la mortalidad`{auto-animate="true"}
+
+<!-- Bloque 1-->
+
+<!-- Preguntar por el nombre de la ecuacion 1-->
+
+::: {.callout-note title="Ecuacion 1"}
+${}_nL_x=\int_0^nl(x+t)dt$
+:::
+
+## `Otras relaciones en la mortalidad`{auto-animate="true"}
+
+<!-- Bloque 2-->
+
+<!-- Preguntar por el nombre de la ecuacion 1-->
+
+::: {.callout-note title="Ecuacion 1"}
+${}_nL_x=\int_0^nl(x+t)dt$
+:::
+
+<!-- Preguntar por el nombre de la ecuacion 2-->
+
+::: {.callout-note title="Ecuacion 2"}
+${}_nd_x=\int_0^nl(x+t)\mu(x+t)dt$
+:::
+
+## `Otras relaciones en la mortalidad`{auto-animate="true"}
+
+<!-- Bloque 3-->
+
+<!-- Preguntar por el nombre de la ecuacion 1-->
+
+::: {.callout-note title="Ecuacion 1"}
+${}_nL_x=\int_0^nl(x+t)dt$
+:::
+
+<!-- Preguntar por el nombre de la ecuacion 2-->
+
+::: {.callout-note title="Ecuacion 2"}
+${}_nd_x=\int_0^nl(x+t)\mu(x+t)dt$
+:::
+
+<!-- Preguntar por el nombre de la ecuacion 3-->
+
+::: {.callout-note title="Ecuacion 3"}
+$T_x=\int_0^{\omega-x}l(x+t)dt=\int_0^{\omega-x}l(x+t)dt$
+:::
+
+## `Otras relaciones en la mortalidad`{auto-animate="true"}
+
+<!-- Bloque 4-->
+
+<!-- Preguntar por el nombre de la ecuacion 1-->
+
+::: {.callout-note title="Ecuacion 1"}
+${}_nL_x=\int_0^nl(x+t)dt$
+:::
+
+<!-- Preguntar por el nombre de la ecuacion 2-->
+
+::: {.callout-note title="Ecuacion 2"}
+${}_nd_x=\int_0^nl(x+t)\mu(x+t)dt$
+:::
+
+<!-- Preguntar por el nombre de la ecuacion 3-->
+
+::: {.callout-note title="Ecuacion 3"}
+$T_x=\int_0^{\omega-x}l(x+t)dt=\int_0^{\omega-x}l(x+t)dt$
+:::
+
+<!-- Preguntar por el nombre de la ecuacion 4-->
+
+::: {.callout-note title="Ecuacion 4"}
+$e_x=\frac{\int_0^{\omega-x}t*l(x+t)\mu(x+t)dt}{\int_0^{\omega-x}l(x+t)\mu(x+t)dt}=\frac{\int_0^{\omega-x}l(x+t)dt}{l(x)}$
+:::
+
+## `Modelos relacionales de la mortalidad (Brass 1971)`{auto-animate="true"}
+
+<!-- Bloque 1-->
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$\hat{Y}(x)=logit[q(x)]=0.5In\left[ \frac{q(x)}{1-q(x)} \right]$
+
+$\hat{Y}(x)=\alpha+\beta\hat{Y}^S(x)$
+:::
+
+## `Proyección logística de la mortalidad`{auto-animate="true"}
+
+<!-- Bloque 1-->
+
+::: {style="text-align: center; font-size: 3em; margin-top:300px;"}
+$e_0(t)=k_1+\frac{k_2}{1+e^{a+bt}}$
+:::
+
+## `El modelo de Lee y Carter`{auto-animate="true"}
+
+<!-- Bloque 1-->
+
+::: {style="text-align: center; font-size: 1.5em; margin-top:100px;"}
+$In(m_{x,t})=a_x+b_xk_t+\epsilon_{x,t}$
+:::
+
+sujeto a:
+
+::: {style="text-align: center; font-size: 1.5em; margin-top:100px;"}
+$\sum_{t=0}^n k_t=0$
+
+$\sum_{t=0}^{\omega} b_x=0$
+:::
+
+## `Estimación 1.Descomposición de Valores Singulares`{auto-animate="true"}
+
+<!-- Bloque 1-->
+
+Dada las restricciones del modelo, se sigue queÑ ::: {style="text-align: center; font-size: 1.5em; margin-top:100px;"} $\sum_{t=0}^n In(m_{x,t})=\sum_{t=0}^n a_z + \sum_{t=0}^n b_xk_t$
+
+$\sum_{t=0}^{\omega} In(m_{x,t})=na_x$
+
+::: Por lo que:
+
+::: {style="text-align: center; font-size: 1.5em; margin-top:100px;"}
+$\hat{a}=\frac{\sum_{t=1}^n In(m_{x,t})}{n}$
+:::
+
+Enronces:
+
+::: {style="text-align: center; font-size: 1.5em; margin-top:100px;"}
+$In(m_{x,t})-\hat{a}=b_xk_t$
+:::
+
+## `Descomposición en Valores Singulares`{auto-animate="true"}
+
+<!-- Bloque 1-->
+
+Formalmente, la factorización DVS indica que para toda $\textbf{A} \in \mathbb{R}^{m\times n}$ de rango $r$, existen matrices ortogonales $\textbf{U}_{m\times n}$ y $\textbf{V}_{n\times n}$ y una matriz diagonal $\textbf{D}_{n\times n}=diag(\sigma_1,\sigma_2,...,\sigma_n)$ tales que: ::: {style="text-align: center; font-size: 1.5em; margin-top:100px;"} $\textbf{A}=\textbf{UDV}^t\,\sigma_1\geq\sigma_2\geq...\geq \sigma_n$
+
+:::
+
+Las $\sigma_i^{'}s$ son los valores singulares de $\textbf{A}$. En la factorización anterior, a las solumnas de $\textbf{U}$ y $\textbf{V}$ se les denomina vectores singulares de $\textbf{A}$ izquierdos y derechos, respectivamente. Entonces $b_x$ se encuentra estimado por el primer vector propio izquierdo y $k_t$ está determinado por la primera componente principal considerando el primer vector propio derecho determinado por el máximo eigenvalor $\sigma_1$. De hecho, en general:
+
+::: {style="text-align: center; font-size: 1.5em; margin-top:100px;"}
+$In(m_{x,t})=a_x+b_{x1}k_{kt1}+b_{x2}k_{t2}+...+b_{xn}k_{tn}$
+:::
+
+donde, $\epsilon_{x,t}=b_{x2}k_{t2}+...+b_{xn}k_{tn}$
+
+## `Criterios de minimización`{auto-animate="true"}
+
+<!-- Bloque 1-->
+
+El criterio de minimización apropiado se encuentra dado por el cálculo de la devianza: ::: {style="text-align: center; font-size: 1.5em; margin-top:100px;"} $devianza_t = 2\sum_{x=0}^{\omega+} \left[D_{x,t}In\left( \frac{D_{x,t}}{D^{'}_{x,t}} \right)-(D_{x,t}-D^{'}_{x,t}) \right]$
+
+:::
+
+La devianza es imilar al cálculo de la prueba $\chi-cuadrada$ para la bondad de ajuste de $D^{'}_{x,t}$ además de que el cálculo es mas sencillo: ::: {style="text-align: center; font-size: 1.5em; margin-top:100px;"} $\chi^2=\sum_{t=1}^n\sum_{x=0}^{\omega+}\left[ \frac{(D_{x,t}-D^{'}_{x,t})^2}{D^{'}_{x,t}} \right]$
+
+donde $D_{x,t}$ son las defunciones totales de los individuos a edad $x$ ocurridas durante el año $t$. Esta ecuación es utilizada para comparar la bondad de ajuste entre los modelos, el criterio de discriminación es: aquel modelo que presente la $\chi^2$ menor es el que ajusta mejor a los datos de las defunciones.
+
+:::
+
+## `Coeficiente de determinación`
+
+<!-- Bloque 1-->
+
+::: {style="text-align: center; font-size: 1.5em; margin-top:100px;"}
+$R^2 = 1 - \frac{\sum_{t=1}^{n} \sum_{x=0}^{w+} \left[ \ln(m_{x,t}) - a_x - b_x k_t \right]^2}{\sum_{t=1}^{n} \sum_{x=0}^{w+} \left[ \ln(m_{x,t}) - a_x \right]^2}$
+
+$= 1 - \frac{\sum_{t=1}^{n} \sum_{x=0}^{w+} \varepsilon_{x,t}^2}{\sum_{t=1}^{n} \sum_{x=0}^{w+} \left[ \ln(m_{x,t}) - a_x \right]^2}.$
+:::
+
+## `Estimación 2. Brooth`*et al*`(2001)`
+
+<!-- Bloque 1-->
+
+
+Refinamiento, habiendo estimado $a_x$ y $b_x$ de acuerdoa LC
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$k_t=\frac{In(m_{x,t})-a_{x,1}}{b_{x,1}}$
+:::
+
+## `Estimación 3. LC alternativo`
+
+Habiendo estimado $a_x$
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$k_t=\sum{}_{x=0}^{\omega}(In(m_{x,t})-a_x)$
+:::
+
+Entonces, $b_x$ se estima por MCO
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$b_x=\frac{\sum{}_{x=0}^{\omega}(In(m_{x,t})-a_x)}{\sum_{t=0}^{n}k_t^2}$
+:::
