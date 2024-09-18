@@ -2,9 +2,9 @@
 format: 
   revealjs:
     embed-resources: true
+    code-fold: true
     math: mathjax
-    theme: sky
-    css: custom.css
+    css: CSS/custom.css
     slide-number: true
     transition: fade
     incremental: true
@@ -16,42 +16,36 @@ height: 1080
 width: 1600
 execute: 
   eval: true
-  echo: true
 ---
+## {background-image=Background/bim1.png}
+::: {style="text-align: center; margin-top: 100px;"}
 
-<div style="text-align: center; margin-top: 100px;">
-
-<h1 style="font-size: 3em; color: #003366;">
-
+<span style="font-size: 3em; color: #003366;">
 Análisis Demográfico 1
+</span>
 
-</h1>
+----
 
-<hr>
-
-<h3 style="font-size: 2em; margin-top: 0.5em;">
-
+<span style="font-size: 2em; margin-top: 0.5em;">
 Dr. Víctor Manuel García Guerrero
+</span>
 
-</h3>
+<span style="font-size: 1.5em; text-transform: lowercase;">
+vmgarcia@colmex.mx
+</span>
 
-<p style="font-size: 1.5em; text-transform: lowercase;">
+![](Input/LogoCEDUA.png){.absolute top="585" left="1200" width="450"} 
+![](Input/colmex.png){.absolute top="610" left="600" width="450"} 
+![](Input/logo_colmex.png){.absolute top="600" left="70" width="450"}
+:::
 
-vmgarcia\@colmex.mx
-
-</p>
-
-</div>
-
-![](Input/LogoCEDUA.png){.absolute top="585" left="1200" width="450"} ![](Input/colmex.png){.absolute top="610" left="600" width="450"} ![](Input/logo_colmex.png){.absolute top="600" left="70" width="450"}
-
-## `¿Qué es la demografía?`
+## `¿Qué es la demografía?` {background-image=Background/bim1.png}
 
 ::: {.callout-tip .centered-callout title=""}
 La **demografía** es la ciencia que tiene por objeto el estudio de la poblaciones humanas tratando, desde un punto de vista principalmente cuantitativo, su dimensión, estructura, evolución y características generales.
 :::
 
-## `Población`
+## `Población`  {background-image=Background/bim1.png}
 
 ::: {.callout-tip .centered-callout title=""}
 -   Colección de personas vivas en un punto determinado en el tiempo que cumplen con ciertos criterios.
@@ -61,47 +55,76 @@ La **demografía** es la ciencia que tiene por objeto el estudio de la poblacion
     -   La población de Mexico
 :::
 
-## `¿Qué es la demografía?`
+## `¿Qué es la demografía?` 
 
 ::: {.callout-tip .centered-callout title=""}
 “\[...\] en definitiva puede considerarse que las investigaciones realizadas en el marco restringido del análisis demográfico constituyen el ‘nucleo’ de la demografía como ciencia, bien entendido que tales investigaciones conciernen exclusivamente al estudio del tamaño, distribución territorial y composición de la población como así también a sus cambios y a los componentes de tales cambios”
 :::
 
-::: r-stack
+##  `.`
+
 ![](Input/demografia.png){.absolute top="50" left="50" width="1500"}
 
-![](Input/demog_google.png){.fragment top="50" left="50" width="1500"}
 
-![](Input/demog_google_esp.png){.fragment width="2500"}
+##  `.`
 
-![](Input/bio_socio.png){.fragment top="100" left="50" width="1500"}
+![](Input/demog_google.png){.absolute  top="50" left="50" width="1500"}
 
-![](Input/bio_socio_esp.png){.fragment top="100" left="50" width="1500"}
 
-![](Input/components.png){.fragment top="100" left="50" width="1500"}
+## ``
 
-![](Input/components_esp.png){.fragment top="100" left="50" width="1500"}
-:::
 
-## 
+![](Input/demog_google_esp.png){.absolute  width="2500"}
 
-::: r-stack
+
+## ``
+
+![](Input/bio_socio.png){.absolute  top="100" left="50" width="1500"}
+
+##``
+
+![](Input/bio_socio_esp.png){.absolute top="100" left="50" width="1500"}
+
+## ``
+
+![](Input/components.png){.absolute  top="100" left="50" width="1500"}
+
+## ``
+
+![](Input/components_esp.png){.absolute  top="100" left="50" width="1500"}
+
+
+## ``
+
 ![](Input/demo1.png){.absolute top="50" left="50" width="1500"}
 
-![](Input/demo2.png){.fragment top="10" left="50" width="1500"}
 
-![](Input/demo3.png){.fragment top="50" left="50" width="500"}
+## ``
 
-![](Input/demo4.png){.fragment top="50" left="50" width="1500"}
+![](Input/demo2.png){.absolute  top="10" left="50" width="1500"}
 
-![](Input/demo5.png){.fragment top="50" left="50" width="1500"}
+## `.`
 
-![](Input/demo6.png){.fragment top="50" left="50" width="1500"}
+![](Input/demo3.png){.absolute  top="50" left="50" width="500"}
 
-![](Input/demo7.png){.fragment top="50" left="50" width="1500"}
-:::
+## `.`
 
-## `¿Qué es la demografía?`
+![](Input/demo4.png){.absolute  top="50" left="50" width="1500"}
+
+## `.`
+
+![](Input/demo5.png){.absolute  top="50" left="50" width="1500"}
+
+## `.`
+
+![](Input/demo6.png){.absolute  top="50" left="50" width="1500"}
+
+## `.`
+
+![](Input/demo7.png){.absolute  top="50" left="50" width="1500"}
+
+
+## `¿Qué es la demografía?` 
 
 ::: {.callout-tip .centered-callout title=""}
 -   Conceptos basicos y medidad
@@ -110,10 +133,10 @@ La **demografía** es la ciencia que tiene por objeto el estudio de la poblacion
 -   Procesos de decremento simple: La tabla de mortalidad
 -   Procesos de decremento múltiple
 -   Fecundidad y reproducción
--   Modelación de los patrones por edad de los eventos vitales
+-   Modelación de los patrones por edad de los eventos vitales 
 :::
 
-## `Bibliografía`
+## `Bibliografía` 
 
 ::: r-stack
 ![](Input/whydemographymatters.jpg){.absolute top="50" left="415" width="700"}
@@ -137,58 +160,61 @@ La **demografía** es la ciencia que tiene por objeto el estudio de la poblacion
 ![](Input/human.png){.fragment top="50" left="415" width="700"}
 :::
 
-## `Evaluación`
+## `Evaluación` 
 
-::: {.callout-tip .centered-callout title=""}
+::: {.callout-tip  title=""}
 -   2 tareas examen 30%
 -   1 examen final 50%
 -   Tareas 20%
 :::
 
-## Materiales
+## `Materiales` 
 
-::: {.callout-tip .centered-callout title=""}
+::: {.callout-tip  title=""}
 -   Computadora (con R y RStudio instalado)
 -   Pluma y lápiz
 -   Cuaderno carta cuadro chico (obligatorio)
 :::
 
-## `Fuentes de información en demografía`
+## `Fuentes de información en demografía` 
 
-::: {.callout-tip .centered-callout title=""}
+::: {.callout-tip  title=""}
 -   Censos (de facto, de jure)
 -   Estadísticas Vitales
 -   Encuestas
 -   Fuentes secundarias( estimaciones y proyecciones, repositorios estadarizados)
 :::
 
-## `Fuentes de información en demografía`
+## `Fuentes de información en demografía` 
 
-::: {.callout-tip .centered-callout title="Censo de facto"}
-Es un método de conteo de individuos basado en dónde se encuentran físicamente en el momento del censo, independientemente de su lugar de residencia habitual. Puede ser particularmente útil para ciertas necesidades de recopilación de datos a corto plazo, pero puede no siempre proporcionar la imagen más precisa para la planificación y asignación de recursos a largo plazo. \* Presencia física \* Instantánea en el tiempo \* Enumeración simplificada
+::: {.callout-tip  title="Censo de facto"}
+Es un método de conteo de individuos basado en dónde se encuentran físicamente en el momento del censo, independientemente de su lugar de residencia habitual. Puede ser particularmente útil para ciertas necesidades de recopilación de datos a corto plazo, pero puede no siempre proporcionar la imagen más precisa para la planificación y asignación de recursos a largo plazo. 
+\* Presencia física 
+\* Instantánea en el tiempo 
+\* Enumeración simplificada
 :::
 
-## `Fuentes de información en demografía`
+## `Fuentes de información en demografía` 
 
-::: {.callout-tip .centered-callout title="Ventajas de un censo de facto"}
+::: {.callout-tip  title="Ventajas de un censo de facto"}
 -   Simplicidad: Más fácil de administrar porque solo considera d ́onde están las personas el día del censo.
 -   Reducción del doble conteo: Minimiza el riesgo de contar a los individuos más de una vez, especialmente aquellos con múltiples residencias.
 -   Eficiente para Poblaciones Temporales: Captura datos sobre poblaciones temporales como turistas, viajeros de negocios y trabajadores estacionales.
 -   Recopilación de datos inmediata: Facilita una recopilación de datos más rápida ya que no implica rastrear residencias habituales o patrones de migración.
 :::
 
-## `Fuentes de información en demografía`
+## `Fuentes de información en demografía` 
 
-::: {.callout-tip .centered-callout title="Desventajas de un censo de facto"}
+::: {.callout-tip  title="Desventajas de un censo de facto"}
 -   Sesgo temporal: Puede no representar con precisión a la población residente habitual, particularmente en áreas con alta población de turistas o transitoria.
 -   Inexactitud para la asignación de recursos: Puede llevar a inexactitudes en la asignación de recursos y la planificación de políticas, ya que no refleja dónde viven y usan servicios las personas habitualmente.
 -   Sobrerrepresentación de ciertas áreas: Las áreas con eventos o grandes poblaciones temporales (por ejemplo, convenciones, festivales) pueden estar sobrerrepresentadas.
 -   Desconsideración de la residencia habitual: Ignora dónde residen típicamente los individuos y contribuyen a la vida comunitaria.
 :::
 
-## `Fuentes de información en demografía`
+## `Fuentes de información en demografía` 
 
-::: {.callout-tip .centered-callout title="Censo de jure"}
+::: {.callout-tip  title="Censo de jure"}
 Es un método de conteo de individuos basado en su lugar de residencia habitual, independientemente de dónde se encuentren físicamente en el momento del censo. Un censo de jure es esencial para obtener una visión precisa y estable de la población residente, crucial para una planificación efectiva y la asignación de recursos a largo plazo.
 
 -   Lugar de residencia habitual.
@@ -196,43 +222,43 @@ Es un método de conteo de individuos basado en su lugar de residencia habitual,
 -   Complejidad de enumeración.
 :::
 
-## `Fuentes de información en demografía`
+## `Fuentes de información en demografía` 
 
-::: {.callout-tip .centered-callout title="Ventajas de un censo de jure"}
+::: {.callout-tip  title="Ventajas de un censo de jure"}
 -   Precisión en la planificación de recursos: Proporciona datos más precisos para la asignaci ́on de recursos y la planificaci ́on de pol ́ıticas pu ́blicas, reflejando la residencia permanente de la poblaci ́on.
 -   Representaci ́on exacta: Mejora la precisión en la representación política y distribución de distritos electorales.
 -   Datos estables: Ayuda a obtener una imagen m ́as estable y menos fluctuante de la población , útil para la planificación a largo plazo.
 -   Adecuado para políticas sociales: Proporciona información relevante para servicios sociales, infraestructura y desarrollo comunitario, basada en la residencia habitual de las personas.
 :::
 
-## `Fuentes de información en demografía`
+## `Fuentes de información en demografía` 
 
-::: {.callout-tip .centered-callout title="Desventajas de un censo de jure"}
+::: {.callout-tip title="Desventajas de un censo de jure"}
 -   Complejidad y costos: Más difícil ıcil y costoso de administrar debido a la necesidad de verificar la residencia habitual.
 -   Riesgo de doble conteo: Puede haber problemas con individuos que tienen múltiples residencias o migran frecuentemente, lo que puede llevar a errores o doble conteo.
 -   Subnotificación: Algunos individuos pueden no ser contados si no se encuentran en su residencia habitual el día del censo o si no se reportan correctamente.
 -   Desafíos de enumeración: Puede ser difícil rastrear y contar a personas sin hogar, nómadas, o aquellos en situaciones de vivienda inestables.
 :::
 
-## `Fuentes de información en demografía`
+## `Fuentes de información en demografía` 
 
-::: {.callout-tip .centered-callout title="En resumen"}
+::: {.callout-tip title="En resumen"}
 -   Censo De Jure: Cuenta a los individuos según su lugar de residencia habitual, proporcionando datos sobre donde la población vive y usa servicios regularmente.
 -   Censo De Facto: Cuenta a los individuos según su ubicación física el día del censo, ofreciendo una instantánea de la población en un momento específico.
 :::
 
-## `Fuentes de información en demografía`
+## `Fuentes de información en demografía` 
 
-::: {.callout-tip .centered-callout title="Ventajas de los censos"}
+::: {.callout-tip title="Ventajas de los censos"}
 -   Datos Completos
 -   Precisión
 -   Referencia
 -   Asignación de recursos Análisis de tendencias
 :::
 
-## `Fuentes de información en demografía`
+## `Fuentes de información en demografía` 
 
-::: {.callout-tip .centered-callout title="Limitaciones de los censos"}
+::: {.callout-tip title="Limitaciones de los censos"}
 -   Costo
 -   Consumo de tiempo
 -   Desafiós logísticos
@@ -242,9 +268,9 @@ Es un método de conteo de individuos basado en su lugar de residencia habitual,
 -   Mala declaración de edad y sexo
 :::
 
-## `Fuentes de información en demografía`
+## `Fuentes de información en demografía` 
 
-::: {.callout-tip .centered-callout title="Mala declaración de edad y sexo"}
+::: {.callout-tip title="Mala declaración de edad y sexo"}
 -   Inexactitud de datos
 -   Tendencias demográficas distorsionadas
 -   Mala asignación de recursos
@@ -252,16 +278,16 @@ Es un método de conteo de individuos basado en su lugar de residencia habitual,
 -   Integridad del censo
 :::
 
-## `Fuentes de información en demografía`
+## `Fuentes de información en demografía` 
 
-::: {.callout-tip .centered-callout title="Mitigación de la mala declaración de edad y sexo"}
+::: {.callout-tip title="Mitigación de la mala declaración de edad y sexo"}
 -   Capacitación de enumeradores.
 -   Campañas de concientizacin pú́blica
 -   Uso de tecnología.
 -   Verificación cruzada.
 :::
 
-## `Fuentes de información en demografía`
+## `Fuentes de información en demografía` 
 
 ::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
 Evaluación
@@ -269,21 +295,490 @@ Evaluación
 
 ![](Input/piramide1.png){.absolute top="150" left="100" width="1390"}
 
-## `Fuentes de información en demografía`
+## `Fuentes de información en demografía` {auto-animate=true}
+
+<!-- bloque 1-->
+::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
+Evaluación
+:::
+::: {.callout-tip  title="Prorateo de población no es especificada"}
+El prorateo de la población no especificada es una técnica en el análisis demografico para distribuir o asignar de manera proporcional una poblacion no especificada a la población determinada por una categoría.
+:::
+
+
+::: {style="text-align: center; font-size: 2em; margin-top:50px;"}
+$N^*_x = N_x + N_{ne} \frac{N_x}{\sum_{x=0}^w N_x}$
+:::
+
+
+
+## `Fuentes de información en demografía` {auto-animate=true}
+
+<!-- bloque 2-->
 
 ::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
 Evaluación
 :::
 
-::: {.callout-note title="Prorrateo de no especificado"}
-$$
-\begin{aligned}
-N^*_x = N_x + N_{ne} \frac{N_x}{\sum_{x=0}^w N_x}
-\end{aligned}
-$$
+::: {style="text-align: center; font-size: 2em; margin-top:50px;"}
+$N^*_x = N_x + N_{ne} \frac{N_x}{\sum_{x=0}^w N_x}$
 :::
 
-## `Fuentes de información en demografía`
+::: {.callout-note  title="Donde:"}
+$N^*_x$ es la nueva población total ajustada a la población no especificada de edad x
+
+$N_x$  total de la población de edad x
+
+$N_{ne}$ total de la población no especificada.
+
+$\frac{N_x}{\sum_{x=0}^w N_x}$ es la proporcion del total de la poblacion de edad x, $N_x$, con respectoa la población total. 
+:::
+
+## `Fuentes de información en demografía` {auto-animate=true}
+
+<!-- bloque 1-->
+::: {style="font-size: 1.2em; color: grey; margin-top: -10px;"}
+Operaciones en bases de datos
+:::
+
+::: {.callout-tip  title="Left join"}
+Un **left join** es una operación en bases de datos que combina dos tablas, con base a una columna en común entre ellas y tomando en cuenta todas las filas de la tabla izquierda. Si no hay coincidencias en la en la tabla derecha, entonces éstas aparecenran con valores *null* en la nueva tabla.
+:::
+
+## `Fuentes de información en demografía` {auto-animate=true}
+
+<!-- Bloque 1-->
+::: {style="font-size: 1.2em; color: grey; margin-top: -10px;"}
+Operaciones en bases de datos-Ejemplo
+:::
+
+:::: {.columns}
+
+::: {.column width="60%"}
+```{.r code-line-numbers="5-9"}
+# Cargar el paquete dplyr
+library(dplyr)
+
+# Crear la primera tabla (izquierda)
+tabla_izq <- data.frame(
+  id = c(1, 2, 3, 4),
+  nombre = c("Juan", "María", "Pedro", "Ana")
+)
+
+# Crear la segunda tabla (derecha)
+tabla_der <- data.frame(
+  id = c(1, 3, 4, 5),
+  ciudad = c("Madrid", "Barcelona", "Valencia", "Sevilla")
+)
+
+# Realizar el left join
+resultado <- left_join(tabla_A, tabla_B, by = "id")
+
+```
+:::
+
+::: {.column width="40%"}
+![](Input/izq.png){.absolute}
+:::
+
+::::
+
+
+## `Fuentes de información en demografía` {auto-animate=true}
+
+<!-- Bloque 2-->
+::: {style="font-size: 1.2em; color: grey; margin-top: -10px;"}
+Operaciones en bases de datos-Ejemplo
+:::
+
+:::: {.columns}
+
+::: {.column width="60%"}
+```{.r code-line-numbers="10-14"}
+# Cargar el paquete dplyr
+library(dplyr)
+
+# Crear la primera tabla (izquierda)
+tabla_izq <- data.frame(
+  id = c(1, 2, 3, 4),
+  nombre = c("Juan", "María", "Pedro", "Ana")
+)
+
+# Crear la segunda tabla (derecha)
+tabla_der <- data.frame(
+  id = c(1, 3, 4, 5),
+  ciudad = c("Madrid", "Barcelona", "Valencia", "Sevilla")
+)
+
+# Realizar el left join
+resultado <- left_join(tabla_A, tabla_B, by = "id")
+```
+::: {.callout-note title="Nota"}
+Observe que en la tabla "derecha" no hay coincidencias para el id=2
+:::
+:::
+
+::: {.column width="40%"}
+![](Input/der.png){.absolute}
+:::
+
+::::
+
+
+## `Fuentes de información en demografía` {auto-animate=true}
+
+<!-- Bloque 2-->
+::: {style="font-size: 1.2em; color: grey; margin-top: -10px;"}
+Operaciones en bases de datos-Ejemplo
+:::
+
+:::: {.columns}
+
+::: {.column width="60%"}
+```{.r code-line-numbers="16-17"}
+# Cargar el paquete dplyr
+library(dplyr)
+
+# Crear la primera tabla (izquierda)
+tabla_izq <- data.frame(
+  id = c(1, 2, 3, 4),
+  nombre = c("Juan", "María", "Pedro", "Ana")
+)
+
+# Crear la segunda tabla (derecha)
+tabla_der <- data.frame(
+  id = c(1, 3, 4, 5),
+  ciudad = c("Madrid", "Barcelona", "Valencia", "Sevilla")
+)
+
+# Realizar el left join
+resultado <- left_join(tabla_izq, tabla_der, by = "id")
+
+```
+:::
+
+::: {.column width="40%"}
+![](Input/left.png){.absolute}
+:::
+::::
+
+## `Fuentes de información en demografía` {auto-animate=true}
+
+<!-- bloque 1-->
+::: {style="font-size: 1.2em; color: grey; margin-top: -10px;"}
+Prorateo de la base de datos base_mx
+:::
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.r code-line-numbers="2-3"}
+base_mx_pror <- left_join(
+  base_mx %>% 
+    filter(do == "Total") %>% 
+    group_by(sex) %>% 
+    mutate(prop = pob / sum(pob)) %>% 
+    filter(is.na(age) == F) %>%
+    ungroup(),
+  base_mx %>% 
+    filter(edo == "Total", is.na(age) == T) %>% 
+    select(sex, pob_na = pob),
+  by = "sex")  %>% 
+  mutate(pob_fin = pob + pob_na * prop) %>% 
+  select(age, sex, pob = pob_fin)
+
+```
+:::
+
+::: {.column width="50%"}
+contents...
+:::
+
+::::
+
+## `Fuentes de información en demografía` {auto-animate=true}
+
+<!-- bloque 2-->
+::: {style="font-size: 1.2em; color: grey; margin-top: -10px;"}
+Prorateo de la base de datos base_mx
+:::
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.r code-line-numbers="4-5"}
+base_mx_pror <- left_join(
+  base_mx %>% 
+    filter(do == "Total") %>% 
+    group_by(sex) %>% 
+    mutate(prop = pob / sum(pob)) %>% 
+    filter(is.na(age) == F) %>%
+    ungroup(),
+  base_mx %>% 
+    filter(edo == "Total", is.na(age) == T) %>% 
+    select(sex, pob_na = pob),
+  by = "sex")  %>% 
+  mutate(pob_fin = pob + pob_na * prop) %>% 
+  select(age, sex, pob = pob_fin)
+
+```
+:::
+
+::: {.column width="50%"}
+contents...
+:::
+
+::::
+
+## `Fuentes de información en demografía` {auto-animate=true}
+
+<!-- Bloque 3-->
+::: {style="font-size: 1.2em; color: grey; margin-top: -10px;"}
+Prorateo de la base de datos base_mx
+:::
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.r code-line-numbers="6"}
+base_mx_pror <- left_join(
+  base_mx %>% 
+    filter(do == "Total") %>% 
+    group_by(sex) %>% 
+    mutate(prop = pob / sum(pob)) %>% 
+    filter(is.na(age) == F) %>%
+    ungroup(),
+  base_mx %>% 
+    filter(edo == "Total", is.na(age) == T) %>% 
+    select(sex, pob_na = pob),
+  by = "sex")  %>% 
+  mutate(pob_fin = pob + pob_na * prop) %>% 
+  select(age, sex, pob = pob_fin)
+
+```
+:::
+
+::: {.column width="50%"}
+contents...
+:::
+
+::::
+
+## `Fuentes de información en demografía` {auto-animate=true}
+
+<!-- Bloque 4-->
+::: {style="font-size: 1.2em; color: grey; margin-top: -10px;"}
+Prorateo de la base de datos base_mx
+:::
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.r code-line-numbers="7"}
+base_mx_pror <- left_join(
+  base_mx %>% 
+    filter(do == "Total") %>% 
+    group_by(sex) %>% 
+    mutate(prop = pob / sum(pob)) %>% 
+    filter(is.na(age) == F) %>%
+    ungroup(),
+  base_mx %>% 
+    filter(edo == "Total", is.na(age) == T) %>% 
+    select(sex, pob_na = pob),
+  by = "sex")  %>% 
+  mutate(pob_fin = pob + pob_na * prop) %>% 
+  select(age, sex, pob = pob_fin)
+
+```
+::: {.callout-note  title="Nota"}
+Resultado tabla "izquierda"
+:::
+:::
+
+::: {.column width="50%"}
+contents...
+:::
+
+::::
+
+
+## `Fuentes de información en demografía` {auto-animate=true}
+
+<!-- Bloque 5-->
+::: {style="font-size: 1.2em; color: grey; margin-top: -10px;"}
+Prorateo de la base de datos base_mx
+:::
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.r code-line-numbers="8-9"}
+base_mx_pror <- left_join(
+  base_mx %>% 
+    filter(do == "Total") %>% 
+    group_by(sex) %>% 
+    mutate(prop = pob / sum(pob)) %>% 
+    filter(is.na(age) == F) %>%
+    ungroup(),
+  base_mx %>% 
+    filter(edo == "Total", is.na(age) == T) %>% 
+    select(sex, pob_na = pob),
+  by = "sex")  %>% 
+  mutate(pob_fin = pob + pob_na * prop) %>% 
+  select(age, sex, pob = pob_fin)
+
+```
+
+:::
+
+::: {.column width="50%"}
+contents...
+:::
+
+::::
+
+## `Fuentes de información en demografía` {auto-animate=true}
+
+<!-- Bloque 6-->
+::: {style="font-size: 1.2em; color: grey; margin-top: -10px;"}
+Prorateo de la base de datos base_mx
+:::
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.r code-line-numbers="10"}
+base_mx_pror <- left_join(
+  base_mx %>% 
+    filter(do == "Total") %>% 
+    group_by(sex) %>% 
+    mutate(prop = pob / sum(pob)) %>% 
+    filter(is.na(age) == F) %>%
+    ungroup(),
+  base_mx %>% 
+    filter(edo == "Total", is.na(age) == T) %>% 
+    select(sex, pob_na = pob),
+  by = "sex")  %>% 
+  mutate(pob_fin = pob + pob_na * prop) %>% 
+  select(age, sex, pob = pob_fin)
+
+```
+::: {.callout-note  title="Nota"}
+Resultado tabla "derecha"
+:::
+:::
+
+::: {.column width="50%"}
+contents...
+:::
+
+::::
+
+## `Fuentes de información en demografía` {auto-animate=true}
+
+<!-- Bloque 7-->
+::: {style="font-size: 1.2em; color: grey; margin-top: -10px;"}
+Prorateo de la base de datos base_mx
+:::
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.r code-line-numbers="1-11"}
+base_mx_pror <- left_join(
+  base_mx %>% 
+    filter(do == "Total") %>% 
+    group_by(sex) %>% 
+    mutate(prop = pob / sum(pob)) %>% 
+    filter(is.na(age) == F) %>%
+    ungroup(),
+  base_mx %>% 
+    filter(edo == "Total", is.na(age) == T) %>% 
+    select(sex, pob_na = pob),
+  by = "sex")  %>% 
+  mutate(pob_fin = pob + pob_na * prop) %>% 
+  select(age, sex, pob = pob_fin)
+
+```
+:::
+
+::: {.column width="50%"}
+contents...
+:::
+
+::::
+
+
+## `Fuentes de información en demografía` {auto-animate=true}
+
+<!-- Bloque 8-->
+::: {style="font-size: 1.2em; color: grey; margin-top: -10px;"}
+Prorateo de la base de datos base_mx
+:::
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.r code-line-numbers="12"}
+base_mx_pror <- left_join(
+  base_mx %>% 
+    filter(do == "Total") %>% 
+    group_by(sex) %>% 
+    mutate(prop = pob / sum(pob)) %>% 
+    filter(is.na(age) == F) %>%
+    ungroup(),
+  base_mx %>% 
+    filter(edo == "Total", is.na(age) == T) %>% 
+    select(sex, pob_na = pob),
+  by = "sex")  %>% 
+  mutate(pob_fin = pob + pob_na * prop) %>% 
+  select(age, sex, pob = pob_fin)
+
+```
+:::
+
+::: {.column width="50%"}
+contents...
+:::
+
+::::
+
+## `Fuentes de información en demografía` {auto-animate=true}
+
+<!-- Bloque 10-->
+::: {style="font-size: 1.2em; color: grey; margin-top: -10px;"}
+Prorateo de la base de datos base_mx
+:::
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.r code-line-numbers="13"}
+base_mx_pror <- left_join(
+  base_mx %>% 
+    filter(do == "Total") %>% 
+    group_by(sex) %>% 
+    mutate(prop = pob / sum(pob)) %>% 
+    filter(is.na(age) == F) %>%
+    ungroup(),
+  base_mx %>% 
+    filter(edo == "Total", is.na(age) == T) %>% 
+    select(sex, pob_na = pob),
+  by = "sex")  %>% 
+  mutate(pob_fin = pob + pob_na * prop) %>% 
+  select(age, sex, pob = pob_fin)
+
+```
+:::
+
+::: {.column width="50%"}
+contents...
+:::
+
+::::
+
+
+## `Fuentes de información en demografía` 
 
 ::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
 Evaluación
@@ -297,23 +792,153 @@ W = 5\frac{N_{25}+N_{30}+N_{35}+...+N_{55}+N_{60}}{N_{23}+N_{24}+N_{25}+...+N_{5
 $$ $W\in[1,5]$ donde 1 indica no prefencia de dígitos y 5 una alta preferencia.
 :::
 
-## `Fuentes de información en demografía`
+
+## `Fuentes de información en demografía`  
+<!--Bloque 1-->
+::: {style="font-size: 1.2em; color: gray; margin-top: 10px;"}
+ Índice de Wipple, usando la tabla de datos `base_mx_pror`
+:::
+Tabla izquierda
+```{r}
+#| echo: true
+#| code-fold: true
+library(tidyverse)
+library(DT)
+load("input/base_mx_pror.RData")
+tabla_izq <- base_mx_pror %>% 
+    filter(
+      age %in% c(25:60),
+      age %% 10 == 0 | age %% 10 == 5
+    )
+datatable(tabla_izq, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+## `Fuentes de información en demografía` 
+<!--Bloque 2-->
+::: {style="font-size: 1.2em; color: gray; margin-top: 10px;"}
+ Índice de Wipple, usando la tabla de datos `base_mx_pror`
+:::
+```{r}
+#| echo: true
+#| code-fold: true
+library(tidyverse)
+library(DT)
+
+tabla_izq <- base_mx_pror %>% 
+    filter(
+      age %in% c(25:60),
+      age %% 10 == 0 | age %% 10 == 5
+    ) %>% 
+    group_by(sex) %>% 
+    summarise(pob_num = sum(pob), .groups = "drop")
+datatable(tabla_izq, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+## `Fuentes de información en demografía` 
+<!--Bloque 3-->
+::: {style="font-size: 1.2em; color: gray; margin-top: 10px;"}
+ Índice de Wipple, usando la tabla de datos `base_mx_pror`
+:::
+Tabla derecha
+```{r}
+#| echo: true
+#| code-fold: true
+library(tidyverse)
+library(DT)
+
+tabla_der <- base_mx_pror %>% 
+    filter(age %in% c(23:62))
+datatable(tabla_der, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+## `Fuentes de información en demografía` 
+<!-- Bloque 4-->
+::: {style="font-size: 1.2em; color: gray; margin-top: 10px;"}
+ Índice de Wipple, usando la tabla de datos `base_mx_pror`
+:::
+
+```{r}
+#| echo: true
+#| code-fold: true
+library(tidyverse)
+library(DT)
+
+tabla_der <-base_mx_pror %>% 
+    filter(age %in% c(23:62)) %>% 
+    group_by(sex) %>% 
+    summarise(pob_den = sum(pob), ,groups = "drop")
+datatable(tabla_der, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+## `Fuentes de información en demografía` 
+<!-- Bloque 5-->
+::: {style="font-size: 1.2em; color: gray; margin-top: 10px;"}
+ Índice de Wipple, usando la tabla de datos `base_mx_pror`
+:::
+Juntando **tabla_izq** y **tabla_der**
+```{r}
+#| echo: true
+#| code-fold: true
+library(tidyverse)
+library(DT)
+tabla_izq <- base_mx_pror %>% 
+    filter(
+      age %in% c(25:60),
+      age %% 10 == 0 | age %% 10 == 5
+    ) %>% 
+    group_by(sex) %>% 
+    summarise(pob_num = sum(pob), .groups = "drop")
+tabla_der <-base_mx_pror %>% 
+    filter(age %in% c(23:62)) %>% 
+    group_by(sex) %>% 
+    summarise(pob_den = sum(pob), ,groups = "drop")
+tabla <- left_join(tabla_izq,tabla_der,by="sex")
+datatable(tabla, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+## `Fuentes de información en demografía` 
+<!-- Bloque 6-->
+::: {style="font-size: 1.2em; color: gray; margin-top: 10px;"}
+ Índice de Wipple, usando la tabla de datos `base_mx_pror`
+:::
+Aqui mostramos el resultado del calculo del Índice de Wipple **W**
+```{r}
+#| echo: true
+#| code-fold: true
+library(tidyverse)
+library(DT)
+tabla_izq <- base_mx_pror %>% 
+    filter(
+      age %in% c(25:60),
+      age %% 10 == 0 | age %% 10 == 5
+    ) %>% 
+    group_by(sex) %>% 
+    summarise(pob_num = sum(pob), .groups = "drop")
+tabla_der <-base_mx_pror %>% 
+    filter(age %in% c(23:62)) %>% 
+    group_by(sex) %>% 
+    summarise(pob_den = sum(pob), ,groups = "drop")
+tabla <- left_join(tabla_izq,tabla_der,by="sex") %>% 
+  mutate(W = 5 * pob_num / pob_den)
+datatable(tabla, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+## `Fuentes de información en demografía`  
+::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
+Evaluación
+:::
+
+::: {.callout-tip title="Índice de Myers"}
+Myers (1940) desarrolló un índice “combinado” para medir la preferencia de los 10 dígitos (Myers 1954). El método determina la proporción de la población cuya edad termina en cada dígito terminal (0-9), variando también la edad de inicio particular para cualquier grupo de edad de 10 años. Se basa en el principio de que, en ausencia de redondeo de edades, la población agregada en cada dígito terminal 0-9 debería representar aproximadamente el 10 por ciento de la población total. Su valor oscila entre 0 (no concentración de edades) a 90 (total concentración en una edad)
+:::
+
+## `Fuentes de información en demografía` 
 
 ::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
 Evaluación
 :::
 
-::: {.callout-tip .centered-callout title="Índice de Myers"}
-Myers (1940) desarrolló un índice “combinado” para medir la preferencia de los 10 dígitos (Myers 1954). El método determina la proporción de la población cuya edad termina en cada d ́ıgito terminal (0-9), variando también la edad de inicio particular para cualquier grupo de edad de 10 años. Se basa en el principio de que, en ausencia de redondeo de edades, la población agregada en cada dígito terminal 0-9 debería representar aproximadamente el 10 por ciento de la población total. Su valor oscila entre 0 (no concentración de edades) a 90 (total concentración en una edad)
-:::
-
-## `Fuentes de información en demografía`
-
-::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
-Evaluación
-:::
-
-::: {.callout-tip .centered-callout tittle="Índice de Myers"}
+::: {.callout-tip tittle="Índice de Myers"}
 El método implica 5 pasos principales (Siegel Jacob y Swanson David 2004):
 
 -   Sumar las poblaciones que terminan en cada dígito sobre todo el rango, comenzando con el límite inferior del rango (por ejemplo, 10,20,30,...,80; 11,21,31,...,81).
@@ -327,7 +952,327 @@ El método implica 5 pasos principales (Siegel Jacob y Swanson David 2004):
 -   Tomar la mitad de la suma de las desviaciones absolutas de cada porcentaje en el paso 4.
 :::
 
-## `Fuentes de información en demografía`
+## `Fuentes de información en demografía` 
+::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
+Índice de Myers con la tabla de datos `base_mx_pror`
+:::
+<!-- Bloque 1-->
+Tabla izquierda
+```{r}
+#| echo: true
+#| code-fold: true
+library(tidyverse)
+library(DT)
+load("input/base_mx_pror.RData")
+tabla_izq <- base_mx_pror %>% 
+  filter(age %in% c(10:80))
+datatable(tabla_izq, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+## `Fuentes de información en demografía` 
+::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
+Índice de Myers con la tabla de datos `base_mx_pror`
+:::
+<!-- Bloque 2-->
+
+```{r}
+#| echo: true
+#| code-fold: true
+library(tidyverse)
+library(DT)
+load("input/base_mx_pror.RData")
+tabla_izq <-base_mx_pror %>% 
+  filter(age %in% c(10:80)) %>% 
+  mutate(digit = age %% 10)
+datatable(tabla_izq, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+## `Fuentes de información en demografía` 
+::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
+Índice de Myers con la tabla de datos `base_mx_pror`
+:::
+<!--Bloque 3-->
+
+```{r}
+#| echo: true
+#| code-fold: true
+library(tidyverse)
+library(DT)
+load("input/base_mx_pror.RData")
+tabla_izq <- base_mx_pror %>% 
+  filter(age %in% c(10:80)) %>% 
+  mutate(digit = age %% 10) %>% 
+  group_by(digit) %>% 
+  summarise(step1 = sum(pob), .groups = "drop")
+datatable(tabla_izq, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+## `Fuentes de información en demografía` 
+::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
+Índice de Myers con la tabla de datos `base_mx_pror`
+:::
+<!--Bloque 4-->
+
+```{r}
+#| echo: true
+#| code-fold: true
+library(tidyverse)
+library(DT)
+load("input/base_mx_pror.RData")
+tabla_izq <- base_mx_pror %>% 
+  filter(age %in% c(10:80)) %>% 
+  mutate(digit = age %% 10) %>% 
+  group_by(digit) %>% 
+  summarise(step1 = sum(pob), .groups = "drop") %>% 
+  mutate(
+    weights  = c(1:10),
+    tot_pop1 = step1*weights)
+datatable(tabla_izq, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+## `Fuentes de información en demografía` 
+::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
+Índice de Myers con la tabla de datos `base_mx_pror`
+:::
+<!--Bloque 5-->
+Tabla derecha
+```{r}
+#| echo: true
+#| code-fold: true
+library(tidyverse)
+library(DT)
+load("input/base_mx_pror.RData")
+tabla_der <-  base_mx_pror %>% 
+  filter(age %in% c(10:80)) 
+datatable(tabla_der, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+## `Fuentes de información en demografía` 
+::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
+Índice de Myers con la tabla de datos `base_mx_pror`
+:::
+<!--Bloque 6-->
+
+```{r}
+#| echo: true
+#| code-fold: true
+library(tidyverse)
+library(DT)
+load("input/base_mx_pror.RData")
+tabla_der <- base_mx_pror %>% 
+  filter(age %in% c(10:80)) %>% 
+  mutate(digit = age %% 10)
+datatable(tabla_der, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+## `Fuentes de información en demografía` 
+::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
+Índice de Myers con la tabla de datos `base_mx_pror`
+:::
+<!--Bloque 7-->
+
+```{r}
+#| echo: true
+#| code-fold: true
+library(tidyverse)
+library(DT)
+load("input/base_mx_pror.RData")
+tabla_der <-base_mx_pror %>% 
+  filter(age %in% c(10:80)) %>% 
+  mutate(digit = age %% 10) %>% 
+  filter(!age %in% c(10:19)) 
+datatable(tabla_der, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+## `Fuentes de información en demografía` 
+::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
+Índice de Myers con la tabla de datos `base_mx_pror`
+:::
+<!--Bloque 8-->
+
+```{r}
+#| echo: true
+#| code-fold: true
+library(tidyverse)
+library(DT)
+load("input/base_mx_pror.RData")
+tabla_der <- base_mx_pror %>% 
+  filter(age %in% c(10:80)) %>% 
+  mutate(digit = age %% 10) %>% 
+  filter(!age %in% c(10:19)) %>% 
+  group_by(digit) %>% 
+  summarise(step2 = sum(pob), .groups = "drop") 
+datatable(tabla_der, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+## `Fuentes de información en demografía` 
+::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
+Índice de Myers con la tabla de datos `base_mx_pror`
+:::
+<!--Bloque 9-->
+
+```{r}
+#| echo: true
+#| code-fold: true
+library(tidyverse)
+library(DT)
+load("input/base_mx_pror.RData")
+tabla_der <- base_mx_pror %>% 
+  filter(age %in% c(10:80)) %>% 
+  mutate(digit = age %% 10) %>% 
+  filter(!age %in% c(10:19)) %>% 
+  group_by(digit) %>% 
+  summarise(step2 = sum(pob), .groups = "drop") %>% 
+  mutate (
+    weights = c(9:0),
+    tot_pop2 = step2*weights)
+datatable(tabla_der, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+## `Fuentes de información en demografía` 
+::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
+Índice de Myers con la tabla de datos `base_mx_pror`
+:::
+<!--Bloque 9-->
+Tabla de datos **myers_tab**, juntando **tabla_izq** y **tabla_der**
+```{r}
+#| echo: true
+#| code-fold: true
+library(tidyverse)
+library(DT)
+load("input/base_mx_pror.RData")
+tabla_izq <- base_mx_pror %>% 
+  filter(age %in% c(10:80)) %>% 
+  mutate(digit = age %% 10) %>% 
+  group_by(digit) %>% 
+  summarise(step1 = sum(pob), .groups = "drop") %>% 
+  mutate(
+    weights  = c(1:10),
+    tot_pop1 = step1*weights)
+tabla_der <- base_mx_pror %>% 
+  filter(age %in% c(10:80)) %>% 
+  mutate(digit = age %% 10) %>% 
+  filter(!age %in% c(10:19)) %>% 
+  group_by(digit) %>% 
+  summarise(step2 = sum(pob), .groups = "drop") %>% 
+  mutate (
+    weights = c(9:0),
+    tot_pop2 = step2*weights)
+myers_tab <- left_join(tabla_izq,tabla_der,by = "digit")
+datatable(myers_tab, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+## `Fuentes de información en demografía` 
+::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
+Índice de Myers con la tabla de datos `base_mx_pror`
+:::
+<!--Bloque 9-->
+
+```{r}
+#| echo: true
+#| code-fold: true
+library(tidyverse)
+library(DT)
+load("input/base_mx_pror.RData")
+tabla_izq <- base_mx_pror %>% 
+  filter(age %in% c(10:80)) %>% 
+  mutate(digit = age %% 10) %>% 
+  group_by(digit) %>% 
+  summarise(step1 = sum(pob), .groups = "drop") %>% 
+  mutate(
+    weights  = c(1:10),
+    tot_pop1 = step1*weights)
+tabla_der <- base_mx_pror %>% 
+  filter(age %in% c(10:80)) %>% 
+  mutate(digit = age %% 10) %>% 
+  filter(!age %in% c(10:19)) %>% 
+  group_by(digit) %>% 
+  summarise(step2 = sum(pob), .groups = "drop") %>% 
+  mutate (
+    weights = c(9:0),
+    tot_pop2 = step2*weights)
+myers_tab <- left_join(tabla_izq,tabla_der,by = "digit")  %>% 
+  select(digit,tot_pop1,tot_pop2)
+datatable(myers_tab, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+## `Fuentes de información en demografía` 
+::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
+Índice de Myers con la tabla de datos `base_mx_pror`
+:::
+<!--Bloque 10-->
+
+```{r}
+#| echo: true
+#| code-fold: true
+library(tidyverse)
+library(DT)
+load("input/base_mx_pror.RData")
+tabla_izq <- base_mx_pror %>% 
+  filter(age %in% c(10:80)) %>% 
+  mutate(digit = age %% 10) %>% 
+  group_by(digit) %>% 
+  summarise(step1 = sum(pob), .groups = "drop") %>% 
+  mutate(
+    weights  = c(1:10),
+    tot_pop1 = step1*weights)
+tabla_der <- base_mx_pror %>% 
+  filter(age %in% c(10:80)) %>% 
+  mutate(digit = age %% 10) %>% 
+  filter(!age %in% c(10:19)) %>% 
+  group_by(digit) %>% 
+  summarise(step2 = sum(pob), .groups = "drop") %>% 
+  mutate (
+    weights = c(9:0),
+    tot_pop2 = step2*weights)
+myers_tab <- left_join(tabla_izq,tabla_der,by = "digit")  %>% 
+  select(digit,tot_pop1,tot_pop2) %>% 
+  mutate(blended = tot_pop1 + tot_pop2,
+         blend_perc = 100*blended/sum(blended),
+         deviat = abs(blend_perc-10 ))
+datatable(myers_tab, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+## `Fuentes de información en demografía` 
+::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
+Índice de Myers con la tabla de datos `base_mx_pror`
+:::
+<!--Bloque 10-->
+
+```{r}
+#| echo: true
+#| code-fold: true
+library(tidyverse)
+library(DT)
+load("input/base_mx_pror.RData")
+tabla_izq <- base_mx_pror %>% 
+  filter(age %in% c(10:80)) %>% 
+  mutate(digit = age %% 10) %>% 
+  group_by(digit) %>% 
+  summarise(step1 = sum(pob), .groups = "drop") %>% 
+  mutate(
+    weights  = c(1:10),
+    tot_pop1 = step1*weights)
+tabla_der <- base_mx_pror %>% 
+  filter(age %in% c(10:80)) %>% 
+  mutate(digit = age %% 10) %>% 
+  filter(!age %in% c(10:19)) %>% 
+  group_by(digit) %>% 
+  summarise(step2 = sum(pob), .groups = "drop") %>% 
+  mutate (
+    weights = c(9:0),
+    tot_pop2 = step2*weights)
+myers_tab <- left_join(tabla_izq,tabla_der,by = "digit")  %>% 
+  select(digit,tot_pop1,tot_pop2) %>% 
+  mutate(blended = tot_pop1 + tot_pop2,
+         blend_perc = 100*blended/sum(blended),
+         deviat = abs(blend_perc-10 ))
+myers_tab <-myers_tab %>% 
+  summarise(myers = sum(deviat)/2)
+datatable(myers_tab, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+## `Fuentes de información en demografía` {background-image=Background/bim1.png}
 
 ::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
 Evaluación
@@ -341,7 +1286,7 @@ Evaluación
 -   Jdanov 2008
 :::
 
-## `Fuentes de información en demografía`
+## `Fuentes de información en demografía` 
 
 ::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
 Corrección
@@ -350,15 +1295,269 @@ Corrección
 -   Agrupar por edades quinquenales
 -   Utilizar algún método de graduación ( degradación en edades simples)
 
-## `Fuentes de información en demografía`
-
+## `Fuentes de información en demografía` 
+<!--Bloque 1-->
 ::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
-Corrección
+Agrupación por edades quinquenales con la tabla de datos `base_mx_pror`
+:::
+Definamos la secuencia de límites para las edades quinquenales.
+```{r}
+#| echo: true
+#| code-fold: true
+bins <- seq(0,max(base_mx_pror$age)+5,by = 5)
+bins
+```
+
+## `Fuentes de información en demografía` 
+<!--Bloque 2-->
+::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
+Agrupación por edades quinquenales con la tabla de datos `base_mx_pror`
+:::
+Definamos la secuencia de límites para las edades quinquenales.
+```{r}
+#| echo: true
+#| code-fold: true
+bins   <- seq(0,max(base_mx_pror$age)+5,by = 5)
+labels <- paste(bins[-length(bins)],
+                bins[-1]-1,
+                sep="-")
+labels
+```
+
+## `Fuentes de información en demografía` 
+<!--Bloque 3-->
+::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
+Agrupación por edades quinquenales con la tabla de datos `base_mx_pror`
+:::
+Definamos la secuencia de límites para las edades quinquenales.
+```{r}
+#| echo: true
+#| code-fold: true
+library(tidyverse)
+library(DT)
+load("Input/base_mx_pror.RData")
+bins   <- seq(0,max(base_mx_pror$age)+5,by = 5)
+labels <- paste(bins[-length(bins)],
+                bins[-1]-1,
+                sep="-")
+base_mx_pror <- base_mx_pror %>% 
+  mutate(age_group = cut(age,breaks = bins,
+                         labels = labels, right = FALSE))
+datatable(base_mx_pror, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+## `Fuentes de información en demografía` 
+<!--Bloque 4-->
+::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
+Agrupación por edades quinquenales con la tabla de datos `base_mx_pror`
+:::
+Tabla de datos agrupados por edades quinquenales `base_mx_5`
+```{r}
+#| echo: true
+#| code-fold: true
+library(tidyverse)
+library(DT)
+load("Input/base_mx_pror.RData")
+bins   <- seq(0,max(base_mx_pror$age)+5,by = 5)
+labels <- paste(bins[-length(bins)],
+                bins[-1]-1,
+                sep="-")
+base_mx_pror <- base_mx_pror %>% 
+  mutate(age_group = cut(age,breaks = bins,
+                         labels = labels, right = FALSE))
+base_mx_5 <- base_mx_pror %>% 
+  group_by(sex,age_group) %>% 
+  summarise(pob = sum(pob,na.rm=TRUE),
+            .groups = "drop")
+datatable(base_mx_5, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+## `Fuentes de información en demografía` 
+<!--Bloque 5-->
+::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
+Agrupación por edades quinquenales con la tabla de datos `base_mx_pror`
+:::
+Tabla de datos agrupados por edades quinquenales `base_mx_5`
+```{r}
+#| echo: true
+#| code-fold: true
+library(tidyverse)
+library(DT)
+load("Input/base_mx_pror.RData")
+bins   <- seq(0,max(base_mx_pror$age)+5,by = 5)
+labels <- paste(bins[-length(bins)],
+                bins[-1]-1,
+                sep="-")
+base_mx_pror <- base_mx_pror %>% 
+  mutate(age_group = cut(age,breaks = bins,
+                         labels = labels, right = FALSE))
+base_mx_5 <- base_mx_pror %>% 
+  group_by(sex,age_group) %>% 
+  summarise(pob = sum(pob,na.rm=TRUE),
+            .groups = "drop") %>% 
+  mutate(pob2 = ifelse(sex=="males",-pob,pob))
+datatable(base_mx_5, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+## `Fuentes de información en demografía` 
+<!--Bloque 1-->
+::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
+Pirámide de población por edades quinquenales con la tabla de datos `base_mx_5`
+:::
+```{r}
+#| echo: true
+#| code-fold: true
+library(tidyverse)
+base_mx_5 %>% 
+  ggplot() +
+  geom_bar(aes(x=age_group,y=pob2/1000000,fill=age_group),
+           stat = "identity",
+           show.legend = F)
+```
+
+## `Fuentes de información en demografía` 
+<!--Bloque 2-->
+::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
+Pirámide de población por edades quinquenales con la tabla de datos `base_mx_5`
+:::
+```{r}
+#| echo: true
+#| code-fold: true
+library(tidyverse)
+base_mx_5 %>% 
+  ggplot() +
+  geom_bar(aes(x=age_group,y=pob2/1000000,fill=age_group),
+           stat = "identity",
+           show.legend = F)+
+  coord_flip() +
+  geom_hline(yintercept = 0)
+```
+
+## `Fuentes de información en demografía` 
+<!--Bloque 3-->
+::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
+Pirámide de población por edades quinquenales con la tabla de datos `base_mx_5`
+:::
+```{r}
+#| echo: true
+#| code-fold: true
+library(tidyverse)
+base_mx_5 %>% 
+  ggplot() +
+  geom_bar(aes(x=age_group,y=pob2/1000000,fill=age_group),
+           stat = "identity",
+           show.legend = F)+
+  coord_flip() +
+  geom_hline(yintercept = 0) +
+  scale_y_continuous(
+    limits = c(-6,6),breaks = seq(-6,6,1),
+    labels = as.character(c(
+      seq(6,0,-1),
+      seq(1,6,1)
+    ))
+  )
+```
+
+## `Fuentes de información en demografía` 
+<!--Bloque 4-->
+::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
+Pirámide de población por edades quinquenales con la tabla de datos `base_mx_5`
+:::
+```{r}
+#| echo: true
+#| code-fold: true
+library(tidyverse)
+base_mx_5 %>% 
+  ggplot() +
+  geom_bar(aes(x=age_group,y=pob2/1000000,fill=age_group),
+           stat = "identity",
+           show.legend = F)+
+  coord_flip() +
+  geom_hline(yintercept = 0) +
+  scale_y_continuous(
+    limits = c(-6,6),breaks = seq(-6,6,1),
+    labels = as.character(c(
+      seq(6,0,-1),
+      seq(1,6,1)
+    ))
+  ) +
+  annotate(
+    geom = "text",x=20,y=-3,label="Hombres",size=3
+  ) +
+  annotate(
+    geom = "text",x=20,y=3,label = "Mujeres",color = "black", size=3
+  )
+```
+
+## `Fuentes de información en demografía` 
+<!--Bloque 5-->
+::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
+Pirámide de población por edades quinquenales con la tabla de datos `base_mx_5`
+:::
+::: {.panel-tabset}
+
+### Pirámide de población por edades quinquenales 
+
+```{r}
+library(tidyverse)
+base_mx_5 %>% 
+  ggplot() +
+  geom_bar(aes(x=age_group,y=pob2/1000000,fill=age_group),
+           stat = "identity",
+           show.legend = F)+
+  coord_flip() +
+  geom_hline(yintercept = 0) +
+  scale_y_continuous(
+    limits = c(-6,6),breaks = seq(-6,6,1),
+    labels = as.character(c(
+      seq(6,0,-1),
+      seq(1,6,1)
+    ))
+  ) +
+  annotate(
+    geom = "text",x=20,y=-3,label="Hombres",size=3
+  ) +
+  annotate(
+    geom = "text",x=20,y=3,label = "Mujeres",color = "black", size=3
+  ) +
+  theme_light()+
+  scale_fill_viridis_d(option = "C") 
+```
+
+### Código 
+
+```{.r}
+library(tidyverse)
+base_mx_5 %>% 
+  ggplot() +
+  geom_bar(aes(x=age_group,y=pob2/1000000,fill=age_group),
+           stat = "identity",
+           show.legend = F)+
+  coord_flip() +
+  geom_hline(yintercept = 0) +
+  scale_y_continuous(
+    limits = c(-6,6),breaks = seq(-6,6,1),
+    labels = as.character(c(
+      seq(6,0,-1),
+      seq(1,6,1)
+    ))
+  ) +
+  annotate(
+    geom = "text",x=20,y=-3,label="Hombres",size=3
+  ) +
+  annotate(
+    geom = "text",x=20,y=3,label = "Mujeres",color = "black", size=3
+  ) +
+  theme_light()+
+  scale_fill_viridis_d(option = "C") 
+```
+
 :::
 
-![](Input/piramide2.png){.absolute top="150" left="100" width="1390"}
 
-## `Fuentes de información en demografía`
+
+
+## `Fuentes de información en demografía` 
 
 ::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
 Corrección
@@ -371,7 +1570,277 @@ Corrección
 -   PCLM (Rizzi, Gampe and Eilers 2015)
 :::
 
-## `Fuentes de información en demografía`
+## `Fuentes de información en demografía` 
+<!--Bloque 1-->
+::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
+Tabla de datos desagregados o suavizados de la tabla de datos `base_mx_5`
+:::
+La función `pclm()` se emplea para aplicar el método PCLM (Penalized Composite Link Model), que sirve para 
+desagregar o suavizar datos agrupados. Este método es común en análisis demográficos, como la desagregación 
+de datos de población o mortalidad que están agrupados por rangos de edad.
+
+::: {.panel-tabset}
+
+### Mujeres
+
+```{r}
+#| echo: true
+#| code-fold: true
+library(ungroup)
+library(tidyverse)
+library(DT)
+load("Input/base_mx_5.RData")
+base_mx_5M <- base_mx_5 %>% 
+  filter(sex=="females")
+datatable(base_mx_5M, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+### Hombre
+
+```{r}
+#| echo: true
+#| code-fold: true
+library(ungroup)
+library(tidyverse)
+library(DT)
+load("Input/base_mx_5.RData")
+base_mx_5H <- base_mx_5 %>% 
+  filter(sex=="males")
+datatable(base_mx_5H, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+:::
+
+## `Fuentes de información en demografía` 
+<!--Bloque 2-->
+::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
+Tabla de datos desagregados o suavizados de la tabla de datos `base_mx_5`
+:::
+
+::: {.panel-tabset}
+
+### Mujeres: datos desagregados
+
+```{r}
+#| echo: true
+#| code-fold: true
+library(ungroup)
+library(tidyverse)
+library(DT)
+load("Input/base_mx_5.RData")
+base_mx_5M <- base_mx_5 %>% 
+  filter(sex=="females")
+base_mx_1_M <- pclm(x=bins[-length(bins)],
+                    base_mx_5M$pob, nlast = 10) 
+base_mx_1_M$fitted
+```
+
+### Hombre: datos desagregados
+
+```{r}
+#| echo: true
+#| code-fold: true
+library(ungroup)
+library(tidyverse)
+library(DT)
+load("Input/base_mx_5.RData")
+base_mx_5H <- base_mx_5 %>% 
+  filter(sex=="males")
+base_mx_1_H <- pclm(x=bins[-length(bins)],
+                    base_mx_5H$pob, nlast = 10) 
+base_mx_1_H$fitted
+```
+
+:::
+
+## `Fuentes de información en demografía` 
+<!--Bloque 3-->
+::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
+Tabla de datos desagregados o suavizados de la tabla de datos `base_mx_5`
+:::
+
+La función `enframe()` transforma el vector de poblaciones desagregadas o suavizadas (`base_mx_1_H$fitted` y `base_mx_1_H$fitted`) en un data 
+frame con tres columnas:
+
+	•	age: Una columna con los valores de 0 a 109, que representa las edades desagregadas.
+	
+	•	sex: Una columna que indica que todos los datos corresponden a mujeres y hombres.
+	
+	•	pob: Los valores de la población desagregada o suavizada por edad.
+
+::: {.panel-tabset}
+
+### Mujeres
+
+```{r}
+#| echo: true
+#| code-fold: true
+library(ungroup)
+library(tidyverse)
+library(DT)
+load("Input/base_mx_5.RData")
+base_mx_5M <- base_mx_5 %>% 
+  filter(sex=="females")
+base_mx_1_M <- pclm(x=bins[-length(bins)],
+                    base_mx_5M$pob, nlast = 10) 
+tabla_M  <- enframe(base_mx_1_M$fitted,
+          name="age",value = "pob") %>% 
+    mutate(age=c(0:109),sex="females",
+           .before = pob)
+datatable(tabla_M, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+### Hombre
+
+```{r}
+#| echo: true
+#| code-fold: true
+library(ungroup)
+library(tidyverse)
+library(DT)
+load("Input/base_mx_5.RData")
+base_mx_5H <- base_mx_5 %>% 
+  filter(sex=="males")
+base_mx_1_H <- pclm(x=bins[-length(bins)],
+                    base_mx_5H$pob, nlast = 10) 
+tabla_H <- enframe(base_mx_1_H$fitted,
+          name="age",value = "pob") %>% 
+    mutate(age=c(0:109),sex="males",
+           .before = pob)
+datatable(tabla_H, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+:::
+
+
+## `Fuentes de información en demografía` 
+<!--Bloque 4-->
+::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
+Tabla de datos desagregados o suavizados de la tabla de datos `base_mx_5`
+:::
+Juntamos ambos `Data.Frames` para crear una nueva tabla de datos llamada `base_mx_1`, que contendran los datos desagregados.
+```{r}
+#| echo: true
+#| code-fold: true
+library(ungroup)
+library(tidyverse)
+library(DT)
+base_mx_5H <- base_mx_5 %>% 
+  filter(sex=="males")
+
+base_mx_5M <- base_mx_5 %>% 
+  filter(sex=="females")
+
+base_mx_1_H <- pclm(x=bins[-length(bins)],
+                    base_mx_5H$pob, nlast = 10) 
+
+base_mx_1_M <- pclm(x=bins[-length(bins)],
+                    base_mx_5M$pob, nlast = 10) 
+
+base_mx_1 <- rbind(
+  enframe(base_mx_1_H$fitted,
+          name="age",value = "pob") %>% 
+    mutate(age=c(0:109),sex="males",
+           .before = pob)
+  ,
+  enframe(base_mx_1_M$fitted,
+          name="age",value = "pob") %>% 
+    mutate(age=c(0:109),sex="females",
+           .before = pob))  %>% 
+  mutate(pob2 = ifelse(sex=="males",-pob,pob))
+datatable(base_mx_1, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+## `Fuentes de información en demografía` 
+<!--Bloque 1-->
+::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
+Pirámide de población con los datos desagregados o suavizados de la tabla de datos `base_mx_1`
+:::
+
+::: {.panel-tabset}
+
+### Pirámide poblacional
+```{r}
+library(tidyverse)
+load("Input/base_mx_1.RData")
+
+base_mx_1 %>% 
+  ggplot() +
+  geom_bar(aes(x=age,y=pob2/1000000,fill=age),
+           stat = "identity",
+           show.legend = F
+  ) +
+  coord_flip() +
+  geom_hline(yintercept = 0) +
+  scale_y_continuous(
+    limits = c(-1.25,1.25),breaks = seq(-1.25,1.25,0.25),
+    labels = as.character(c(
+      seq(1.25,0,-0.25),
+      seq(0.25,1.25,0.25)
+    ))
+  ) +
+  scale_x_continuous(
+    limits = c(-1,110),
+    breaks = seq(0,110,5),
+    labels = seq(0,110,5)
+  ) +
+  annotate(
+    geom = "text",x=95,y=-1,label="Hombres",size=3
+  ) +
+  annotate(
+    geom = "text",x=95,y=1,label = "Mujeres",color = "black", size=3
+  )+
+  theme_light() +
+  scale_fill_viridis_c(option = "A", guide = guide_colorbar()) 
+```
+
+### Código 
+
+```{.r}
+library(tidyverse)
+load("Input/base_mx_1.RData")
+
+base_mx_1 %>% 
+  ggplot() +
+  geom_bar(aes(x=age,y=pob2/1000000,fill=age),
+           stat = "identity",
+           show.legend = F
+  ) +
+  coord_flip() +
+  geom_hline(yintercept = 0) +
+  scale_y_continuous(
+    limits = c(-1.25,1.25),breaks = seq(-1.25,1.25,0.25),
+    labels = as.character(c(
+      seq(1.25,0,-0.25),
+      seq(0.25,1.25,0.25)
+    ))
+  ) +
+  scale_x_continuous(
+    limits = c(-1,110),
+    breaks = seq(0,110,5),
+    labels = seq(0,110,5)
+  ) +
+  annotate(
+    geom = "text",x=95,y=-1,label="Hombres",size=3
+  ) +
+  annotate(
+    geom = "text",x=95,y=1,label = "Mujeres",color = "black", size=3
+  )+
+  theme_light() +
+  scale_fill_viridis_c(option = "A", guide = guide_colorbar()) 
+```
+
+:::
+
+
+
+
+
+
+
+
+
+
+## `Fuentes de información en demografía` 
 
 ::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
 Corrección
@@ -379,64 +1848,73 @@ Corrección
 
 ![](Input/piramide3.png){.absolute top="150" left="100" width="1390"}
 
-## `Fuentes de información en demografía`
+## `Fuentes de información en demografía` 
 
-::: {.callout-tip .centered-callout tittle="Métodos de graduación"}
+::: {.callout-tip  tittle="Métodos de graduación"}
 -   Registro tardío
 -   Mala declaración de edad.
 -   Sesgos
 :::
 
-## `Fuentes de información en demografía`
+## `Fuentes de información en demografía` 
 
 ::: {.callout-tip .centered-callout tittle="Problemas en las escuestas"}
 -   Error de muestreo
 -   Representatividad
 :::
 
-## `Conceptos básicos`
+## `Conceptos básicos` 
 
-::: {.callout-note .centered-callout tittle="Otros indicadores"}
+::: {style="text-align: center; font-size: 2em; margin-top:50px;"}
 -   $proporción = \frac{Núm. \,de\, elementos\, de \,un\, subconjunto}{Núm.\, de\, elementos\, del\, total}$
 -   $razón = \frac{Núm. \,de\, elementos\, de\, un\, subconjunto}{Núm. \,de\, elementos\, de \,otro \,subconjunto}$
 -   $tasa  = \frac{Núm.\, de \,veces\, que\, ocurre \,un\, evento}{Años-persona\, de\, exposición\, al\, riesgo}$
 -   $probabilidad  = \frac{Núm.\, de\, veces \,que \,ocurre\, un\, evento}{Núm.\, de \,casos\, igualmente \,factibles}$
 :::
 
-## `Conceptos básicos`
 
-::: {.callout-note .centered-callout tittle="Otros indicadores"}
--   $proporción = \frac{Núm.\, de\, elementos\, de\, un\, subconjunto}{Núm.\, de\, elementos\, del \,total}$
+## `Tasas de periodo y años-persona` 
+
+::: {style="text-align: center; font-size: 1.5em; margin-top:200px;"}
+$tasa[0,T] = \frac{Núm.\, de\, veces\, que\, ocurre\, un \, evento\, entre\,0 \,y\,T}{Años-persona\, vividos\, por\, la \,población \,entre\,0\,y\,T}$
 :::
 
-## `Tasas de periodo y años-persona`
-
-::: {.callout-note .centered-callout tittle="Otros indicadores"}
--   $tasa[0,T] = \frac{Núm.\, de\, veces\, que\, ocurre\, un \, evento\, entre\,0 \,y\,T}{Años-persona\, vividos\, por\, la \,población \,entre\,0\,y\,T}$
-:::
-
-## `Tasas de periodo y años-persona`
+## `Tasas de periodo y años-persona` 
 
 ![](Input/años-persona%20.png){.absolute top="150" left="100" width="1390"}
 
 ## `Tasas de periodo y años-persona` {auto-animate="true"}
 
-::: {style="text-align: center; font-size: 2.5em; margin-top:250px;"}
+::: {style="text-align: center; font-size: 2em; margin-top:100px;"}
 $AP[t_1,t_2]= \sum_{i=t_1}^{t_2}N_i\Delta_i$
 :::
 
-##  {auto-animate="true"}
-
-::: {style="text-align: center; font-size: 2.5em; margin-top:250px;"}
+::: {style="text-align: center; font-size: 2em; margin-top:250px;"}
 $AP[t_1,t_2]= \sum_{i=t_1}^{t_2}N_i\Delta_i$
 :::
 
-::: {style="text-align: center; font-size: 2.5em; margin-top: 150px;"}
+::: {style="text-align: center; font-size: 2em; margin-top: 150px;"}
 $AP[t_1,t_2]= \int_{t_1}^{t_2}N(t)dt$
 :::
 
-## `Tasas de crecimiento` {auto-animate="true"}
+## `Definición formal de la derivada`
+Decimos que una función, $f:Dom(f)\to \mathbb{R}$, es derivable en un punto $x$ si y solo si:
 
+::: {style="text-align: center; font-size: 2em; margin-top:50px;"}
+$\lim_{h\to 0}\frac{f(x+h)-f(x)}{h}$
+:::
+existe.
+
+Decimos que una función, $f:Dom(f)\to \mathbb{R}$, es derivable en todo su **dominio** si y solo si para todo $x\in Dom(f)$, f es derivable en $x$
+
+## `Definición formal de la derivada`
+::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
+Animación gráfica de la derivada en un punto $x$
+:::
+![](Input/derivate.gif){.absolute top="50" left="50" width="1500"}
+
+
+## `Tasas de crecimiento` {auto-animate="true"}
 ::: {style="text-align: center; font-size: 2em; margin-top:50px;"}
 $r(t_1,t_2)=\frac{N(t_2)-N(t_1)}{AP[t_1,t_2]}$
 :::
@@ -451,7 +1929,7 @@ $r(t_1,t_2)=\frac{N(t_2)-N(t_1)}{AP[t_1,t_2]}$
 $r(t)=\color{red}{\lim_{\Delta t \to 0}\frac{\Delta N(t)}{N(t)\Delta t}}$
 :::
 
-::: callout-important
+::: {.callout-warning title="El diablo esta en los detalles"}
 -   Pues se tiene que los años-persona $AP[t_1,t_2] = N(t)(t_2 - t_1)= N(t)\Delta t$.
 -   Además, al buscar el cambio instantaneo, hacemos $t_1 \to t_2$, que se entiende como $t_1$ toma valores cada vez parecidos a $t_2$. En este sentido $\Delta t=t_2-t_1 \to 0$, que se entiende que el cambio entre el tiempo $t_1$ y $t_2$ tiende a 0, toma valores cada vez mas cercanos a cero.
 :::
@@ -463,11 +1941,11 @@ $r(t_1,t_2)=\frac{N(t_2)-N(t_1)}{AP[t_1,t_2]}$
 :::
 
 ::: {style="text-align: center; font-size: 1.5em; margin-top: 150px;"}
-$r(t)=\lim_{\Delta t \to 0}\frac{\Delta N(t)}{N(t)\Delta t}=\lim_{\Delta t \to 0}\color{red}{\frac{\frac{\Delta N(t)}{\Delta t}}{\frac{N(t)}{1}}}$
+$r(t)=\lim_{\Delta t \to 0}\frac{\Delta N(t)}{N(t)\Delta t}=\lim_{\Delta t \to 0}\color{red}{\frac{\Delta N(t)}{\Delta t}/\frac{N(t)}{1}}$
 :::
 
-::: callout-important
-Por la ley del "Sándwich". Es decir, para $a,b,c,d$ números reales,tenemos que $\frac{\frac{a}{b}}{\frac{c}{d}} = \frac{a.d}{b.c}$
+::: { .callout-warning title="El diablo esta en los detalles"}
+Por la ley del "Sándwich". Es decir, para $a,b,c,d$ números reales,tenemos que $\frac{a}{b}}/\frac{c}{d} = \frac{a.d}{b.c}$
 :::
 
 ## `Tasas de crecimiento` {auto-animate="true"}
@@ -480,13 +1958,13 @@ $r(t_1,t_2)=\frac{N(t_2)-N(t_1)}{AP[t_1,t_2]}$
 $r(t)=\lim_{\Delta t \to 0}\frac{\Delta N(t)}{N(t)\Delta t}=\color{red}{\frac{\lim_{\Delta t \to 0}\frac{\Delta N(t)}{\Delta t}}{N(t)}}$
 :::
 
-::: callout-important
+::: {.callout-warning title="El diablo esta en los detalles"}
 -   Por la ley de cocientes para los límites $\lim_{t\to           a}\frac{f(t)}{g(t)}=\frac{\lim_{t\to a}f(t)}{\lim_{t\to        a}g(t)}$
 -   En nuestro caso especifico tenemos que $f(t)=\frac{\Delta N(t)}{\Delta t}$ y $g(t)=\frac{N(t)}{1}$
 -   Notemos que $\lim_{\Delta \to 0}N(t)= N(t)$, pues $N(t)$ no depende de $\Delta t$, es decir, no depende del cambio entre $t_1$ y $t_2$.
 :::
 
-## `Tasas de crecimiento` {auto-animate="true"}
+## `Tasas de crecimiento` {auto-animate="true" background-image=Background/bim1.png}
 
 ::: {style="text-align: center; font-size: 2em; margin-top:50px;"}
 $r(t_1,t_2)=\frac{N(t_2)-N(t_1)}{AP[t_1,t_2]}$
@@ -496,26 +1974,26 @@ $r(t_1,t_2)=\frac{N(t_2)-N(t_1)}{AP[t_1,t_2]}$
 $r(t)=\lim_{\Delta t \to 0}\frac{\Delta N(t)}{N(t)\Delta t}=\frac{\lim_{\Delta t \to 0}\frac{\Delta N(t)}{\Delta t}}{N(t)}=\color{red}{\frac{N^{'}(t)}{N(t)}}$
 :::
 
-::: callout-important
+::: { .callout-warning title="El diablo esta en los detalles"}
 Por la definición de la derivada en un punto $t$: $N^{'}(t)=\frac{dN(t)}{dt}=\lim_{\Delta t \to 0}\frac{N(t_2)-N(t_1)}{t_2-t_1}=\lim_{\Delta t\to 0}\frac{\Delta N(t)}{\Delta t}$
 :::
 
-## `Tasas de crecimiento` {auto-animate="true"}
+## `Tasas de crecimiento` {auto-animate="true'}
 
 ::: {style="text-align: center; font-size: 2em; margin-top:50px;"}
 $r(t_1,t_2)=\frac{N(t_2)-N(t_1)}{AP[t_1,t_2]}$
 :::
 
 ::: {style="text-align: center; font-size: 1.5em; margin-top: 90px;"}
-$r(t)=\lim_{\Delta t \to 0}\frac{\Delta N(t)}{N(t)\Delta t}=\frac{\lim_{\Delta t \to 0}\frac{\Delta N(t)}{\Delta t}}{N(t)}=\frac{N^{'}(t)}{N(t)}=\color{red}{\frac{d In(N(t))}{dt}}$
+$r(t)=\lim_{\Delta t \to 0}\frac{\Delta N(t)}{N(t)\Delta t}=\frac{\lim_{\Delta t \to 0}\frac{\Delta N(t)}{\Delta t}}{N(t)}=\frac{N^{'}(t)}{N(t)}=\color{red}{\frac{d\, ln(N(t))}{dt}}$
 :::
 
-::: callout-important
-Por la derivada de $In(t)$ en un punto $t$: $\frac{d}{dt}In(t)=\frac{1}{t}$.
+::: {.callout-warning title="El diablo esta en los detalles"}
+Por la derivada de $In(t)$ en un punto $t$: $\frac{d}{dt}ln(t)=\frac{1}{t}$.
 
 \par
 
-Y más en general, para cualquier función derivable $f(t)$ $\frac{d}{dt}In[f(t)]=\frac{f^{'}(t)}{f(t)}$
+Y más en general, para cualquier función derivable $f(t)$ $\frac{d}{dt}ln[f(t)]=\frac{f^{'}(t)}{f(t)}$
 :::
 
 ## `Tasas de crecimiento` {auto-animate="true"}
@@ -525,14 +2003,14 @@ $r(t_1,t_2)=\frac{N(t_2)-N(t_1)}{AP[t_1,t_2]}$
 :::
 
 ::: {style="text-align: center; font-size: 1.5em; margin-top: 90px;"}
-$r(t)=\lim_{\Delta t \to 0}\frac{\Delta N(t)}{N(t)\Delta t}=\frac{\lim_{\Delta t \to 0}\frac{\Delta N(t)}{\Delta t}}{N(t)}=\frac{N^{'}(t)}{N(t)}=\frac{d In(N(t))}{dt}$
+$r(t)=\lim_{\Delta t \to 0}\frac{\Delta N(t)}{N(t)\Delta t}=\frac{\lim_{\Delta t \to 0}\frac{\Delta N(t)}{\Delta t}}{N(t)}=\frac{N^{'}(t)}{N(t)}=\frac{d\, ln(N(t))}{dt}$
 :::
 
 ::: {style="text-align: center; font-size: 1.5em; margin-top:50px;"}
-$\color{red}{\int_{t_1}^{t_2}r(t)dt=\int_{t_1}^{t_2}\frac{d}{dt}In(t)dt}$
+$\color{red}{\int_{t_1}^{t_2}r(t)dt=\int_{t_1}^{t_2}\frac{d}{dt}ln(t)dt}$
 :::
 
-::: callout-important
+::: {.callout-warning title="El diablo esta en los detalles"}
 Integrando por ambos lados de la ecuación sobre el intervalo $(t_1,t_2)$
 :::
 
@@ -543,95 +2021,95 @@ $r(t_1,t_2)=\frac{N(t_2)-N(t_1)}{AP[t_1,t_2]}$
 :::
 
 ::: {style="text-align: center; font-size: 1em; margin-top: 150px;"}
-$r(t)=\lim_{\Delta t \to 0}\frac{\Delta N(t)}{N(t)\Delta t}=\frac{\lim_{\Delta t \to 0}\frac{\Delta N(t)}{\Delta t}}{N(t)}=\frac{N^{'}(t)}{N(t)}=\frac{d In(N(t))}{dt}$
+$r(t)=\lim_{\Delta t \to 0}\frac{\Delta N(t)}{N(t)\Delta t}=\frac{\lim_{\Delta t \to 0}\frac{\Delta N(t)}{\Delta t}}{N(t)}=\frac{N^{'}(t)}{N(t)}=\frac{d \,ln(N(t))}{dt}$
 :::
 
 ::: {style="text-align: center; font-size: 1m; margin-top:50px;"}
-$\int_{t_1}^{t_2}r(t)dt=\int_{t_1}^{t_2}\frac{d}{dt}In(t)=\color{red}{In[N(t_2)]-In[N(t1)]}$
+$\int_{t_1}^{t_2}r(t)dt=\int_{t_1}^{t_2}\frac{d}{dt}ln(t)=\color{red}{ln[N(t_2)]-ln[N(t1)]}$
 :::
 
-::: callout-important
+::: {.callout-warning title="El diablo esta en los detalles"}
 Por teorema fundamental del cálculo. En esencia, lo que nos dice el teorema, es que la derivada y la integral son operaciones inversas.
 :::
 
-## `Tasas de crecimiento` {auto-animate="true"}
+## `Tasas de crecimiento` {auto-animate="true" background-image=Background/bim1.png}
 
 ::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
 $r(t_1,t_2)=\frac{N(t_2)-N(t_1)}{AP[t_1,t_2]}$
 :::
 
 ::: {style="text-align: center; font-size: 1em; margin-top: 90px;"}
-$r(t)=\lim_{\Delta t \to 0}\frac{\Delta N(t)}{N(t)\Delta t}=\frac{\lim_{\Delta t \to 0}\frac{\Delta N(t)}{\Delta t}}{N(t)}=\frac{N^{'}(t)}{N(t)}=\frac{d In(N(t))}{dt}$
+$r(t)=\lim_{\Delta t \to 0}\frac{\Delta N(t)}{N(t)\Delta t}=\frac{\lim_{\Delta t \to 0}\frac{\Delta N(t)}{\Delta t}}{N(t)}=\frac{N^{'}(t)}{N(t)}=\frac{d \,ln(N(t))}{dt}$
 :::
 
 ::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
-$\int_{t_1}^{t_2}r(t)dt=\int_{t_1}^{t_2}\frac{d}{dt}In(t)dt=In[N(t_2)]-In[N(t1)]=\color{red}{In[\frac{N(t_2)}{N(t_1)}]}$
+$\int_{t_1}^{t_2}r(t)dt=\int_{t_1}^{t_2}\frac{d}{dt}ln(t)dt=ln[N(t_2)]-ln[N(t1)]=\color{red}{ln[\frac{N(t_2)}{N(t_1)}]}$
 :::
 
-::: callout-important
-Por leyes de los logaritmos. Para cualquiera números $a$ y $b$ se satisface $In(\frac{a}{b})=In(a)-In(b)$
+::: {.callout-warning title="El diablo esta en los detalles"}
+Por leyes de los logaritmos. Para cualquiera números $a$ y $b$ se satisface $ln(\frac{a}{b})=ln(a)-ln(b)$
 :::
 
-## `Tasas de crecimiento` {auto-animate="true"}
+## `Tasas de crecimiento` {auto-animate="true" background-image=Background/bim1.png}
 
 ::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
 $r(t_1,t_2)=\frac{N(t_2)-N(t_1)}{AP[t_1,t_2]}$
 :::
 
 ::: {style="text-align: center; font-size: 1em; margin-top: 90px;"}
-$r(t)=\lim_{\Delta t \to 0}\frac{\Delta N(t)}{N(t)\Delta t}=\frac{\lim_{\Delta t \to 0}\frac{\Delta N(t)}{\Delta t}}{N(t)}=\frac{N^{'}(t)}{N(t)}=\frac{d In(N(t))}{dt}$
+$r(t)=\lim_{\Delta t \to 0}\frac{\Delta N(t)}{N(t)\Delta t}=\frac{\lim_{\Delta t \to 0}\frac{\Delta N(t)}{\Delta t}}{N(t)}=\frac{N^{'}(t)}{N(t)}=\frac{d \,ln(N(t))}{dt}$
 :::
 
 ::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
-$\int_{t_1}^{t_2}r(t)dt=\int_{t_1}^{t_2}\frac{d}{dt}In(t)dt=In[N(t_2)]-In[N(t1)]=\color{red}{In[\frac{N(t_2)}{N(t_1)}]}$
+$\int_{t_1}^{t_2}r(t)dt=\int_{t_1}^{t_2}\frac{d}{dt}ln(t)dt=ln[N(t_2)]-ln[N(t1)]=\color{red}{ln \left[ \frac{N(t_2)}{N(t_1)}\right]}$
 :::
 
 ::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
-$\color{red}{e^{\int_{t_1}^{t_2}r(t)dt}=e^{In[\frac{N(t_2)}{N(t_1)}]}}$
+$\color{red}{e^{\int_{t_1}^{t_2}r(t)dt}=e^{ln\left[\frac{N(t_2)}{N(t_1)}\right]}}$
 :::
 
-::: callout-important
+::: {.callout-warning title="El diablo esta en los detalles"}
 Aplicando la exponencial a ambos lados de la ecuación $e^x$
 :::
 
-## `Tasas de crecimiento` {auto-animate="true"}
+## `Tasas de crecimiento` {auto-animate="true" background-image=Background/bim1.png}
 
 ::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
 $r(t_1,t_2)=\frac{N(t_2)-N(t_1)}{AP[t_1,t_2]}$
 :::
 
 ::: {style="text-align: center; font-size: 1em; margin-top: 50px;"}
-$r(t)=\lim_{\Delta t \to 0}\frac{\Delta N(t)}{N(t)\Delta t}=\frac{\lim_{\Delta t \to 0}\frac{\Delta N(t)}{\Delta t}}{N(t)}=\frac{N^{'}(t)}{N(t)}=\frac{d In(N(t))}{dt}$
+$r(t)=\lim_{\Delta t \to 0}\frac{\Delta N(t)}{N(t)\Delta t}=\frac{\lim_{\Delta t \to 0}\frac{\Delta N(t)}{\Delta t}}{N(t)}=\frac{N^{'}(t)}{N(t)}=\frac{d \,ln(N(t))}{dt}$
 :::
 
 ::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
-$\int_{t_1}^{t_2}r(t)dt=\int_{t_1}^{t_2}\frac{d}{dt}In(t)dt=In[N(t_2)]-In[N(t1)]=\color{red}{In[\frac{N(t_2)}{N(t_1)}]}$
+$\int_{t_1}^{t_2}r(t)dt=\int_{t_1}^{t_2}\frac{d}{dt}in(t)dt=ln[N(t_2)]-ln[N(t1)]=\color{red}{ln\left[\frac{N(t_2)}{N(t_1)}\right]}$
 :::
 
 ::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
 $e^{\int_{t_1}^{t_2}r(t)dt}=\color{red}{\frac{N(t_2)}{N(t_1)}}$
 :::
 
-::: callout-important
+::: {.callout-warning title="El diablo esta en los detalles"}
 Esto es, pues, la exponencial, $e^x$, y el logaritmo natural, $In(x)$, son operaciones inversas Esto es $e^{In(x)}=x$
 :::
 
-::: callout-warning
+::: {.callout-warning title="El diablo esta en los detalles"}
 Ojo: $In(e^x)=x$ si y solo si $x>0$
 :::
 
-## `Tasas de crecimiento` {auto-animate="true"}
+## `Tasas de crecimiento` {auto-animate="true" background-image=Background/bim1.png}
 
 ::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
 $r(t_1,t_2)=\frac{N(t_2)-N(t_1)}{AP[t_1,t_2]}$
 :::
 
 ::: {style="text-align: center; font-size: 1em; margin-top: 50px;"}
-$r(t)=\lim_{\Delta t \to 0}\frac{\Delta N(t)}{N(t)\Delta t}=\frac{\lim_{\Delta t \to 0}\frac{\Delta N(t)}{\Delta t}}{N(t)}=\frac{N^{'}(t)}{N(t)}=\frac{d In(N(t))}{dt}$
+$r(t)=\lim_{\Delta t \to 0}\frac{\Delta N(t)}{N(t)\Delta t}=\frac{\lim_{\Delta t \to 0}\frac{\Delta N(t)}{\Delta t}}{N(t)}=\frac{N^{'}(t)}{N(t)}=\frac{d \,ln(N(t))}{dt}$
 :::
 
 ::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
-$\int_{t_1}^{t_2}r(t)dt=\int_{t_1}^{t_2}\frac{d}{dt}In(t)dt=In[N(t_2)]-In[N(t1)]=\color{red}{In[\frac{N(t_2)}{N(t_1)}]}$
+$\int_{t_1}^{t_2}r(t)dt=\int_{t_1}^{t_2}\frac{d}{dt}ln(t)dt=ln[N(t_2)]-ln[N(t1)]=\color{red}{ln\left[\frac{N(t_2)}{N(t_1)}\right]}$
 :::
 
 ::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
@@ -642,42 +2120,66 @@ $e^{\int_{t_1}^{t_2}r(t)dt}=\frac{N(t_2)}{N(t_1)}$
 $N(t_2)= \color{red}{N(t_1)e^{\int_{t_1}^{t_2}r(t)dt}}$
 :::
 
-::: callout-important
+::: {.callout-warning title="El diablo esta en los detalles"}
 Despejando $N(t_2)$
 :::
 
-## `Tasas de crecimiento` {auto-animate="true"}
+## `Tasas de crecimiento` {auto-animate="true" background-image=Background/bim1.png}
 
-::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+::: {style="text-align: center; font-size: 0.5em; margin-top:50px;"}
 $r(t_1,t_2)=\frac{N(t_2)-N(t_1)}{AP[t_1,t_2]}$
 :::
 
-::: {style="text-align: center; font-size: 1em; margin-top: 50px;"}
+::: {style="text-align: center; font-size: 0.5em; margin-top: 50px;"}
 $r(t)=\lim_{\Delta t \to 0}\frac{\Delta N(t)}{N(t)\Delta t}=\frac{\lim_{\Delta t \to 0}\frac{\Delta N(t)}{\Delta t}}{N(t)}=\frac{N^{'}(t)}{N(t)}=\frac{d In(N(t))}{dt}$
 :::
 
-::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
-$\int_{t_1}^{t_2}r(t)dt=\int_{t_1}^{t_2}\frac{d}{dt}In(t)dt=In[N(t_2)]-In[N(t1)]=In[\frac{N(t_2)}{N(t_1)}]$
+::: {style="text-align: center; font-size: 0.5em; margin-top:50px;"}
+$\int_{t_1}^{t_2}r(t)dt=\int_{t_1}^{t_2}\frac{d}{dt}In(t)dt=ln[N(t_2)]-In[N(t1)]=In\left[\frac{N(t_2)}{N(t_1)}\right]$
 :::
 
-::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+::: {style="text-align: center; font-size: 0.5em; margin-top:50px;"}
 $e^{\int_{t_1}^{t_2}r(t)dt}=\frac{N(t_2)}{N(t_1)}$
 :::
 
-::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+::: {style="text-align: center; font-size: 0.5em; margin-top:50px;"}
 $N(t_2)= N(t_1)e^{\int_{t_1}^{t_2}r(t)dt}$
 :::
 
 ::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
-$\color{red}{\overline{r}(t_1,t_2)=\frac{\int_{t_1}^{t_2}r(t)dt}{t_2-t_1}=\frac{In[\frac{N(t_1)}{N(t_2)}]}{t_2-t_1}}$
+$\color{red}{\overline{r}(t_1,t_2)=\frac{\int_{t_1}^{t_2}r(t)dt}{t_2-t_1}=\frac{ln\left[\frac{N(t_1)}{N(t_2)}\right]}{t_2-t_1}}$
 :::
 
-::: callout-important
+::: {.callout-warning title="El diablo esta en los detalles"}
 -   Si $r(t)=\overline{r}(t_1,t_2)$, entonces $r(t)$ ya no depende de $t$ y es ahora una constante.
 -   Por lo tanto $\int_{t_1}^{t_2}\overline{r}(t_1,t_2)dt=\overline{r}(t_1,t_2)\int_{t_1}^{t_2}dt$
 -   Por lo tanto $\int_{t_1}^{t_2}\overline{r}(t_1,t_2)dt=\overline{r}(t_1,t_2)\int_{t_1}^{t_2}dt=\overline{r}(t_1,t_2)(t_2-t_1)$
 :::
 
+## `Series de Maclaurin`
+
+Una serie de Maclaurin para una función  $f(x)$  es una representación en forma de una suma infinita de potencias de  $x$. Para $f$ derivable en $0$, la serie se define como:
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$f(x) = f(0) + \frac{f'(0)}{1!}x + \frac{f''(0)}{2!}x^2 + \frac{f^{(3)}(0)}{3!}x^3 + \cdots$
+:::
+
+O en notación de suma infinita:
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(0)}{n!} x^n$
+:::
+
+El ejemplo particular que nos interesa es la serie de Maclaurin del logaritmo natural:
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$\ln(1+x) = \sum_{n=1}^{\infty} \frac{(-1)^{n-1}}{n} x^n = x - \frac{x^2}{2} + \frac{x^3}{3} - \cdots, \quad |x| < 1$
+:::
+Asi tenemos que 
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$\ln(1+x) \approx x$ para $n=1$
+:::
+
 ## `Aproximación a los AP` {auto-animate="true"}
 
 ::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
@@ -688,47 +2190,192 @@ $AP[t_1,t_2]=\frac{N(t_2)-N(t_1)}{\overline{r}(t_1,t_2)}$
 
 ::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
 $AP[t_1,t_2]=\frac{N(t_2)-N(t_1)}{\overline{r}(t_1,t_2)}$
-
-\par
-
-$\hspace{5.5cm}\color{red}{=\frac{N(t_2)-N(t_1)}{\frac{In[\frac{N(t_2)}{N(t_1)}]}{t_2-t_1}}}$
 :::
 
-::: callout-important
-Por lo el resultado anterior cuando $r(t)=\overline{r}(t_1,t_2)=\frac{In[\frac{N(t_2)}{N(t_1)}]}{t_2-t_1}$
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$\color{red}{=\frac{N(t_2)-N(t_1)}{\frac{In\left[\frac{N(t_2)}{N(t_1)}\right]}{t_2-t_1}}}$
+:::
+
+::: { .callout-warning title="El diablo esta en los detalles"}
+Por lo el resultado anterior cuando 
+$r(t)=\overline{r}(t_1,t_2)=\frac{ln\left[\frac{N(t_2)}{N(t_1)}\right]}{t_2-t_1}$
 :::
 
 ## `Aproximación a los AP` {auto-animate="true"}
 
 ::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
 $AP[t_1,t_2]=\frac{N(t_2)-N(t_1)}{\overline{r}(t_1,t_2)}$
-
-\par
-
-$\hspace{5cm}=\frac{N(t_2)-N(t_1)}{\frac{In[\frac{N(t_2)}{N(t_1)}]}{t_2-t_1}}$
-
-\par
-
-$\hspace{5cm}\color{red}{=\frac{N(t_2)-N(t_1).[t_2-t_1]}{In[\frac{N(t_2)}{N(t_1)}]}}$
 :::
 
-::: callout-important
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$=\frac{N(t_2)-N(t_1)}{\frac{ln[\frac{N(t_2)}{N(t_1)}]}{t_2-t_1}}$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$\color{red}{=\frac{N(t_2)-N(t_1).[t_2-t_1]}{ln\left[\frac{N(t_2)}{N(t_1)}\right]}}$
+:::
+
+:::{ .callout-warning title="El diablo esta en los detalles"}
 Por la ley del "Sandwich"
 :::
 
-## `Diagrama de Lexis`
+## `Aproximación a los AP` {auto-animate="true"}
+
+:::{ .callout-warning title="El diablo esta en los detalles"}
+En este apartado aproximaremos $ln(\frac{N(t_2)}{N(t_1)})$
+
+* $N(t_2)=N(t_2)+0=N(t_2)+[N(t_1)-N(t_1)]=N(t_1)+[N(t_2)-N(t_1)]$
+
+* $\frac{N(t_2)}{N(t_1)}=1+\frac{N(t_2)-N(t_1)}{N(t_1)}$ dividiendo sobre $N(t_1)$
+
+* Sea $x=\frac{N(t_2)-N(t_1)}{N(t_1)}$
+
+* Para $t_1\to t_2$ tenemos que $N(t_1)\to N(t_2)$
+
+* Lo que implica que cuando $t_1\to t_2$ se tiene que $N(t_1)\approx N(t_2)$
+
+* Por lo tanto $|x| \leq \left|\frac{N(t_2)-N(t_1)}{N(t_1)}\right|\leq \left|\frac{1}{N(t_1)}\right| = \frac{1}{N(t_1)} < 1$
+
+* Se cumplen las hipótesis para aproximar $ln(1+x)$ por su serie de Maclaurin
+
+* Asi tenemos que $ln\left(\frac{N(t_2)}{N(t_1)}\right)=ln\left(1+\frac{N(t_2)-N(t_!)}{N(1)}\right)\approx \frac{N(t_2)-N(t_!)}{N(t_1)}$
+
+:::
+
+## `Aproximación a los AP` {auto-animate="true"}
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$AP[t_1,t_2]=\frac{N(t_2)-N(t_1)}{\overline{r}(t_1,t_2)}$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$=\frac{N(t_2)-N(t_1)}{\frac{ln[\frac{N(t_2)}{N(t_1)}]}{t_2-t_1}}$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$=\frac{N(t_2)-N(t_1).[t_2-t_1]}{ln\left[\frac{N(t_2)}{N(t_1)}\right]}$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$AP[t_1,t_2]=\frac{N(t_2)-N(t_1).[t_2-t_1]}{\color{red}{\frac{N(t_2)-N(t_1)}{N(t_1)}}}$
+:::
+
+:::{ .callout-warning title="El diablo esta en los detalles"}
+Por el apartado anterior 
+:::
+
+## `Aproximación a los AP` {auto-animate="true"}
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$AP[t_1,t_2]=\frac{N(t_2)-N(t_1)}{\overline{r}(t_1,t_2)}$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$=\frac{N(t_2)-N(t_1)}{\frac{ln[\frac{N(t_2)}{N(t_1)}]}{t_2-t_1}}$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$=\frac{N(t_2)-N(t_1).[t_2-t_1]}{ln\left[\frac{N(t_2)}{N(t_1)}\right]}$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$AP[t_1,t_2]=\frac{N(t_2)-N(t_1).[t_2-t_1]}{{\frac{N(t_2)-N(t_1)}{N(t_1)}}}$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$AP[t_1,t_2]=\color{red}{N(t_1)}.[t_2-t_1]$
+:::
+
+:::{ .callout-warning title="El diablo esta en los detalles"}
+Pues
+$\frac{N(t_2)-N(t_1).[t_2-t_1]}{{\frac{N(t_2)-N(t_1)}{N(t_1)}}} = \frac{N(t_2)-N(t_1)}{N(t_2)-N(t_1)}.N(t_1)[t_2-t_1]=N(t_1)[t_2-t_1]$
+:::
+
+## `Aproximación a los AP` {auto-animate="true"}
+
+::: {style="text-align: center; font-size: 0.5em; margin-top:50px;"}
+$AP[t_1,t_2]=\frac{N(t_2)-N(t_1)}{\overline{r}(t_1,t_2)}$
+:::
+
+::: {style="text-align: center; font-size: 0.5em; margin-top:50px;"}
+$=\frac{N(t_2)-N(t_1)}{\frac{ln[\frac{N(t_2)}{N(t_1)}]}{t_2-t_1}}$
+:::
+
+::: {style="text-align: center; font-size: 0.5em; margin-top:50px;"}
+$=\frac{N(t_2)-N(t_1).[t_2-t_1]}{ln\left[\frac{N(t_2)}{N(t_1)}\right]}$
+:::
+
+::: {style="text-align: center; font-size: 0.5em; margin-top:50px;"}
+$AP[t_1,t_2]=\frac{N(t_2)-N(t_1).[t_2-t_1]}{{\frac{N(t_2)-N(t_1)}{N(t_1)}}}$
+:::
+
+::: {style="text-align: center; font-size: 0.5em; margin-top:50px;"}
+$AP[t_1,t_2]=N(t_1).[t_2-t_1]$
+:::
+
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$AP[t_1,t_2]=\color{red}{\hat{N}(t_1)}.[t_2-t_1]$ donde $\hat{N}(t_1)$ es la población a mitad de periodo entre $t_1$ y $t_2$
+:::
+
+:::{ .callout-warning title="El diablo esta en los detalles"}
+Sabemos que: 
+
+* $N(t_1)\leq \hat{N}(t_1)\leq N(t_2)$
+
+* Cuando $t_1\to t_2$ tenemos que $N(t_1)\approx \hat{N}(t_1)\approx N(t_2)$
+
+:::
+
+## `Diagrama de Lexis` 
+
+```{r,out.width='800%', out.height='900px'}
+library(LexisPlotR)
+lexis_grid(year_start = 1900, year_end = 1905, age_start = 0, age_end = 5)
+```
+
+## `Diagrama de Lexis` 
+::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
+Edad
+:::
+```{r,out.width='800%', out.height='900px'}
+library(LexisPlotR)
+lexis <- lexis_grid(year_start = 1900, year_end = 1905, age_start = 0, age_end = 5)
+lexis_age(lg = lexis, age = 2)
+```
+
+## `Diagrama de Lexis` 
+::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
+Periodo
+:::
+```{r,out.width='800%', out.height='900px'}
+library(LexisPlotR)
+lexis <- lexis_grid(year_start = 1900, year_end = 1905, age_start = 0, age_end = 5)
+lexis_year(lg = lexis, year = 1903)
+```
+## `Diagrama de Lexis` 
+::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
+Corte
+:::
+```{r,out.width='800%', out.height='900px'}
+library(LexisPlotR)
+lexis <- lexis_grid(year_start = 1900, year_end = 1905, age_start = 0, age_end = 5)
+lexis_cohort(lg = lexis, cohort = 1898)
+```
+
+
+## `Diagrama de Lexis` 
 
 ![](Input/diagrama_de_lexis1.png){.absolute top="150" left="100" width="1390"}\
 
-## `Diagrama de Lexis`
+## `Diagrama de Lexis` {background-image=Background/bim1.png}
 
 ![](Input/diagrama_de_lexis2.png){.absolute top="150" left="100" width="1390"}
 
-## `Diagrama de Lexis`
+## `Diagrama de Lexis` {background-image=Background/bim1.png}
 
 ![](Input/diagrama_de_lexis3.png){.absolute top="150" left="100" width="1390"}
 
-## `Diagrama de Lexis-Probabilidades cohorte por edad`
+## `Diagrama de Lexis-Probabilidades cohorte por edad` {background-image=Background/bim1.png}
 
 ::: {style="text-align: center; font-size: 2em; margin-top:200px;"}
 ${}_1q_0^{\text{C1980}} = \frac{{}_1D_0^{\text{C1980}}}{B_0^{\text{C1980}}}$
@@ -738,7 +2385,7 @@ ${}_1q_0^{\text{C1980}} = \frac{{}_1D_0^{\text{C1980}}}{B_0^{\text{C1980}}}$
 ${}_5q_{25}^{\text{C1980}} = \frac{{}_5D_{25}^{\text{C1980}}}{{}_5N_{25}^{\text{C1980}}}$
 :::
 
-## `Tasa especificas por edad de periodo`
+## `Tasa especificas por edad de periodo` 
 
 ::: {style="text-align: center; font-size: 2em; margin-top:200px;"}
 ${}_nM_x[t_1,t_2]=\frac{{}_nD_x[t_1,t_2]}{{}_nAP_x[t_1,t_2]}=\frac{{}_nD_x[t_1,t_2]}{(t_2-t_1){}_nN_x}$
@@ -748,7 +2395,7 @@ ${}_nM_x[t_1,t_2]=\frac{{}_nD_x[t_1,t_2]}{{}_nAP_x[t_1,t_2]}=\frac{{}_nD_x[t_1,t
 Usualmente $t_2 - t_1 = n$
 :::
 
-## `Estandarización`
+## `Estandarización` 
 
 ::: {.callout-tip title="Recordando"}
 ::: {style="text-align: center; font-size: 2em; margin-top:100px;"}
@@ -759,13 +2406,13 @@ Usualmente $t_2 - t_1 = n$
 :::
 :::
 
-## `Estandarización`{auto-animate="true"}
+## `Estandarización` {auto-animate="true"}
 
 ::: {style="text-align: center; font-size: 1.2em; margin-top:100px;"}
 $\text{tbm}=\frac{D}{N}=\frac{\sum_{x=0}^\omega {}_nD_x}{N}$
 :::
 
-## `Estandarización`{auto-animate="true"}
+## `Estandarización` {auto-animate="true"}
 
 ::: {style="text-align: center; font-size: 1.2em; margin-top:100px;"}
 $\text{tbm}=\frac{D}{N}=\frac{\sum_{x=0}^\omega {}_nD_x}{N}$
@@ -775,7 +2422,7 @@ $\text{tbm}=\frac{D}{N}=\frac{\sum_{x=0}^\omega {}_nD_x}{N}$
 $\hspace{3.5cm}= \sum_{x=0}^{\omega}\frac{{}_nD_x}{N}\frac{{}_nN_x}{{}_nN_x}$
 :::
 
-## `Estandarización`{auto-animate="true"}
+## `Estandarización` {auto-animate="true"}
 
 ::: {style="text-align: center; font-size: 1.2em; margin-top:100px;"}
 $\text{tbm}=\frac{D}{N}=\frac{\sum_{x=0}^\omega {}_nD_x}{N}$
@@ -799,7 +2446,7 @@ $\sum_{x=0}^{\omega} {}_nC_x = \frac{\sum_{x=0}^{\omega +} {}_nN_x}{N}=1$
 :::
 :::
 
-## `Estandarización`{auto-animate="true"}
+## `Estandarización` {auto-animate="true"}
 
 ::: {.callout-note title="Tomando la ${}_nC_x de Europa$"}
 ::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
@@ -807,7 +2454,7 @@ $tbm^*=\sum_{x=0}^{\omega} {}_nM^{Africa}_x \hspace{0.5cm} {}_nC^{Europa}_x$
 :::
 :::
 
-## `Estandarización`{auto-animate="true"}
+## `Estandarización` {auto-animate="true"}
 
 ::: {.callout-note title="Tomando la ${}_nC_x$ de Europa"}
 ::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
@@ -827,7 +2474,20 @@ para $j=A,B$ y
 ${}_nC_x^S = \frac{{}_nC_x^A+{}_nC_x^B}{2}$
 :::
 
-## `La Tabla de Mortalidad`{auto-animate="true"}
+## `Estandarización`
+::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
+Limpieza de la base de datos `WPP2024 MORT F01 1 DEATHS SINGLE AGE BOTH_SEXES`
+:::
+
+```{r}
+#| code-fold: true
+library(DT)
+load("Databases/base0_raw.RData")
+base0 <- base0_raw
+datatable(head(base0,1000), options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+## `La Tabla de Mortalidad` {auto-animate="true"}
 
 ::: {.callout-note title="Datos observados"}
 ${}_nN_x$ es la población a la mitad de año entre las edades $x$ y $x+n$
@@ -839,8 +2499,7 @@ ${}_nD_x$ son las defunciones totales que ocurridas entre las edades $x$ y $x+n$
 ${}_nm_x = \frac{{}_nd_x}{{}_nL_x}\simeq \frac{{}_nD_x}{{}_nN_x}$
 :::
 
-## `La Tabla de Mortalidad`{auto-animate="true"}
-
+## `La Tabla de Mortalidad` {auto-animate="true"}
 ::: {.callout-note title="Datos observados"}
 ${}_nN_x$ es la población a la mitad de año entre las edades $x$ y $x+n$
 
@@ -855,7 +2514,7 @@ ${}_nm_x = \frac{{}_nd_x}{{}_nL_x}\simeq \frac{{}_nD_x}{{}_nN_x}$
 ${}_nd_x = l_x-l_{x+n}=l_x\hspace{0.2cm}{}_nq_x$
 :::
 
-## `La Tabla de Mortalidad`{auto-animate="true"}
+## `La Tabla de Mortalidad` {auto-animate="true"}
 
 ::: {.callout-note title="Datos observados"}
 ${}_nN_x$ es la población a la mitad de año entre las edades $x$ y $x+n$
@@ -875,7 +2534,7 @@ ${}_nd_x = l_x-l_{x+n}=l_x\hspace{0.2cm}{}_nq_x$
 ${}_nq_x = \frac{{}_nd_x}{l_x}$
 :::
 
-## `La Tabla de Mortalidad`{auto-animate="true"}
+## `La Tabla de Mortalidad` {auto-animate="true"}
 
 ::: {.callout-note title="Datos observados"}
 ${}_nN_x$ es la población a la mitad de año entre las edades $x$ y $x+n$
@@ -899,11 +2558,11 @@ ${}_nq_x = \frac{{}_nd_x}{l_x}$
 ${}_nL_x=nl_{x+n}+{}_nA_x=nl_{x+n}+{}_na_x/,{}_nd_x$
 :::
 
-## `Tabla de Mortalidad` {
+## `Tabla de Mortalidad` 
 
 ![](Input/tabla.png){fig-align="center"}
 
-## `Método de Greville y Chiang para el cálculo de $L_x$`
+## `Método de Greville y Chiang para el cálculo de $L_x$` {background-image=Background/bim1.png}
 
 <!-- Primer bloque -->
 
@@ -913,7 +2572,7 @@ Entonces:
 ${}_nL_x=n(l_x-{}_nd_x)+{}_na_x\hspace{0.2cm}{}_nd_x$
 :::
 
-## `Método de Greville y Chiang para el cálculo de $L_x$`{auto-animate="true"}
+## `Método de Greville y Chiang para el cálculo de $L_x$` {auto-animate="true" background-image=Background/bim1.png}
 
 <!-- Segundo bloque -->
 
@@ -931,7 +2590,7 @@ ${}_nL_x=\color{red}{nl_x-n{}_nd_x}+{}_na_x\hspace{0.2cm}{}_nd_x$
 Por **propiedad distributiva**, es decir, para cualesquiera $a,x,y$ números se satisface: $a*(x+y)=a*x+b*y$
 :::
 
-## `Método de Greville y Chiang para el cálculo de $L_x$`{auto-animate="true"}
+## `Método de Greville y Chiang para el cálculo de $L_x$` {auto-animate="true" background-image=Background/bim1.png}
 
 <!-- Tercer bloque -->
 
@@ -959,7 +2618,7 @@ $nl_x={}_nL_x+(n-{}_na_x){}_nd_x$
 -   ${}_nl_x={}_nL_x+\color{red}{(n-{}_na_x){}_nd_x}$, por **propiedad distributiva**
 :::
 
-## `Método de Greville y Chiang para el cálculo de $L_x$`{auto-animate="true"}
+## `Método de Greville y Chiang para el cálculo de $L_x$` {auto-animate="true" background-image=Background/bim1.png}
 
 <!-- Cuarto bloque -->
 
@@ -985,7 +2644,7 @@ $l_x=\color{red}{\frac{1}{n}[{}_nL_x+(n-{}_na_x){}_nd_x]}$
 **Despejando** $l_x$
 :::
 
-## `Método de Greville y Chiang para el cálculo de $L_x$`{auto-animate="true"}
+## `Método de Greville y Chiang para el cálculo de $L_x$` {auto-animate="true" background-image=Background/bim1.png}
 
 <!-- Quinto bloque -->
 
@@ -1013,7 +2672,7 @@ Recordemos que:
 $\color{red}{{}_nq_x=\frac{{}_nd_x}{l_x}}$
 :::
 
-## `Método de Greville y Chiang para el cálculo de $L_x$`{auto-animate="true"}
+## `Método de Greville y Chiang para el cálculo de $L_x$` {auto-animate="true" background-image=Background/bim1.png}
 
 <!-- Sexto bloque -->
 
@@ -1047,7 +2706,7 @@ ${}_nq_x=\frac{{}_nd_x}{l_x} =\color{red}{ \frac{n\hspace{0.3cm}{}_nd_x}{{}_nL_x
 -   ${}_nq_x = \color{red}{\frac{{}_nd_x}{\frac{1}{n}[{}_nL_x+(n-{}_na_x){}_nd_x]}}$
 :::
 
-## `Método de Greville y Chiang para el cálculo de $L_x$`{auto-animate="true"}
+## `Método de Greville y Chiang para el cálculo de $L_x$` {auto-animate="true" background-image=Background/bim1.png}
 
 <!-- Septimo bloque -->
 
@@ -1081,7 +2740,7 @@ ${}_nq_x=\frac{{}_nd_x}{l_x} =\color{red}{ \frac{n\hspace{0.3cm}{}_nd_x}{{}_nL_x
 -   ${}_nq_x = \frac{{}_nd_x}{\frac{1}{n}[{}_nL_x+(n-{}_na_x){}_nd_x]} = \color{red}{\frac{n\hspace{0.3cm}{}_nd_x}{{}_nL_x+(n-{}_na_x){}_nd_x}}$
 :::
 
-## `Método de Greville y Chiang para el cálculo de $L_x$`{auto-animate="true"}
+## `Método de Greville y Chiang para el cálculo de $L_x$` {auto-animate="true" background-image=Background/bim1.png}
 
 <!-- Octavo bloque -->
 
@@ -1115,7 +2774,7 @@ Tomando en cuenta que
 $\frac{\frac{n\hspace{0.3cm}{}_nd_x}{{}_nL_x}}{\frac{({}_nL_x+(n-{}_na_x){}_nd_x)}{{}_nL_x}} = \frac{n\hspace{0.3cm}{}_nd_x\hspace{0.2cm}{}_nL_x}{({}_nL_x+(n-{}_na_x){}_nd_x){}_nL_x} = \frac{n\hspace{0.3cm}{}_nd_x}{{}_nL_x+(n-{}_na_x){}_nd_x}$ aplicando la **ley del sandwich**
 :::
 
-## `Método de Greville y Chiang para el cálculo de $L_x$`{auto-animate="true"}
+## `Método de Greville y Chiang para el cálculo de $L_x$` {auto-animate="true" background-image=Background/bim1.png}
 
 <!-- Noveno bloque -->
 
@@ -1143,7 +2802,7 @@ Recordemos que:
 ${}_nq_x=\frac{{}_nd_x}{l_x}= \frac{n\hspace{0.3cm}{}_nd_x}{{}_nL_x+(n-{}_na_x){}_nd_x} = \frac{\frac{n\hspace{0.3cm}{}_nd_x}{{}_nL_x}}{\frac{({}_nL_x+(n-{}_na_x){}_nd_x)}{{}_nL_x}} = \frac{n\hspace{0.2cm}{}_nm_x}{1+(n-{}_na_x){}_nm_x}$
 :::
 
-## `Repaso de la Tabla de Mortalidad`
+## `Repaso de la Tabla de Mortalidad` {background-image=Background/bim1.png}
 
 <!-- Primer bloque -->
 
@@ -1155,7 +2814,7 @@ ${}_na_x=\frac{-\frac{n}{24}{}_nd_{x-n}+\frac{n}{2}{}_nd_x+\frac{n}{24}{}_nd_{x+
 Pero cuando $n=1$ entonces ${}_na_x=0.5$
 :::
 
-## `Repaso de la Tabla de Mortalidad`{auto-animate="true"}
+## `Repaso de la Tabla de Mortalidad` {auto-animate="true" background-image=Background/bim1.png}
 
 <!-- Segundo bloque -->
 
@@ -1175,7 +2834,7 @@ Para el último grupo de edad:
 ${}_{\infty}q_x = 1$
 :::
 
-## `Repaso de la Tabla de Mortalidad`{auto-animate="true"}
+## `Repaso de la Tabla de Mortalidad` {auto-animate="true" background-image=Background/bim1.png}
 
 <!-- Tercer bloque -->
 
@@ -1199,7 +2858,7 @@ ${}_{\infty}q_x = 1$
 ${}_{\infty}L_x = \frac{l_x}{{}_{\infty}m_x}$
 :::
 
-## `Repaso de la Tabla de Mortalidad`{auto-animate="true"}
+## `Repaso de la Tabla de Mortalidad` {auto-animate="true" background-image=Background/bim1.png}
 
 <!-- Cuarto bloque -->
 
@@ -1235,7 +2894,7 @@ $T_x = \sum_{a=x}^{\infty}{}_nL_a$
 $e_x^0=\frac{T_x}{l_x}$
 :::
 
-## `Relaciones básicas de la mortalidad`{auto-animate="true"}
+## `Relaciones básicas de la mortalidad` {auto-animate="true" background-image=Background/bim1.png}
 
 <!-- Primer bloque bloque -->
 
@@ -1243,7 +2902,7 @@ $e_x^0=\frac{T_x}{l_x}$
 $\mu(x)= \lim_{n\to 0}{}_nm_x$
 :::
 
-## `Relaciones básicas de la mortalidad`{auto-animate="true"}
+## `Relaciones básicas de la mortalidad` {auto-animate="true" background-image=Background/bim1.png}
 
 <!-- Segundo bloque bloque -->
 
@@ -1251,13 +2910,13 @@ $\mu(x)= \lim_{n\to 0}{}_nm_x$
 $\mu(x)= \lim_{n\to 0}{}_nm_x = \lim_{n\to 0}\frac{{}_nd_x}{{}_nL_x}$
 :::
 
-## `Relaciones básicas de la mortalidad`{auto-animate="true"}
+## `Relaciones básicas de la mortalidad` {auto-animate="true" background-image=Background/bim1.png}
 
 ::: {.callout-note title="Tasa instantánea de mortalidad"}
 $\mu(x)= \lim_{n\to 0}{}_nm_x = \lim_{n\to 0}\frac{{}_nd_x}{{}_nL_x} = \lim_{n\to 0}\frac{l_x-l_{x+n}}{nL_x}$
 :::
 
-## `Relaciones básicas de la mortalidad`{auto-animate="true"}
+## `Relaciones básicas de la mortalidad` {auto-animate="true" background-image=Background/bim1.png}
 
 <!-- Tercer bloque  -->
 
@@ -1271,7 +2930,7 @@ Aplicamos la definición de la **derivada**:
 $\lim_{n\to 0}\frac{l_x - l_{x+n}}{nl_x}=\lim_{n\to 0}-\frac{l_{x+n}-l_x}{nl_x}$
 :::
 
-## `Relaciones básicas de la mortalidad`{auto-animate="true"}
+## `Relaciones básicas de la mortalidad` {auto-animate="true" background-image=Background/bim1.png}
 
 <!-- Cuarto bloque  -->
 
@@ -1285,7 +2944,7 @@ Aplicamos la definición de la **derivada**:
 $\lim_{n\to 0}\frac{l_x - l_{x+n}}{nl_x}=\lim_{n\to 0}-\frac{l_{x+n}-l_x}{nl_x}$ factorizando un signo negativo
 :::
 
-## `Relaciones básicas de la mortalidad`{auto-animate="true"}
+## `Relaciones básicas de la mortalidad` {auto-animate="true" background-image=Background/bim1.png}
 
 <!-- Quinto bloque  -->
 
@@ -1299,7 +2958,7 @@ Aplicamos la definición de la **derivada**:
 $\lim_{n\to 0}\frac{l_x - l_{x+n}}{nl_x}=\lim_{n\to 0}-\frac{l_{x+n}-l_x}{nl_x}= -\frac{1}{l_x}\lim_{x\to 0}\frac{l_{x+n-l_x}}{n}$ pues el factor $-\frac{1}{l_x}$ no depende de n y lo podemos sacar del límite.
 :::
 
-## `Relaciones básicas de la mortalidad`{auto-animate="true"}
+## `Relaciones básicas de la mortalidad` {auto-animate="true" background-image=Background/bim1.png}
 
 <!-- Sexto bloque  -->
 
@@ -1313,7 +2972,7 @@ Aplicamos la definición de la **derivada**:
 $\lim_{n\to 0}\frac{l_x - l_{x+n}}{nl_x}=\lim_{n\to 0}-\frac{l_{x+n}-l_x}{nl_x}= -\frac{1}{l_x}\lim_{x\to 0}\frac{l_{x+n-l_x}}{n}=-\frac{1}{l(x)}\frac{d}{dx}l(x)$ aplicando la definición de la **derivada**
 :::
 
-## `Relaciones básicas de la mortalidad`{auto-animate="true"}
+## `Relaciones básicas de la mortalidad` {auto-animate="true" background-image=Background/bim1.png}
 
 <!-- Septimo bloque  -->
 
@@ -1327,7 +2986,7 @@ Recordemos que:
 $\frac{d}{dx}In[l(x)]=\frac{\frac{d}{dx}l(x)}{l(x)}=\frac{dl(x)}{l(x)dx}$
 :::
 
-## `Relaciones básicas de la mortalidad`{auto-animate="true"}
+## `Relaciones básicas de la mortalidad` {auto-animate="true" background-image=Background/bim1.png}
 
 <!-- Octavo bloque  -->
 
@@ -1339,7 +2998,7 @@ $\mu(x)= \lim_{n\to 0}{}_nm_x = \lim_{n\to 0}\frac{{}_nd_x}{{}_nL_x} = \lim_{n\t
 $-\int_y^z\mu(x)dx=$
 :::
 
-## `Relaciones básicas de la mortalidad`{auto-animate="true"}
+## `Relaciones básicas de la mortalidad` {auto-animate="true" background-image=Background/bim1.png}
 
 <!-- Noveno bloque  -->
 
@@ -1355,7 +3014,7 @@ $-\int_y^z\mu(x)dx=\int_y^z\frac{d}{dx}In[l(x)]dx$
 Sustituyendo $\mu(x)$ del bloque de **Tasa instantánea de mortalidad**
 :::
 
-## `Relaciones básicas de la mortalidad`{auto-animate="true"}
+## `Relaciones básicas de la mortalidad` {auto-animate="true" background-image=Background/bim1.png}
 
 <!-- Noveno bloque  -->
 
@@ -1371,7 +3030,7 @@ $-\int_y^z\mu(x)dx=\int_y^z\frac{d}{dx}In[l(x)]dx=In[l(z)]-In[l(y)]$
 Por **Teorema Fundamental del Cálculo**
 :::
 
-## `Relaciones básicas de la mortalidad`{auto-animate="true"}
+## `Relaciones básicas de la mortalidad` {auto-animate="true" background-image=Background/bim1.png}
 
 <!-- Decimo bloque  -->
 
@@ -1387,7 +3046,7 @@ $-\int_y^z\mu(x)dx=\int_y^z\frac{d}{dx}In[l(x)]dx=In[l(z)]-In[l(y)] = In[\frac{l
 Por **Leyes de los logaritmos**. Para cualquiera números $a,b$, tenemos que $In[\frac{a}{b}]=In(a)-In(b)$
 :::
 
-## `Relaciones básicas de la mortalidad`{auto-animate="true"}
+## `Relaciones básicas de la mortalidad` {auto-animate="true" background-image=Background/bim1.png}
 
 <!-- Onceavo bloque  -->
 
@@ -1411,7 +3070,7 @@ Despejando $l(z)$:
 -   $l(z)=l(y)e^{-\int_y^z\mu(x)dx}$
 :::
 
-## `Relaciones básicas de la mortalidad`{auto-animate="true"}
+## `Relaciones básicas de la mortalidad` {auto-animate="true" background-image=Background/bim1.png}
 
 <!-- Doceavo bloque  -->
 
@@ -1431,7 +3090,7 @@ Entonces: $l(x)=l(0)e^{-\int_0^x\mu(t)dt}$
 Si tomamos en cuenta $y=x$ y $z=0$
 :::
 
-## `Relaciones básicas de la mortalidad`{auto-animate="true"}
+## `Relaciones básicas de la mortalidad` {auto-animate="true" background-image=Background/bim1.png}
 
 <!-- 13 bloque  -->
 
@@ -1451,7 +3110,7 @@ Si tomamos $l(0)=1$, obtenemos:
 $l(x)=e^{-\int_0^x\mu(t)dt}$
 :::
 
-## `Relaciones básicas de la mortalidad (otra perspectiva)`{auto-animate="true"}
+## `Relaciones básicas de la mortalidad (otra perspectiva)` {auto-animate="true" background-image=Background/bim1.png}
 
 <!-- 1 bloque  -->
 
@@ -1479,7 +3138,7 @@ Vayamos con calma en este bloque. Una **función de densidad** o **función de p
 -   $f(x)\leq 1$ es decir, es menor o igual a 1
 :::
 
-## `Relaciones básicas de la mortalidad (otra perspectiva)`{auto-animate="true"}
+## `Relaciones básicas de la mortalidad (otra perspectiva)` {auto-animate="true" background-image=Background/bim1.png}
 
 <!-- 2 bloque  -->
 
@@ -1505,7 +3164,7 @@ Porque son importantes las **funciones de probabilidad**?
 -   En nuestro contexto, se lee como la probabilidad de que una persona muera en el tiempo determinado $x$.
 :::
 
-## `Relaciones básicas de la mortalidad (otra perspectiva)`{auto-animate="true"}
+## `Relaciones básicas de la mortalidad (otra perspectiva)` {auto-animate="true" background-image=Background/bim1.png}
 
 <!-- 3 bloque  -->
 
@@ -1533,7 +3192,7 @@ $\mu(X)= \lim_{\Delta x \to0} \frac{P(X\in (x,x+\Delta x)|Se\,llegó\, con \,vid
 
 <!-- Explicacion de la probabilidad condicional un bloque-->
 
-## `Relaciones básicas de la mortalidad (otra perspectiva)`{auto-animate="true"}
+## `Relaciones básicas de la mortalidad (otra perspectiva)` {auto-animate="true" background-image=Background/bim1.png}
 
 <!-- 4 bloque  -->
 
@@ -1563,7 +3222,7 @@ $\frac{q(X)}{1-Q(X)}=\frac{q(X)}{l(X)}$
 
 <!-- Explicar el cociente y la funcion de supervivencia  -->
 
-## `Relaciones básicas de la mortalidad (otra perspectiva)`{auto-animate="true"}
+## `Relaciones básicas de la mortalidad (otra perspectiva)` {auto-animate="true" background-image=Background/bim1.png}
 
 <!-- 1 bloque  -->
 
@@ -1573,7 +3232,7 @@ Como $q(X)$ es una función de densidad, entonces:
 $q(X) = \frac{dQ(X)}{dx}=\frac{d[1-l(X)]}{dx}=-\frac{dl(X)}{dx}$ <!-- Explicar la derivada de una constante 1 bloque  -->
 :::
 
-## `Relaciones básicas de la mortalidad (otra perspectiva)`{auto-animate="true"}
+## `Relaciones básicas de la mortalidad (otra perspectiva)` {auto-animate="true" background-image=Background/bim1.png}
 
 <!-- 2 bloque  -->
 
@@ -1587,7 +3246,7 @@ por lo que
 $\mu(X)=\frac{q(X)}{l(X)}=-\frac{dl(X)}{l(X)dx}=-\frac{dIn[l(X)]}{dx}$
 :::
 
-## `Relaciones básicas de la mortalidad (otra perspectiva)`{auto-animate="true"}
+## `Relaciones básicas de la mortalidad (otra perspectiva)` {auto-animate="true" background-image=Background/bim1.png}
 
 <!-- 3 bloque  -->
 
@@ -1605,7 +3264,7 @@ de lo que se sigue que:
 $l(x)=e^{-\int_0^x \mu(t)dt}$
 :::
 
-## `Relaciones básicas de la mortalidad (resumen)`{auto-animate="true"}
+## `Relaciones básicas de la mortalidad (resumen)` {auto-animate="true" background-image=Background/bim1.png}
 
 <!-- 1 bloque  -->
 
@@ -1615,7 +3274,7 @@ $l(x)=e^{-\int_0^x \mu(t)dt}$
 -   $q(x)=\mu(x)e^{-\int_0^x\mu(t)dt}$
 :::
 
-## `Patrones modelo de la mortalidad`{auto-animate="true"}
+## `Patrones modelo de la mortalidad` {auto-animate="true" background-image=Background/bim1.png}
 
 <!-- 1 bloque  -->
 
@@ -1623,7 +3282,7 @@ $l(x)=e^{-\int_0^x \mu(t)dt}$
 $\mu(x)=BC^x$
 :::
 
-## `Patrones modelo de la mortalidad`{auto-animate="true"}
+## `Patrones modelo de la mortalidad` {auto-animate="true" background-image=Background/bim1.png}
 
 <!-- 2 bloque  -->
 
@@ -1635,7 +3294,7 @@ $\mu(x)=BC^x$
 $\mu(x)=A+BC^x$
 :::
 
-## `Patrones modelo de la mortalidad`{auto-animate="true"}
+## `Patrones modelo de la mortalidad` {auto-animate="true" background-image=Background/bim1.png}
 
 <!-- 3 bloque  -->
 
@@ -1651,7 +3310,7 @@ $\mu(x)=A+BC^x$
 $\mu(x)=kx^n$
 :::
 
-## `Patrones modelo de la mortalidad`{auto-animate="true"}
+## `Patrones modelo de la mortalidad` {auto-animate="true" background-image=Background/bim1.png}
 
 <!-- 3 bloque  -->
 
@@ -1671,11 +3330,11 @@ $\mu(x)=kx^n$
 $\mu(x)=A^{(x+B)^C}+De^{-E(In(x)-In(F)^2)}+GH^x$
 :::
 
-## `Patrones modelo de la mortalidad`{auto-animate="true"}
+## `Patrones modelo de la mortalidad` {auto-animate="true" background-image=Background/bim1.png}
 
 ![](Input/mortalidad.png)
 
-## `Otras relaciones en la mortalidad`{auto-animate="true"}
+## `Otras relaciones en la mortalidad` {auto-animate="true" background-image=Background/bim1.png}
 
 <!-- Bloque 1-->
 
@@ -1685,7 +3344,7 @@ $\mu(x)=A^{(x+B)^C}+De^{-E(In(x)-In(F)^2)}+GH^x$
 ${}_nL_x=\int_0^nl(x+t)dt$
 :::
 
-## `Otras relaciones en la mortalidad`{auto-animate="true"}
+## `Otras relaciones en la mortalidad` {auto-animate="true" background-image=Background/bim1.png}
 
 <!-- Bloque 2-->
 
@@ -1701,7 +3360,7 @@ ${}_nL_x=\int_0^nl(x+t)dt$
 ${}_nd_x=\int_0^nl(x+t)\mu(x+t)dt$
 :::
 
-## `Otras relaciones en la mortalidad`{auto-animate="true"}
+## `Otras relaciones en la mortalidad` {auto-animate="true" background-image=Background/bim1.png}
 
 <!-- Bloque 3-->
 
@@ -1723,7 +3382,7 @@ ${}_nd_x=\int_0^nl(x+t)\mu(x+t)dt$
 $T_x=\int_0^{\omega-x}l(x+t)dt=\int_0^{\omega-x}l(x+t)dt$
 :::
 
-## `Otras relaciones en la mortalidad`{auto-animate="true"}
+## `Otras relaciones en la mortalidad` {auto-animate="true" background-image=Background/bim1.png}
 
 <!-- Bloque 4-->
 
@@ -1751,7 +3410,7 @@ $T_x=\int_0^{\omega-x}l(x+t)dt=\int_0^{\omega-x}l(x+t)dt$
 $e_x=\frac{\int_0^{\omega-x}t*l(x+t)\mu(x+t)dt}{\int_0^{\omega-x}l(x+t)\mu(x+t)dt}=\frac{\int_0^{\omega-x}l(x+t)dt}{l(x)}$
 :::
 
-## `Modelos relacionales de la mortalidad (Brass 1971)`{auto-animate="true"}
+## `Modelos relacionales de la mortalidad (Brass 1971)` {auto-animate="true" background-image=Background/bim1.png}
 
 <!-- Bloque 1-->
 
@@ -1761,7 +3420,7 @@ $\hat{Y}(x)=logit[q(x)]=0.5In\left[ \frac{q(x)}{1-q(x)} \right]$
 $\hat{Y}(x)=\alpha+\beta\hat{Y}^S(x)$
 :::
 
-## `Proyección logística de la mortalidad`{auto-animate="true"}
+## `Proyección logística de la mortalidad` {background-image=Background/bim1.png}
 
 <!-- Bloque 1-->
 
@@ -1769,7 +3428,7 @@ $\hat{Y}(x)=\alpha+\beta\hat{Y}^S(x)$
 $e_0(t)=k_1+\frac{k_2}{1+e^{a+bt}}$
 :::
 
-## `El modelo de Lee y Carter`{auto-animate="true"}
+## `El modelo de Lee y Carter` {background-image=Background/bim1.png}
 
 <!-- Bloque 1-->
 
@@ -1785,32 +3444,40 @@ $\sum_{t=0}^n k_t=0$
 $\sum_{t=0}^{\omega} b_x=0$
 :::
 
-## `Estimación 1.Descomposición de Valores Singulares`{auto-animate="true"}
+## `Estimación 1.Descomposición de Valores Singulares` {background-image=Background/bim1.png}
 
 <!-- Bloque 1-->
 
-Dada las restricciones del modelo, se sigue queÑ ::: {style="text-align: center; font-size: 1.5em; margin-top:100px;"} $\sum_{t=0}^n In(m_{x,t})=\sum_{t=0}^n a_z + \sum_{t=0}^n b_xk_t$
+Dada las restricciones del modelo, se sigue que:
+
+::: {style="text-align: center; font-size: 1.5em; margin-top:100px;"} 
+
+$\sum_{t=0}^n In(m_{x,t})=\sum_{t=0}^n a_z + \sum_{t=0}^n b_xk_t$
 
 $\sum_{t=0}^{\omega} In(m_{x,t})=na_x$
 
-::: Por lo que:
+:::
+
+Por lo que:
 
 ::: {style="text-align: center; font-size: 1.5em; margin-top:100px;"}
 $\hat{a}=\frac{\sum_{t=1}^n In(m_{x,t})}{n}$
 :::
 
-Enronces:
+Entonces:
 
 ::: {style="text-align: center; font-size: 1.5em; margin-top:100px;"}
 $In(m_{x,t})-\hat{a}=b_xk_t$
 :::
 
-## `Descomposición en Valores Singulares`{auto-animate="true"}
+## `Descomposición en Valores Singulares` {auto-animate="true" background-image=Background/bim1.png}
 
 <!-- Bloque 1-->
 
-Formalmente, la factorización DVS indica que para toda $\textbf{A} \in \mathbb{R}^{m\times n}$ de rango $r$, existen matrices ortogonales $\textbf{U}_{m\times n}$ y $\textbf{V}_{n\times n}$ y una matriz diagonal $\textbf{D}_{n\times n}=diag(\sigma_1,\sigma_2,...,\sigma_n)$ tales que: ::: {style="text-align: center; font-size: 1.5em; margin-top:100px;"} $\textbf{A}=\textbf{UDV}^t\,\sigma_1\geq\sigma_2\geq...\geq \sigma_n$
+Formalmente, la factorización DVS indica que para toda $\textbf{A} \in \mathbb{R}^{m\times n}$ de rango $r$, existen matrices ortogonales $\textbf{U}_{m\times n}$ y $\textbf{V}_{n\times n}$ y una matriz diagonal $\textbf{D}_{n\times n}=diag(\sigma_1,\sigma_2,...,\sigma_n)$ tales que: 
 
+::: {style="text-align: center; font-size: 1.5em; margin-top:100px;"} 
+$\textbf{A}=\textbf{UDV}^t\,\sigma_1\geq\sigma_2\geq...\geq \sigma_n$
 :::
 
 Las $\sigma_i^{'}s$ son los valores singulares de $\textbf{A}$. En la factorización anterior, a las solumnas de $\textbf{U}$ y $\textbf{V}$ se les denomina vectores singulares de $\textbf{A}$ izquierdos y derechos, respectivamente. Entonces $b_x$ se encuentra estimado por el primer vector propio izquierdo y $k_t$ está determinado por la primera componente principal considerando el primer vector propio derecho determinado por el máximo eigenvalor $\sigma_1$. De hecho, en general:
@@ -1821,21 +3488,29 @@ $In(m_{x,t})=a_x+b_{x1}k_{kt1}+b_{x2}k_{t2}+...+b_{xn}k_{tn}$
 
 donde, $\epsilon_{x,t}=b_{x2}k_{t2}+...+b_{xn}k_{tn}$
 
-## `Criterios de minimización`{auto-animate="true"}
+## `Criterios de minimización` {auto-animate="true" background-image=Background/bim1.png}
 
 <!-- Bloque 1-->
 
-El criterio de minimización apropiado se encuentra dado por el cálculo de la devianza: ::: {style="text-align: center; font-size: 1.5em; margin-top:100px;"} $devianza_t = 2\sum_{x=0}^{\omega+} \left[D_{x,t}In\left( \frac{D_{x,t}}{D^{'}_{x,t}} \right)-(D_{x,t}-D^{'}_{x,t}) \right]$
+El criterio de minimización apropiado se encuentra dado por el cálculo de la devianza: 
+
+::: {style="text-align: center; font-size: 1.5em; margin-top:100px;"} 
+$devianza_t = 2\sum_{x=0}^{\omega+} \left[D_{x,t}In\left( \frac{D_{x,t}}{D^{'}_{x,t}} \right)-(D_{x,t}-D^{'}_{x,t}) \right]$
 
 :::
 
-La devianza es imilar al cálculo de la prueba $\chi-cuadrada$ para la bondad de ajuste de $D^{'}_{x,t}$ además de que el cálculo es mas sencillo: ::: {style="text-align: center; font-size: 1.5em; margin-top:100px;"} $\chi^2=\sum_{t=1}^n\sum_{x=0}^{\omega+}\left[ \frac{(D_{x,t}-D^{'}_{x,t})^2}{D^{'}_{x,t}} \right]$
+La devianza es imilar al cálculo de la prueba $\chi-cuadrada$ para la bondad de ajuste de $D^{'}_{x,t}$ además de que el cálculo es mas sencillo: 
+
+::: {style="text-align: center; font-size: 1.5em; margin-top:100px;"} 
+$\chi^2=\sum_{t=1}^n\sum_{x=0}^{\omega+}\left[ \frac{(D_{x,t}-D^{'}_{x,t})^2}{D^{'}_{x,t}} \right]$
+
+:::
 
 donde $D_{x,t}$ son las defunciones totales de los individuos a edad $x$ ocurridas durante el año $t$. Esta ecuación es utilizada para comparar la bondad de ajuste entre los modelos, el criterio de discriminación es: aquel modelo que presente la $\chi^2$ menor es el que ajusta mejor a los datos de las defunciones.
 
-:::
 
-## `Coeficiente de determinación`
+
+## `Coeficiente de determinación` {background-image=Background/bim1.png}
 
 <!-- Bloque 1-->
 
@@ -1845,10 +3520,9 @@ $R^2 = 1 - \frac{\sum_{t=1}^{n} \sum_{x=0}^{w+} \left[ \ln(m_{x,t}) - a_x - b_x 
 $= 1 - \frac{\sum_{t=1}^{n} \sum_{x=0}^{w+} \varepsilon_{x,t}^2}{\sum_{t=1}^{n} \sum_{x=0}^{w+} \left[ \ln(m_{x,t}) - a_x \right]^2}.$
 :::
 
-## `Estimación 2. Brooth`*et al*`(2001)`
+## `Estimación 2. Brooth`*et al*`(2001)` {auto-animate="true" background-image=Background/bim1.png}
 
 <!-- Bloque 1-->
-
 
 Refinamiento, habiendo estimado $a_x$ y $b_x$ de acuerdoa LC
 
@@ -1856,7 +3530,7 @@ Refinamiento, habiendo estimado $a_x$ y $b_x$ de acuerdoa LC
 $k_t=\frac{In(m_{x,t})-a_{x,1}}{b_{x,1}}$
 :::
 
-## `Estimación 3. LC alternativo`
+## `Estimación 3. LC alternativo` {auto-animate="true" background-image=Background/bim1.png}
 
 Habiendo estimado $a_x$
 
@@ -1869,3 +3543,7 @@ Entonces, $b_x$ se estima por MCO
 ::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
 $b_x=\frac{\sum{}_{x=0}^{\omega}(In(m_{x,t})-a_x)}{\sum_{t=0}^{n}k_t^2}$
 :::
+
+
+
+
