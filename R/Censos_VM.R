@@ -4,9 +4,7 @@ library(readr)
 library(stringr)
 
 ## Fuentes/Censos/input/censo2020.xls
-data <- read_xlsx("input/Censo2020.xlsx",
-                  skip = 11, col_names = F
-)
+data <- load("R/data.RData")
 
 names(data)<-
   c("id","edo","age","both","males","females")
@@ -34,16 +32,14 @@ base_mx %>%
   ggplot() +
   geom_bar(aes(x = age, y = pob2/1000000, fill = age),
            stat = "identity",
-           show.legend = F
-  ) +
+           show.legend = F) +
   coord_flip() +
   geom_hline(yintercept = 0) +
   scale_y_continuous(
     limits = c(-1.25, 1.25),
     breaks = seq(-1.25, 1.25, 0.25),
     labels = as.character(
-      c(
-        seq(1.25, 0, -0.25),
+      c(seq(1.25, 0, -0.25),
         seq(0.25, 1.25, 0.25)
       ))
   ) +
@@ -62,7 +58,6 @@ base_mx %>%
   theme_light() +
   scale_fill_viridis_c(option = "A", guide = guide_colorbar()) +
   labs(y = "Población (millones)", x = "Edad", fill = "Edad") 
-scale_fill_viridis_c(option = "A") 
 ggsave(filename = "output/piramide1.png",dpi = 320)
 
 #Tarea 
@@ -74,8 +69,7 @@ left_join(
   base_mx %>% 
     filter(edo== "Total", is.na(age) == T) %>% 
     select(sex, pob_na = pob),
-  by = "sex"
-) %>% 
+  by = "sex") %>% 
   mutate(rat = 100 * pob_na / pob)
 
 base_mx_pror <- left_join(
@@ -92,8 +86,11 @@ base_mx_pror <- left_join(
 )  %>% 
   mutate(pob_fin = pob + pob_na * prop) %>% 
   select(age, sex, pob = pob_fin)
+save(base_mx_pror, file = "Input/base_mx_pror.RData")
+
 
 # indice de wipple 26 de Agosto
+load("input/base_mx_pror.RData")
 
 left_join(
   base_mx_pror %>% 
@@ -120,8 +117,7 @@ s <- base_mx_pror %>%
   summarise(step1 = sum(pob), .groups = "drop") %>% 
   mutate(
     weights  = c(1:10),
-    tot_pop1 = step1*weights
-  )
+    tot_pop1 = step1*weights)
 s
 t <-  base_mx_pror %>% 
   filter(age %in% c(10:80)) %>% 
@@ -131,8 +127,7 @@ t <-  base_mx_pror %>%
   summarise(step2 = sum(pob), .groups = "drop") %>% 
   mutate (
     weights = c(9:0),
-    tot_pop2 = step2*weights
-  )
+    tot_pop2 = step2*weights)
 t
 
 myers_tab <- left_join(s,t,by = "digit") %>% 
@@ -143,6 +138,8 @@ myers_tab <- left_join(s,t,by = "digit") %>%
 
 myers_tab %>% 
   summarise(myers = sum(deviat)/2)
+
+
 ## agrupaciones en edades quinquenales
 
 # Define the bins for the age groups 
@@ -163,6 +160,8 @@ base_mx_5 <- base_mx_pror %>%
   summarise(pob = sum(pob,na.rm=TRUE),
             .groups = "drop") %>% 
   mutate(pob2 = ifelse(sex=="males",-pob,pob))
+save(base_mx_5, file = "Input/base_mx_5.RData")
+
 
 base_mx_5 %>% 
   ggplot() +
@@ -184,7 +183,7 @@ base_mx_5 %>%
   ) +
   annotate(
     geom = "text",x=20,y=3,label = "Mujeres",color = "black", size=3
-  )+
+  ) +
   theme_light()+
   scale_fill_viridis_d(option = "C") 
 
@@ -200,6 +199,7 @@ base_mx_5M <- base_mx_5 %>%
 
 base_mx_1_H <- pclm(x=bins[-length(bins)],
                     base_mx_5H$pob, nlast = 10) 
+
 base_mx_1_M <- pclm(x=bins[-length(bins)],
                     base_mx_5M$pob, nlast = 10) 
 
@@ -216,7 +216,9 @@ base_mx_1 <- rbind(
   
 ) %>% 
   mutate(pob2 = ifelse(sex=="males",-pob,pob))
-#grafca suave
+save(base_mx_5, file = "Input/base_mx_1.RData")
+
+#grafica suave
 base_mx_1 %>% 
   ggplot() +
   geom_bar(aes(x=age,y=pob2/1000000,fill=age),
@@ -243,8 +245,9 @@ base_mx_1 %>%
   annotate(
     geom = "text",x=95,y=1,label = "Mujeres",color = "black", size=3
   )+
-  theme_light()+
-  scale_fill_viridis_d(option = "C") 
+  theme_light() + 
+  scale_fill_viridis_c(option = "A", guide = guide_colorbar()) 
+
 ggsave(filename = "output/piramide2.png",dpi = 320)       
 
 
