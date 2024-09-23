@@ -1,9 +1,0 @@
-/* Apply to the DataTables wrapper */
-.dataTables_wrapper {
-  font-size: 20px !important;  /* The !important will force the rule */
-}
-
-/* Apply to the table body for extra specificity */
-.dataTables_wrapper table.dataTable tbody {
-  font-size: 20px !important;  /* Also enforce for the table body */
-}

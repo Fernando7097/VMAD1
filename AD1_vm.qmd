@@ -287,6 +287,629 @@ Es un método de conteo de individuos basado en su lugar de residencia habitual,
 -   Verificación cruzada.
 :::
 
+## `Fuentes de información en demografía` {auto-animate=true}
+
+<!-- bloque 1-->
+::: {style="font-size: 1.2em; color: grey; margin-top: -10px;"}
+Operaciones en bases de datos
+:::
+
+::: {.callout-tip  title="Left join"}
+Un **left join** es una operación en bases de datos que combina dos tablas, con base a una columna en común entre ellas y tomando en cuenta todas las filas de la tabla izquierda. Si no hay coincidencias en la en la tabla derecha, entonces éstas aparecenran con valores *null* en la nueva tabla.
+:::
+
+## `Fuentes de información en demografía` {auto-animate=true}
+
+<!-- Bloque 2-->
+::: {style="font-size: 1.2em; color: grey; margin-top: -10px;"}
+Operaciones en bases de datos-Ejemplo
+:::
+
+:::: {.columns}
+
+::: {.column width="60%"}
+```{.r code-line-numbers="5-9"}
+# Cargar el paquete dplyr
+library(dplyr)
+
+# Crear la primera tabla (izquierda)
+tabla_izq <- data.frame(
+  id = c(1, 2, 3, 4),
+  nombre = c("Juan", "María", "Pedro", "Ana")
+)
+
+# Crear la segunda tabla (derecha)
+tabla_der <- data.frame(
+  id = c(1, 3, 4, 5),
+  ciudad = c("Madrid", "Barcelona", "Valencia", "Sevilla")
+)
+
+# Realizar el left join
+resultado <- left_join(tabla_A, tabla_B, by = "id")
+
+```
+:::
+
+::: {.column width="40%"}
+![](Input/izq.png){.absolute}
+:::
+
+::::
+
+
+## `Fuentes de información en demografía` {auto-animate=true}
+
+<!-- Bloque 3-->
+::: {style="font-size: 1.2em; color: grey; margin-top: -10px;"}
+Operaciones en bases de datos-Ejemplo
+:::
+
+:::: {.columns}
+
+::: {.column width="60%"}
+```{.r code-line-numbers="10-14"}
+# Cargar el paquete dplyr
+library(dplyr)
+
+# Crear la primera tabla (izquierda)
+tabla_izq <- data.frame(
+  id = c(1, 2, 3, 4),
+  nombre = c("Juan", "María", "Pedro", "Ana")
+)
+
+# Crear la segunda tabla (derecha)
+tabla_der <- data.frame(
+  id = c(1, 3, 4, 5),
+  ciudad = c("Madrid", "Barcelona", "Valencia", "Sevilla")
+)
+
+# Realizar el left join
+resultado <- left_join(tabla_A, tabla_B, by = "id")
+```
+::: {.callout-note title="Nota"}
+Observe que en la tabla "derecha" no hay coincidencias para el id=2
+:::
+:::
+
+::: {.column width="40%"}
+![](Input/der.png){.absolute}
+:::
+
+::::
+
+
+## `Fuentes de información en demografía` {auto-animate=true}
+
+<!-- Bloque 4-->
+::: {style="font-size: 1.2em; color: grey; margin-top: -10px;"}
+Operaciones en bases de datos-Ejemplo
+:::
+
+:::: {.columns}
+
+::: {.column width="60%"}
+```{.r code-line-numbers="16-17"}
+# Cargar el paquete dplyr
+library(dplyr)
+
+# Crear la primera tabla (izquierda)
+tabla_izq <- data.frame(
+  id = c(1, 2, 3, 4),
+  nombre = c("Juan", "María", "Pedro", "Ana")
+)
+
+# Crear la segunda tabla (derecha)
+tabla_der <- data.frame(
+  id = c(1, 3, 4, 5),
+  ciudad = c("Madrid", "Barcelona", "Valencia", "Sevilla")
+)
+
+# Realizar el left join
+resultado <- left_join(tabla_izq, tabla_der, by = "id")
+
+```
+:::
+
+::: {.column width="40%"}
+![](Input/left.png){.absolute}
+:::
+::::
+
+
+## Limpieza de la base de datos `Data` 
+
+<!-- Bloque 1-->
+
+Cargamos la base de datos `Data` es su forma "cruda"
+
+```{r}
+library(DT)
+load("Databases/data.RData")
+# datatable(data, options = list(scrollX = TRUE, scrollY = "500px"))
+datatable( data,
+  options = list(
+    columnDefs = list(
+      list(width = '20px'   , targets = 0),
+      list(width = '20px'   , targets = 1),  
+      list(width = '20px'   , targets = 2),
+      list(width = '20px'   , targets = 3),  
+      list(width = '20px'   , targets = 4),  
+      list(width = '20px'   , targets = 5),  
+      list(width = '20px'   , targets = 6)   
+    )
+  )
+)
+```
+::: { .callout-note title="Nota"}
+Sientase libre de jugar con la tabla de valores. Note que hay renglones y casillas en blanco que corresponden a valores no especificados, **NA**. Note también que hay casillas del tipo **De 5 a 9 años**.
+Nuestra labor será limpiar o eliminar estos renglones y casillas.
+:::
+
+## Limpieza de la base de datos `Data` 
+
+<!-- Bloque 2-->
+
+Ahora, asignemos nombres a las columnas de nuestra tabla de datos.
+
+```{r}
+library(DT)
+load("Databases/data.RData")
+names(data)<-
+  c("id","edo","age","both","males","females")
+datatable(data, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+## Limpieza de la base de datos `Data` 
+
+<!-- Bloque 3-->
+
+Filtremos los renglones de la tabla de datos `Data`, manteniendo solo aquellos de la columna **edo** que no tienen valores **NA** y asignemos esta tabla filtrada a una nueva tabla de datos `base_mx`
+
+```{r}
+library(DT)
+library(tidyverse)
+load("Databases/data.RData")
+names(data)<-
+  c("id","edo","age","both","males","females")
+base_mx <- data %>% 
+  filter(is.na(edo) == FALSE)
+datatable( base_mx,
+  options = list(
+    columnDefs = list(
+      list(width = '20px'   , targets = 0),
+      list(width = '20px'   , targets = 1),  
+      list(width = '1px'    , targets = 2),
+      list(width = '20px'   , targets = 3),  
+      list(width = '20px'   , targets = 4),  
+      list(width = '20px'   , targets = 5),  
+      list(width = '20px'   , targets = 6)   
+    )
+  )
+)
+```
+
+## Limpieza de la base de datos `Data` 
+
+<!-- Bloque 4-->
+
+Seleccionemos todas las columnas, excepto **id** y **both**
+
+```{r}
+library(DT)
+library(tidyverse)
+load("Databases/data.RData")
+names(data)<-
+  c("id","edo","age","both","males","females")
+base_mx <- data %>% 
+  filter(is.na(edo) == FALSE) %>% 
+  select(-c("id", "both"))
+datatable( base_mx,
+  options = list(
+    columnDefs = list(
+      list(width = '20px'   , targets = 0),
+      list(width = '20px'   , targets = 1),  
+      list(width = '20px'    , targets = 2),
+      list(width = '20px'   , targets = 3)  
+    )
+  )
+)
+```
+
+## Limpieza de la base de datos `Data` 
+
+<!-- Bloque 5-->
+
+Despues de aplicar `na.omit()` a **base_mx**, solo nos quedaremos con los renglones donde no hay valores **NA**.
+
+```{r}
+library(DT)
+library(tidyverse)
+load("Databases/data.RData")
+names(data)<-
+  c("id","edo","age","both","males","females")
+base_mx <- data %>% 
+  filter(is.na(edo) == FALSE) %>% 
+  select(-c("id", "both")) %>%
+  na.omit() 
+datatable( base_mx,
+  options = list(
+    columnDefs = list(
+      list(width = '20px'   , targets = 0),
+      list(width = '20px'   , targets = 1),  
+      list(width = '20px'    , targets = 2),
+      list(width = '20px'   , targets = 3) 
+    )
+  )
+)
+```
+::: { .callout-note title="Nota"}
+En la tabla, busque valores donde la variable age tome el valor "Total"
+:::
+
+## Limpieza de la base de datos `Data` 
+
+<!-- Bloque 6-->
+
+En este segundo `filter()` estamos eliminando los renglones donde:
+
+-   el valor age es **Total**
+
+-   la columna age contiene la palabra **De**
+
+-   la columna age contiene la palabra **85 años**
+
+```{r}
+library(tidyverse)
+library(stringr)
+library(DT)
+load("Databases/data.RData")
+names(data)<-
+  c("id","edo","age","both","males","females")
+base_mx <- data %>% 
+  filter(is.na(edo) == FALSE) %>% 
+  select(-c("id", "both")) %>%
+  na.omit() %>%
+  filter(
+    age != "Total",
+    !grepl("De", age),
+    !grepl("85 años", age)
+  )
+datatable( base_mx,
+  options = list(
+    columnDefs = list(
+      list(width = '20px'   , targets = 0),
+      list(width = '20px'   , targets = 1),  
+      list(width = '20px'   , targets = 2),
+      list(width = '20px'   , targets = 3)
+    )
+  )
+)
+```
+
+## Limpieza de la base de datos `Data` 
+
+<!-- Bloque 7-->
+La función **mutate** es usada para modificar una columna existente o agregar una nueva. En nuestro caso, modificaremos nuestra columna **age** para extraer el valor numérico de todos los renglones.
+
+```{r}
+library(tidyverse)
+library(stringr)
+library(DT)
+load("Databases/data.RData")
+names(data)<-
+  c("id","edo","age","both","males","females")
+base_mx <- data %>% 
+  filter(is.na(edo) == FALSE) %>% 
+  select(-c("id", "both")) %>%
+  na.omit() %>%
+  filter(
+    age != "Total",
+    !grepl("De", age),
+    !grepl("85 años", age)
+  ) %>%
+  mutate(age = str_extract(age,"\\d+"))
+datatable(base_mx, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+## Limpieza de la base de datos `Data` 
+
+<!-- Bloque 7-->
+La función `gather()`nos ayudará a transformar las columnas **male** y **female** en filas, creando nuevas columnas sex y pob.
+Por otro lado `type_convert()`se utiliza para convertir automáticamente las columnas de un data frame a los tipos de datos más apropiados según su contenido. En nuestro caso, la variable **age** pasará de **string** a **numeric**
+
+```{r}
+library(tidyverse)
+library(stringr)
+library(DT)
+load("Databases/data.RData")
+names(data)<-
+  c("id","edo","age","both","males","females")
+base_mx <- data %>% 
+  filter(is.na(edo) == FALSE) %>% 
+  select(-c("id", "both")) %>%
+  na.omit() %>%
+  filter(
+    age != "Total",
+    !grepl("De", age),
+    !grepl("85 años", age)
+  ) %>%
+  mutate(age = str_extract(age,"\\d+")) %>%
+  gather(key = sex, value = pob, -age, -edo) %>% 
+  type_convert()
+datatable(base_mx, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+## Limpieza de la base de datos `Data` 
+
+<!-- Bloque 8-->
+Usaremos la función `mutate()` para crear una nueva columan **pop2**. Si **sex** toma el valor de **female** entonces **pop2** tomará el valor de **pop**; en otro caso, **pop2** tomará el valor de -**pop**
+Finalmente guardaremos nuestra nueva tabla de datos `base_mx` en nuestra carpeta **output**
+
+```{r}
+library(tidyverse)
+library(stringr)
+library(DT)
+load("Databases/data.RData")
+names(data)<-
+  c("id","edo","age","both","males","females")
+base_mx <- data %>% 
+  filter(is.na(edo) == FALSE) %>% 
+  select(-c("id", "both")) %>%
+  na.omit() %>%
+  filter(
+    age != "Total",
+    !grepl("De", age),
+    !grepl("85 años", age)
+  ) %>%
+  mutate(age = str_extract(age,"\\d+")) %>%
+  gather(key = sex, value = pob, -age, -edo) %>% 
+  type_convert() %>% 
+  mutate(pob2 = ifelse(sex == "females", pob, -pob))
+save(base_mx, file = "input/base_mx.RData")
+datatable(base_mx, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+## Pirámide de población con la tabla de datos `Base_mx` 
+<!-- Bloque 1-->
+Para la gráfica de la piramide de población, tomaremos en cuenta la población total. Para esta labor, recordemos que deberemos omitir los valores **NA**.
+```{r}
+
+library(tidyverse)
+library(DT)
+base_mx <- base_mx %>%
+  filter(edo == "Total", is.na(age) == FALSE)
+datatable(base_mx, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+## Pirámide de población con la tabla de datos `Base_mx` 
+<!-- Bloque 2-->
+```{r}
+#| code-fold: true
+#| echo: true
+library(tidyverse)
+base_mx %>%
+  filter(edo == "Total", is.na(age) == FALSE) %>%
+  ggplot() +
+  geom_bar(aes(x = age, y = pob2/1000000, fill = age),
+           stat = "identity",
+           show.legend = F) 
+```
+
+
+## Pirámide de población con la tabla de datos `Base_mx` 
+<!-- Bloque 3-->
+```{r}
+#| code-fold: true
+#| echo: true
+library(tidyverse)
+base_mx %>%
+  filter(edo == "Total", is.na(age) == FALSE) %>%
+  ggplot() +
+  geom_bar(aes(x = age, y = pob2/1000000, fill = age),
+           stat = "identity",
+           show.legend = F) +
+  coord_flip() +
+    geom_hline(yintercept = 0)
+```
+
+## Pirámide de población con la tabla de datos `Base_mx` 
+<!-- Bloque 4-->
+```{r}
+#| code-fold: true
+#| echo: true
+library(tidyverse)
+base_mx %>%
+  filter(edo == "Total", is.na(age) == FALSE) %>%
+  ggplot() +
+  geom_bar(aes(x = age, y = pob2/1000000, fill = age),
+           stat = "identity",
+           show.legend = F) +
+  coord_flip() +
+  geom_hline(yintercept = 0) +
+  scale_y_continuous(
+    limits = c(-1.25, 1.25),
+    breaks = seq(-1.25, 1.25, 0.25),
+    labels = as.character(
+      c(seq(1.25, 0, -0.25),seq(0.25, 1.25, 0.25)
+      ))
+  )
+```
+## Pirámide de población con la tabla de datos `Base_mx` 
+<!-- Bloque 5-->
+```{r}
+#| code-fold: true
+#| echo: true
+library(tidyverse)
+base_mx %>%
+  filter(edo == "Total", is.na(age) == FALSE) %>%
+  ggplot() +
+  geom_bar(aes(x = age, y = pob2/1000000, fill = age),
+           stat = "identity",
+           show.legend = F) +
+  coord_flip() +
+  geom_hline(yintercept = 0) +
+  scale_y_continuous(
+    limits = c(-1.25, 1.25),
+    breaks = seq(-1.25, 1.25, 0.25),
+    labels = as.character(
+      c(seq(1.25, 0, -0.25),seq(0.25, 1.25, 0.25)
+      ))
+  )+
+  scale_x_continuous(
+    limits = c(-1, 101), breaks = seq(0, 100, 5),
+    labels = seq(0, 100, 5)
+  )
+```
+
+## Pirámide de población con la tabla de datos `Base_mx` 
+<!-- Bloque 5-->
+```{r}
+#| code-fold: true
+#| echo: true
+library(tidyverse)
+base_mx %>%
+  filter(edo == "Total", is.na(age) == FALSE) %>%
+  ggplot() +
+  geom_bar(aes(x = age, y = pob2/1000000, fill = age),
+           stat = "identity",
+           show.legend = F) +
+  coord_flip() +
+  geom_hline(yintercept = 0) +
+  scale_y_continuous(
+    limits = c(-1.25, 1.25),
+    breaks = seq(-1.25, 1.25, 0.25),
+    labels = as.character(
+      c(seq(1.25, 0, -0.25),seq(0.25, 1.25, 0.25)
+      ))
+  )+
+  scale_x_continuous(
+    limits = c(-1, 101), breaks = seq(0, 100, 5),
+    labels = seq(0, 100, 5)
+  )+
+  annotate(
+    geom = "text", x = 95, y = -1, label = "Hombres",
+    color = "black", size = 3
+  ) +
+  annotate(
+    geom = "text", x = 95, y = 1, label = "Mujeres",
+    color = "black", size = 3
+  ) 
+```
+
+
+
+## Pirámide de población con la tabla de datos `Base_mx` 
+<!-- Bloque 6-->
+```{r}
+#| code-fold: true
+#| echo: true
+library(tidyverse)
+
+base_mx %>%
+  filter(edo == "Total", is.na(age) == FALSE) %>%
+  ggplot() +
+  geom_bar(aes(x = age, y = pob2/1000000, fill = age),
+           stat = "identity",
+           show.legend = F) +
+  coord_flip() +
+  geom_hline(yintercept = 0) +
+  scale_y_continuous(
+    limits = c(-1.25, 1.25),
+    breaks = seq(-1.25, 1.25, 0.25),
+    labels = as.character(
+      c(seq(1.25, 0, -0.25),
+        seq(0.25, 1.25, 0.25)
+      ))
+  ) +
+  scale_x_continuous(
+    limits = c(-1, 101), breaks = seq(0, 100, 5),
+    labels = seq(0, 100, 5)
+  )+
+  annotate(
+    geom = "text", x = 95, y = -1, label = "Hombres",
+    color = "black", size = 3
+  ) +
+  annotate(
+    geom = "text", x = 95, y = 1, label = "Mujeres",
+    color = "black", size = 3
+  ) +
+  theme_light()
+```
+
+## Pirámide de población con la tabla de datos `Base_mx` 
+<!-- Bloque 7-->
+```{r}
+#| code-fold: true
+#| echo: true
+library(tidyverse)
+
+base_mx %>%
+  filter(edo == "Total", is.na(age) == FALSE) %>%
+  ggplot() +
+  geom_bar(aes(x = age, y = pob2/1000000, fill = age),
+           stat = "identity",
+           show.legend = F) +
+  coord_flip() +
+  geom_hline(yintercept = 0) +
+  scale_y_continuous(
+    limits = c(-1.25, 1.25),
+    breaks = seq(-1.25, 1.25, 0.25),
+    labels = as.character(
+      c(seq(1.25, 0, -0.25),
+        seq(0.25, 1.25, 0.25)
+      ))
+  ) +
+  scale_x_continuous(
+    limits = c(-1, 101), breaks = seq(0, 100, 5),
+    labels = seq(0, 100, 5)
+  )+
+  annotate(
+    geom = "text", x = 95, y = -1, label = "Hombres",
+    color = "black", size = 3
+  ) +
+  annotate(
+    geom = "text", x = 95, y = 1, label = "Mujeres",
+    color = "black", size = 3
+  ) +
+  theme_light() +
+  scale_fill_viridis_c(option = "A", guide = guide_colorbar())+
+  labs(y = "Población (millones)", x = "Edad", fill = "Edad")
+```
+## Ejercicio de práctica 1 
+Escoja algún estado de la tabla de datos `base_mx` y determine su pirámide de población.
+
+## Ejercicio de práctica 2  
+Calcule la proporción de gente no especificada de población total para ambos sexos, hombres y mujeres.
+
+* Para esto, use un `left_join` para unir dos tablas.
+
+  - La tabla izquierda deberá contar con la población total **pob** para ambos sexos.
+  
+  - La tabla derecha deberá contar con la población total no especificada **pob_na** para ambos sexos.
+  
+* Calcule la proporción **rat** de la poblacion total no especificada en porcentaje.
+
+```{r}
+library(tidyverse)
+library(DT)
+load("Databases/base_mx.RData")
+base_mx <- left_join(
+  base_mx %>% 
+    filter(edo == "Total", is.na(age) == F) %>% 
+    group_by(sex) %>% 
+    summarise(pob = sum(pob), .groups = "drop"),
+  base_mx %>% 
+    filter(edo== "Total", is.na(age) == T) %>% 
+    select(sex, pob_na = pob),
+  by = "sex") %>% 
+  mutate(rat = 100 * pob_na / pob)
+datatable(base_mx, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+
+
+
+
 ## `Fuentes de información en demografía` 
 
 ::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
@@ -334,448 +957,175 @@ $N_{ne}$ total de la población no especificada.
 $\frac{N_x}{\sum_{x=0}^w N_x}$ es la proporcion del total de la poblacion de edad x, $N_x$, con respectoa la población total. 
 :::
 
-## `Fuentes de información en demografía` {auto-animate=true}
-
-<!-- bloque 1-->
-::: {style="font-size: 1.2em; color: grey; margin-top: -10px;"}
-Operaciones en bases de datos
-:::
-
-::: {.callout-tip  title="Left join"}
-Un **left join** es una operación en bases de datos que combina dos tablas, con base a una columna en común entre ellas y tomando en cuenta todas las filas de la tabla izquierda. Si no hay coincidencias en la en la tabla derecha, entonces éstas aparecenran con valores *null* en la nueva tabla.
-:::
-
-## `Fuentes de información en demografía` {auto-animate=true}
-
+## Prorateo de la tabla de datos `base_mx` 
 <!-- Bloque 1-->
-::: {style="font-size: 1.2em; color: grey; margin-top: -10px;"}
-Operaciones en bases de datos-Ejemplo
-:::
-
-:::: {.columns}
-
-::: {.column width="60%"}
-```{.r code-line-numbers="5-9"}
-# Cargar el paquete dplyr
-library(dplyr)
-
-# Crear la primera tabla (izquierda)
-tabla_izq <- data.frame(
-  id = c(1, 2, 3, 4),
-  nombre = c("Juan", "María", "Pedro", "Ana")
-)
-
-# Crear la segunda tabla (derecha)
-tabla_der <- data.frame(
-  id = c(1, 3, 4, 5),
-  ciudad = c("Madrid", "Barcelona", "Valencia", "Sevilla")
-)
-
-# Realizar el left join
-resultado <- left_join(tabla_A, tabla_B, by = "id")
-
+Tabla izquierda
+```{r}
+#| echo: true
+#| code-fold: true
+library(tidyverse)
+library(DT)
+load("input/base_mx.RData")
+tabla_izq <- base_mx %>% 
+    filter(edo == "Total")
+datatable(tabla_izq, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
-:::
 
-::: {.column width="40%"}
-![](Input/izq.png){.absolute}
-:::
-
-::::
-
-
-## `Fuentes de información en demografía` {auto-animate=true}
-
+## Prorateo de la tabla de datos `base_mx` 
 <!-- Bloque 2-->
-::: {style="font-size: 1.2em; color: grey; margin-top: -10px;"}
-Operaciones en bases de datos-Ejemplo
-:::
-
-:::: {.columns}
-
-::: {.column width="60%"}
-```{.r code-line-numbers="10-14"}
-# Cargar el paquete dplyr
-library(dplyr)
-
-# Crear la primera tabla (izquierda)
-tabla_izq <- data.frame(
-  id = c(1, 2, 3, 4),
-  nombre = c("Juan", "María", "Pedro", "Ana")
-)
-
-# Crear la segunda tabla (derecha)
-tabla_der <- data.frame(
-  id = c(1, 3, 4, 5),
-  ciudad = c("Madrid", "Barcelona", "Valencia", "Sevilla")
-)
-
-# Realizar el left join
-resultado <- left_join(tabla_A, tabla_B, by = "id")
-```
-::: {.callout-note title="Nota"}
-Observe que en la tabla "derecha" no hay coincidencias para el id=2
-:::
-:::
-
-::: {.column width="40%"}
-![](Input/der.png){.absolute}
-:::
-
-::::
-
-
-## `Fuentes de información en demografía` {auto-animate=true}
-
-<!-- Bloque 2-->
-::: {style="font-size: 1.2em; color: grey; margin-top: -10px;"}
-Operaciones en bases de datos-Ejemplo
-:::
-
-:::: {.columns}
-
-::: {.column width="60%"}
-```{.r code-line-numbers="16-17"}
-# Cargar el paquete dplyr
-library(dplyr)
-
-# Crear la primera tabla (izquierda)
-tabla_izq <- data.frame(
-  id = c(1, 2, 3, 4),
-  nombre = c("Juan", "María", "Pedro", "Ana")
-)
-
-# Crear la segunda tabla (derecha)
-tabla_der <- data.frame(
-  id = c(1, 3, 4, 5),
-  ciudad = c("Madrid", "Barcelona", "Valencia", "Sevilla")
-)
-
-# Realizar el left join
-resultado <- left_join(tabla_izq, tabla_der, by = "id")
-
-```
-:::
-
-::: {.column width="40%"}
-![](Input/left.png){.absolute}
-:::
-::::
-
-## `Fuentes de información en demografía` {auto-animate=true}
-
-<!-- bloque 1-->
-::: {style="font-size: 1.2em; color: grey; margin-top: -10px;"}
-Prorateo de la base de datos base_mx
-:::
-
-:::: {.columns}
-
-::: {.column width="50%"}
-```{.r code-line-numbers="2-3"}
-base_mx_pror <- left_join(
-  base_mx %>% 
-    filter(do == "Total") %>% 
+```{r}
+#| echo: true
+#| code-fold: true
+library(tidyverse)
+library(DT)
+tabla_izq <-  base_mx %>% 
+    filter(edo == "Total") %>% 
     group_by(sex) %>% 
-    mutate(prop = pob / sum(pob)) %>% 
-    filter(is.na(age) == F) %>%
-    ungroup(),
-  base_mx %>% 
-    filter(edo == "Total", is.na(age) == T) %>% 
-    select(sex, pob_na = pob),
-  by = "sex")  %>% 
-  mutate(pob_fin = pob + pob_na * prop) %>% 
-  select(age, sex, pob = pob_fin)
-
+    mutate(prop = pob / sum(pob))
+datatable(tabla_izq, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
-:::
 
-::: {.column width="50%"}
-contents...
-:::
-
-::::
-
-## `Fuentes de información en demografía` {auto-animate=true}
-
-<!-- bloque 2-->
-::: {style="font-size: 1.2em; color: grey; margin-top: -10px;"}
-Prorateo de la base de datos base_mx
-:::
-
-:::: {.columns}
-
-::: {.column width="50%"}
-```{.r code-line-numbers="4-5"}
-base_mx_pror <- left_join(
-  base_mx %>% 
-    filter(do == "Total") %>% 
-    group_by(sex) %>% 
-    mutate(prop = pob / sum(pob)) %>% 
-    filter(is.na(age) == F) %>%
-    ungroup(),
-  base_mx %>% 
-    filter(edo == "Total", is.na(age) == T) %>% 
-    select(sex, pob_na = pob),
-  by = "sex")  %>% 
-  mutate(pob_fin = pob + pob_na * prop) %>% 
-  select(age, sex, pob = pob_fin)
-
-```
-:::
-
-::: {.column width="50%"}
-contents...
-:::
-
-::::
-
-## `Fuentes de información en demografía` {auto-animate=true}
-
+## Prorateo de la tabla de datos `base_mx` 
 <!-- Bloque 3-->
-::: {style="font-size: 1.2em; color: grey; margin-top: -10px;"}
-Prorateo de la base de datos base_mx
-:::
-
-:::: {.columns}
-
-::: {.column width="50%"}
-```{.r code-line-numbers="6"}
-base_mx_pror <- left_join(
-  base_mx %>% 
-    filter(do == "Total") %>% 
+```{r}
+#| echo: true
+#| code-fold: true
+library(tidyverse)
+library(DT)
+tabla_izq <-   base_mx %>% 
+    filter(edo == "Total") %>% 
     group_by(sex) %>% 
     mutate(prop = pob / sum(pob)) %>% 
-    filter(is.na(age) == F) %>%
-    ungroup(),
-  base_mx %>% 
-    filter(edo == "Total", is.na(age) == T) %>% 
-    select(sex, pob_na = pob),
-  by = "sex")  %>% 
-  mutate(pob_fin = pob + pob_na * prop) %>% 
-  select(age, sex, pob = pob_fin)
-
+    filter(is.na(age) == F) 
+datatable(tabla_izq, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
-:::
 
-::: {.column width="50%"}
-contents...
-:::
-
-::::
-
-## `Fuentes de información en demografía` {auto-animate=true}
-
+## Prorateo de la tabla de datos `base_mx` 
 <!-- Bloque 4-->
-::: {style="font-size: 1.2em; color: grey; margin-top: -10px;"}
-Prorateo de la base de datos base_mx
-:::
-
-:::: {.columns}
-
-::: {.column width="50%"}
-```{.r code-line-numbers="7"}
-base_mx_pror <- left_join(
-  base_mx %>% 
-    filter(do == "Total") %>% 
+```{r}
+#| echo: true
+#| code-fold: true
+library(tidyverse)
+library(DT)
+tabla_izq <-   base_mx %>% 
+    filter(edo == "Total") %>% 
     group_by(sex) %>% 
     mutate(prop = pob / sum(pob)) %>% 
     filter(is.na(age) == F) %>%
-    ungroup(),
-  base_mx %>% 
-    filter(edo == "Total", is.na(age) == T) %>% 
-    select(sex, pob_na = pob),
-  by = "sex")  %>% 
-  mutate(pob_fin = pob + pob_na * prop) %>% 
-  select(age, sex, pob = pob_fin)
-
+    ungroup()
+datatable(tabla_izq, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
-::: {.callout-note  title="Nota"}
-Resultado tabla "izquierda"
-:::
-:::
 
-::: {.column width="50%"}
-contents...
-:::
-
-::::
-
-
-## `Fuentes de información en demografía` {auto-animate=true}
-
+## Prorateo de la tabla de datos `base_mx` 
 <!-- Bloque 5-->
-::: {style="font-size: 1.2em; color: grey; margin-top: -10px;"}
-Prorateo de la base de datos base_mx
-:::
-
-:::: {.columns}
-
-::: {.column width="50%"}
-```{.r code-line-numbers="8-9"}
-base_mx_pror <- left_join(
-  base_mx %>% 
-    filter(do == "Total") %>% 
+Tabla derecha
+```{r}
+#| echo: true
+#| code-fold: true
+library(tidyverse)
+library(DT)
+tabla_izq <-   base_mx %>% 
+    filter(edo == "Total") %>% 
     group_by(sex) %>% 
     mutate(prop = pob / sum(pob)) %>% 
     filter(is.na(age) == F) %>%
-    ungroup(),
-  base_mx %>% 
-    filter(edo == "Total", is.na(age) == T) %>% 
-    select(sex, pob_na = pob),
-  by = "sex")  %>% 
-  mutate(pob_fin = pob + pob_na * prop) %>% 
-  select(age, sex, pob = pob_fin)
-
+    ungroup()
+tabla_der <- base_mx %>% 
+    filter(edo == "Total", is.na(age) == T)
+datatable(tabla_der, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
-
-:::
-
-::: {.column width="50%"}
-contents...
-:::
-
-::::
-
-## `Fuentes de información en demografía` {auto-animate=true}
-
+## Prorateo de la tabla de datos `base_mx` 
 <!-- Bloque 6-->
-::: {style="font-size: 1.2em; color: grey; margin-top: -10px;"}
-Prorateo de la base de datos base_mx
-:::
 
-:::: {.columns}
-
-::: {.column width="50%"}
-```{.r code-line-numbers="10"}
-base_mx_pror <- left_join(
-  base_mx %>% 
-    filter(do == "Total") %>% 
+```{r}
+#| echo: true
+#| code-fold: true
+library(tidyverse)
+library(DT)
+tabla_izq <-   base_mx %>% 
+    filter(edo == "Total") %>% 
     group_by(sex) %>% 
     mutate(prop = pob / sum(pob)) %>% 
     filter(is.na(age) == F) %>%
-    ungroup(),
-  base_mx %>% 
+    ungroup()
+tabla_der <- base_mx %>% 
     filter(edo == "Total", is.na(age) == T) %>% 
-    select(sex, pob_na = pob),
-  by = "sex")  %>% 
-  mutate(pob_fin = pob + pob_na * prop) %>% 
-  select(age, sex, pob = pob_fin)
-
+    select(sex, pob_na = pob)
+datatable(tabla_der, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
-::: {.callout-note  title="Nota"}
-Resultado tabla "derecha"
-:::
-:::
 
-::: {.column width="50%"}
-contents...
-:::
-
-::::
-
-## `Fuentes de información en demografía` {auto-animate=true}
-
+## Prorateo de la tabla de datos `base_mx` 
 <!-- Bloque 7-->
-::: {style="font-size: 1.2em; color: grey; margin-top: -10px;"}
-Prorateo de la base de datos base_mx
-:::
 
-:::: {.columns}
-
-::: {.column width="50%"}
-```{.r code-line-numbers="1-11"}
-base_mx_pror <- left_join(
-  base_mx %>% 
-    filter(do == "Total") %>% 
+Tabla de datos prorateada `base_mx_pror`
+```{r}
+#| echo: true
+#| code-fold: true
+library(tidyverse)
+library(DT)
+tabla_izq <-   base_mx %>% 
+    filter(edo == "Total") %>% 
     group_by(sex) %>% 
     mutate(prop = pob / sum(pob)) %>% 
     filter(is.na(age) == F) %>%
-    ungroup(),
-  base_mx %>% 
+    ungroup()
+tabla_der <- base_mx %>% 
     filter(edo == "Total", is.na(age) == T) %>% 
-    select(sex, pob_na = pob),
-  by = "sex")  %>% 
-  mutate(pob_fin = pob + pob_na * prop) %>% 
-  select(age, sex, pob = pob_fin)
-
+    select(sex, pob_na = pob)
+base_mx_pror <-  left_join(tabla_izq,tabla_der,by = "sex")
+datatable(base_mx_pror, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
-:::
 
-::: {.column width="50%"}
-contents...
-:::
-
-::::
-
-
-## `Fuentes de información en demografía` {auto-animate=true}
-
+## Prorateo de la tabla de datos `base_mx` 
 <!-- Bloque 8-->
-::: {style="font-size: 1.2em; color: grey; margin-top: -10px;"}
-Prorateo de la base de datos base_mx
-:::
 
-:::: {.columns}
-
-::: {.column width="50%"}
-```{.r code-line-numbers="12"}
-base_mx_pror <- left_join(
-  base_mx %>% 
-    filter(do == "Total") %>% 
+Recordemos la formula para la población final, $N^*_x$, para la variable **pop_fin**.
+```{r}
+#| echo: true
+#| code-fold: true
+library(tidyverse)
+library(DT)
+tabla_izq <-   base_mx %>% 
+    filter(edo == "Total") %>% 
     group_by(sex) %>% 
     mutate(prop = pob / sum(pob)) %>% 
     filter(is.na(age) == F) %>%
-    ungroup(),
-  base_mx %>% 
+    ungroup()
+tabla_der <- base_mx %>% 
     filter(edo == "Total", is.na(age) == T) %>% 
-    select(sex, pob_na = pob),
-  by = "sex")  %>% 
-  mutate(pob_fin = pob + pob_na * prop) %>% 
-  select(age, sex, pob = pob_fin)
-
+    select(sex, pob_na = pob)
+base_mx_pror <-  left_join(tabla_izq,tabla_der,by = "sex")
+base_mx_pror <-  base_mx_pror %>% 
+                    mutate(pob_fin = pob + pob_na * prop)
+datatable(base_mx_pror, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$N^*_x = N_x + N_{ne} \frac{N_x}{\sum_{x=0}^w N_x}$
 :::
 
-::: {.column width="50%"}
-contents...
-:::
-
-::::
-
-## `Fuentes de información en demografía` {auto-animate=true}
-
-<!-- Bloque 10-->
-::: {style="font-size: 1.2em; color: grey; margin-top: -10px;"}
-Prorateo de la base de datos base_mx
-:::
-
-:::: {.columns}
-
-::: {.column width="50%"}
-```{.r code-line-numbers="13"}
-base_mx_pror <- left_join(
-  base_mx %>% 
-    filter(do == "Total") %>% 
+## Prorateo de la tabla de datos `base_mx` 
+<!-- Bloque 9-->
+Resultado final para la tabla de datos `base_mx_pror`
+```{r}
+#| echo: true
+#| code-fold: true
+library(tidyverse)
+library(DT)
+tabla_izq <-   base_mx %>% 
+    filter(edo == "Total") %>% 
     group_by(sex) %>% 
     mutate(prop = pob / sum(pob)) %>% 
     filter(is.na(age) == F) %>%
-    ungroup(),
-  base_mx %>% 
+    ungroup()
+tabla_der <- base_mx %>% 
     filter(edo == "Total", is.na(age) == T) %>% 
-    select(sex, pob_na = pob),
-  by = "sex")  %>% 
-  mutate(pob_fin = pob + pob_na * prop) %>% 
-  select(age, sex, pob = pob_fin)
-
+    select(sex, pob_na = pob)
+base_mx_pror <-  left_join(tabla_izq,tabla_der,by = "sex")
+base_mx_pror <-  base_mx_pror %>% 
+                    mutate(pob_fin = pob + pob_na * prop) %>% 
+                    select(age, sex, pob = pob_fin)
+datatable(base_mx_pror, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
-:::
-
-::: {.column width="50%"}
-contents...
-:::
-
-::::
 
 
 ## `Fuentes de información en demografía` 
@@ -804,7 +1154,7 @@ Tabla izquierda
 #| code-fold: true
 library(tidyverse)
 library(DT)
-load("input/base_mx_pror.RData")
+load("Databases/base_mx_pror.RData")
 tabla_izq <- base_mx_pror %>% 
     filter(
       age %in% c(25:60),
@@ -963,7 +1313,7 @@ Tabla izquierda
 #| code-fold: true
 library(tidyverse)
 library(DT)
-load("input/base_mx_pror.RData")
+load("Databases/base_mx_pror.RData")
 tabla_izq <- base_mx_pror %>% 
   filter(age %in% c(10:80))
 datatable(tabla_izq, options = list(scrollX = TRUE, scrollY = "500px"))
@@ -980,7 +1330,7 @@ datatable(tabla_izq, options = list(scrollX = TRUE, scrollY = "500px"))
 #| code-fold: true
 library(tidyverse)
 library(DT)
-load("input/base_mx_pror.RData")
+load("Databases/base_mx_pror.RData")
 tabla_izq <-base_mx_pror %>% 
   filter(age %in% c(10:80)) %>% 
   mutate(digit = age %% 10)
@@ -998,7 +1348,7 @@ datatable(tabla_izq, options = list(scrollX = TRUE, scrollY = "500px"))
 #| code-fold: true
 library(tidyverse)
 library(DT)
-load("input/base_mx_pror.RData")
+load("Databases/base_mx_pror.RData")
 tabla_izq <- base_mx_pror %>% 
   filter(age %in% c(10:80)) %>% 
   mutate(digit = age %% 10) %>% 
@@ -1018,7 +1368,7 @@ datatable(tabla_izq, options = list(scrollX = TRUE, scrollY = "500px"))
 #| code-fold: true
 library(tidyverse)
 library(DT)
-load("input/base_mx_pror.RData")
+load("Databases/base_mx_pror.RData")
 tabla_izq <- base_mx_pror %>% 
   filter(age %in% c(10:80)) %>% 
   mutate(digit = age %% 10) %>% 
@@ -1041,7 +1391,7 @@ Tabla derecha
 #| code-fold: true
 library(tidyverse)
 library(DT)
-load("input/base_mx_pror.RData")
+load("Databases/base_mx_pror.RData")
 tabla_der <-  base_mx_pror %>% 
   filter(age %in% c(10:80)) 
 datatable(tabla_der, options = list(scrollX = TRUE, scrollY = "500px"))
@@ -1058,7 +1408,7 @@ datatable(tabla_der, options = list(scrollX = TRUE, scrollY = "500px"))
 #| code-fold: true
 library(tidyverse)
 library(DT)
-load("input/base_mx_pror.RData")
+load("Databases/base_mx_pror.RData")
 tabla_der <- base_mx_pror %>% 
   filter(age %in% c(10:80)) %>% 
   mutate(digit = age %% 10)
@@ -1076,7 +1426,7 @@ datatable(tabla_der, options = list(scrollX = TRUE, scrollY = "500px"))
 #| code-fold: true
 library(tidyverse)
 library(DT)
-load("input/base_mx_pror.RData")
+load("Databases/base_mx_pror.RData")
 tabla_der <-base_mx_pror %>% 
   filter(age %in% c(10:80)) %>% 
   mutate(digit = age %% 10) %>% 
@@ -1095,7 +1445,7 @@ datatable(tabla_der, options = list(scrollX = TRUE, scrollY = "500px"))
 #| code-fold: true
 library(tidyverse)
 library(DT)
-load("input/base_mx_pror.RData")
+load("Databases/base_mx_pror.RData")
 tabla_der <- base_mx_pror %>% 
   filter(age %in% c(10:80)) %>% 
   mutate(digit = age %% 10) %>% 
@@ -1116,7 +1466,7 @@ datatable(tabla_der, options = list(scrollX = TRUE, scrollY = "500px"))
 #| code-fold: true
 library(tidyverse)
 library(DT)
-load("input/base_mx_pror.RData")
+load("Databases/base_mx_pror.RData")
 tabla_der <- base_mx_pror %>% 
   filter(age %in% c(10:80)) %>% 
   mutate(digit = age %% 10) %>% 
@@ -1140,7 +1490,7 @@ Tabla de datos **myers_tab**, juntando **tabla_izq** y **tabla_der**
 #| code-fold: true
 library(tidyverse)
 library(DT)
-load("input/base_mx_pror.RData")
+load("Databases/base_mx_pror.RData")
 tabla_izq <- base_mx_pror %>% 
   filter(age %in% c(10:80)) %>% 
   mutate(digit = age %% 10) %>% 
@@ -1173,7 +1523,7 @@ datatable(myers_tab, options = list(scrollX = TRUE, scrollY = "500px"))
 #| code-fold: true
 library(tidyverse)
 library(DT)
-load("input/base_mx_pror.RData")
+load("Databases/base_mx_pror.RData")
 tabla_izq <- base_mx_pror %>% 
   filter(age %in% c(10:80)) %>% 
   mutate(digit = age %% 10) %>% 
@@ -1207,7 +1557,7 @@ datatable(myers_tab, options = list(scrollX = TRUE, scrollY = "500px"))
 #| code-fold: true
 library(tidyverse)
 library(DT)
-load("input/base_mx_pror.RData")
+load("Databases/base_mx_pror.RData")
 tabla_izq <- base_mx_pror %>% 
   filter(age %in% c(10:80)) %>% 
   mutate(digit = age %% 10) %>% 
@@ -1244,7 +1594,7 @@ datatable(myers_tab, options = list(scrollX = TRUE, scrollY = "500px"))
 #| code-fold: true
 library(tidyverse)
 library(DT)
-load("input/base_mx_pror.RData")
+load("Databases/base_mx_pror.RData")
 tabla_izq <- base_mx_pror %>% 
   filter(age %in% c(10:80)) %>% 
   mutate(digit = age %% 10) %>% 
@@ -1335,7 +1685,7 @@ Definamos la secuencia de límites para las edades quinquenales.
 #| code-fold: true
 library(tidyverse)
 library(DT)
-load("Input/base_mx_pror.RData")
+load("Databases/base_mx_pror.RData")
 bins   <- seq(0,max(base_mx_pror$age)+5,by = 5)
 labels <- paste(bins[-length(bins)],
                 bins[-1]-1,
@@ -1357,7 +1707,7 @@ Tabla de datos agrupados por edades quinquenales `base_mx_5`
 #| code-fold: true
 library(tidyverse)
 library(DT)
-load("Input/base_mx_pror.RData")
+load("Databases/base_mx_pror.RData")
 bins   <- seq(0,max(base_mx_pror$age)+5,by = 5)
 labels <- paste(bins[-length(bins)],
                 bins[-1]-1,
@@ -1383,7 +1733,7 @@ Tabla de datos agrupados por edades quinquenales `base_mx_5`
 #| code-fold: true
 library(tidyverse)
 library(DT)
-load("Input/base_mx_pror.RData")
+load("Databases/base_mx_pror.RData")
 bins   <- seq(0,max(base_mx_pror$age)+5,by = 5)
 labels <- paste(bins[-length(bins)],
                 bins[-1]-1,
@@ -1589,7 +1939,7 @@ de datos de población o mortalidad que están agrupados por rangos de edad.
 library(ungroup)
 library(tidyverse)
 library(DT)
-load("Input/base_mx_5.RData")
+load("Databases/base_mx_5.RData")
 base_mx_5M <- base_mx_5 %>% 
   filter(sex=="females")
 datatable(base_mx_5M, options = list(scrollX = TRUE, scrollY = "500px"))
@@ -1603,7 +1953,7 @@ datatable(base_mx_5M, options = list(scrollX = TRUE, scrollY = "500px"))
 library(ungroup)
 library(tidyverse)
 library(DT)
-load("Input/base_mx_5.RData")
+load("Databases/base_mx_5.RData")
 base_mx_5H <- base_mx_5 %>% 
   filter(sex=="males")
 datatable(base_mx_5H, options = list(scrollX = TRUE, scrollY = "500px"))
@@ -1627,7 +1977,7 @@ Tabla de datos desagregados o suavizados de la tabla de datos `base_mx_5`
 library(ungroup)
 library(tidyverse)
 library(DT)
-load("Input/base_mx_5.RData")
+load("Databases/base_mx_5.RData")
 base_mx_5M <- base_mx_5 %>% 
   filter(sex=="females")
 base_mx_1_M <- pclm(x=bins[-length(bins)],
@@ -1643,7 +1993,7 @@ base_mx_1_M$fitted
 library(ungroup)
 library(tidyverse)
 library(DT)
-load("Input/base_mx_5.RData")
+load("Databases/base_mx_5.RData")
 base_mx_5H <- base_mx_5 %>% 
   filter(sex=="males")
 base_mx_1_H <- pclm(x=bins[-length(bins)],
@@ -1678,7 +2028,7 @@ frame con tres columnas:
 library(ungroup)
 library(tidyverse)
 library(DT)
-load("Input/base_mx_5.RData")
+load("Databases/base_mx_5.RData")
 base_mx_5M <- base_mx_5 %>% 
   filter(sex=="females")
 base_mx_1_M <- pclm(x=bins[-length(bins)],
@@ -1698,7 +2048,7 @@ datatable(tabla_M, options = list(scrollX = TRUE, scrollY = "500px"))
 library(ungroup)
 library(tidyverse)
 library(DT)
-load("Input/base_mx_5.RData")
+load("Databases/base_mx_5.RData")
 base_mx_5H <- base_mx_5 %>% 
   filter(sex=="males")
 base_mx_1_H <- pclm(x=bins[-length(bins)],
@@ -1761,7 +2111,7 @@ Pirámide de población con los datos desagregados o suavizados de la tabla de d
 ### Pirámide poblacional
 ```{r}
 library(tidyverse)
-load("Input/base_mx_1.RData")
+load("Databases/base_mx_1.RData")
 
 base_mx_1 %>% 
   ggplot() +
@@ -1797,7 +2147,7 @@ base_mx_1 %>%
 
 ```{.r}
 library(tidyverse)
-load("Input/base_mx_1.RData")
+load("Databases/base_mx_1.RData")
 
 base_mx_1 %>% 
   ggplot() +
@@ -2175,7 +2525,8 @@ El ejemplo particular que nos interesa es la serie de Maclaurin del logaritmo na
 ::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
 $\ln(1+x) = \sum_{n=1}^{\infty} \frac{(-1)^{n-1}}{n} x^n = x - \frac{x^2}{2} + \frac{x^3}{3} - \cdots, \quad |x| < 1$
 :::
-Asi tenemos que 
+Asi tenemos que:
+
 ::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
 $\ln(1+x) \approx x$ para $n=1$
 :::
@@ -2345,15 +2696,6 @@ lexis_age(lg = lexis, age = 2)
 
 ## `Diagrama de Lexis` 
 ::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
-Periodo
-:::
-```{r,out.width='800%', out.height='900px'}
-library(LexisPlotR)
-lexis <- lexis_grid(year_start = 1900, year_end = 1905, age_start = 0, age_end = 5)
-lexis_year(lg = lexis, year = 1903)
-```
-## `Diagrama de Lexis` 
-::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
 Corte
 :::
 ```{r,out.width='800%', out.height='900px'}
@@ -2364,6 +2706,18 @@ lexis_cohort(lg = lexis, cohort = 1898)
 
 
 ## `Diagrama de Lexis` 
+::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
+Periodo
+:::
+```{r,out.width='800%', out.height='900px'}
+library(LexisPlotR)
+lexis <- lexis_grid(year_start = 1900, year_end = 1905, age_start = 0, age_end = 5)
+lexis_year(lg = lexis, year = 1903)
+```
+
+
+
+## `Diagrama de Lexis` 
 
 ![](Input/diagrama_de_lexis1.png){.absolute top="150" left="100" width="1390"}\
 
@@ -2371,11 +2725,1171 @@ lexis_cohort(lg = lexis, cohort = 1898)
 
 ![](Input/diagrama_de_lexis2.png){.absolute top="150" left="100" width="1390"}
 
-## `Diagrama de Lexis` {background-image=Background/bim1.png}
+## `Diagrama de Lexis` 
 
 ![](Input/diagrama_de_lexis3.png){.absolute top="150" left="100" width="1390"}
 
-## `Diagrama de Lexis-Probabilidades cohorte por edad` {background-image=Background/bim1.png}
+## `Diagrama de Lexis` 
+<!-- Bloque 0 -->
+```{r}
+#| echo: false
+
+library(dplyr)
+library(ggplot2)
+library(Epi)
+
+
+
+# Step 1: Stellen sie manuellen Lexis Gitternetzlinien beit horizontal, vertikal, and diagonal linienen
+
+# Horizontal linien (constant ages over time)
+horizontal_lines <- data.frame(
+  x_start = as.Date(c("1900-01-01", "1900-01-01", "1900-01-01", "1900-01-01", "1900-01-01","1900-01-01")),
+  x_end   = as.Date(c("1905-01-01", "1905-01-01", "1905-01-01", "1905-01-01", "1905-01-01","1905-01-01")),
+  y_start = c(0, 1, 2, 3, 4, 5),
+  y_end   = c(0, 1, 2, 3, 4, 5)
+)
+
+# Vertikal linnien (constant years)
+vertical_lines <- data.frame(
+  x_start = as.Date(c("1900-01-01", "1901-01-01", "1902-01-01", "1903-01-01", "1904-01-01", "1905-01-01"
+                      ,"1900-01-01","1900-01-01","1900-01-01","1900-01-01")),
+  x_end   = as.Date(c("1900-01-01", "1901-01-01", "1902-01-01", "1903-01-01", "1904-01-01", "1905-01-01"
+                      ,"1904-01-01","1903-01-01","1902-01-01","1901-01-01")),
+  y_start = c(0, 0, 0, 0, 0, 0,
+              1, 2, 3, 4),
+  y_end   = c(5, 5, 5, 5, 5, 5,
+              5, 5, 5, 5)
+)
+
+# Diagonal liniel (cohorts aging over time)
+diagonal_lines <- data.frame(
+  x_start = as.Date(c("1900-01-01", "1901-01-01", "1902-01-01", "1903-01-01", "1904-01-01")),
+  x_end   = as.Date(c("1905-01-01", "1905-01-01", "1905-01-01", "1905-01-01", "1905-01-01")),
+  y_start = c(0, 0, 0, 0, 0),
+  y_end   = c(5, 4, 3, 2, 1)
+)
+
+# Step 2: Define the polygons with custom colors
+polygons <- data.frame(
+  group = c(1, 1, 1, 
+            2, 2, 2,
+            3, 3, 3,
+            4, 4, 4,
+            5, 5, 5,
+            6, 6, 6,
+            7, 7, 7,
+            8, 8, 8,
+            9, 9, 9,
+           10, 10,10),  # Group defines which vertices belong to the same polygon
+  x = as.Date(c("1900-01-01", "1901-01-01", "1901-01-01",    # erster polygon (orange)
+                "1900-01-01", "1900-01-01", "1901-01-01",    # zweiter polygon
+                "1900-01-01", "1901-01-01", "1901-01-01",    # dritter polygon
+                "1900-01-01", "1900-01-01", "1901-01-01",    # vierter polygon
+                "1900-01-01", "1901-01-01", "1901-01-01",    # fünfter polygon
+                "1900-01-01", "1900-01-01", "1901-01-01",    # sechster polygon
+                "1900-01-01", "1901-01-01", "1901-01-01",    # siebter 
+                "1900-01-01", "1900-01-01", "1901-01-01",    # achter
+                "1900-01-01", "1901-01-01", "1901-01-01",    # neunter
+                "1900-01-01", "1900-01-01", "1901-01-01")),  # zehnter
+  y = c(0, 0, 1, # erster
+        0, 1, 1, # zweiter
+        1, 1, 2, # dritter
+        1, 2, 2, # vierter
+        2, 2, 3, # fünfter
+        2, 3, 3, # sechter
+        3, 3, 4, # siebter
+        3, 4, 4, # achter
+        4, 4, 5, # neunter
+        4, 5, 5),  # zehnter
+  
+  fill_color <- c(
+    "#8A2BE2", "#8A2BE2", "#8A2BE2", 
+    "#008080", "#008080", "#008080",  # Purple and Teal
+    "#FF69B4", "#FF69B4", "#FF69B4", 
+    "#1E90FF", "#1E90FF", "#1E90FF",  # Pink and Blue
+    "#FFD700", "#FFD700", "#FFD700", 
+    "#228B22", "#228B22", "#228B22",  # Gold and Forest Green
+    "#DC143C", "#DC143C", "#DC143C", 
+    "#00FFFF", "#00FFFF", "#00FFFF",  # Crimson and Cyan
+    "#FF7F50", "#FF7F50", "#FF7F50", 
+    "#000080", "#000080", "#000080"  # Coral and Navy
+  )
+  
+)
+
+# Step 3: Plot the Lexis grid and the polygons
+ggplot() +
+  # Add horizontal lines
+  geom_segment(data = horizontal_lines, aes(x = x_start, y = y_start, xend = x_end, yend = y_end), color = "black") +
+  
+  # Add vertical lines
+  geom_segment(data = vertical_lines, aes(x = x_start, y = y_start, xend = x_end, yend = y_end), color = "black") +
+  
+  # Add diagonal lines
+  geom_segment(data = diagonal_lines, aes(x = x_start, y = y_start, xend = x_end, yend = y_end), color = "black") +
+  
+  # Add polygons with controlled colors
+  geom_polygon(data = polygons, aes(x = x, y = y, group = group, fill = fill_color), alpha = 0.7) +
+  
+  scale_fill_identity() +  # Use the colors defined in the 'fill_color' column
+  
+  # Customize the theme to remove grid lines and borders
+  theme_minimal() +
+  theme(panel.grid.major = element_blank(),  # Remove major grid lines
+        panel.grid.minor = element_blank(),  # Remove minor grid lines
+        panel.border = element_blank())+
+  
+  # Set axis limits (adjust as necessary)
+  xlim(as.Date("1900-01-01"), as.Date("1910-01-01")) +  # x-axis limits
+  ylim(0, 5)  # y-axis limits
+```
+
+## `Diagrama de Lexis` 
+<!-- Bloque 1 -->
+```{r}
+#| echo: false
+
+library(dplyr)
+library(ggplot2)
+library(Epi)
+
+
+
+# Step 1: Stellen sie manuellen Lexis Gitternetzlinien beit horizontal, vertikal, and diagonal linienen
+
+# Horizontal linien (constant ages over time)
+horizontal_lines <- data.frame(
+  x_start = as.Date(c("1900-01-01", "1900-01-01", "1900-01-01", "1900-01-01", "1900-01-01","1900-01-01")),
+  x_end   = as.Date(c("1905-01-01", "1905-01-01", "1905-01-01", "1905-01-01", "1905-01-01","1905-01-01")),
+  y_start = c(0, 1, 2, 3, 4, 5),
+  y_end   = c(0, 1, 2, 3, 4, 5)
+)
+
+# Vertikal linnien (constant years)
+vertical_lines <- data.frame(
+  x_start = as.Date(c("1900-01-01", "1901-01-01", "1902-01-01", "1903-01-01", "1904-01-01", "1905-01-01"
+                      ,"1900-01-01","1900-01-01","1900-01-01","1900-01-01")),
+  x_end   = as.Date(c("1900-01-01", "1901-01-01", "1902-01-01", "1903-01-01", "1904-01-01", "1905-01-01"
+                      ,"1904-01-01","1903-01-01","1902-01-01","1901-01-01")),
+  y_start = c(0, 0, 0, 0, 0, 0,
+              1, 2, 3, 4),
+  y_end   = c(5, 5, 5, 5, 5, 5,
+              5, 5, 5, 5)
+)
+
+# Diagonal liniel (cohorts aging over time)
+diagonal_lines <- data.frame(
+  x_start = as.Date(c("1900-01-01", "1901-01-01", "1902-01-01", "1903-01-01", "1904-01-01")),
+  x_end   = as.Date(c("1905-01-01", "1905-01-01", "1905-01-01", "1905-01-01", "1905-01-01")),
+  y_start = c(0, 0, 0, 0, 0),
+  y_end   = c(5, 4, 3, 2, 1)
+)
+
+# Step 2: Define the polygons with custom colors
+polygons <- data.frame(
+  group = c(1, 1, 1, 
+            2, 2, 2,
+            3, 3, 3,
+            4, 4, 4,
+            5, 5, 5,
+            6, 6, 6,
+            7, 7, 7,
+            8, 8, 8,
+            9, 9, 9,
+           10, 10,10),  # Group defines which vertices belong to the same polygon
+  x = as.Date(c("1900-01-01", "1901-01-01", "1901-01-01",    # erster polygon (orange)
+                "1901-01-01", "1901-01-01", "1902-01-01",    # zweiter polygon
+                "1900-01-01", "1901-01-01", "1901-01-01",    # dritter polygon
+                "1900-01-01", "1900-01-01", "1901-01-01",    # vierter polygon
+                "1900-01-01", "1901-01-01", "1901-01-01",    # fünfter polygon
+                "1900-01-01", "1900-01-01", "1901-01-01",    # sechster polygon
+                "1900-01-01", "1901-01-01", "1901-01-01",    # siebter 
+                "1900-01-01", "1900-01-01", "1901-01-01",    # achter
+                "1900-01-01", "1901-01-01", "1901-01-01",    # neunter
+                "1900-01-01", "1900-01-01", "1901-01-01")),  # zehnter
+  y = c(0, 0, 1, # erster
+        0, 1, 1, # zweiter
+        1, 1, 2, # dritter
+        1, 2, 2, # vierter
+        2, 2, 3, # fünfter
+        2, 3, 3, # sechter
+        3, 3, 4, # siebter
+        3, 4, 4, # achter
+        4, 4, 5, # neunter
+        4, 5, 5),  # zehnter
+  
+  fill_color <- c(
+    "#8A2BE2", "#8A2BE2", "#8A2BE2", 
+    "#008080", "#008080", "#008080",  # Purple and Teal
+    "#FF69B4", "#FF69B4", "#FF69B4", 
+    "#1E90FF", "#1E90FF", "#1E90FF",  # Pink and Blue
+    "#FFD700", "#FFD700", "#FFD700", 
+    "#228B22", "#228B22", "#228B22",  # Gold and Forest Green
+    "#DC143C", "#DC143C", "#DC143C", 
+    "#00FFFF", "#00FFFF", "#00FFFF",  # Crimson and Cyan
+    "#FF7F50", "#FF7F50", "#FF7F50", 
+    "#000080", "#000080", "#000080"  # Coral and Navy
+  )
+  
+)
+
+# Step 3: Plot the Lexis grid and the polygons
+ggplot() +
+  # Add horizontal lines
+  geom_segment(data = horizontal_lines, aes(x = x_start, y = y_start, xend = x_end, yend = y_end), color = "black") +
+  
+  # Add vertical lines
+  geom_segment(data = vertical_lines, aes(x = x_start, y = y_start, xend = x_end, yend = y_end), color = "black") +
+  
+  # Add diagonal lines
+  geom_segment(data = diagonal_lines, aes(x = x_start, y = y_start, xend = x_end, yend = y_end), color = "black") +
+  
+  # Add polygons with controlled colors
+  geom_polygon(data = polygons, aes(x = x, y = y, group = group, fill = fill_color), alpha = 0.7) +
+  
+  scale_fill_identity() +  # Use the colors defined in the 'fill_color' column
+  
+  # Customize the theme to remove grid lines and borders
+  theme_minimal() +
+  theme(panel.grid.major = element_blank(),  # Remove major grid lines
+        panel.grid.minor = element_blank(),  # Remove minor grid lines
+        panel.border = element_blank())+
+  
+  # Set axis limits (adjust as necessary)
+  xlim(as.Date("1900-01-01"), as.Date("1910-01-01")) +  # x-axis limits
+  ylim(0, 5)  # y-axis limits
+```
+
+## `Diagrama de Lexis` 
+<!-- Bloque 2 -->
+```{r}
+#| echo: false
+
+library(dplyr)
+library(ggplot2)
+library(Epi)
+
+
+
+# Step 1: Stellen sie manuellen Lexis Gitternetzlinien beit horizontal, vertikal, and diagonal linienen
+
+# Horizontal linien (constant ages over time)
+horizontal_lines <- data.frame(
+  x_start = as.Date(c("1900-01-01", "1900-01-01", "1900-01-01", "1900-01-01", "1900-01-01","1900-01-01")),
+  x_end   = as.Date(c("1905-01-01", "1905-01-01", "1905-01-01", "1905-01-01", "1905-01-01","1905-01-01")),
+  y_start = c(0, 1, 2, 3, 4, 5),
+  y_end   = c(0, 1, 2, 3, 4, 5)
+)
+
+# Vertikal linnien (constant years)
+vertical_lines <- data.frame(
+  x_start = as.Date(c("1900-01-01", "1901-01-01", "1902-01-01", "1903-01-01", "1904-01-01", "1905-01-01"
+                      ,"1900-01-01","1900-01-01","1900-01-01","1900-01-01")),
+  x_end   = as.Date(c("1900-01-01", "1901-01-01", "1902-01-01", "1903-01-01", "1904-01-01", "1905-01-01"
+                      ,"1904-01-01","1903-01-01","1902-01-01","1901-01-01")),
+  y_start = c(0, 0, 0, 0, 0, 0,
+              1, 2, 3, 4),
+  y_end   = c(5, 5, 5, 5, 5, 5,
+              5, 5, 5, 5)
+)
+
+# Diagonal liniel (cohorts aging over time)
+diagonal_lines <- data.frame(
+  x_start = as.Date(c("1900-01-01", "1901-01-01", "1902-01-01", "1903-01-01", "1904-01-01")),
+  x_end   = as.Date(c("1905-01-01", "1905-01-01", "1905-01-01", "1905-01-01", "1905-01-01")),
+  y_start = c(0, 0, 0, 0, 0),
+  y_end   = c(5, 4, 3, 2, 1)
+)
+
+# Step 2: Define the polygons with custom colors
+polygons <- data.frame(
+  group = c(1, 1, 1, 
+            2, 2, 2,
+            3, 3, 3,
+            4, 4, 4,
+            5, 5, 5,
+            6, 6, 6,
+            7, 7, 7,
+            8, 8, 8,
+            9, 9, 9,
+           10, 10,10),  # Group defines which vertices belong to the same polygon
+  x = as.Date(c("1900-01-01", "1901-01-01", "1901-01-01",    # erster polygon (orange)
+                "1901-01-01", "1901-01-01", "1902-01-01",    # zweiter polygon
+                "1901-01-01", "1902-01-01", "1902-01-01",    # dritter polygon
+                "1900-01-01", "1900-01-01", "1901-01-01",    # vierter polygon
+                "1900-01-01", "1901-01-01", "1901-01-01",    # fünfter polygon
+                "1900-01-01", "1900-01-01", "1901-01-01",    # sechster polygon
+                "1900-01-01", "1901-01-01", "1901-01-01",    # siebter 
+                "1900-01-01", "1900-01-01", "1901-01-01",    # achter
+                "1900-01-01", "1901-01-01", "1901-01-01",    # neunter
+                "1900-01-01", "1900-01-01", "1901-01-01")),  # zehnter
+  y = c(0, 0, 1, # erster
+        0, 1, 1, # zweiter
+        1, 1, 2, # dritter
+        1, 2, 2, # vierter
+        2, 2, 3, # fünfter
+        2, 3, 3, # sechter
+        3, 3, 4, # siebter
+        3, 4, 4, # achter
+        4, 4, 5, # neunter
+        4, 5, 5),  # zehnter
+  
+  fill_color <- c(
+    "#8A2BE2", "#8A2BE2", "#8A2BE2", 
+    "#008080", "#008080", "#008080",  # Purple and Teal
+    "#FF69B4", "#FF69B4", "#FF69B4", 
+    "#1E90FF", "#1E90FF", "#1E90FF",  # Pink and Blue
+    "#FFD700", "#FFD700", "#FFD700", 
+    "#228B22", "#228B22", "#228B22",  # Gold and Forest Green
+    "#DC143C", "#DC143C", "#DC143C", 
+    "#00FFFF", "#00FFFF", "#00FFFF",  # Crimson and Cyan
+    "#FF7F50", "#FF7F50", "#FF7F50", 
+    "#000080", "#000080", "#000080"  # Coral and Navy
+  )
+  
+)
+
+# Step 3: Plot the Lexis grid and the polygons
+ggplot() +
+  # Add horizontal lines
+  geom_segment(data = horizontal_lines, aes(x = x_start, y = y_start, xend = x_end, yend = y_end), color = "black") +
+  
+  # Add vertical lines
+  geom_segment(data = vertical_lines, aes(x = x_start, y = y_start, xend = x_end, yend = y_end), color = "black") +
+  
+  # Add diagonal lines
+  geom_segment(data = diagonal_lines, aes(x = x_start, y = y_start, xend = x_end, yend = y_end), color = "black") +
+  
+  # Add polygons with controlled colors
+  geom_polygon(data = polygons, aes(x = x, y = y, group = group, fill = fill_color), alpha = 0.7) +
+  
+  scale_fill_identity() +  # Use the colors defined in the 'fill_color' column
+  
+  # Customize the theme to remove grid lines and borders
+  theme_minimal() +
+  theme(panel.grid.major = element_blank(),  # Remove major grid lines
+        panel.grid.minor = element_blank(),  # Remove minor grid lines
+        panel.border = element_blank())+
+  
+  # Set axis limits (adjust as necessary)
+  xlim(as.Date("1900-01-01"), as.Date("1910-01-01")) +  # x-axis limits
+  ylim(0, 5)  # y-axis limits
+```
+
+## `Diagrama de Lexis` 
+<!-- Bloque 3-->
+```{r}
+#| echo: false
+
+library(dplyr)
+library(ggplot2)
+library(Epi)
+
+
+
+# Step 1: Stellen sie manuellen Lexis Gitternetzlinien beit horizontal, vertikal, and diagonal linienen
+
+# Horizontal linien (constant ages over time)
+horizontal_lines <- data.frame(
+  x_start = as.Date(c("1900-01-01", "1900-01-01", "1900-01-01", "1900-01-01", "1900-01-01","1900-01-01")),
+  x_end   = as.Date(c("1905-01-01", "1905-01-01", "1905-01-01", "1905-01-01", "1905-01-01","1905-01-01")),
+  y_start = c(0, 1, 2, 3, 4, 5),
+  y_end   = c(0, 1, 2, 3, 4, 5)
+)
+
+# Vertikal linnien (constant years)
+vertical_lines <- data.frame(
+  x_start = as.Date(c("1900-01-01", "1901-01-01", "1902-01-01", "1903-01-01", "1904-01-01", "1905-01-01"
+                      ,"1900-01-01","1900-01-01","1900-01-01","1900-01-01")),
+  x_end   = as.Date(c("1900-01-01", "1901-01-01", "1902-01-01", "1903-01-01", "1904-01-01", "1905-01-01"
+                      ,"1904-01-01","1903-01-01","1902-01-01","1901-01-01")),
+  y_start = c(0, 0, 0, 0, 0, 0,
+              1, 2, 3, 4),
+  y_end   = c(5, 5, 5, 5, 5, 5,
+              5, 5, 5, 5)
+)
+
+# Diagonal liniel (cohorts aging over time)
+diagonal_lines <- data.frame(
+  x_start = as.Date(c("1900-01-01", "1901-01-01", "1902-01-01", "1903-01-01", "1904-01-01")),
+  x_end   = as.Date(c("1905-01-01", "1905-01-01", "1905-01-01", "1905-01-01", "1905-01-01")),
+  y_start = c(0, 0, 0, 0, 0),
+  y_end   = c(5, 4, 3, 2, 1)
+)
+
+# Step 2: Define the polygons with custom colors
+polygons <- data.frame(
+  group = c(1, 1, 1, 
+            2, 2, 2,
+            3, 3, 3,
+            4, 4, 4,
+            5, 5, 5,
+            6, 6, 6,
+            7, 7, 7,
+            8, 8, 8,
+            9, 9, 9,
+           10, 10,10),  # Group defines which vertices belong to the same polygon
+  x = as.Date(c("1900-01-01", "1901-01-01", "1901-01-01",    # erster polygon (orange)
+                "1901-01-01", "1901-01-01", "1902-01-01",    # zweiter polygon
+                "1901-01-01", "1902-01-01", "1902-01-01",    # dritter polygon
+                "1902-01-01", "1902-01-01", "1903-01-01",    # vierter polygon
+                "1900-01-01", "1901-01-01", "1901-01-01",    # fünfter polygon
+                "1900-01-01", "1900-01-01", "1901-01-01",    # sechster polygon
+                "1900-01-01", "1901-01-01", "1901-01-01",    # siebter 
+                "1900-01-01", "1900-01-01", "1901-01-01",    # achter
+                "1900-01-01", "1901-01-01", "1901-01-01",    # neunter
+                "1900-01-01", "1900-01-01", "1901-01-01")),  # zehnter
+  y = c(0, 0, 1, # erster
+        0, 1, 1, # zweiter
+        1, 1, 2, # dritter
+        1, 2, 2, # vierter
+        2, 2, 3, # fünfter
+        2, 3, 3, # sechter
+        3, 3, 4, # siebter
+        3, 4, 4, # achter
+        4, 4, 5, # neunter
+        4, 5, 5),  # zehnter
+  
+  fill_color <- c(
+    "#8A2BE2", "#8A2BE2", "#8A2BE2", 
+    "#008080", "#008080", "#008080",  # Purple and Teal
+    "#FF69B4", "#FF69B4", "#FF69B4", 
+    "#1E90FF", "#1E90FF", "#1E90FF",  # Pink and Blue
+    "#FFD700", "#FFD700", "#FFD700", 
+    "#228B22", "#228B22", "#228B22",  # Gold and Forest Green
+    "#DC143C", "#DC143C", "#DC143C", 
+    "#00FFFF", "#00FFFF", "#00FFFF",  # Crimson and Cyan
+    "#FF7F50", "#FF7F50", "#FF7F50", 
+    "#000080", "#000080", "#000080"  # Coral and Navy
+  )
+  
+)
+
+# Step 3: Plot the Lexis grid and the polygons
+ggplot() +
+  # Add horizontal lines
+  geom_segment(data = horizontal_lines, aes(x = x_start, y = y_start, xend = x_end, yend = y_end), color = "black") +
+  
+  # Add vertical lines
+  geom_segment(data = vertical_lines, aes(x = x_start, y = y_start, xend = x_end, yend = y_end), color = "black") +
+  
+  # Add diagonal lines
+  geom_segment(data = diagonal_lines, aes(x = x_start, y = y_start, xend = x_end, yend = y_end), color = "black") +
+  
+  # Add polygons with controlled colors
+  geom_polygon(data = polygons, aes(x = x, y = y, group = group, fill = fill_color), alpha = 0.7) +
+  
+  scale_fill_identity() +  # Use the colors defined in the 'fill_color' column
+  
+  # Customize the theme to remove grid lines and borders
+  theme_minimal() +
+  theme(panel.grid.major = element_blank(),  # Remove major grid lines
+        panel.grid.minor = element_blank(),  # Remove minor grid lines
+        panel.border = element_blank())+
+  
+  # Set axis limits (adjust as necessary)
+  xlim(as.Date("1900-01-01"), as.Date("1910-01-01")) +  # x-axis limits
+  ylim(0, 5)  # y-axis limits
+```
+
+
+## `Diagrama de Lexis`
+<!-- Bloque 4-->
+```{r}
+#| echo: false
+
+library(dplyr)
+library(ggplot2)
+library(Epi)
+
+
+
+# Step 1: Stellen sie manuellen Lexis Gitternetzlinien beit horizontal, vertikal, and diagonal linienen
+
+# Horizontal linien (constant ages over time)
+horizontal_lines <- data.frame(
+  x_start = as.Date(c("1900-01-01", "1900-01-01", "1900-01-01", "1900-01-01", "1900-01-01","1900-01-01")),
+  x_end   = as.Date(c("1905-01-01", "1905-01-01", "1905-01-01", "1905-01-01", "1905-01-01","1905-01-01")),
+  y_start = c(0, 1, 2, 3, 4, 5),
+  y_end   = c(0, 1, 2, 3, 4, 5)
+)
+
+# Vertikal linnien (constant years)
+vertical_lines <- data.frame(
+  x_start = as.Date(c("1900-01-01", "1901-01-01", "1902-01-01", "1903-01-01", "1904-01-01", "1905-01-01"
+                      ,"1900-01-01","1900-01-01","1900-01-01","1900-01-01")),
+  x_end   = as.Date(c("1900-01-01", "1901-01-01", "1902-01-01", "1903-01-01", "1904-01-01", "1905-01-01"
+                      ,"1904-01-01","1903-01-01","1902-01-01","1901-01-01")),
+  y_start = c(0, 0, 0, 0, 0, 0,
+              1, 2, 3, 4),
+  y_end   = c(5, 5, 5, 5, 5, 5,
+              5, 5, 5, 5)
+)
+
+# Diagonal liniel (cohorts aging over time)
+diagonal_lines <- data.frame(
+  x_start = as.Date(c("1900-01-01", "1901-01-01", "1902-01-01", "1903-01-01", "1904-01-01")),
+  x_end   = as.Date(c("1905-01-01", "1905-01-01", "1905-01-01", "1905-01-01", "1905-01-01")),
+  y_start = c(0, 0, 0, 0, 0),
+  y_end   = c(5, 4, 3, 2, 1)
+)
+
+# Step 2: Define the polygons with custom colors
+polygons <- data.frame(
+  group = c(1, 1, 1, 
+            2, 2, 2,
+            3, 3, 3,
+            4, 4, 4,
+            5, 5, 5,
+            6, 6, 6,
+            7, 7, 7,
+            8, 8, 8,
+            9, 9, 9,
+           10, 10,10),  # Group defines which vertices belong to the same polygon
+  x = as.Date(c("1900-01-01", "1901-01-01", "1901-01-01",    # erster polygon (orange)
+                "1901-01-01", "1901-01-01", "1902-01-01",    # zweiter polygon
+                "1901-01-01", "1902-01-01", "1902-01-01",    # dritter polygon
+                "1902-01-01", "1902-01-01", "1903-01-01",    # vierter polygon
+                "1902-01-01", "1903-01-01", "1903-01-01",    # fünfter polygon
+                "1900-01-01", "1900-01-01", "1901-01-01",    # sechster polygon
+                "1900-01-01", "1901-01-01", "1901-01-01",    # siebter 
+                "1900-01-01", "1900-01-01", "1901-01-01",    # achter
+                "1900-01-01", "1901-01-01", "1901-01-01",    # neunter
+                "1900-01-01", "1900-01-01", "1901-01-01")),  # zehnter
+  y = c(0, 0, 1, # erster
+        0, 1, 1, # zweiter
+        1, 1, 2, # dritter
+        1, 2, 2, # vierter
+        2, 2, 3, # fünfter
+        2, 3, 3, # sechter
+        3, 3, 4, # siebter
+        3, 4, 4, # achter
+        4, 4, 5, # neunter
+        4, 5, 5),  # zehnter
+  
+  fill_color <- c(
+    "#8A2BE2", "#8A2BE2", "#8A2BE2", 
+    "#008080", "#008080", "#008080",  # Purple and Teal
+    "#FF69B4", "#FF69B4", "#FF69B4", 
+    "#1E90FF", "#1E90FF", "#1E90FF",  # Pink and Blue
+    "#FFD700", "#FFD700", "#FFD700", 
+    "#228B22", "#228B22", "#228B22",  # Gold and Forest Green
+    "#DC143C", "#DC143C", "#DC143C", 
+    "#00FFFF", "#00FFFF", "#00FFFF",  # Crimson and Cyan
+    "#FF7F50", "#FF7F50", "#FF7F50", 
+    "#000080", "#000080", "#000080"  # Coral and Navy
+  )
+  
+)
+
+# Step 3: Plot the Lexis grid and the polygons
+ggplot() +
+  # Add horizontal lines
+  geom_segment(data = horizontal_lines, aes(x = x_start, y = y_start, xend = x_end, yend = y_end), color = "black") +
+  
+  # Add vertical lines
+  geom_segment(data = vertical_lines, aes(x = x_start, y = y_start, xend = x_end, yend = y_end), color = "black") +
+  
+  # Add diagonal lines
+  geom_segment(data = diagonal_lines, aes(x = x_start, y = y_start, xend = x_end, yend = y_end), color = "black") +
+  
+  # Add polygons with controlled colors
+  geom_polygon(data = polygons, aes(x = x, y = y, group = group, fill = fill_color), alpha = 0.7) +
+  
+  scale_fill_identity() +  # Use the colors defined in the 'fill_color' column
+  
+  # Customize the theme to remove grid lines and borders
+  theme_minimal() +
+  theme(panel.grid.major = element_blank(),  # Remove major grid lines
+        panel.grid.minor = element_blank(),  # Remove minor grid lines
+        panel.border = element_blank())+
+  
+  # Set axis limits (adjust as necessary)
+  xlim(as.Date("1900-01-01"), as.Date("1910-01-01")) +  # x-axis limits
+  ylim(0, 5)  # y-axis limits
+```
+
+## `Diagrama de Lexis` 
+<!-- Bloque 5-->
+```{r}
+#| echo: false
+
+library(dplyr)
+library(ggplot2)
+library(Epi)
+
+
+
+# Step 1: Stellen sie manuellen Lexis Gitternetzlinien beit horizontal, vertikal, and diagonal linienen
+
+# Horizontal linien (constant ages over time)
+horizontal_lines <- data.frame(
+  x_start = as.Date(c("1900-01-01", "1900-01-01", "1900-01-01", "1900-01-01", "1900-01-01","1900-01-01")),
+  x_end   = as.Date(c("1905-01-01", "1905-01-01", "1905-01-01", "1905-01-01", "1905-01-01","1905-01-01")),
+  y_start = c(0, 1, 2, 3, 4, 5),
+  y_end   = c(0, 1, 2, 3, 4, 5)
+)
+
+# Vertikal linnien (constant years)
+vertical_lines <- data.frame(
+  x_start = as.Date(c("1900-01-01", "1901-01-01", "1902-01-01", "1903-01-01", "1904-01-01", "1905-01-01"
+                      ,"1900-01-01","1900-01-01","1900-01-01","1900-01-01")),
+  x_end   = as.Date(c("1900-01-01", "1901-01-01", "1902-01-01", "1903-01-01", "1904-01-01", "1905-01-01"
+                      ,"1904-01-01","1903-01-01","1902-01-01","1901-01-01")),
+  y_start = c(0, 0, 0, 0, 0, 0,
+              1, 2, 3, 4),
+  y_end   = c(5, 5, 5, 5, 5, 5,
+              5, 5, 5, 5)
+)
+
+# Diagonal liniel (cohorts aging over time)
+diagonal_lines <- data.frame(
+  x_start = as.Date(c("1900-01-01", "1901-01-01", "1902-01-01", "1903-01-01", "1904-01-01")),
+  x_end   = as.Date(c("1905-01-01", "1905-01-01", "1905-01-01", "1905-01-01", "1905-01-01")),
+  y_start = c(0, 0, 0, 0, 0),
+  y_end   = c(5, 4, 3, 2, 1)
+)
+
+# Step 2: Define the polygons with custom colors
+polygons <- data.frame(
+  group = c(1, 1, 1, 
+            2, 2, 2,
+            3, 3, 3,
+            4, 4, 4,
+            5, 5, 5,
+            6, 6, 6,
+            7, 7, 7,
+            8, 8, 8,
+            9, 9, 9,
+           10, 10,10),  # Group defines which vertices belong to the same polygon
+  x = as.Date(c("1900-01-01", "1901-01-01", "1901-01-01",    # erster polygon (orange)
+                "1901-01-01", "1901-01-01", "1902-01-01",    # zweiter polygon
+                "1901-01-01", "1902-01-01", "1902-01-01",    # dritter polygon
+                "1902-01-01", "1902-01-01", "1903-01-01",    # vierter polygon
+                "1902-01-01", "1903-01-01", "1903-01-01",    # fünfter polygon
+                "1903-01-01", "1903-01-01", "1904-01-01",    # sechster polygon
+                "1900-01-01", "1901-01-01", "1901-01-01",    # siebter 
+                "1900-01-01", "1900-01-01", "1901-01-01",    # achter
+                "1900-01-01", "1901-01-01", "1901-01-01",    # neunter
+                "1900-01-01", "1900-01-01", "1901-01-01")),  # zehnter
+  y = c(0, 0, 1, # erster
+        0, 1, 1, # zweiter
+        1, 1, 2, # dritter
+        1, 2, 2, # vierter
+        2, 2, 3, # fünfter
+        2, 3, 3, # sechter
+        3, 3, 4, # siebter
+        3, 4, 4, # achter
+        4, 4, 5, # neunter
+        4, 5, 5),  # zehnter
+  
+  fill_color <- c(
+    "#8A2BE2", "#8A2BE2", "#8A2BE2", 
+    "#008080", "#008080", "#008080",  # Purple and Teal
+    "#FF69B4", "#FF69B4", "#FF69B4", 
+    "#1E90FF", "#1E90FF", "#1E90FF",  # Pink and Blue
+    "#FFD700", "#FFD700", "#FFD700", 
+    "#228B22", "#228B22", "#228B22",  # Gold and Forest Green
+    "#DC143C", "#DC143C", "#DC143C", 
+    "#00FFFF", "#00FFFF", "#00FFFF",  # Crimson and Cyan
+    "#FF7F50", "#FF7F50", "#FF7F50", 
+    "#000080", "#000080", "#000080"  # Coral and Navy
+  )
+  
+)
+
+# Step 3: Plot the Lexis grid and the polygons
+ggplot() +
+  # Add horizontal lines
+  geom_segment(data = horizontal_lines, aes(x = x_start, y = y_start, xend = x_end, yend = y_end), color = "black") +
+  
+  # Add vertical lines
+  geom_segment(data = vertical_lines, aes(x = x_start, y = y_start, xend = x_end, yend = y_end), color = "black") +
+  
+  # Add diagonal lines
+  geom_segment(data = diagonal_lines, aes(x = x_start, y = y_start, xend = x_end, yend = y_end), color = "black") +
+  
+  # Add polygons with controlled colors
+  geom_polygon(data = polygons, aes(x = x, y = y, group = group, fill = fill_color), alpha = 0.7) +
+  
+  scale_fill_identity() +  # Use the colors defined in the 'fill_color' column
+  
+  # Customize the theme to remove grid lines and borders
+  theme_minimal() +
+  theme(panel.grid.major = element_blank(),  # Remove major grid lines
+        panel.grid.minor = element_blank(),  # Remove minor grid lines
+        panel.border = element_blank())+
+  
+  # Set axis limits (adjust as necessary)
+  xlim(as.Date("1900-01-01"), as.Date("1910-01-01")) +  # x-axis limits
+  ylim(0, 5)  # y-axis limits
+```
+
+## `Diagrama de Lexis` 
+<!-- Bloque 6-->
+```{r}
+#| echo: false
+
+library(dplyr)
+library(ggplot2)
+library(Epi)
+
+
+
+# Step 1: Stellen sie manuellen Lexis Gitternetzlinien beit horizontal, vertikal, and diagonal linienen
+
+# Horizontal linien (constant ages over time)
+horizontal_lines <- data.frame(
+  x_start = as.Date(c("1900-01-01", "1900-01-01", "1900-01-01", "1900-01-01", "1900-01-01","1900-01-01")),
+  x_end   = as.Date(c("1905-01-01", "1905-01-01", "1905-01-01", "1905-01-01", "1905-01-01","1905-01-01")),
+  y_start = c(0, 1, 2, 3, 4, 5),
+  y_end   = c(0, 1, 2, 3, 4, 5)
+)
+
+# Vertikal linnien (constant years)
+vertical_lines <- data.frame(
+  x_start = as.Date(c("1900-01-01", "1901-01-01", "1902-01-01", "1903-01-01", "1904-01-01", "1905-01-01"
+                      ,"1900-01-01","1900-01-01","1900-01-01","1900-01-01")),
+  x_end   = as.Date(c("1900-01-01", "1901-01-01", "1902-01-01", "1903-01-01", "1904-01-01", "1905-01-01"
+                      ,"1904-01-01","1903-01-01","1902-01-01","1901-01-01")),
+  y_start = c(0, 0, 0, 0, 0, 0,
+              1, 2, 3, 4),
+  y_end   = c(5, 5, 5, 5, 5, 5,
+              5, 5, 5, 5)
+)
+
+# Diagonal liniel (cohorts aging over time)
+diagonal_lines <- data.frame(
+  x_start = as.Date(c("1900-01-01", "1901-01-01", "1902-01-01", "1903-01-01", "1904-01-01")),
+  x_end   = as.Date(c("1905-01-01", "1905-01-01", "1905-01-01", "1905-01-01", "1905-01-01")),
+  y_start = c(0, 0, 0, 0, 0),
+  y_end   = c(5, 4, 3, 2, 1)
+)
+
+# Step 2: Define the polygons with custom colors
+polygons <- data.frame(
+  group = c(1, 1, 1, 
+            2, 2, 2,
+            3, 3, 3,
+            4, 4, 4,
+            5, 5, 5,
+            6, 6, 6,
+            7, 7, 7,
+            8, 8, 8,
+            9, 9, 9,
+           10, 10,10),  # Group defines which vertices belong to the same polygon
+  x = as.Date(c("1900-01-01", "1901-01-01", "1901-01-01",    # erster polygon (orange)
+                "1901-01-01", "1901-01-01", "1902-01-01",    # zweiter polygon
+                "1901-01-01", "1902-01-01", "1902-01-01",    # dritter polygon
+                "1902-01-01", "1902-01-01", "1903-01-01",    # vierter polygon
+                "1902-01-01", "1903-01-01", "1903-01-01",    # fünfter polygon
+                "1903-01-01", "1903-01-01", "1904-01-01",    # sechster polygon
+                "1903-01-01", "1904-01-01", "1904-01-01",    # siebter 
+                "1900-01-01", "1900-01-01", "1901-01-01",    # achter
+                "1900-01-01", "1901-01-01", "1901-01-01",    # neunter
+                "1900-01-01", "1900-01-01", "1901-01-01")),  # zehnter
+  y = c(0, 0, 1, # erster
+        0, 1, 1, # zweiter
+        1, 1, 2, # dritter
+        1, 2, 2, # vierter
+        2, 2, 3, # fünfter
+        2, 3, 3, # sechter
+        3, 3, 4, # siebter
+        3, 4, 4, # achter
+        4, 4, 5, # neunter
+        4, 5, 5),  # zehnter
+  
+  fill_color <- c(
+    "#8A2BE2", "#8A2BE2", "#8A2BE2", 
+    "#008080", "#008080", "#008080",  # Purple and Teal
+    "#FF69B4", "#FF69B4", "#FF69B4", 
+    "#1E90FF", "#1E90FF", "#1E90FF",  # Pink and Blue
+    "#FFD700", "#FFD700", "#FFD700", 
+    "#228B22", "#228B22", "#228B22",  # Gold and Forest Green
+    "#DC143C", "#DC143C", "#DC143C", 
+    "#00FFFF", "#00FFFF", "#00FFFF",  # Crimson and Cyan
+    "#FF7F50", "#FF7F50", "#FF7F50", 
+    "#000080", "#000080", "#000080"  # Coral and Navy
+  )
+  
+)
+
+# Step 3: Plot the Lexis grid and the polygons
+ggplot() +
+  # Add horizontal lines
+  geom_segment(data = horizontal_lines, aes(x = x_start, y = y_start, xend = x_end, yend = y_end), color = "black") +
+  
+  # Add vertical lines
+  geom_segment(data = vertical_lines, aes(x = x_start, y = y_start, xend = x_end, yend = y_end), color = "black") +
+  
+  # Add diagonal lines
+  geom_segment(data = diagonal_lines, aes(x = x_start, y = y_start, xend = x_end, yend = y_end), color = "black") +
+  
+  # Add polygons with controlled colors
+  geom_polygon(data = polygons, aes(x = x, y = y, group = group, fill = fill_color), alpha = 0.7) +
+  
+  scale_fill_identity() +  # Use the colors defined in the 'fill_color' column
+  
+  # Customize the theme to remove grid lines and borders
+  theme_minimal() +
+  theme(panel.grid.major = element_blank(),  # Remove major grid lines
+        panel.grid.minor = element_blank(),  # Remove minor grid lines
+        panel.border = element_blank())+
+  
+  # Set axis limits (adjust as necessary)
+  xlim(as.Date("1900-01-01"), as.Date("1910-01-01")) +  # x-axis limits
+  ylim(0, 5)  # y-axis limits
+```
+
+## `Diagrama de Lexis` 
+<!-- Bloque 7-->
+```{r}
+#| echo: false
+
+library(dplyr)
+library(ggplot2)
+library(Epi)
+
+
+
+# Step 1: Stellen sie manuellen Lexis Gitternetzlinien beit horizontal, vertikal, and diagonal linienen
+
+# Horizontal linien (constant ages over time)
+horizontal_lines <- data.frame(
+  x_start = as.Date(c("1900-01-01", "1900-01-01", "1900-01-01", "1900-01-01", "1900-01-01","1900-01-01")),
+  x_end   = as.Date(c("1905-01-01", "1905-01-01", "1905-01-01", "1905-01-01", "1905-01-01","1905-01-01")),
+  y_start = c(0, 1, 2, 3, 4, 5),
+  y_end   = c(0, 1, 2, 3, 4, 5)
+)
+
+# Vertikal linnien (constant years)
+vertical_lines <- data.frame(
+  x_start = as.Date(c("1900-01-01", "1901-01-01", "1902-01-01", "1903-01-01", "1904-01-01", "1905-01-01"
+                      ,"1900-01-01","1900-01-01","1900-01-01","1900-01-01")),
+  x_end   = as.Date(c("1900-01-01", "1901-01-01", "1902-01-01", "1903-01-01", "1904-01-01", "1905-01-01"
+                      ,"1904-01-01","1903-01-01","1902-01-01","1901-01-01")),
+  y_start = c(0, 0, 0, 0, 0, 0,
+              1, 2, 3, 4),
+  y_end   = c(5, 5, 5, 5, 5, 5,
+              5, 5, 5, 5)
+)
+
+# Diagonal liniel (cohorts aging over time)
+diagonal_lines <- data.frame(
+  x_start = as.Date(c("1900-01-01", "1901-01-01", "1902-01-01", "1903-01-01", "1904-01-01")),
+  x_end   = as.Date(c("1905-01-01", "1905-01-01", "1905-01-01", "1905-01-01", "1905-01-01")),
+  y_start = c(0, 0, 0, 0, 0),
+  y_end   = c(5, 4, 3, 2, 1)
+)
+
+# Step 2: Define the polygons with custom colors
+polygons <- data.frame(
+  group = c(1, 1, 1, 
+            2, 2, 2,
+            3, 3, 3,
+            4, 4, 4,
+            5, 5, 5,
+            6, 6, 6,
+            7, 7, 7,
+            8, 8, 8,
+            9, 9, 9,
+           10, 10,10),  # Group defines which vertices belong to the same polygon
+  x = as.Date(c("1900-01-01", "1901-01-01", "1901-01-01",    # erster polygon (orange)
+                "1901-01-01", "1901-01-01", "1902-01-01",    # zweiter polygon
+                "1901-01-01", "1902-01-01", "1902-01-01",    # dritter polygon
+                "1902-01-01", "1902-01-01", "1903-01-01",    # vierter polygon
+                "1902-01-01", "1903-01-01", "1903-01-01",    # fünfter polygon
+                "1903-01-01", "1903-01-01", "1904-01-01",    # sechster polygon
+                "1903-01-01", "1904-01-01", "1904-01-01",    # siebter 
+                "1904-01-01", "1904-01-01", "1905-01-01",    # achter
+                "1900-01-01", "1901-01-01", "1901-01-01",    # neunter
+                "1900-01-01", "1900-01-01", "1901-01-01")),  # zehnter
+  y = c(0, 0, 1, # erster
+        0, 1, 1, # zweiter
+        1, 1, 2, # dritter
+        1, 2, 2, # vierter
+        2, 2, 3, # fünfter
+        2, 3, 3, # sechter
+        3, 3, 4, # siebter
+        3, 4, 4, # achter
+        4, 4, 5, # neunter
+        4, 5, 5),  # zehnter
+  
+  fill_color <- c(
+    "#8A2BE2", "#8A2BE2", "#8A2BE2", 
+    "#008080", "#008080", "#008080",  # Purple and Teal
+    "#FF69B4", "#FF69B4", "#FF69B4", 
+    "#1E90FF", "#1E90FF", "#1E90FF",  # Pink and Blue
+    "#FFD700", "#FFD700", "#FFD700", 
+    "#228B22", "#228B22", "#228B22",  # Gold and Forest Green
+    "#DC143C", "#DC143C", "#DC143C", 
+    "#00FFFF", "#00FFFF", "#00FFFF",  # Crimson and Cyan
+    "#FF7F50", "#FF7F50", "#FF7F50", 
+    "#000080", "#000080", "#000080"  # Coral and Navy
+  )
+  
+)
+
+# Step 3: Plot the Lexis grid and the polygons
+ggplot() +
+  # Add horizontal lines
+  geom_segment(data = horizontal_lines, aes(x = x_start, y = y_start, xend = x_end, yend = y_end), color = "black") +
+  
+  # Add vertical lines
+  geom_segment(data = vertical_lines, aes(x = x_start, y = y_start, xend = x_end, yend = y_end), color = "black") +
+  
+  # Add diagonal lines
+  geom_segment(data = diagonal_lines, aes(x = x_start, y = y_start, xend = x_end, yend = y_end), color = "black") +
+  
+  # Add polygons with controlled colors
+  geom_polygon(data = polygons, aes(x = x, y = y, group = group, fill = fill_color), alpha = 0.7) +
+  
+  scale_fill_identity() +  # Use the colors defined in the 'fill_color' column
+  
+  # Customize the theme to remove grid lines and borders
+  theme_minimal() +
+  theme(panel.grid.major = element_blank(),  # Remove major grid lines
+        panel.grid.minor = element_blank(),  # Remove minor grid lines
+        panel.border = element_blank())+
+  
+  # Set axis limits (adjust as necessary)
+  xlim(as.Date("1900-01-01"), as.Date("1910-01-01")) +  # x-axis limits
+  ylim(0, 5)  # y-axis limits
+```
+
+## `Diagrama de Lexis` 
+<!-- Bloque 8-->
+```{r}
+#| echo: false
+
+library(dplyr)
+library(ggplot2)
+library(Epi)
+
+
+
+# Step 1: Stellen sie manuellen Lexis Gitternetzlinien beit horizontal, vertikal, and diagonal linienen
+
+# Horizontal linien (constant ages over time)
+horizontal_lines <- data.frame(
+  x_start = as.Date(c("1900-01-01", "1900-01-01", "1900-01-01", "1900-01-01", "1900-01-01","1900-01-01")),
+  x_end   = as.Date(c("1905-01-01", "1905-01-01", "1905-01-01", "1905-01-01", "1905-01-01","1905-01-01")),
+  y_start = c(0, 1, 2, 3, 4, 5),
+  y_end   = c(0, 1, 2, 3, 4, 5)
+)
+
+# Vertikal linnien (constant years)
+vertical_lines <- data.frame(
+  x_start = as.Date(c("1900-01-01", "1901-01-01", "1902-01-01", "1903-01-01", "1904-01-01", "1905-01-01"
+                      ,"1900-01-01","1900-01-01","1900-01-01","1900-01-01")),
+  x_end   = as.Date(c("1900-01-01", "1901-01-01", "1902-01-01", "1903-01-01", "1904-01-01", "1905-01-01"
+                      ,"1904-01-01","1903-01-01","1902-01-01","1901-01-01")),
+  y_start = c(0, 0, 0, 0, 0, 0,
+              1, 2, 3, 4),
+  y_end   = c(5, 5, 5, 5, 5, 5,
+              5, 5, 5, 5)
+)
+
+# Diagonal liniel (cohorts aging over time)
+diagonal_lines <- data.frame(
+  x_start = as.Date(c("1900-01-01", "1901-01-01", "1902-01-01", "1903-01-01", "1904-01-01")),
+  x_end   = as.Date(c("1905-01-01", "1905-01-01", "1905-01-01", "1905-01-01", "1905-01-01")),
+  y_start = c(0, 0, 0, 0, 0),
+  y_end   = c(5, 4, 3, 2, 1)
+)
+
+# Step 2: Define the polygons with custom colors
+polygons <- data.frame(
+  group = c(1, 1, 1, 
+            2, 2, 2,
+            3, 3, 3,
+            4, 4, 4,
+            5, 5, 5,
+            6, 6, 6,
+            7, 7, 7,
+            8, 8, 8,
+            9, 9, 9,
+           10, 10,10),  # Group defines which vertices belong to the same polygon
+  x = as.Date(c("1900-01-01", "1901-01-01", "1901-01-01",    # erster polygon (orange)
+                "1901-01-01", "1901-01-01", "1902-01-01",    # zweiter polygon
+                "1901-01-01", "1902-01-01", "1902-01-01",    # dritter polygon
+                "1902-01-01", "1902-01-01", "1903-01-01",    # vierter polygon
+                "1902-01-01", "1903-01-01", "1903-01-01",    # fünfter polygon
+                "1903-01-01", "1903-01-01", "1904-01-01",    # sechster polygon
+                "1903-01-01", "1904-01-01", "1904-01-01",    # siebter 
+                "1904-01-01", "1904-01-01", "1905-01-01",    # achter
+                "1904-01-01", "1905-01-01", "1905-01-01",    # neunter
+                "1900-01-01", "1900-01-01", "1901-01-01")),  # zehnter
+  y = c(0, 0, 1, # erster
+        0, 1, 1, # zweiter
+        1, 1, 2, # dritter
+        1, 2, 2, # vierter
+        2, 2, 3, # fünfter
+        2, 3, 3, # sechter
+        3, 3, 4, # siebter
+        3, 4, 4, # achter
+        4, 4, 5, # neunter
+        4, 5, 5),  # zehnter
+  
+  fill_color <- c(
+    "#8A2BE2", "#8A2BE2", "#8A2BE2", 
+    "#008080", "#008080", "#008080",  # Purple and Teal
+    "#FF69B4", "#FF69B4", "#FF69B4", 
+    "#1E90FF", "#1E90FF", "#1E90FF",  # Pink and Blue
+    "#FFD700", "#FFD700", "#FFD700", 
+    "#228B22", "#228B22", "#228B22",  # Gold and Forest Green
+    "#DC143C", "#DC143C", "#DC143C", 
+    "#00FFFF", "#00FFFF", "#00FFFF",  # Crimson and Cyan
+    "#FF7F50", "#FF7F50", "#FF7F50", 
+    "#000080", "#000080", "#000080"  # Coral and Navy
+  )
+  
+)
+
+# Step 3: Plot the Lexis grid and the polygons
+ggplot() +
+  # Add horizontal lines
+  geom_segment(data = horizontal_lines, aes(x = x_start, y = y_start, xend = x_end, yend = y_end), color = "black") +
+  
+  # Add vertical lines
+  geom_segment(data = vertical_lines, aes(x = x_start, y = y_start, xend = x_end, yend = y_end), color = "black") +
+  
+  # Add diagonal lines
+  geom_segment(data = diagonal_lines, aes(x = x_start, y = y_start, xend = x_end, yend = y_end), color = "black") +
+  
+  # Add polygons with controlled colors
+  geom_polygon(data = polygons, aes(x = x, y = y, group = group, fill = fill_color), alpha = 0.7) +
+  
+  scale_fill_identity() +  # Use the colors defined in the 'fill_color' column
+  
+  # Customize the theme to remove grid lines and borders
+  theme_minimal() +
+  theme(panel.grid.major = element_blank(),  # Remove major grid lines
+        panel.grid.minor = element_blank(),  # Remove minor grid lines
+        panel.border = element_blank())+
+  
+  # Set axis limits (adjust as necessary)
+  xlim(as.Date("1900-01-01"), as.Date("1910-01-01")) +  # x-axis limits
+  ylim(0, 5)  # y-axis limits
+```
+
+## `Diagrama de Lexis` 
+<!-- Bloque 9-->
+```{r}
+#| echo: false
+
+library(dplyr)
+library(ggplot2)
+library(Epi)
+
+
+
+# Step 1: Stellen sie manuellen Lexis Gitternetzlinien beit horizontal, vertikal, and diagonal linienen
+
+# Horizontal linien (constant ages over time)
+horizontal_lines <- data.frame(
+  x_start = as.Date(c("1900-01-01", "1900-01-01", "1900-01-01", "1900-01-01", "1900-01-01","1900-01-01")),
+  x_end   = as.Date(c("1905-01-01", "1905-01-01", "1905-01-01", "1905-01-01", "1905-01-01","1905-01-01")),
+  y_start = c(0, 1, 2, 3, 4, 5),
+  y_end   = c(0, 1, 2, 3, 4, 5)
+)
+
+# Vertikal linnien (constant years)
+vertical_lines <- data.frame(
+  x_start = as.Date(c("1900-01-01", "1901-01-01", "1902-01-01", "1903-01-01", "1904-01-01", "1905-01-01"
+                      ,"1900-01-01","1900-01-01","1900-01-01","1900-01-01")),
+  x_end   = as.Date(c("1900-01-01", "1901-01-01", "1902-01-01", "1903-01-01", "1904-01-01", "1905-01-01"
+                      ,"1904-01-01","1903-01-01","1902-01-01","1901-01-01")),
+  y_start = c(0, 0, 0, 0, 0, 0,
+              1, 2, 3, 4),
+  y_end   = c(5, 5, 5, 5, 5, 5,
+              5, 5, 5, 5)
+)
+
+# Diagonal liniel (cohorts aging over time)
+diagonal_lines <- data.frame(
+  x_start = as.Date(c("1900-01-01", "1901-01-01", "1902-01-01", "1903-01-01", "1904-01-01")),
+  x_end   = as.Date(c("1905-01-01", "1905-01-01", "1905-01-01", "1905-01-01", "1905-01-01")),
+  y_start = c(0, 0, 0, 0, 0),
+  y_end   = c(5, 4, 3, 2, 1)
+)
+
+# Step 2: Define the polygons with custom colors
+polygons <- data.frame(
+  group = c(1, 1, 1, 
+            2, 2, 2,
+            3, 3, 3,
+            4, 4, 4,
+            5, 5, 5,
+            6, 6, 6,
+            7, 7, 7,
+            8, 8, 8,
+            9, 9, 9,
+           10, 10,10),  # Group defines which vertices belong to the same polygon
+  x = as.Date(c("1900-01-01", "1901-01-01", "1901-01-01",    # erster polygon (orange)
+                "1901-01-01", "1901-01-01", "1902-01-01",    # zweiter polygon
+                "1901-01-01", "1902-01-01", "1902-01-01",    # dritter polygon
+                "1902-01-01", "1902-01-01", "1903-01-01",    # vierter polygon
+                "1902-01-01", "1903-01-01", "1903-01-01",    # fünfter polygon
+                "1903-01-01", "1903-01-01", "1904-01-01",    # sechster polygon
+                "1903-01-01", "1904-01-01", "1904-01-01",    # siebter 
+                "1904-01-01", "1904-01-01", "1905-01-01",    # achter
+                "1904-01-01", "1905-01-01", "1905-01-01",    # neunter
+                "1905-01-01", "190-01-01", "1906-01-01")),  # zehnter
+  y = c(0, 0, 1, # erster
+        0, 1, 1, # zweiter
+        1, 1, 2, # dritter
+        1, 2, 2, # vierter
+        2, 2, 3, # fünfter
+        2, 3, 3, # sechter
+        3, 3, 4, # siebter
+        3, 4, 4, # achter
+        4, 4, 5, # neunter
+        4, 5, 5),  # zehnter
+  
+  fill_color <- c(
+    "#8A2BE2", "#8A2BE2", "#8A2BE2", 
+    "#008080", "#008080", "#008080",  # Purple and Teal
+    "#FF69B4", "#FF69B4", "#FF69B4", 
+    "#1E90FF", "#1E90FF", "#1E90FF",  # Pink and Blue
+    "#FFD700", "#FFD700", "#FFD700", 
+    "#228B22", "#228B22", "#228B22",  # Gold and Forest Green
+    "#DC143C", "#DC143C", "#DC143C", 
+    "#00FFFF", "#00FFFF", "#00FFFF",  # Crimson and Cyan
+    "#FF7F50", "#FF7F50", "#FF7F50", 
+    "#000080", "#000080", "#000080"  # Coral and Navy
+  )
+  
+)
+
+# Step 3: Plot the Lexis grid and the polygons
+ggplot() +
+  # Add horizontal lines
+  geom_segment(data = horizontal_lines, aes(x = x_start, y = y_start, xend = x_end, yend = y_end), color = "black") +
+  
+  # Add vertical lines
+  geom_segment(data = vertical_lines, aes(x = x_start, y = y_start, xend = x_end, yend = y_end), color = "black") +
+  
+  # Add diagonal lines
+  geom_segment(data = diagonal_lines, aes(x = x_start, y = y_start, xend = x_end, yend = y_end), color = "black") +
+  
+  # Add polygons with controlled colors
+  geom_polygon(data = polygons, aes(x = x, y = y, group = group, fill = fill_color), alpha = 0.7) +
+  
+  scale_fill_identity() +  # Use the colors defined in the 'fill_color' column
+  
+  # Customize the theme to remove grid lines and borders
+  theme_minimal() +
+  theme(panel.grid.major = element_blank(),  # Remove major grid lines
+        panel.grid.minor = element_blank(),  # Remove minor grid lines
+        panel.border = element_blank())+
+  
+  # Set axis limits (adjust as necessary)
+  xlim(as.Date("1900-01-01"), as.Date("1910-01-01")) +  # x-axis limits
+  ylim(0, 5)  # y-axis limits
+```
+## `Diagrama de Lexis-Probabilidades cohorte por edad` 
 
 ::: {style="text-align: center; font-size: 2em; margin-top:200px;"}
 ${}_1q_0^{\text{C1980}} = \frac{{}_1D_0^{\text{C1980}}}{B_0^{\text{C1980}}}$
