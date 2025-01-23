@@ -1,0 +1,688 @@
+---
+lightbox: auto
+format: 
+  revealjs:
+    embed-resources: true
+    code-fold: true
+    math: mathjax
+    css: CSS/custom.css
+    slide-number: true
+    transition: fade
+    incremental: true
+    center-title-slide: false
+    backgroundTransition: fade
+highlight-style: a11y
+code-link: true
+height: 1080
+width: 1600
+execute: 
+  eval: true
+---
+
+
+::: {style="text-align: center; margin-top: 100px;"}
+<span style="font-size: 2em; margin-top: 0.5em;">
+Dr. Víctor Manuel García Guerrero
+</span>
+
+<span style="font-size: 1.5em; text-transform: lowercase;">
+vmgarcia@colmex.mx
+</span>
+
+![](Input/LogoCEDUA.png){.absolute top="585" left="1200" width="450"} 
+![](Input/colmex.png){.absolute top="610" left="600" width="450"} 
+![](Input/logo_colmex.png){.absolute top="600" left="70" width="450"}
+:::
+
+## Índice {#toc}
+
+- [Proceso de decremento múltiple](#Proceso-de-decremento-múltiple)
+- [Funciones de decremento de múltiple](#Funciones-de-decremento-de-múltiple)
+- [Tabla de mortalidad](#Tabla-de-mortalidad)
+- [Matemáticas asociadas](#Matemáticas-asociadas)
+   - [Fórmula de Greville-Chang](#Fórmula-de-Greville-Chang)
+   - [Fuerza de mortalidad-de-i](#Fuerza-de-mortalidad-de-i) 
+   - [Probabilidad de supervivencia](#Probabilidad-de-supervivencia)
+   - [Tablas-de-causa-eliminada](#Tablas-de-causa-eliminada)
+
+
+# Proceso de decremento múltiple {#Proceso-de-decremento-múltiple}
+Un proceso de decremento múltiple es uno en el que se tiene mas de un modo de salir de un estado definido. En ocasiones, estos son llamados como **riesgos de competencia**.
+    
+- **Análisis de fertilidad**: cuando se considera que las personas están expuestas al riesgo de embarazo y a la interrupción del uso de anticonceptivos.
+    
+- **Migración**: cuando los individuos están expuestos al riesgo de trasladarse a diferentes lugares.
+    
+- **Nupcialidad**: cuando las personas casadas están expuestas a los riesgos de divorcio y viudez.
+
+
+# Funciones de decremento de múltiple {#Funciones-de-decremento-de-múltiple}
+
+::: {.callout-tip title="Notación"}
+- ${}_nd^i_x$: número de decrementos por la causa **i** entre las edades **x** y **x+n**
+- ${}_nq^i_x$: probabilidad de que ocurra el decremento por la causa **i** entre las edades **x** y **x+n**.
+- ${}_nm^i_x$: tasa específica de decremento por la causa **i** entre las edades **x** y **x+n**.
+- $l^i_x$: número de personas que alcanzan la edad **x** y que eventualmente sucumben por la causa **i**
+:::
+
+- ${}_nq^i_x = \frac{{}_nd_x^i}{l_x}$
+
+- ${}_nm^i_x = \frac{{}_nd_x^i}{{}_nL_x}$
+
+- $l_x^i = \sum_{a=x}^{\omega^+} {}_nd_a^i$
+
+# Funciones de decremento de múltiple
+
+- ${}_nd_x=\sum_{i=1}^N {}_nd_x^i$
+
+- ${}_nm_x = \sum_{i=1}^N \frac{{}_nd_x^i}{{}_nL_x}=\frac{\sum_{i=1}^N {}_nd_x^i}{{}_nL_x}=\frac{{}_nd_x}{{}_nL_x}$
+
+- ${}_nq_x = \frac{{}_nd_x}{l_x}=\sum_{i=1}^N \frac{{}_nd_x^i}{l_x}=\sum_{i=1}^N{}_nq_x^i$
+
+- $\sum_{i=1}^N l_x^i = \sum_{i=1}^N \sum_{a=x}^{\omega^+} {}_nd_a^i=\sum_{a=x}^{\omega^+} \sum_{i=1}^N {}_nd_a^i = \sum_{a=x}^{\omega^+} {}_nd_a = l_x$
+
+
+# Tabla de mortalidad {#Tabla-de-mortalidad} 
+<!-- Bloque 1-->
+:::: {.columns}
+
+::: {.column width="40%"}
+```{r}
+source("R/mortality_chart.R")
+mortality_chart(list(list(type = "D", age = 0.07,color="red")))
+```
+:::
+
+::: {.column width="60%"}
+
+|$x$|$l_x$|${}_nd_x^D$|${}_nd_x^M$|${}_nd_x$|${}_nq_x^D$|${}_nq_x^M$|${}_nq_x$|$l_x^D$|$l_x^M$|
+|-------|---------|-------------|-------------|-----------|-------------|-------------|-----------|-----------|-----------|-----------|
+| 0 | 10 | 1 | 0 | 1 | 1/10| 0  | 1/10 | 4     | 6   | 
+| | | |  |   |   |   |     |    |      |       |
+| | | |  |   |   |   |     |    |      |       |
+| | | |  |   |   |   |     |    |      |       |
+| | | |  |   |   |   |     |    |      |       |
+| | | |  |   |   |   |     |    |      |       |
+| | | |  |   |   |   |     |    |      |       |
+| | | |  |   |   |   |     |    |      |       |
+| | | |  |   |   |   |     |    |      |       |
+:::
+
+::::
+
+#  {auto-animate=true}
+<!-- Bloque 2-->
+:::: {.columns}
+
+::: {.column width="40%"}
+```{r}
+source("R/mortality_chart.R")
+mortality_chart(list(list(type = "D", age = 1.22,color = "red")))
+```
+:::
+
+::: {.column width="60%"}
+
+|$x$|$l_x$|${}_nd_x^D$|${}_nd_x^M$|${}_nd_x$|${}_nq_x^D$|${}_nq_x^M$|${}_nq_x$|$l_x^D$|$l_x^M$
+|-------|---------|-------------|-------------|-----------|-------------|-------------|-----------|-----------|-----------|-----------|
+| 0 | 10 | 1 | 0 | 1 | 1/10| 0  | 1/10 | 4  | 6 |
+| 1 | 9  |  1|  0|1  |  1/9| 0  |  1/9 | 3  | 6 | 
+| | | |  |   |   |   |     |    |      |    |
+| | | |  |   |   |   |     |    |      |    |
+| | | |  |   |   |   |     |    |      |    |
+| | | |  |   |   |   |     |    |      |    |
+| | | |  |   |   |   |     |    |      |    |
+| | | |  |   |   |   |     |    |      |    |
+| | | |  |   |   |   |     |    |      |    |
+
+:::
+
+::::
+
+#  {auto-animate=true}
+<!-- Bloque 3-->
+:::: {.columns}
+
+::: {.column width="40%"}
+```{r}
+source("R/mortality_chart.R")
+mortality_chart(list(list(type = "D", age = 1,color = "white")))
+```
+:::
+
+::: {.column width="60%"}
+
+|$x$|$l_x$|${}_nd_x^D$|${}_nd_x^M$|${}_nd_x$|${}_nq_x^D$|${}_nq_x^M$|${}_nq_x$|$l_x^D$|$l_x^M$
+|-------|---------|-------------|-------------|-----------|-------------|-------------|-----------|-----------|-----------|-----------|
+| 0 | 10 | 1 | 0 | 1 | 1/10 | 0  | 1/10 | 4  | 6 | 
+| 1 |  9 | 1 | 0 | 1 |  1/9 | 0  |  1/9 | 3  | 6 | 
+| 5 |  8 | 0 | 0 | 0 |  0   | 0  |  0   | 3  | 6 | 
+| | | |  |   |   |   |      |    |      |    |
+| | | |  |   |   |   |      |    |      |    |
+| | | |  |   |   |   |      |    |      |    |
+| | | |  |   |   |   |      |    |      |    |
+| | | |  |   |   |   |      |    |      |    |
+| | | |  |   |   |   |      |    |      |    |
+
+:::
+
+::::
+
+#  {auto-animate=true}
+<!-- Bloque 4-->
+:::: {.columns}
+
+::: {.column width="40%"}
+```{r}
+source("R/mortality_chart.R")
+mortality_chart(list(
+  list(type = "M", age = 17.22, color = "blue"),
+  list(type = "M", age = 17.62, color = "blue"),
+  list(type = "M", age = 19.63, color = "blue"),
+  list(type = "D", age = 16.41, color = "red")
+))
+```
+:::
+
+::: {.column width="60%"}
+
+|$x$|$l_x$|${}_nd_x^D$|${}_nd_x^M$|${}_nd_x$|${}_nq_x^D$|${}_nq_x^M$|${}_nq_x$|$l_x^D$|$l_x^M$
+|-------|---------|-------------|-------------|-----------|-------------|-------------|-----------|-----------|-----------|-----------|
+| 0 | 10 | 1 | 0 | 1 | 1/10| 0  | 1/10 | 4  | 6 | 
+| 1 |  9 | 1 | 0 | 1 | 1/9 | 0  |  1/9 | 3  | 6 | 
+| 5 |  8 | 0 | 0 | 0 |  0  | 0  |  0   | 3  | 6 | 
+| 10|  8 | 1 | 3 | 4 | 1/8 | 3/8| 1/2  | 2  | 6 |    
+| | | |  |   |   |   |     |    |      |    |
+| | | |  |   |   |   |     |    |      |    |
+| | | |  |   |   |   |     |    |      |    |
+| | | |  |   |   |   |     |    |      |    |
+| | | |  |   |   |   |     |    |      |    |
+
+:::
+
+::::
+
+#  {auto-animate=true}
+<!-- Bloque 5-->
+:::: {.columns}
+
+::: {.column width="40%"}
+```{r}
+source("R/mortality_chart.R")
+mortality_chart(list(
+  list(type = "M", age = 22.47, color = "blue"),
+  list(type = "M", age = 23.47, color = "blue"),
+  list(type = "M", age = 27.42, color = "blue")
+))
+```
+:::
+
+::: {.column width="60%"}
+
+|$x$|$l_x$|${}_nd_x^D$|${}_nd_x^M$|${}_nd_x$|${}_nq_x^D$|${}_nq_x^M$|${}_nq_x$|$l_x^D$|$l_x^M$
+|-------|---------|-------------|-------------|-----------|-------------|-------------|-----------|-----------|-----------|-----------|
+| 0 | 10| 1 | 0 | 1 | 1/10| 0   | 1/10 | 4  | 6 | 
+| 1 | 9 | 1 | 0 | 1 | 1/9 | 0   |  1/9 | 3  | 6 | 
+| 5 | 8 | 0 | 0 | 0 |  0  | 0   |  0   | 3  | 6 | 
+| 10| 8 | 1 | 3 | 4 | 1/8 | 3/8 | 1/2  | 2  | 6 |    
+| 20| 4 | 0 | 3 | 3 | 0   | 3/4 |  3/4 | 1  | 3 |    |
+|   |   |   |   |   |     |     |      |    |   |    |
+|   |   |   |   |   |     |     |      |    |   |    |
+|   |   |   |   |   |     |     |      |    |   |    |
+|   |   |   |   |   |     |     |      |    |   |    |
+
+:::
+
+::::
+
+#  {auto-animate=true}
+<!-- Bloque 6-->
+:::: {.columns}
+
+::: {.column width="40%"}
+```{r}
+source("R/mortality_chart.R")
+mortality_chart(list(list(type = "M", age = 1, color = "blue")))
+```
+:::
+
+::: {.column width="60%"}
+
+|$x$|$l_x$|${}_nd_x^D$|${}_nd_x^M$|${}_nd_x$|${}_nq_x^D$|${}_nq_x^M$|${}_nq_x$|$l_x^D$|$l_x^M$
+|-------|---------|-------------|-------------|-----------|-------------|-------------|-----------|-----------|-----------|-----------|
+| 0 | 10| 1 | 0 | 1 | 1/10| 0   | 1/10 | 4  | 6 | 
+| 1 | 9 | 1 | 0 | 1 | 1/9 | 0   |  1/9 | 3  | 6 | 
+| 5 | 8 | 0 | 0 | 0 |  0  | 0   |  0   | 3  | 6 | 
+| 10| 8 | 1 | 3 | 4 | 1/8 | 3/8 | 1/2  | 2  | 6 |    
+| 20| 4 | 0 | 3 | 3 |  0  | 3/4 |  3/4 | 1  | 3 |    
+| 30| 1 | 0 | 0 | 0 |  0  | 0   |  0   | 1  | 0 |    
+| 40| 1 | 0 | 0 | 0 |  0  | 0   |  0   | 1  | 0 |    
+|   |   |   |   |   |     |     |      |    |   |    
+|   |   |   |   |   |     |     |      |    |   |    
+
+:::
+
+::::
+
+#  {auto-animate=true}
+<!-- Bloque 7-->
+:::: {.columns}
+
+::: {.column width="40%"}
+```{r}
+source("R/mortality_chart.R")
+mortality_chart(list(list(type = "D", age = 1, color = "red")))
+```
+:::
+
+::: {.column width="60%"}
+
+|$x$|$l_x$|${}_nd_x^D$|${}_nd_x^M$|${}_nd_x$|${}_nq_x^D$|${}_nq_x^M$|${}_nq_x$|$l_x^D$|$l_x^M$|
+  |-------|---------|-------------|-------------|-----------|-------------|-------------|-----------|-----------|-----------|-----------|
+  | 0 | 10 | 1  | 0 | 1 | 1/10| 0     | 1/10  | 4   | 6   | 
+  | 1 | 9  | 1  | 0 | 1 | 1/9 | 0     | 1/9   | 3   | 6   | 
+  | 5 | 8  | 0  | 0 | 0 | 0   | 0     | 0     | 2   | 6   | 
+  | 10| 8  | 1  | 3 | 4 | 1/8 | 3/8   | 4/8   | 2   | 6   | 
+  | 20| 4  | 0  | 3 | 3 | 0   | 3/4   | 3/4   | 1   | 3   | 
+  | 30| 1  | 0  | 0 | 0 | 0   | 0     | 0     | 1   | 0   | 
+  | 40| 1  | 0  | 0 | 0 | 0   | 0     | 0     | 1   | 0   | 
+  | 50| 1  | 1  | 0 | 1 | 1/1 | 0     | 1/1   | 1   | 0   | 
+  | 60| 0  | -  | - | - | -   | -     | -     | 0   | 0   |    
+[Índice](#toc)
+:::
+
+::::
+
+# Matemáticas asociadas {#Fórmula-de-Greville-Chang}
+<!--Bloque 1-->
+**`Fórmula de Greville-Chang`** 
+
+${}_nq^i _x = \frac{n.{}_nm^i_x}{1+(n-{}_na_x){}_nm_x}$
+
+::: {.callout-note title="Nota"}
+Los valores de ${}_nm_x$ y ${}_na_x$ en el denominador no son específicos de la causa  i , sino que son valores correspondientes a todas las causas de disminución combinadas.
+:::
+
+
+# Matemáticas asociadas
+
+
+$\require{cancel}$ <!--activa el paquete para cancelar-->
+
+::: {style="text-align: center; font-size: 1.5em; margin-top:10px;"}
+
+::: {.fragment}
+   $\frac{{}_nq^i _x}{{}_nq _x}=         \frac{\frac{n.{}_nm^i_x}{1+(n-{}_na_x){}_nm_x}}{\frac{n.{}_nm_x}{1+(n-{}_na_x){}_nm_x}}$
+   
+:::
+   
+::: { .fragment}
+   $=\frac{\frac{n.{}_nm^i_x}{\cancel{1+(n-{}_na_x){}_nm_x}}}{\frac{n.{}_nm_x}{\cancel{1+(n-{}_na_x){}_nm_x}}}$
+   
+:::
+
+::: { .fragment}
+   $=\frac{{}_nm^i_x}{{}_nm_x}$
+   
+:::
+
+::: { .fragment}
+   $=\frac{\frac{{}_ad^i_x}{{}_nL_x}}{\frac{{}_ad_x}{{}_nL_x}}$
+   
+:::
+
+:::
+
+# Matemáticas asociadas {autoanimate="true"}
+
+::: {style="text-align: center; font-size: 1.5em; margin-top:10px;"}
+
+::: { .fragment}
+   $=\frac{\frac{{}_ad^i_x}{\cancel{{}_nL_x}}}{\frac{{}_ad_x}{\cancel{{}_nL_x}}}$
+   
+:::
+::: { .fragment}
+   $=\frac{{}_nd^i_x}{{}_nd_x}$
+   
+:::
+::: { .fragment}
+   $\approx\frac{{}_nD^i_x}{{}_nD_x}$
+   
+:::
+
+::: {.callout-note title="Nota"}
+
+${}_nD^i_x$ Defunciones observadas de las causa i
+
+::: 
+
+:::
+
+# Matemáticas asociadas {autoanimate="true"}
+<!--bloque 2-->
+::: {style="text-align: center; font-size: 1.5em; margin-top:10px;"}
+
+
+   $=\frac{\frac{{}_ad^i_x}{\cancel{{}_nL_x}}}{\frac{{}_ad_x}{\cancel{{}_nL_x}}}$
+   
+
+   $=\frac{{}_nd^i_x}{{}_nd_x}$
+   
+
+   $\approx\frac{{}_nD^i_x}{{}_nD_x}$
+   
+
+
+$\color{green}{\Rightarrow {}_nq^i_x={}_nq_x\frac{{}_nD^i_x}{{}_nD_x}}$
+
+:::
+[Índice](#toc)
+
+
+
+
+# Matemáticas asociadas {#Fuerza-de-mortalidad-de-i} 
+**`Fuerza de mortalidad de i`** 
+
+::: {style="text-align: center; font-size: 1.5em; margin-top:10px;"}
+$\mu(x)=\displaystyle\lim_{n\to 0}{}_nm_x$
+
+$\mu^i(x)=\displaystyle\lim_{n\to 0}{}_nm^i_x$
+
+::: { .fragment}
+   ${}_nm_x=\color{red}{\displaystyle\sum_{i=1}^N {}_nm^i_x}$
+   
+:::
+::: {.callout-note title="Aditividad de los limites"}
+
+$\displaystyle\lim_{n\to0}(a_n+b_n)=\displaystyle\lim_{n\to0}a_n+\displaystyle\lim_{n\to0}b_n$ 
+
+$N$ es el número de decrementos
+:::
+:::
+[Índice](#toc)
+
+# Matemáticas asociadas {#Probabilidad-de-supervivencia}
+<!--Bloque 1-->
+**`Probabilidad de supervivencia`**  
+
+::: {style="text-align: center; font-size: 1.5em; margin-top:10px;"}
+::: {.fragment}
+ ${}_np_x = \frac{l(x+n)}{l(x)}=\displaystyle\frac{l(y)e^{-\int_{a}^{x+n}\mu(y)dy}}{l(y)e^{-\int_{a}^{x}\mu(y)dy}}$
+   
+:::
+::: {.fragment}
+ $=\displaystyle\frac{e^{-\int_{a}^{x+n}\mu(y)dy}}{e^{-\int_{a}^{x}\mu(y)dy}}$
+   
+:::
+:::
+
+# Matemáticas asociadas {auto-animate="true"}
+<!--Bloque 2-->
+ 
+::: {style="text-align: center; font-size: 1.5em; margin-top:10px;"}
+
+ ${}_np_x = \frac{l(x+n)}{l(x)}=\displaystyle\frac{l(y)e^{-\int_{a}^{x+n}\mu(y)dy}}{l(y)e^{-\int_{a}^{x}\mu(y)dy}}$
+   
+ $=\displaystyle\frac{e^{-\int_{a}^{x+n}\mu(y)dy}}{e^{-\int_{a}^{x}\mu(y)dy}}$
+   
+ $=\color{red}{\displaystyle e^{-\int_{x}^{x+n}\mu(y)dy}}$
+
+:::
+
+::: {.callout-warning title="El diablo está en los detalles"}
+
+- Si $a\leq c\leq b \Rightarrow \int_{a}^bf(x)dx=\int_{a}^cf(x)dx+\int_{c}^bf(x)dx$;       y además  $e^{x+y}=e^xe^y$ 
+
+::: {style="text-align: center; font-size: 2em; margin-top:10px;"}
+
+- $\frac{e^{-\int_{a}^{x+n}\mu(y)dy}}{e^{-\int_{a}^{x}\mu(y)dy}}= \frac{e^{-\left(\int_{a}^{x}\mu(y)dy+\int_{x}^{x+n}\mu(y)dy\right)}}{e^{-\int_{a}^{x}\mu(y)dy}}=\frac{e^{-\int_{a}^{x}\mu(y)dy}e^{\int_{x}^{x+n}\mu(y)dy}}{e^{-\int_{a}^{x}\mu(y)dy}}=e^{\int_x^{x+n}\mu(y)dy}$
+
+:::
+:::
+
+# Matemáticas asociadas {auto-animate="true"}
+<!--Bloque 3-->
+::: {style="text-align: center; font-size: 1.5em; margin-top:10px;"}
+
+ ${}_np_x = \frac{l(x+n)}{l(x)}=\displaystyle\frac{l(y)e^{-\int_{a}^{x+n}\mu(y)dy}}{l(y)e^{-\int_{a}^{x}\mu(y)dy}}$
+   
+ $=\displaystyle\frac{e^{-\int_{a}^{x+n}\mu(y)dy}}{e^{-\int_{a}^{x}\mu(y)dy}}$
+   
+ $= e^{-\int_{x}^{x+n}\mu(y)dy}$
+ 
+ $= e^{-\displaystyle\int_{x}^{x+n}\displaystyle\sum_{i=i}^N\mu^i(y)dy}$
+ 
+::: {.fragment}
+ $= e^{-\displaystyle\sum_{i=i}^N\int_{x}^{x+n}\displaystyle\mu^i(y)dy}$
+ 
+:::
+:::
+
+# Matemáticas asociadas {auto-animate="true"}
+<!--Bloque 5-->
+::: {style="text-align: center; font-size: 1.5em; margin-top:10px;"}
+ $\color{red}{= e^{-\displaystyle\sum_{i=i}^N\int_{x}^{x+n}\displaystyle\mu^i(y)dy}}$
+ 
+:::
+
+::: {.callout-warning title="El diablo está en los detalles"}
+- **Aditividad de la integral:** si $f(x)+g(x)\Rightarrow \int_a^b[f(x)+g(x)]dx=\int_a^bf(x)dx+\int_a^bg(x)dx$
+
+- $\displaystyle\sum_{i=i}^N f_i(x)= f_1(x)+f_2(x)+\dots+f_N(x)$
+:::
+
+# Matemáticas asociadas {auto-animate="true"}
+<!--Bloque 5-->
+::: {style="text-align: center; font-size: 1.5em; margin-top:10px;"}
+ $= e^{-\displaystyle\sum_{i=i}^N\int_{x}^{x+n}\displaystyle\mu^i(y)dy}$
+ 
+::: {.fragment}
+ $= \displaystyle\prod_{i=1}^N e^{\displaystyle\int_{x}^{x+n}\displaystyle\mu^i(y)dy}$
+ 
+:::
+:::
+::: {.callout-warning title="El diablo está en los detalles"}
+$\displaystyle\prod_{i=1}^N e^{f_i(x)}=e^{f_1(x)}e^{f_2(x)}\dots e^{f_N(x)}$
+:::
+
+# Matemáticas asociadas {auto-animate="true"}
+<!--Bloque 6-->
+::: {style="text-align: center; font-size: 1.5em; margin-top:10px;"}
+ $= e^{-\displaystyle\sum_{i=i}^N\int_{x}^{x+n}\displaystyle\mu^i(y)dy}$
+ 
+ $= \displaystyle\prod_{i=1}^N e^{\displaystyle\int_{x}^{x+n}\displaystyle\mu^i(y)dy}$
+ 
+ $= \displaystyle\prod_{i=1}^N {}_n^*p^i_x$
+
+:::
+[Índice](#toc)
+
+ 
+# Matemáticas asociadas {#Tablas-de-causa-eliminada} 
+<!--bloque1-->
+**Tablas de causa eliminada**
+
+::: {style="text-align: center; font-size: 1.5em; margin-top:10px;"}
+
+:::{.fragment}
+${}_nd_x = l(x) \int_x^{x+n} e^{-\int_x^a \mu(y) \, dy} \, \mu(a) \, da$
+
+:::
+
+<br>
+
+:::{.fragment}
+${}_n^* d_x^i = {}^* l^i(x) \int_x^{x+n} e^{-\int_x^a \mu^i(y) \, dy} \, \mu^i(a) \, da$
+
+:::
+
+<br>
+
+:::{.fragment}
+${}_nd_x^i = l(x) \int_x^{x+n} e^{-\int_x^a \mu(y) \, dy} \, \mu^i(a) \, da$
+
+:::
+
+<br>
+
+
+:::
+
+::: {.callout-note title="Nota"}
+${}^*f^i$ función de causa eliminada por la causa **i**
+:::
+
+# Matemáticas asociadas {auto-animate="true"}
+<!--bloque2-->
+
+::: {style="text-align: center; font-size: 1.5em; margin-top:10px;"}
+
+${}^*_nm^i_x=\frac{{}^*_nd^i_x}{{}^*_nL^i_x}\,\,\,$   ${}_nm^i_x=\frac{{}_nd^i_x}{{}_nL^i_x}$
+
+
+<br>
+
+:::{.fragment}
+${}_nm_x^i = \frac{\int_x^{x+n} e^{-\int_x^a \mu(y) \, dy} \, \mu^i(a) \, da}{\int_x^{x+n} e^{-\int_x^a \mu(y) \, dy} \, da}$
+
+:::
+
+<br>
+
+:::{.fragment}
+${}_n^* m_x^i = \frac{\int_x^{x+n} e^{-\int_x^a \mu^i(y) \, dy} \, \mu^i(a) \, da}{\int_x^{x+n} e^{-\int_x^a \mu^i(y) \, dy} \, da}$
+
+:::
+
+
+:::
+
+# Matemáticas asociadas 
+<!--bloque3-->
+
+::: {style="text-align: center; font-size: 1.5em; margin-top:10px;"}
+
+:::{.fragment}
+$\mu^i(x)=R^i\mu(x)$
+
+:::
+
+<br>
+
+:::{.fragment}
+$\mu(x)=\displaystyle\sum_{i=1}^N \mu^i(x)=\sum_{i=1}^N R^i\mu(x)=\mu(x)\sum_{i=1}^N R^i$
+
+:::
+
+<br>
+
+:::{.fragment}
+$\Rightarrow\displaystyle\sum_{i=1}^N R^i=1$
+
+:::
+
+
+:::
+
+# Matemáticas asociadas 
+<!--bloque4-->
+
+::: {style="text-align: center; font-size: 1.5em; margin-top:10px;"}
+
+:::{.fragment}
+${}_n^*p^i_x = e^{-\int_x^{x+n}\mu^i(a)da}$
+
+:::
+
+<br>
+
+:::{.fragment}
+$=e^{-\int_x^{x+n}R^i\mu(a)da}$
+
+:::
+
+<br>
+
+:::{.fragment}
+$=e^{-R^i[\int_x^{x+n}\mu(a)da]}$
+
+:::
+<br>
+
+:::{.fragment}
+$=\left[e^{\int_x^{x+n}\mu(a)da}\right]^{R^i}$
+
+:::
+
+<br>
+
+:::{.fragment}
+$={}_np_x^{R^i}$
+
+:::
+:::
+
+# Matemáticas asociadas 
+<!--bloque5-->
+
+::: {style="text-align: center; font-size: 1.5em; margin-top:100px;"}
+
+$R^i= \frac{{}_nD^i_x}{{}_nD_x}$
+
+$R^{-i} = \frac{{}_nD_x-{}_nD^i_x}{{}_nD_x}=1-\frac{{}_nD^i_x}{{}_nD_x}$
+:::
+
+::: {.callout-note title="Nota"}
+
+$R^i$ proporcion de personas que mueren por la causa i
+
+$R^{-i}$ proporcion de personas que no sucumen por la causa i
+
+:::
+
+# Matemáticas asociadas 
+<!--bloque6-->
+
+::: {style="text-align: center; font-size: 1.5em; margin-top:100px;"}
+
+:::{.fragment}
+${}^*_nL^i_x = {}^*_nl^i_x + {}^*_na^i_x . {}^*_nd^i_x$
+
+:::
+
+<br>
+
+:::{.fragment}
+${}^*_na^i_x = \frac{-\frac{n}{24}{}^*_nd^i_x+\frac{n}{2}{}^*_nd^i_x+\frac{n}{24}{}^*_nd^i_x}{{}^*_nd^i_x}$
+
+:::
+
+:::{.fragment}
+${}^*T^i_x = \displaystyle\sum_{a=x}^{\omega+}{}^*_nL^i_a$
+
+:::
+
+:::{.fragment}
+${}^*e^i_x = \frac{{}^*T^i_x}{{}^*l^i_x}$
+
+:::
+:::
+
+::: {.callout-note title="Nota"}
+
+${}^*_nL^i_x$ años persona vividos de individuos que perecen por la causa i
+
+:::
+
+
+--- 
+<!--bloque6-->
+
+${}^*_na^i_x=n+R^i\frac{{}_nq_x}{{}^*_nq_x}({}_na_x-n)$
+
+para edades intermedias
+
+${}^*_na^i_{\omega+}=\frac{e_{\omega^+}}{R^i}$
+
+para primeras y penúltimas edades.

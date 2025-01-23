@@ -1,0 +1,35 @@
+---
+lightbox: auto
+format: 
+  revealjs:
+    embed-resources: true
+    code-fold: true
+    math: mathjax
+    css: CSS/custom.css
+    slide-number: true
+    transition: fade
+    incremental: true
+    center-title-slide: false
+    backgroundTransition: fade
+highlight-style: a11y
+code-link: true
+height: 1080
+width: 1600
+execute: 
+  eval: true
+---
+
+
+::: {style="text-align: center; margin-top: 100px;"}
+<span style="font-size: 2em; margin-top: 0.5em;">
+Dr. Víctor Manuel García Guerrero
+</span>
+
+<span style="font-size: 1.5em; text-transform: lowercase;">
+vmgarcia@colmex.mx
+</span>
+
+![](Input/LogoCEDUA.png){.absolute top="585" left="1200" width="450"} 
+![](Input/colmex.png){.absolute top="610" left="600" width="450"} 
+![](Input/logo_colmex.png){.absolute top="600" left="70" width="450"}
+:::

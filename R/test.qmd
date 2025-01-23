@@ -1,0 +1,11 @@
+---
+title: "Dynamic Mortality Chart"
+format: revealjs
+---
+
+## Mortality Chart - Label (D) 1.22 in Red
+
+```{r}
+source("mortality_chart.R")
+mortality_chart(list(type = "D", age = 0.07))
+```

@@ -1,0 +1,370 @@
+---
+lightbox: auto
+format: 
+  revealjs:
+    embed-resources: true
+    code-fold: true
+    math: mathjax
+    css: CSS/custom.css
+    slide-number: true
+    transition: fade
+    incremental: true
+    center-title-slide: false
+    backgroundTransition: fade
+highlight-style: a11y
+code-link: true
+height: 1080
+width: 1600
+execute: 
+  eval: true
+---
+
+## `Estandarización`
+
+::: {style="text-align: center; font-size: 2em; margin-top:50px;"}
+${}_mq_n^{\text{C}} = \frac{{}_mD_n^{\text{C}}}{B_n^{\text{C}}}$
+:::
+
+
+::: {.callout-note style=“font-size:10px;”}
+### Donde:
+
+*	${}_{\color{green}m}q_{\color{red}n}^{\color{blue}{\text{C}}}$ es la probabilidad de que un individuo de la $\color{blue}{cohorte\,C}$, muera entre los $\color{red}{n\,años}$ **cumplidos** y antes de los $\color{green}{m}$ años.
+
+*	${}_mD_n^{\text{C}}$ son el número de defunciones de la $\color{blue}{cohorte\,C}$ entre las edades de $\color{red}{n}$ años **cumplidos** y $\color{green}{m}$ años.
+	
+*	${}B_n^{\text{C}}$ son las personas expuestas, es decir, el número individuos, que pertenecen a la $\color{blue}{cohorte\,C}$, entre las edades de $\color{red}{n}$ años **cumplidos** y $\color{green}{m}$ años.
+
+:::
+
+
+
+## `Diagrama de Lexis-Probabilidades cohorte por edad` {auto-animate="true"}
+`Ejemplos`
+
+::: {style="text-align: center; font-size: 2em; margin-top:50px;"}
+${}_1q_0^{\text{C1980}} = \frac{{}_1D_0^{\text{C1980}}}{B_0^{\text{C1980}}}$
+:::
+
+Es la probabilidad de que un $\color{red}{recien\,nacido}$, de la $\color{blue}{cohorte\,de\,1980}$, muera antes de cumplir el $\color{green}{año}$ de edad.
+
+::: {.callout-note style=“font-size:10px;”}
+### Donde:
+
+*	${}_1D_0^{\text{1980}}$ son las defunciones de los infantes nacidos en $\color{blue}{1980}$, $\color{red}{0\,años}$, que no alcanzan el primer $\color{red}{año}$ de edad.
+
+*	${}B_0^{\text{C}}$ son el número de nacimientos en $\color{blue}{1980}$
+
+:::
+
+## `Diagrama de Lexis-Probabilidades cohorte por edad` {auto-animate="true"}
+`Ejemplos`
+
+::: {style="text-align: center; font-size: 2em; margin-top:50px;"}
+${}_1q_0^{\text{C1980}} = \frac{{}_1D_0^{\text{C1980}}}{B_0^{\text{C1980}}}$
+:::
+
+::: {style="text-align: center; font-size: 2em; margin-top:50px;"}
+${}_5q_{25}^{\text{C1980}} = \frac{{}_5D_{25}^{\text{C1980}}}{B_{25}^{\text{C1980}}}$
+:::
+
+Es la probabilidad de que un individuo, perteneciente a la $\color{blue}{cohorte\,de\,1980}$, muera entre los $\color{red}{25\,años}$ cumplidos y los $\color{green}{30\,años}$.
+
+::: {.callout-note style=“font-size:10px;”}
+### Donde:
+
+*	${}_5D_{25}^{\text{C1980}}$ número de defunciones, de la $\color{blue}{cohorte\,de\,1980}$, entre los $\color{red}{25\, años}$ cumplidos y los $\color{green}{30\,años}$.
+
+*	${}B_{25}^{\text{1980}}$ son las personas expuestas: personas de la $\color{blue}{cohorte\,de\,1980}$ y que alcanzan la edad de $\color{red}{25\,años}$
+
+:::
+
+## `Diagrama de Lexis-Probabilidades cohorte por edad` 
+### `Conteo de los conjuntos` ${}_mD_n^{\text{C}}$ `y` ${}B_n^{\text{C}}$
+<!-- Bloque 1-->
+:::: {.columns}
+
+::: {.column width="40%"}
+```{r}
+library(LexisPlotR)
+entry <- c("1995-02-01","1995-04-01","1995-04-25","1995-06-25","1995-08-25","1995-10-25")
+exit <- c(NA,"1995-08-25",NA,"1996-02-25","1996-11-25",NA)
+lifelines <- data.frame(entry,exit)
+lg <- lexis_grid(year_start = 1995, year_end = 1997, age_start = 0, age_end = 2)
+polygons <- data.frame(group = c(1, 1, 1, 2, 2, 2),
+                       x = c("1995-01-01", "1996-01-01", "1996-01-01",
+                             "1996-01-01", "1996-01-01", "1997-01-01"),
+                       y = c(0, 0, 1, 
+                             0, 1, 1))
+lexis_lifeline(lg = lg, birth = lifelines$entry, exit = lifelines$exit, lwd = 1.5, lineends = TRUE)
+lexis_polygon(lg , x = polygons$x, y = polygons$y, group = polygons$group)
+```
+:::{.callout-tip title="Haga click sobre las imágenes "}
+:::
+:::
+
+::: {.column width="60%"}
+Lo primero que notamos son 6 líneas de vida. Observemos que dos personas de la cohorte original mueren antes de alcanzar el primer año de edad. Asi tenemos que:
+
+* ${}_1D_0^{\text{1995}} = 2$
+
+* ${}B_0^{\text{1995}} = 6$
+
+* Por lo tanto, la probabilidad de muerte infantil es:
+${}_1q_0^{1995}=\frac{{}_1D_0^{\text{1995}}}{{}B_0^{\text{1995}}}=\frac{2}{6}=\frac{1}{2}$
+
+
+:::{.callout-note title="Nota"}
+Note que no podriamos calcular ${}_2D_1^{\text{1995}}$, pues el diagrama solo llega hasta **1997**
+:::
+:::
+
+
+
+::::
+
+## `Diagrama de Lexis-Probabilidades cohorte por edad` {auto-animate="true"}
+### `Conteo de los conjuntos` ${}_mD_n^{\text{C}}$ `y` ${}B_n^{\text{C}}$
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+```{r}
+#| echo: false
+#| code-fold: false
+library(dplyr)
+library(ggplot2)
+library(Epi)
+library(LexisPlotR)
+
+# Diagramas de Lexis con Lexisplot
+
+
+lg <- lexis_grid(year_start = 1995, year_end = 1998, age_start = 0, age_end = 3)
+polygon1 <- data.frame(group = c(1, 1, 1, # poligono 1
+                                 2, 2, 2) # poligono 2 
+                       ,
+                       x = c("1995-01-01", "1996-01-01", "1996-01-01",  # poligono 1
+                             "1996-01-01", "1996-01-01", "1997-01-01"),  # poligono 2
+                       
+                       y = c(0, 0, 1,  # poligono 1
+                             0, 1, 1)  # poligono 2 
+)
+polygon2 <- data.frame(group = c(1, 1, 1, # poligono 3
+                                 2, 2, 2) # poligono 4
+                       ,
+                       x = c("1996-01-01", "1997-01-01", "1997-01-01",  # poligono 3
+                             "1997-01-01", "1997-01-01", "1998-01-01"), # poligono 4
+                       y = c(1, 1, 2,  # poligono 3
+                             1, 2, 2)) # poligono 4
+lexis_polygon(lg , x = polygon1$x, y = polygon1$y, group = polygon1$group,fill = "#FF7F50")
+lexis_polygon(lg , x = polygon2$x, y = polygon2$y, group = polygon2$group,fill = "#000080")
+
+# Lexis plot manual para controlar los colores
+horizontal_lines <- data.frame(
+  # control de lineas horizontales para de 1995-1998.
+  x_start = as.Date(c("1995-01-01", "1995-01-01", "1995-01-01", "1995-01-01")), # inicio de la linea horizontal
+  x_end   = as.Date(c("1998-01-01", "1998-01-01", "1998-01-01", "1998-01-01")), # termino de la linea horizontal
+  y_start = c(0, 1, 2, 3), # inicia en  (0 inicia  en 1
+  y_end   = c(0, 1, 2, 3)  # termina en (0 termian en 1
+)
+
+# Vertikal linnien (constant years)
+ vertical_lines <- data.frame(
+                      # 1 linea      2 linea      3 linea        4 linea
+ x_start = as.Date(c( "1995-01-01", "1996-01-01", "1997-01-01", "1998-01-01")),
+ x_end   = as.Date(c( "1995-01-01", "1996-01-01", "1997-01-01", "1998-01-01")),
+          #   1l  2l  3l  4l
+ y_start = c( 0,  0,  0,  0),
+ y_end   = c( 3,  3,  3,  3)
+)
+
+# Diagonal liniel (cohorts aging over time)
+ diagonal_lines <- data.frame(
+ #                   central diag. fst lower diag snd lower diag  fst upper diag snd upper diag
+ x_start = as.Date(c("1995-01-01", "1996-01-01",  "1997-01-01",   "1995-01-01",  "1995-01-01")),
+ x_end   = as.Date(c("1998-01-01", "1998-01-01",  "1998-01-01",   "1997-01-01",  "1996-01-01")),
+ # cd = central diagonal, fstld = first lower diagonal, sndld = second lower diagonal, fud = first upper diagonal 
+ # sud = second upper diagonal
+ #          cd  fstld sld fud sud
+ y_start = c(0, 0,   0,  1,  2),
+ y_end   = c(3, 2,   1,  3,  3)
+)
+
+# Step 2: Define the polygons with custom colors
+polygons <- data.frame(
+ group = c( 1, 1, 1, 
+            2, 2, 2,
+            3, 3, 3,
+            4, 4, 4)
+,
+# Group defines which vertices belong to the same polygon
+# Determinaremos las coordenas de los vertices 
+# Coordenadas x
+  x = as.Date(c("1995-01-01", "1996-01-01", "1996-01-01",    # erster polygon (orange)
+                "1996-01-01", "1996-01-01", "1997-01-01",    # zweiter polygon
+                "1996-01-01", "1997-01-01", "1997-01-01",    # dritter polygon
+                "1997-01-01", "1997-01-01", "1998-01-01"))    # vierter polygon
+              ,
+# coordenadas y 
+  y = c(0, 0, 1, # erster
+        0, 1, 1, # zweiter
+        1, 1, 2, # dritter
+        1, 2, 2) # vierter
+# Asi, por ejemplo, las coordenadas del primer poligono son 
+#  ("1995-01-01",0), ("1996-01-01",0), ("1996-01-01",1)
+,
+  fill_color <- c(
+    "#8A2BE2", "#8A2BE2", "#8A2BE2", 
+    "#008080", "#008080", "#008080",  
+    "#FF69B4", "#FF69B4", "#FF69B4", 
+    "#1E90FF", "#1E90FF", "#1E90FF" )
+  )
+
+# Add labels with formulas to the polygons
+polygon_labels <- data.frame(
+  group = c(1, 2, 3, 4),
+  x = as.Date(c("1995-09-01", "1996-05-01", "1996-09-01", "1997-05-01")),
+  y = c(0.3, 0.7, 1.3, 1.7), #(x,y) control the position of the label 
+  label = c(
+    "phantom() * {}[s]*D[0](1995)", # the labels to display the Latex format.
+    "phantom() * {}[p]*D[0](1996)", 
+    "phantom() * {}[s]*D[1](1996)", 
+    "phantom() * {}[p]*D[1](1997)"
+  )
+)
+
+
+# Step 3: Plot the Lexis grid and the polygons
+ggplot() +
+  # Add horizontal lines
+  geom_segment(data = horizontal_lines, aes(x = x_start, y = y_start, xend = x_end, yend = y_end), color = "black")+
+  
+  # Add vertical lines
+  geom_segment(data = vertical_lines, aes(x = x_start, y = y_start, xend = x_end, yend = y_end), color = "black") +
+  
+  # Add diagonal lines
+  geom_segment(data = diagonal_lines, aes(x = x_start, y = y_start, xend = x_end, yend = y_end), color = "black") +
+  
+  # Add polygons with controlled colors
+  geom_polygon(data = polygons, aes(x = x, y = y, group = group, fill = fill_color), alpha = 0.7) +
+  
+  # Add labels with formulas to the polygons
+  geom_text(data = polygon_labels, aes(x = x, y = y, label = label), color = "black", size = 4, fontface = "bold", 
+            parse = TRUE) +
+  
+  scale_fill_identity() +  # Use the colors defined in the 'fill_color' column
+  
+  # Customize the theme and axis labels
+  theme_minimal() +
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), panel.border = element_blank()) +
+  
+  # Set axis labels
+  labs(x = "Year", y = "Age Group") +
+  
+  # Set axis limits
+  xlim(as.Date("1995-01-01"), as.Date("2002-01-01")) +
+  ylim(0, 4)
+```
+
+:::
+
+::: {.column width="60%"}
+Ahora veamos un ejemplo con ${}_2D^{1995}_0$
+
+Si:
+
+* $\color{#FF7F50}{{}_1D^{1995}_0} = \color{#8A2BE2}{{}_sD(1995)_0} + \color{#008080}{{}_pD(1996)_0}$ 
+* $\color{#000080}{{}_2D^{1995}_1} = \color{#FF69B4}{{}_sD(1996)_1} + \color{#1E90FF}{{}_pD(1997)_1}$ 
+
+entonces:
+
+* ${}_2D^{1995}_1 = \color{#FF7F50}{{}_1D^{1995}_0}+\color{#000080}{{}_2D^{1995}_1}$
+* $=\color{#8A2BE2}{{}_sD(1995)_0}+\color{#008080}{{}_pD(1996)_0}+\color{#FF69B4}{{}_sD(1996)_1} + \color{#1E90FF}{{}_pD(1997)_1}$
+
+:::
+
+::::
+
+## `Diagrama de Lexis-Probabilidades cohorte por edad` {auto-animate="true"}
+<!-- Bloque 1-->
+En general tenemos que:
+
+${}_mD^C_n =\displaystyle\sum_{i=1}^{m} {}_1D^{C}_{(n+i-1)}$
+
+::: {.callout-note title="Donde"}
+
+* ${}_1D^{C}_{(n+i-1)}$ número de defunciones entre las edades **n+i-1** cumplidas y **n+1**
+
+:::
+
+
+
+
+
+## `Diagrama de Lexis-Probabilidades cohorte por edad` {auto-animate="true"}
+<!-- Bloque 2-->
+En general tenemos que:
+
+${}_mD^C_n =\displaystyle\sum_{i=1}^{m} {}_1D^{C}_{(n+i-1)}$
+
+Además podemos considerar para toda $i=\{1,...,m\}$: 
+
+${}_1D^{C}_{(n+i-1)}={}_sD(t+n+i-1)_{(n+i-1)}+{}_pD(t+n+i)_{(n+i-1)}$
+
+con $t=C$
+
+::: {.callout-note title="Donde"}
+
+* ${}_sD(t+n+i-1)_{(n+i-1)}$ número de defunciones en el mismo periodo **t+n+i-1**, con **n+i-1** años cumplidos 
+
+* ${}_pD(t+n+i)_{(n+i-1)}$ número de defunciones en el periodo inmediato posterior **t+n+i**, con **n+i-1** años 
+cumplidos 
+
+:::
+
+## `Diagrama de Lexis-Probabilidades cohorte por edad` {auto-animate="true"}
+<!-- Bloque 3-->
+En general tenemos que:
+
+${}_mD^C_n =\displaystyle\sum_{i=1}^{m} {}_1D^{C}_{(n+i-1)}$
+
+Además podemos considerar para toda $i=\{1,...,m\}$: 
+
+${}_1D^{C}_{(n+i-1)}={}_sD(t+n+i-1)_{(n+i-1)}+{}_pD(t+n+i)_{(n+i-1)}$
+
+con $t=C$
+
+Por lo que una expresión más general estará dada por:
+
+${}_mD^C_n =\displaystyle\sum_{i=1}^{m} \left[ {}_sD(t+n+i-1)_{(n+i-1)}+{}_pD(t+n+i)_{(n+i-1)}\right]$ 
+
+
+## `Diagrama de Lexis-Probabilidades cohorte por edad` {auto-animate="true"}
+<!-- Bloque 4-->
+
+Además podemos considerar para toda $i=\{1,...,m\}$: 
+
+${}_1D^{C}_{(n+i-1)}={}_sD(t+n+i-1)_{(n+i-1)}+{}_pD(t+n+i)_{(n+i-1)}$
+
+con $t=C$
+
+Por lo que una expresión más general estará dada por:
+
+${}_mD^C_n =\displaystyle\sum_{i=1}^{m} \left[ {}_sD(t+n+i-1)_{(n+i-1)}+{}_pD(t+n+i)_{(n+i-1)}\right]$ 
+
+De la expresión anterior podemos deducir que las **las personas expuestas que llegan con n años** es:
+
+$B^{C}_n=B^{C}_o-\displaystyle\sum_{j=1}^{n-1}{}_1D_j^C$
+
+::: {.callout-note title="Donde"}
+
+* $B^C_n$ número de personas expuestas con edades de **n** años cumplidos.
+
+* $B^C_0$ número de nacimientos de la cohorte C
+
+* ${}_1D_j^C$ defunciones entre las edades **j** años cumplidos y **j+1**
+
+:::
+
