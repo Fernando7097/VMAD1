@@ -1,4 +1,5 @@
 ---
+lightbox: auto
 format: 
   revealjs:
     embed-resources: true
@@ -17,7 +18,7 @@ width: 1600
 execute: 
   eval: true
 ---
-## {background-image=Background/bim1.png}
+
 ::: {style="text-align: center; margin-top: 100px;"}
 
 <span style="font-size: 3em; color: #003366;">
@@ -64,6 +65,7 @@ La **demografía** es la ciencia que tiene por objeto el estudio de la poblacion
 ##  `.`
 
 ![](Input/demografia.png){.absolute top="50" left="50" width="1500"}
+
 
 
 ##  `.`
@@ -127,7 +129,7 @@ La **demografía** es la ciencia que tiene por objeto el estudio de la poblacion
 ## `¿Qué es la demografía?` 
 
 ::: {.callout-tip .centered-callout title=""}
--   Conceptos basicos y medidad
+-   Conceptos basicos y medida
 -   Fuentes de información en demografía (evaluación y corrección )
 -   Tasas por edad específica y probabilidad
 -   Procesos de decremento simple: La tabla de mortalidad
@@ -136,29 +138,38 @@ La **demografía** es la ciencia que tiene por objeto el estudio de la poblacion
 -   Modelación de los patrones por edad de los eventos vitales 
 :::
 
-## `Bibliografía` 
+## `Bibliografía`
 
 ::: r-stack
-![](Input/whydemographymatters.jpg){.absolute top="50" left="415" width="700"}
 
-![](Input/proyeccionesypoliticas.jpg){.fragment top="50" left="415" width="700"} ![](Input/appliedmathematical.jpg){.fragment top="50" left="415" width="700"}
+![](Input/whydemographymatters.jpg){.absolute top="130" left="550" width="500"}
 
-![](Input/tools.png){.fragment top="50" left="415" width="700"}
+![](Input/proyeccionesypoliticas.jpg){.fragment top= width="535"}
 
-![](Input/preston.jpg){.fragment top="50" left="415" width="700"}
+![](Input/appliedmathematical.jpg){.fragment top="50" left="415" width="525"}
 
-![](Input/rowland.jpg){.fragment top="50" left="415" width="700"}
+![](Input/preston.jpg){.fragment top="50" left="415" width="560"}
 
-![](Input/swanson.jpg){.fragment top="50" left="415" width="700"}
+![](Input/rowland.jpg){.fragment top="50" left="415" width="560"}
 
-![](Input/biodemography.jpg){.fragment top="50" left="415" width="700"} ![](Input/salgueiro.jpg){.fragment top="50" left="415" width="700"}
+![](Input/swanson.jpg){.fragment top="50" left="415" width="590"}
 
-![](Input/watcher.jpg){.fragment top="50" left="415" width="700"}
+![](Input/biodemography.jpg){.fragment top="50" left="415" width="585"}
 
-![](Input/poston.jpg){.fragment top="50" left="415" width="700"}
+![](Input/salgueiro.jpg){.fragment top="50" left="415" width="585"}
 
-![](Input/human.png){.fragment top="50" left="415" width="700"}
+![](Input/watcher.jpg){.fragment top="50" left="415" width="585"}
+
+![](Input/poston.jpg){.fragment top="50" left="415" width="585"}
+
+![](Input/human.png){.fragment top="50" left="415" width="585"}
+
+![](Input/tools.png){.fragment top="50" left="415" width="680"}
+
 :::
+
+
+
 
 ## `Evaluación` 
 
@@ -189,15 +200,19 @@ La **demografía** es la ciencia que tiene por objeto el estudio de la poblacion
 
 ::: {.callout-tip  title="Censo de facto"}
 Es un método de conteo de individuos basado en dónde se encuentran físicamente en el momento del censo, independientemente de su lugar de residencia habitual. Puede ser particularmente útil para ciertas necesidades de recopilación de datos a corto plazo, pero puede no siempre proporcionar la imagen más precisa para la planificación y asignación de recursos a largo plazo. 
+
 \* Presencia física 
-\* Instantánea en el tiempo 
+
+\* Instantánea en el tiempo
+
 \* Enumeración simplificada
+
 :::
 
 ## `Fuentes de información en demografía` 
 
 ::: {.callout-tip  title="Ventajas de un censo de facto"}
--   Simplicidad: Más fácil de administrar porque solo considera d ́onde están las personas el día del censo.
+-   Simplicidad: Más fácil de administrar porque solo considera dónde están las personas el día del censo.
 -   Reducción del doble conteo: Minimiza el riesgo de contar a los individuos más de una vez, especialmente aquellos con múltiples residencias.
 -   Eficiente para Poblaciones Temporales: Captura datos sobre poblaciones temporales como turistas, viajeros de negocios y trabajadores estacionales.
 -   Recopilación de datos inmediata: Facilita una recopilación de datos más rápida ya que no implica rastrear residencias habituales o patrones de migración.
@@ -225,16 +240,16 @@ Es un método de conteo de individuos basado en su lugar de residencia habitual,
 ## `Fuentes de información en demografía` 
 
 ::: {.callout-tip  title="Ventajas de un censo de jure"}
--   Precisión en la planificación de recursos: Proporciona datos más precisos para la asignaci ́on de recursos y la planificaci ́on de pol ́ıticas pu ́blicas, reflejando la residencia permanente de la poblaci ́on.
--   Representaci ́on exacta: Mejora la precisión en la representación política y distribución de distritos electorales.
--   Datos estables: Ayuda a obtener una imagen m ́as estable y menos fluctuante de la población , útil para la planificación a largo plazo.
+-   Precisión en la planificación de recursos: Proporciona datos más precisos para la asignaci ́on de recursos y la planificación de políticas públicas, reflejando la residencia permanente de la población.
+-   Representación exacta: Mejora la precisión en la representación política y distribución de distritos electorales.
+-   Datos estables: Ayuda a obtener una imagen más estable y menos fluctuante de la población , útil para la planificación a largo plazo.
 -   Adecuado para políticas sociales: Proporciona información relevante para servicios sociales, infraestructura y desarrollo comunitario, basada en la residencia habitual de las personas.
 :::
 
 ## `Fuentes de información en demografía` 
 
 ::: {.callout-tip title="Desventajas de un censo de jure"}
--   Complejidad y costos: Más difícil ıcil y costoso de administrar debido a la necesidad de verificar la residencia habitual.
+-   Complejidad y costos: Más difícil y costoso de administrar debido a la necesidad de verificar la residencia habitual.
 -   Riesgo de doble conteo: Puede haber problemas con individuos que tienen múltiples residencias o migran frecuentemente, lo que puede llevar a errores o doble conteo.
 -   Subnotificación: Algunos individuos pueden no ser contados si no se encuentran en su residencia habitual el día del censo o si no se reportan correctamente.
 -   Desafíos de enumeración: Puede ser difícil rastrear y contar a personas sin hogar, nómadas, o aquellos en situaciones de vivienda inestables.
@@ -253,7 +268,8 @@ Es un método de conteo de individuos basado en su lugar de residencia habitual,
 -   Datos Completos
 -   Precisión
 -   Referencia
--   Asignación de recursos Análisis de tendencias
+-   Asignación de recursos 
+-   Análisis de tendencias
 :::
 
 ## `Fuentes de información en demografía` 
@@ -282,7 +298,7 @@ Es un método de conteo de individuos basado en su lugar de residencia habitual,
 
 ::: {.callout-tip title="Mitigación de la mala declaración de edad y sexo"}
 -   Capacitación de enumeradores.
--   Campañas de concientizacin pú́blica
+-   Campañas de concientización pública
 -   Uso de tecnología.
 -   Verificación cruzada.
 :::
@@ -420,12 +436,19 @@ resultado <- left_join(tabla_izq, tabla_der, by = "id")
 
 <!-- Bloque 1-->
 
+
 Cargamos la base de datos `Data` es su forma "cruda"
 
 ```{r}
+#| echo: true
+#| code-fold: true
 library(DT)
 load("Databases/data.RData")
-# datatable(data, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+```{r}
+#| echo: false
+#| code-fold: false
 datatable( data,
   options = list(
     columnDefs = list(
@@ -452,10 +475,16 @@ Nuestra labor será limpiar o eliminar estos renglones y casillas.
 Ahora, asignemos nombres a las columnas de nuestra tabla de datos.
 
 ```{r}
+#| echo: true
+#| code-fold: true
 library(DT)
 load("Databases/data.RData")
 names(data)<-
   c("id","edo","age","both","males","females")
+```
+```{r}
+#| echo: false
+#| code-fold: false
 datatable(data, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
@@ -466,6 +495,8 @@ datatable(data, options = list(scrollX = TRUE, scrollY = "500px"))
 Filtremos los renglones de la tabla de datos `Data`, manteniendo solo aquellos de la columna **edo** que no tienen valores **NA** y asignemos esta tabla filtrada a una nueva tabla de datos `base_mx`
 
 ```{r}
+#| echo: true
+#| code-fold: true
 library(DT)
 library(tidyverse)
 load("Databases/data.RData")
@@ -473,6 +504,10 @@ names(data)<-
   c("id","edo","age","both","males","females")
 base_mx <- data %>% 
   filter(is.na(edo) == FALSE)
+```
+```{r}
+#| echo: false 
+#| code-fold: false
 datatable( base_mx,
   options = list(
     columnDefs = list(
@@ -495,6 +530,8 @@ datatable( base_mx,
 Seleccionemos todas las columnas, excepto **id** y **both**
 
 ```{r}
+#| echo: true
+#| code-fold: true
 library(DT)
 library(tidyverse)
 load("Databases/data.RData")
@@ -503,16 +540,11 @@ names(data)<-
 base_mx <- data %>% 
   filter(is.na(edo) == FALSE) %>% 
   select(-c("id", "both"))
-datatable( base_mx,
-  options = list(
-    columnDefs = list(
-      list(width = '20px'   , targets = 0),
-      list(width = '20px'   , targets = 1),  
-      list(width = '20px'    , targets = 2),
-      list(width = '20px'   , targets = 3)  
-    )
-  )
-)
+```
+```{r}
+#| echo: false
+#| code-fold: false
+datatable(base_mx, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
 ## Limpieza de la base de datos `Data` 
@@ -522,6 +554,8 @@ datatable( base_mx,
 Despues de aplicar `na.omit()` a **base_mx**, solo nos quedaremos con los renglones donde no hay valores **NA**.
 
 ```{r}
+#| echo: true
+#| code-fold: true
 library(DT)
 library(tidyverse)
 load("Databases/data.RData")
@@ -531,16 +565,11 @@ base_mx <- data %>%
   filter(is.na(edo) == FALSE) %>% 
   select(-c("id", "both")) %>%
   na.omit() 
-datatable( base_mx,
-  options = list(
-    columnDefs = list(
-      list(width = '20px'   , targets = 0),
-      list(width = '20px'   , targets = 1),  
-      list(width = '20px'    , targets = 2),
-      list(width = '20px'   , targets = 3) 
-    )
-  )
-)
+```
+```{r}
+#| echo: false
+#| code-fold: false
+datatable(base_mx, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 ::: { .callout-note title="Nota"}
 En la tabla, busque valores donde la variable age tome el valor "Total"
@@ -559,6 +588,8 @@ En este segundo `filter()` estamos eliminando los renglones donde:
 -   la columna age contiene la palabra **85 años**
 
 ```{r}
+#| echo: true
+#| code-fold: true
 library(tidyverse)
 library(stringr)
 library(DT)
@@ -574,32 +605,31 @@ base_mx <- data %>%
     !grepl("De", age),
     !grepl("85 años", age)
   )
-datatable( base_mx,
-  options = list(
-    columnDefs = list(
-      list(width = '20px'   , targets = 0),
-      list(width = '20px'   , targets = 1),  
-      list(width = '20px'   , targets = 2),
-      list(width = '20px'   , targets = 3)
-    )
-  )
-)
+```
+```{r}
+#| echo: false
+#| code-fold: false
+datatable(base_mx, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
 ## Limpieza de la base de datos `Data` 
-
 <!-- Bloque 7-->
+
 La función **mutate** es usada para modificar una columna existente o agregar una nueva. En nuestro caso, modificaremos nuestra columna **age** para extraer el valor numérico de todos los renglones.
 
 ```{r}
+#| echo: true
+#| code-fold: true
 library(tidyverse)
 library(stringr)
 library(DT)
+library(htmltools)
 load("Databases/data.RData")
-names(data)<-
-  c("id","edo","age","both","males","females")
-base_mx <- data %>% 
-  filter(is.na(edo) == FALSE) %>% 
+
+names(data) <- c("id", "edo", "age", "both", "males", "females")
+
+base_mx <- data %>%
+  filter(is.na(edo) == FALSE) %>%
   select(-c("id", "both")) %>%
   na.omit() %>%
   filter(
@@ -607,17 +637,47 @@ base_mx <- data %>%
     !grepl("De", age),
     !grepl("85 años", age)
   ) %>%
-  mutate(age = str_extract(age,"\\d+"))
-datatable(base_mx, options = list(scrollX = TRUE, scrollY = "500px"))
+  mutate(age = str_extract(age, "\\d+"))
+```
+```{r}
+#| echo: false
+#| code-fold: false
+datatable(base_mx, 
+          options = list(
+            scrollX = TRUE,  # Enable horizontal scrolling
+            scrollY = "200px",  # Enable vertical scrolling with fixed height
+            pageLength = 10
+          )) %>%
+  # Add custom style to change the font size of table cells
+  htmlwidgets::prependContent(
+    tags$style(HTML("
+      table.dataTable {
+        font-size: 20px;  /* Font size for table headers and cells */
+      }
+      table.dataTable td {
+        font-size: 20px;  /* Font size for table data cells */
+      }
+      div.dataTables_wrapper div.dataTables_length label,
+      div.dataTables_wrapper div.dataTables_filter label,
+      div.dataTables_wrapper div.dataTables_info {
+        font-size: 20px;  /* Font size for 'Show entries', 'Search', and 'Showing 1 to ...' */
+      }
+      .dataTables_wrapper .dataTables_paginate {
+        font-size: 12px;  /* Font size for pagination */
+      }
+    "))
+  )
 ```
 
 ## Limpieza de la base de datos `Data` 
 
-<!-- Bloque 7-->
+<!-- Bloque 8-->
 La función `gather()`nos ayudará a transformar las columnas **male** y **female** en filas, creando nuevas columnas sex y pob.
 Por otro lado `type_convert()`se utiliza para convertir automáticamente las columnas de un data frame a los tipos de datos más apropiados según su contenido. En nuestro caso, la variable **age** pasará de **string** a **numeric**
 
 ```{r}
+#| echo: true
+#| code-fold: true
 library(tidyverse)
 library(stringr)
 library(DT)
@@ -636,16 +696,22 @@ base_mx <- data %>%
   mutate(age = str_extract(age,"\\d+")) %>%
   gather(key = sex, value = pob, -age, -edo) %>% 
   type_convert()
+```
+```{r}
+#| echo: false
+#| code-fold: false
 datatable(base_mx, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
 ## Limpieza de la base de datos `Data` 
 
-<!-- Bloque 8-->
+<!-- Bloque 9-->
 Usaremos la función `mutate()` para crear una nueva columan **pop2**. Si **sex** toma el valor de **female** entonces **pop2** tomará el valor de **pop**; en otro caso, **pop2** tomará el valor de -**pop**
 Finalmente guardaremos nuestra nueva tabla de datos `base_mx` en nuestra carpeta **output**
 
 ```{r}
+#| echo: true
+#| code-fold: true
 library(tidyverse)
 library(stringr)
 library(DT)
@@ -665,7 +731,10 @@ base_mx <- data %>%
   gather(key = sex, value = pob, -age, -edo) %>% 
   type_convert() %>% 
   mutate(pob2 = ifelse(sex == "females", pob, -pob))
-save(base_mx, file = "input/base_mx.RData")
+```
+```{r}
+#| echo: false
+#| code-fold: false
 datatable(base_mx, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
@@ -673,11 +742,16 @@ datatable(base_mx, options = list(scrollX = TRUE, scrollY = "500px"))
 <!-- Bloque 1-->
 Para la gráfica de la piramide de población, tomaremos en cuenta la población total. Para esta labor, recordemos que deberemos omitir los valores **NA**.
 ```{r}
-
+#| echo: true
+#| code-fold: true
 library(tidyverse)
 library(DT)
 base_mx <- base_mx %>%
   filter(edo == "Total", is.na(age) == FALSE)
+```
+```{r}
+#| echo: false
+#| code-fold: false
 datatable(base_mx, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
@@ -890,6 +964,8 @@ Calcule la proporción de gente no especificada de población total para ambos s
 * Calcule la proporción **rat** de la poblacion total no especificada en porcentaje.
 
 ```{r}
+#| echo: true
+#| code-fold: true
 library(tidyverse)
 library(DT)
 load("Databases/base_mx.RData")
@@ -903,6 +979,12 @@ base_mx <- left_join(
     select(sex, pob_na = pob),
   by = "sex") %>% 
   mutate(rat = 100 * pob_na / pob)
+```
+```{r}
+#| echo: false
+#| code-fold: false
+ base_mx  <- base_mx %>%
+  mutate(across(c(rat), ~ round(.x, 3)))
 datatable(base_mx, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
@@ -965,9 +1047,13 @@ Tabla izquierda
 #| code-fold: true
 library(tidyverse)
 library(DT)
-load("input/base_mx.RData")
+load("Databases/base_mx.RData")
 tabla_izq <- base_mx %>% 
     filter(edo == "Total")
+```
+```{r}
+#| echo: false
+#| code-fold: false
 datatable(tabla_izq, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
@@ -982,6 +1068,12 @@ tabla_izq <-  base_mx %>%
     filter(edo == "Total") %>% 
     group_by(sex) %>% 
     mutate(prop = pob / sum(pob))
+```
+```{r}
+#| echo: false
+#| code-fold: false
+ tabla_izq  <- tabla_izq %>%
+  mutate(across(c(prop), ~ round(.x, 3)))
 datatable(tabla_izq, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
@@ -997,6 +1089,12 @@ tabla_izq <-   base_mx %>%
     group_by(sex) %>% 
     mutate(prop = pob / sum(pob)) %>% 
     filter(is.na(age) == F) 
+```
+```{r}
+#| echo: false
+#| code-fold: false
+tabla_izq  <- tabla_izq %>%
+  mutate(across(c(prop), ~ round(.x, 3)))
 datatable(tabla_izq, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
@@ -1013,6 +1111,12 @@ tabla_izq <-   base_mx %>%
     mutate(prop = pob / sum(pob)) %>% 
     filter(is.na(age) == F) %>%
     ungroup()
+```
+```{r}
+#| echo: false
+#| code-fold: false
+tabla_izq  <- tabla_izq %>%
+  mutate(across(c(prop), ~ round(.x, 3)))
 datatable(tabla_izq, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
@@ -1032,7 +1136,13 @@ tabla_izq <-   base_mx %>%
     ungroup()
 tabla_der <- base_mx %>% 
     filter(edo == "Total", is.na(age) == T)
-datatable(tabla_der, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+```{r}
+#| echo: false
+#| code-fold: false
+tabla_izq  <- tabla_izq %>%
+  mutate(across(c(prop), ~ round(.x, 3)))
+datatable(tabla_izq, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 ## Prorateo de la tabla de datos `base_mx` 
 <!-- Bloque 6-->
@@ -1051,7 +1161,13 @@ tabla_izq <-   base_mx %>%
 tabla_der <- base_mx %>% 
     filter(edo == "Total", is.na(age) == T) %>% 
     select(sex, pob_na = pob)
-datatable(tabla_der, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+```{r}
+#| echo: false
+#| code-fold: false
+tabla_izq  <- tabla_izq %>%
+  mutate(across(c(prop), ~ round(.x, 3)))
+datatable(tabla_izq, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
 ## Prorateo de la tabla de datos `base_mx` 
@@ -1073,7 +1189,13 @@ tabla_der <- base_mx %>%
     filter(edo == "Total", is.na(age) == T) %>% 
     select(sex, pob_na = pob)
 base_mx_pror <-  left_join(tabla_izq,tabla_der,by = "sex")
-datatable(base_mx_pror, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+```{r}
+#| echo: false
+#| code-fold: false
+tabla_izq  <- tabla_izq %>%
+  mutate(across(c(prop), ~ round(.x, 3)))
+datatable(tabla_izq, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
 ## Prorateo de la tabla de datos `base_mx` 
@@ -1097,6 +1219,12 @@ tabla_der <- base_mx %>%
 base_mx_pror <-  left_join(tabla_izq,tabla_der,by = "sex")
 base_mx_pror <-  base_mx_pror %>% 
                     mutate(pob_fin = pob + pob_na * prop)
+```
+```{r}
+#| echo: false
+#| code-fold: false
+base_mx_pror  <- base_mx_pror %>%
+  mutate(across(c(pob_fin), ~ round(.x, 3)))
 datatable(base_mx_pror, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 ::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
@@ -1124,6 +1252,12 @@ base_mx_pror <-  left_join(tabla_izq,tabla_der,by = "sex")
 base_mx_pror <-  base_mx_pror %>% 
                     mutate(pob_fin = pob + pob_na * prop) %>% 
                     select(age, sex, pob = pob_fin)
+```
+```{r}
+#| echo: false
+#| code-fold: false
+base_mx_pror  <- base_mx_pror %>%
+  mutate(across(c(pob), ~ round(.x, 3)))
 datatable(base_mx_pror, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
@@ -1146,7 +1280,7 @@ $$ $W\in[1,5]$ donde 1 indica no prefencia de dígitos y 5 una alta preferencia.
 ## `Fuentes de información en demografía`  
 <!--Bloque 1-->
 ::: {style="font-size: 1.2em; color: gray; margin-top: 10px;"}
- Índice de Wipple, usando la tabla de datos `base_mx_pror`
+ Índice de Whipple, usando la tabla de datos `base_mx_pror`
 :::
 Tabla izquierda
 ```{r}
@@ -1160,13 +1294,19 @@ tabla_izq <- base_mx_pror %>%
       age %in% c(25:60),
       age %% 10 == 0 | age %% 10 == 5
     )
+```
+```{r}
+#| echo: false
+#| code-fold: false
+tabla_izq  <- tabla_izq %>%
+  mutate(across(c(pob), ~ round(.x, 3)))
 datatable(tabla_izq, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
 ## `Fuentes de información en demografía` 
 <!--Bloque 2-->
 ::: {style="font-size: 1.2em; color: gray; margin-top: 10px;"}
- Índice de Wipple, usando la tabla de datos `base_mx_pror`
+ Índice de Whipple, usando la tabla de datos `base_mx_pror`
 :::
 ```{r}
 #| echo: true
@@ -1181,13 +1321,19 @@ tabla_izq <- base_mx_pror %>%
     ) %>% 
     group_by(sex) %>% 
     summarise(pob_num = sum(pob), .groups = "drop")
+```
+```{r}
+#| echo: false
+#| code-fold: false
+tabla_izq  <- tabla_izq %>%
+  mutate(across(c(pob_num), ~ round(.x, 3)))
 datatable(tabla_izq, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
 ## `Fuentes de información en demografía` 
 <!--Bloque 3-->
 ::: {style="font-size: 1.2em; color: gray; margin-top: 10px;"}
- Índice de Wipple, usando la tabla de datos `base_mx_pror`
+ Índice de Whipple, usando la tabla de datos `base_mx_pror`
 :::
 Tabla derecha
 ```{r}
@@ -1198,13 +1344,19 @@ library(DT)
 
 tabla_der <- base_mx_pror %>% 
     filter(age %in% c(23:62))
+```
+```{r}
+#| echo: false
+#| code-fold: false
+tabla_der  <- tabla_der %>%
+  mutate(across(c(pob), ~ round(.x, 3)))
 datatable(tabla_der, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
 ## `Fuentes de información en demografía` 
 <!-- Bloque 4-->
 ::: {style="font-size: 1.2em; color: gray; margin-top: 10px;"}
- Índice de Wipple, usando la tabla de datos `base_mx_pror`
+ Índice de Whipple, usando la tabla de datos `base_mx_pror`
 :::
 
 ```{r}
@@ -1217,13 +1369,19 @@ tabla_der <-base_mx_pror %>%
     filter(age %in% c(23:62)) %>% 
     group_by(sex) %>% 
     summarise(pob_den = sum(pob), ,groups = "drop")
+```
+```{r}
+#| echo: false
+#| code-fold: false
+tabla_der  <- tabla_der %>%
+  mutate(across(c(pob_den), ~ round(.x, 3)))
 datatable(tabla_der, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
 ## `Fuentes de información en demografía` 
 <!-- Bloque 5-->
 ::: {style="font-size: 1.2em; color: gray; margin-top: 10px;"}
- Índice de Wipple, usando la tabla de datos `base_mx_pror`
+ Índice de Whipple, usando la tabla de datos `base_mx_pror`
 :::
 Juntando **tabla_izq** y **tabla_der**
 ```{r}
@@ -1243,15 +1401,21 @@ tabla_der <-base_mx_pror %>%
     group_by(sex) %>% 
     summarise(pob_den = sum(pob), ,groups = "drop")
 tabla <- left_join(tabla_izq,tabla_der,by="sex")
+```
+```{r}
+#| echo: false
+#| code-fold: false
+tabla  <- tabla %>%
+  mutate(across(c(pob_num,pob_den), ~ round(.x, 3)))
 datatable(tabla, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
 ## `Fuentes de información en demografía` 
 <!-- Bloque 6-->
 ::: {style="font-size: 1.2em; color: gray; margin-top: 10px;"}
- Índice de Wipple, usando la tabla de datos `base_mx_pror`
+ Índice de Whipple, usando la tabla de datos `base_mx_pror`
 :::
-Aqui mostramos el resultado del calculo del Índice de Wipple **W**
+Aqui mostramos el resultado del cálculo del índice de Whipple **W**
 ```{r}
 #| echo: true
 #| code-fold: true
@@ -1270,6 +1434,12 @@ tabla_der <-base_mx_pror %>%
     summarise(pob_den = sum(pob), ,groups = "drop")
 tabla <- left_join(tabla_izq,tabla_der,by="sex") %>% 
   mutate(W = 5 * pob_num / pob_den)
+```
+```{r}
+#| echo: false
+#| code-fold: false
+tabla  <- tabla %>%
+  mutate(across(c(pob_num,pob_den,W), ~ round(.x, 3)))
 datatable(tabla, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
@@ -1291,11 +1461,11 @@ Evaluación
 ::: {.callout-tip tittle="Índice de Myers"}
 El método implica 5 pasos principales (Siegel Jacob y Swanson David 2004):
 
--   Sumar las poblaciones que terminan en cada dígito sobre todo el rango, comenzando con el límite inferior del rango (por ejemplo, 10,20,30,...,80; 11,21,31,...,81).
+-   Sumar las poblaciones que terminan en cada dígito sobre todo el rango, comenzando con el límite inferior del rango (por ejemplo, 10,20 ,30 ,... ,80; 11, 21 ,31 ,... ,81 ).
 
--   Determinar la suma excluyendo la primera población en cada grupo del paso 1 (por ejemplo, 20,30,...,80; 21,31,...,81).
+-   Determinar la suma excluyendo la primera población en cada grupo del paso 1 (por ejemplo, 20,30 ,... ,80; 21 ,31 ,... ,81 ).
 
--   Ponderar las sumas de los pasos 1 y 2 y sumar los resultados para obtener una población combinada (por ejemplo, pesos 1 y 9 para el d ́ıgito 0; pesos 2 y 8 para el dígito 1).
+-   Ponderar las sumas de los pasos 1 y 2 y sumar los resultados para obtener una población combinada (por ejemplo, pesos 1 y 9 para el dígito 0; pesos 2 y 8 para el dígito 1).
 
 -   Convertir la distribución del paso 3 en porcentajes.
 
@@ -1316,6 +1486,12 @@ library(DT)
 load("Databases/base_mx_pror.RData")
 tabla_izq <- base_mx_pror %>% 
   filter(age %in% c(10:80))
+```
+```{r}
+#| echo: false
+#| code-fold: false
+tabla_izq  <- tabla_izq %>%
+  mutate(across(c(pob), ~ round(.x, 3)))
 datatable(tabla_izq, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
@@ -1334,6 +1510,12 @@ load("Databases/base_mx_pror.RData")
 tabla_izq <-base_mx_pror %>% 
   filter(age %in% c(10:80)) %>% 
   mutate(digit = age %% 10)
+```
+```{r}
+#| echo: false
+#| code-fold: false
+tabla_izq  <- tabla_izq %>%
+  mutate(across(c(pob), ~ round(.x, 3)))
 datatable(tabla_izq, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
@@ -1354,6 +1536,12 @@ tabla_izq <- base_mx_pror %>%
   mutate(digit = age %% 10) %>% 
   group_by(digit) %>% 
   summarise(step1 = sum(pob), .groups = "drop")
+```
+```{r}
+#| echo: false
+#| code-fold: false
+tabla_izq  <- tabla_izq %>%
+  mutate(across(c(step1), ~ round(.x, 3)))
 datatable(tabla_izq, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
@@ -1377,6 +1565,12 @@ tabla_izq <- base_mx_pror %>%
   mutate(
     weights  = c(1:10),
     tot_pop1 = step1*weights)
+```
+```{r}
+#| echo: false
+#| code-fold: false
+tabla_izq  <- tabla_izq %>%
+  mutate(across(c(step1,tot_pop1), ~ round(.x, 3)))
 datatable(tabla_izq, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
@@ -1393,7 +1587,13 @@ library(tidyverse)
 library(DT)
 load("Databases/base_mx_pror.RData")
 tabla_der <-  base_mx_pror %>% 
-  filter(age %in% c(10:80)) 
+  filter(age %in% c(10:80))
+```
+```{r}
+#| echo: false
+#| code-fold: false
+tabla_der  <- tabla_der %>%
+  mutate(across(c(pob), ~ round(.x, 3)))
 datatable(tabla_der, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
@@ -1411,7 +1611,13 @@ library(DT)
 load("Databases/base_mx_pror.RData")
 tabla_der <- base_mx_pror %>% 
   filter(age %in% c(10:80)) %>% 
-  mutate(digit = age %% 10)
+  mutate(digit = age %% 10) 
+```
+```{r}
+#| echo: false
+#| code-fold: false
+tabla_der  <- tabla_der %>%
+  mutate(across(c(pob), ~ round(.x, 3)))
 datatable(tabla_der, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
@@ -1431,6 +1637,12 @@ tabla_der <-base_mx_pror %>%
   filter(age %in% c(10:80)) %>% 
   mutate(digit = age %% 10) %>% 
   filter(!age %in% c(10:19)) 
+```
+```{r}
+#| echo: false
+#| code-fold: false
+tabla_der  <- tabla_der %>%
+  mutate(across(c(pob), ~ round(.x, 3)))
 datatable(tabla_der, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
@@ -1452,6 +1664,12 @@ tabla_der <- base_mx_pror %>%
   filter(!age %in% c(10:19)) %>% 
   group_by(digit) %>% 
   summarise(step2 = sum(pob), .groups = "drop") 
+```
+```{r}
+#| echo: false
+#| code-fold: false
+tabla_der  <- tabla_der %>%
+  mutate(across(c(step2), ~ round(.x, 3)))
 datatable(tabla_der, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
@@ -1476,6 +1694,12 @@ tabla_der <- base_mx_pror %>%
   mutate (
     weights = c(9:0),
     tot_pop2 = step2*weights)
+```
+```{r}
+#| echo: false
+#| code-fold: false
+tabla_der  <- tabla_der %>%
+  mutate(across(c(step2,tot_pop2), ~ round(.x, 3)))
 datatable(tabla_der, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
@@ -1495,7 +1719,7 @@ tabla_izq <- base_mx_pror %>%
   filter(age %in% c(10:80)) %>% 
   mutate(digit = age %% 10) %>% 
   group_by(digit) %>% 
-  summarise(step1 = sum(pob), .groups = "drop") %>% 
+  summarise(step1 = round(sum(pob),3), .groups = "drop") %>% 
   mutate(
     weights  = c(1:10),
     tot_pop1 = step1*weights)
@@ -1504,11 +1728,18 @@ tabla_der <- base_mx_pror %>%
   mutate(digit = age %% 10) %>% 
   filter(!age %in% c(10:19)) %>% 
   group_by(digit) %>% 
-  summarise(step2 = sum(pob), .groups = "drop") %>% 
+  summarise(step2 = round(sum(pob),3), .groups = "drop") %>% 
   mutate (
     weights = c(9:0),
     tot_pop2 = step2*weights)
 myers_tab <- left_join(tabla_izq,tabla_der,by = "digit")
+```
+```{r}
+#| echo: false
+#| code-fold: false
+
+myers_tab   <- myers_tab %>%
+  mutate(across(c(step1,step2,tot_pop2), ~ round(.x, 3)))
 datatable(myers_tab, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
@@ -1543,6 +1774,12 @@ tabla_der <- base_mx_pror %>%
     tot_pop2 = step2*weights)
 myers_tab <- left_join(tabla_izq,tabla_der,by = "digit")  %>% 
   select(digit,tot_pop1,tot_pop2)
+```
+```{r}
+#| echo: false
+#| code-fold: false 
+myers_tab  <- myers_tab %>%
+  mutate(across(c(tot_pop1,tot_pop2), ~ round(.x, 3)))
 datatable(myers_tab, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
@@ -1562,7 +1799,7 @@ tabla_izq <- base_mx_pror %>%
   filter(age %in% c(10:80)) %>% 
   mutate(digit = age %% 10) %>% 
   group_by(digit) %>% 
-  summarise(step1 = sum(pob), .groups = "drop") %>% 
+  summarise(step1 = round(sum(pob),3), .groups = "drop") %>% 
   mutate(
     weights  = c(1:10),
     tot_pop1 = step1*weights)
@@ -1571,7 +1808,7 @@ tabla_der <- base_mx_pror %>%
   mutate(digit = age %% 10) %>% 
   filter(!age %in% c(10:19)) %>% 
   group_by(digit) %>% 
-  summarise(step2 = sum(pob), .groups = "drop") %>% 
+  summarise(step2 = round(sum(pob),3), .groups = "drop") %>% 
   mutate (
     weights = c(9:0),
     tot_pop2 = step2*weights)
@@ -1580,6 +1817,12 @@ myers_tab <- left_join(tabla_izq,tabla_der,by = "digit")  %>%
   mutate(blended = tot_pop1 + tot_pop2,
          blend_perc = 100*blended/sum(blended),
          deviat = abs(blend_perc-10 ))
+```
+```{r}
+#| echo: false
+#| code-fold: false
+myers_tab  <- myers_tab %>%
+  mutate(across(c(tot_pop1,tot_pop2,blended,blend_perc,deviat), ~ round(.x, 3)))
 datatable(myers_tab, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
@@ -1619,6 +1862,12 @@ myers_tab <- left_join(tabla_izq,tabla_der,by = "digit")  %>%
          deviat = abs(blend_perc-10 ))
 myers_tab <-myers_tab %>% 
   summarise(myers = sum(deviat)/2)
+```
+```{r}
+#| echo: false
+#| code-fold: false
+myers_tab  <- myers_tab %>%
+  mutate(across(c(myers), ~ round(.x, 3)))
 datatable(myers_tab, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
@@ -1663,7 +1912,7 @@ bins
 ::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
 Agrupación por edades quinquenales con la tabla de datos `base_mx_pror`
 :::
-Definamos la secuencia de límites para las edades quinquenales.
+Labels de los intervalos
 ```{r}
 #| echo: true
 #| code-fold: true
@@ -1679,7 +1928,7 @@ labels
 ::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
 Agrupación por edades quinquenales con la tabla de datos `base_mx_pror`
 :::
-Definamos la secuencia de límites para las edades quinquenales.
+
 ```{r}
 #| echo: true
 #| code-fold: true
@@ -1693,6 +1942,12 @@ labels <- paste(bins[-length(bins)],
 base_mx_pror <- base_mx_pror %>% 
   mutate(age_group = cut(age,breaks = bins,
                          labels = labels, right = FALSE))
+```
+```{r}
+#| echo: false
+#| code-fold: false
+base_mx_pror  <- base_mx_pror %>%
+  mutate(across(c(pob), ~ round(.x, 3)))
 datatable(base_mx_pror, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
@@ -1719,6 +1974,12 @@ base_mx_5 <- base_mx_pror %>%
   group_by(sex,age_group) %>% 
   summarise(pob = sum(pob,na.rm=TRUE),
             .groups = "drop")
+```
+```{r}
+#| echo: false
+#| code-fold: false 
+base_mx_5  <- base_mx_5 %>%
+  mutate(across(c(pob), ~ round(.x, 3)))
 datatable(base_mx_5, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
@@ -1746,6 +2007,12 @@ base_mx_5 <- base_mx_pror %>%
   summarise(pob = sum(pob,na.rm=TRUE),
             .groups = "drop") %>% 
   mutate(pob2 = ifelse(sex=="males",-pob,pob))
+```
+```{r}
+#| echo: false
+#| code-fold: false
+base_mx_5  <- base_mx_5 %>%
+  mutate(across(c(pob,pob2), ~ round(.x, 3)))
 datatable(base_mx_5, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
@@ -1942,7 +2209,13 @@ library(DT)
 load("Databases/base_mx_5.RData")
 base_mx_5M <- base_mx_5 %>% 
   filter(sex=="females")
-datatable(base_mx_5M, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+```{r}
+#| echo: false
+#| code-fold: false
+base_mx_5M   <- base_mx_5M  %>%
+  mutate(across(c(pob,pob2), ~ round(.x, 3)))
+datatable(base_mx_5M , options = list(scrollX = TRUE, scrollY = "300px"))
 ```
 
 ### Hombre
@@ -1956,8 +2229,15 @@ library(DT)
 load("Databases/base_mx_5.RData")
 base_mx_5H <- base_mx_5 %>% 
   filter(sex=="males")
-datatable(base_mx_5H, options = list(scrollX = TRUE, scrollY = "500px"))
 ```
+```{r}
+#| echo: false
+#| code-fold: false
+base_mx_5H   <- base_mx_5H  %>%
+  mutate(across(c(pob,pob2), ~ round(.x, 3)))
+datatable(base_mx_5H , options = list(scrollX = TRUE, scrollY = "300px"))
+```
+
 
 :::
 
@@ -2037,7 +2317,13 @@ tabla_M  <- enframe(base_mx_1_M$fitted,
           name="age",value = "pob") %>% 
     mutate(age=c(0:109),sex="females",
            .before = pob)
-datatable(tabla_M, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+```{r}
+#| echo: false
+#| code-fold: false
+tabla_M   <- tabla_M  %>%
+  mutate(across(c(pob), ~ round(.x, 3)))
+datatable(tabla_M , options = list(scrollX = TRUE, scrollY = "300px"))
 ```
 
 ### Hombre
@@ -2057,7 +2343,13 @@ tabla_H <- enframe(base_mx_1_H$fitted,
           name="age",value = "pob") %>% 
     mutate(age=c(0:109),sex="males",
            .before = pob)
-datatable(tabla_H, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+```{r}
+#| echo: false
+#| code-fold: false
+tabla_H   <- tabla_H  %>%
+  mutate(across(c(pob), ~ round(.x, 3)))
+datatable(tabla_H , options = list(scrollX = TRUE, scrollY = "300px"))
 ```
 :::
 
@@ -2097,7 +2389,13 @@ base_mx_1 <- rbind(
     mutate(age=c(0:109),sex="females",
            .before = pob))  %>% 
   mutate(pob2 = ifelse(sex=="males",-pob,pob))
-datatable(base_mx_1, options = list(scrollX = TRUE, scrollY = "500px"))
+```
+```{r}
+#| echo: false
+#| code-fold: false
+base_mx_1   <- base_mx_1 %>%
+  mutate(across(c(pob,pob2), ~ round(.x, 3)))
+datatable(tabla_M , options = list(scrollX = TRUE, scrollY = "300px"))
 ```
 
 ## `Fuentes de información en demografía` 
@@ -2251,16 +2549,15 @@ $AP[t_1,t_2]= \int_{t_1}^{t_2}N(t)dt$
 Decimos que una función, $f:Dom(f)\to \mathbb{R}$, es derivable en un punto $x$ si y solo si:
 
 ::: {style="text-align: center; font-size: 2em; margin-top:50px;"}
-$\lim_{h\to 0}\frac{f(x+h)-f(x)}{h}$
+$\displaystyle \lim_{h\to 0}\frac{f(x+h)-f(x)}{h}$
 :::
+
 existe.
 
 Decimos que una función, $f:Dom(f)\to \mathbb{R}$, es derivable en todo su **dominio** si y solo si para todo $x\in Dom(f)$, f es derivable en $x$
 
 ## `Definición formal de la derivada`
-::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
-Animación gráfica de la derivada en un punto $x$
-:::
+
 ![](Input/derivate.gif){.absolute top="50" left="50" width="1500"}
 
 
@@ -2276,10 +2573,10 @@ $r(t_1,t_2)=\frac{N(t_2)-N(t_1)}{AP[t_1,t_2]}$
 :::
 
 ::: {style="text-align: center; font-size: 1.5em; margin-top: 150px;"}
-$r(t)=\color{red}{\lim_{\Delta t \to 0}\frac{\Delta N(t)}{N(t)\Delta t}}$
+$r(t)=\color{red}{\displaystyle\lim_{\Delta t \to 0}\frac{\Delta N(t)}{N(t)\Delta t}}$
 :::
 
-::: {.callout-warning title="El diablo esta en los detalles"}
+::: {.callout-warning title="El diablo está en los detalles"}
 -   Pues se tiene que los años-persona $AP[t_1,t_2] = N(t)(t_2 - t_1)= N(t)\Delta t$.
 -   Además, al buscar el cambio instantaneo, hacemos $t_1 \to t_2$, que se entiende como $t_1$ toma valores cada vez parecidos a $t_2$. En este sentido $\Delta t=t_2-t_1 \to 0$, que se entiende que el cambio entre el tiempo $t_1$ y $t_2$ tiende a 0, toma valores cada vez mas cercanos a cero.
 :::
@@ -2291,11 +2588,11 @@ $r(t_1,t_2)=\frac{N(t_2)-N(t_1)}{AP[t_1,t_2]}$
 :::
 
 ::: {style="text-align: center; font-size: 1.5em; margin-top: 150px;"}
-$r(t)=\lim_{\Delta t \to 0}\frac{\Delta N(t)}{N(t)\Delta t}=\lim_{\Delta t \to 0}\color{red}{\frac{\Delta N(t)}{\Delta t}/\frac{N(t)}{1}}$
+$r(t)=\displaystyle\lim_{\Delta t \to 0}\frac{\Delta N(t)}{N(t)\Delta t}=\lim_{\Delta t \to 0}\color{red}{\frac{\Delta N(t)}{\Delta t}/\frac{N(t)}{1}}$
 :::
 
-::: { .callout-warning title="El diablo esta en los detalles"}
-Por la ley del "Sándwich". Es decir, para $a,b,c,d$ números reales,tenemos que $\frac{a}{b}}/\frac{c}{d} = \frac{a.d}{b.c}$
+::: { .callout-warning title="El diablo está en los detalles"}
+Por la ley del "Sándwich". Es decir, para $a,b,c,d$ números reales,tenemos que $\frac{a}{b} / \frac{c}{d} = \frac{a.d}{b.c}$
 :::
 
 ## `Tasas de crecimiento` {auto-animate="true"}
@@ -2305,13 +2602,13 @@ $r(t_1,t_2)=\frac{N(t_2)-N(t_1)}{AP[t_1,t_2]}$
 :::
 
 ::: {style="text-align: center; font-size: 1.5em; margin-top: 90px;"}
-$r(t)=\lim_{\Delta t \to 0}\frac{\Delta N(t)}{N(t)\Delta t}=\color{red}{\frac{\lim_{\Delta t \to 0}\frac{\Delta N(t)}{\Delta t}}{N(t)}}$
+$r(t)=\displaystyle\lim_{\Delta t \to 0}\frac{\Delta N(t)}{N(t)\Delta t}=\color{red}{\frac{\displaystyle\lim_{\Delta t \to 0}\frac{\Delta N(t)}{\Delta t}}{N(t)}}$
 :::
 
-::: {.callout-warning title="El diablo esta en los detalles"}
--   Por la ley de cocientes para los límites $\lim_{t\to           a}\frac{f(t)}{g(t)}=\frac{\lim_{t\to a}f(t)}{\lim_{t\to        a}g(t)}$
+::: {.callout-warning title="El diablo está en los detalles"}
+-   Por la ley de cocientes para los límites $\displaystyle\lim_{t\to           a}\frac{f(t)}{g(t)}=\frac{\displaystyle\lim_{t\to a}f(t)}{\displaystyle\lim_{t\to        a}g(t)}$
 -   En nuestro caso especifico tenemos que $f(t)=\frac{\Delta N(t)}{\Delta t}$ y $g(t)=\frac{N(t)}{1}$
--   Notemos que $\lim_{\Delta \to 0}N(t)= N(t)$, pues $N(t)$ no depende de $\Delta t$, es decir, no depende del cambio entre $t_1$ y $t_2$.
+-   Notemos que $\displaystyle\lim_{\Delta t \to 0}N(t)= N(t)$, pues $N(t)$ no depende de $\Delta t$, es decir, no depende del cambio entre $t_1$ y $t_2$.
 :::
 
 ## `Tasas de crecimiento` {auto-animate="true" background-image=Background/bim1.png}
@@ -2321,11 +2618,11 @@ $r(t_1,t_2)=\frac{N(t_2)-N(t_1)}{AP[t_1,t_2]}$
 :::
 
 ::: {style="text-align: center; font-size: 1.5em; margin-top: 90px;"}
-$r(t)=\lim_{\Delta t \to 0}\frac{\Delta N(t)}{N(t)\Delta t}=\frac{\lim_{\Delta t \to 0}\frac{\Delta N(t)}{\Delta t}}{N(t)}=\color{red}{\frac{N^{'}(t)}{N(t)}}$
+$r(t)=\displaystyle\lim_{\Delta t \to 0}\frac{\Delta N(t)}{N(t)\Delta t}=\frac{\displaystyle\lim_{\Delta t \to 0}\frac{\Delta N(t)}{\Delta t}}{N(t)}=\color{red}{\frac{N^{'}(t)}{N(t)}}$
 :::
 
-::: { .callout-warning title="El diablo esta en los detalles"}
-Por la definición de la derivada en un punto $t$: $N^{'}(t)=\frac{dN(t)}{dt}=\lim_{\Delta t \to 0}\frac{N(t_2)-N(t_1)}{t_2-t_1}=\lim_{\Delta t\to 0}\frac{\Delta N(t)}{\Delta t}$
+::: { .callout-warning title="El diablo está en los detalles"}
+Por la definición de la derivada en un punto $t$ tenemos: $N^{'}(t)=\frac{dN(t)}{dt}=\displaystyle\lim_{\Delta t \to 0}\frac{N(t_2)-N(t_1)}{t_2-t_1}=\lim_{\Delta t\to 0}\frac{\Delta N(t)}{\Delta t}$
 :::
 
 ## `Tasas de crecimiento` {auto-animate="true'}
@@ -2335,15 +2632,15 @@ $r(t_1,t_2)=\frac{N(t_2)-N(t_1)}{AP[t_1,t_2]}$
 :::
 
 ::: {style="text-align: center; font-size: 1.5em; margin-top: 90px;"}
-$r(t)=\lim_{\Delta t \to 0}\frac{\Delta N(t)}{N(t)\Delta t}=\frac{\lim_{\Delta t \to 0}\frac{\Delta N(t)}{\Delta t}}{N(t)}=\frac{N^{'}(t)}{N(t)}=\color{red}{\frac{d\, ln(N(t))}{dt}}$
+$r(t)=\displaystyle\lim_{\Delta t \to 0}\frac{\Delta N(t)}{N(t)\Delta t}=\frac{\displaystyle\lim_{\Delta t \to 0}\frac{\Delta N(t)}{\Delta t}}{N(t)}=\frac{N^{'}(t)}{N(t)}=\color{red}{\frac{d\, ln(N(t))}{dt}}$
 :::
 
-::: {.callout-warning title="El diablo esta en los detalles"}
-Por la derivada de $In(t)$ en un punto $t$: $\frac{d}{dt}ln(t)=\frac{1}{t}$.
+::: {.callout-warning title="El diablo está en los detalles"}
+Por la derivada de $ln(t)$ en un punto $t$ tenemos: $\frac{d}{dt}ln(t)=\frac{1}{t}$.
 
 \par
 
-Y más en general, para cualquier función derivable $f(t)$ $\frac{d}{dt}ln[f(t)]=\frac{f^{'}(t)}{f(t)}$
+Y más en general, para cualquier función derivable $f$,tenemos: $\frac{d}{dt}ln[f(t)]=\frac{f^{'}(t)}{f(t)}$
 :::
 
 ## `Tasas de crecimiento` {auto-animate="true"}
@@ -2353,14 +2650,14 @@ $r(t_1,t_2)=\frac{N(t_2)-N(t_1)}{AP[t_1,t_2]}$
 :::
 
 ::: {style="text-align: center; font-size: 1.5em; margin-top: 90px;"}
-$r(t)=\lim_{\Delta t \to 0}\frac{\Delta N(t)}{N(t)\Delta t}=\frac{\lim_{\Delta t \to 0}\frac{\Delta N(t)}{\Delta t}}{N(t)}=\frac{N^{'}(t)}{N(t)}=\frac{d\, ln(N(t))}{dt}$
+$r(t)=\displaystyle\lim_{\Delta t \to 0}\frac{\Delta N(t)}{N(t)\Delta t}=\frac{\displaystyle\lim_{\Delta t \to 0}\frac{\Delta N(t)}{\Delta t}}{N(t)}=\frac{N^{'}(t)}{N(t)}=\frac{d\, ln(N(t))}{dt}$
 :::
 
 ::: {style="text-align: center; font-size: 1.5em; margin-top:50px;"}
 $\color{red}{\int_{t_1}^{t_2}r(t)dt=\int_{t_1}^{t_2}\frac{d}{dt}ln(t)dt}$
 :::
 
-::: {.callout-warning title="El diablo esta en los detalles"}
+::: {.callout-warning title="El diablo está en los detalles"}
 Integrando por ambos lados de la ecuación sobre el intervalo $(t_1,t_2)$
 :::
 
@@ -2371,14 +2668,14 @@ $r(t_1,t_2)=\frac{N(t_2)-N(t_1)}{AP[t_1,t_2]}$
 :::
 
 ::: {style="text-align: center; font-size: 1em; margin-top: 150px;"}
-$r(t)=\lim_{\Delta t \to 0}\frac{\Delta N(t)}{N(t)\Delta t}=\frac{\lim_{\Delta t \to 0}\frac{\Delta N(t)}{\Delta t}}{N(t)}=\frac{N^{'}(t)}{N(t)}=\frac{d \,ln(N(t))}{dt}$
+$r(t)=\displaystyle\lim_{\Delta t \to 0}\frac{\Delta N(t)}{N(t)\Delta t}=\frac{\displaystyle\lim_{\Delta t \to 0}\frac{\Delta N(t)}{\Delta t}}{N(t)}=\frac{N^{'}(t)}{N(t)}=\frac{d \,ln(N(t))}{dt}$
 :::
 
 ::: {style="text-align: center; font-size: 1m; margin-top:50px;"}
-$\int_{t_1}^{t_2}r(t)dt=\int_{t_1}^{t_2}\frac{d}{dt}ln(t)=\color{red}{ln[N(t_2)]-ln[N(t1)]}$
+$\int_{t_1}^{t_2}r(t)dt=\int_{t_1}^{t_2}\frac{d}{dt}ln(t)=\color{red}{ln[N(t_2)]-ln[N(t_1)]}$
 :::
 
-::: {.callout-warning title="El diablo esta en los detalles"}
+::: {.callout-warning title="El diablo está en los detalles"}
 Por teorema fundamental del cálculo. En esencia, lo que nos dice el teorema, es que la derivada y la integral son operaciones inversas.
 :::
 
@@ -2389,14 +2686,14 @@ $r(t_1,t_2)=\frac{N(t_2)-N(t_1)}{AP[t_1,t_2]}$
 :::
 
 ::: {style="text-align: center; font-size: 1em; margin-top: 90px;"}
-$r(t)=\lim_{\Delta t \to 0}\frac{\Delta N(t)}{N(t)\Delta t}=\frac{\lim_{\Delta t \to 0}\frac{\Delta N(t)}{\Delta t}}{N(t)}=\frac{N^{'}(t)}{N(t)}=\frac{d \,ln(N(t))}{dt}$
+$r(t)=\displaystyle\lim_{\Delta t \to 0}\frac{\Delta N(t)}{N(t)\Delta t}=\frac{\displaystyle\lim_{\Delta t \to 0}\frac{\Delta N(t)}{\Delta t}}{N(t)}=\frac{N^{'}(t)}{N(t)}=\frac{d \,ln(N(t))}{dt}$
 :::
 
 ::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
-$\int_{t_1}^{t_2}r(t)dt=\int_{t_1}^{t_2}\frac{d}{dt}ln(t)dt=ln[N(t_2)]-ln[N(t1)]=\color{red}{ln[\frac{N(t_2)}{N(t_1)}]}$
+$\int_{t_1}^{t_2}r(t)dt=\int_{t_1}^{t_2}\frac{d}{dt}ln(t)dt=ln[N(t_2)]-ln[N(t_1)]=\color{red}{ln[\frac{N(t_2)}{N(t_1)}]}$
 :::
 
-::: {.callout-warning title="El diablo esta en los detalles"}
+::: {.callout-warning title="El diablo está en los detalles"}
 Por leyes de los logaritmos. Para cualquiera números $a$ y $b$ se satisface $ln(\frac{a}{b})=ln(a)-ln(b)$
 :::
 
@@ -2407,18 +2704,18 @@ $r(t_1,t_2)=\frac{N(t_2)-N(t_1)}{AP[t_1,t_2]}$
 :::
 
 ::: {style="text-align: center; font-size: 1em; margin-top: 90px;"}
-$r(t)=\lim_{\Delta t \to 0}\frac{\Delta N(t)}{N(t)\Delta t}=\frac{\lim_{\Delta t \to 0}\frac{\Delta N(t)}{\Delta t}}{N(t)}=\frac{N^{'}(t)}{N(t)}=\frac{d \,ln(N(t))}{dt}$
+$r(t)=\displaystyle\lim_{\Delta t \to 0}\frac{\Delta N(t)}{N(t)\Delta t}=\frac{\displaystyle\lim_{\Delta t \to 0}\frac{\Delta N(t)}{\Delta t}}{N(t)}=\frac{N^{'}(t)}{N(t)}=\frac{d \,ln(N(t))}{dt}$
 :::
 
 ::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
-$\int_{t_1}^{t_2}r(t)dt=\int_{t_1}^{t_2}\frac{d}{dt}ln(t)dt=ln[N(t_2)]-ln[N(t1)]=\color{red}{ln \left[ \frac{N(t_2)}{N(t_1)}\right]}$
+$\int_{t_1}^{t_2}r(t)dt=\int_{t_1}^{t_2}\frac{d}{dt}ln(t)dt=ln[N(t_2)]-ln[N(t_1)]=\color{red}{ln \left[ \frac{N(t_2)}{N(t_1)}\right]}$
 :::
 
 ::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
 $\color{red}{e^{\int_{t_1}^{t_2}r(t)dt}=e^{ln\left[\frac{N(t_2)}{N(t_1)}\right]}}$
 :::
 
-::: {.callout-warning title="El diablo esta en los detalles"}
+::: {.callout-warning title="El diablo está en los detalles"}
 Aplicando la exponencial a ambos lados de la ecuación $e^x$
 :::
 
@@ -2429,23 +2726,23 @@ $r(t_1,t_2)=\frac{N(t_2)-N(t_1)}{AP[t_1,t_2]}$
 :::
 
 ::: {style="text-align: center; font-size: 1em; margin-top: 50px;"}
-$r(t)=\lim_{\Delta t \to 0}\frac{\Delta N(t)}{N(t)\Delta t}=\frac{\lim_{\Delta t \to 0}\frac{\Delta N(t)}{\Delta t}}{N(t)}=\frac{N^{'}(t)}{N(t)}=\frac{d \,ln(N(t))}{dt}$
+$r(t)=\displaystyle\lim_{\Delta t \to 0}\frac{\Delta N(t)}{N(t)\Delta t}=\frac{\displaystyle\lim_{\Delta t \to 0}\frac{\Delta N(t)}{\Delta t}}{N(t)}=\frac{N^{'}(t)}{N(t)}=\frac{d \,ln(N(t))}{dt}$
 :::
 
 ::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
-$\int_{t_1}^{t_2}r(t)dt=\int_{t_1}^{t_2}\frac{d}{dt}in(t)dt=ln[N(t_2)]-ln[N(t1)]=\color{red}{ln\left[\frac{N(t_2)}{N(t_1)}\right]}$
+$\int_{t_1}^{t_2}r(t)dt=\int_{t_1}^{t_2}\frac{d}{dt}ln(t)dt=ln[N(t_2)]-ln[N(t_1)]=\color{red}{ln\left[\frac{N(t_2)}{N(t_1)}\right]}$
 :::
 
 ::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
 $e^{\int_{t_1}^{t_2}r(t)dt}=\color{red}{\frac{N(t_2)}{N(t_1)}}$
 :::
 
-::: {.callout-warning title="El diablo esta en los detalles"}
-Esto es, pues, la exponencial, $e^x$, y el logaritmo natural, $In(x)$, son operaciones inversas Esto es $e^{In(x)}=x$
+::: {.callout-warning title="El diablo está en los detalles"}
+Esto es, pues, la exponencial, $e^x$, y el logaritmo natural, $ln(x)$, son operaciones inversas. Esto es $e^{ln(x)}=x$
 :::
 
-::: {.callout-warning title="El diablo esta en los detalles"}
-Ojo: $In(e^x)=x$ si y solo si $x>0$
+::: {.callout-warning title="El diablo está en los detalles"}
+Ojo: $ln(e^x)=x$ si y solo si $x>0$
 :::
 
 ## `Tasas de crecimiento` {auto-animate="true" background-image=Background/bim1.png}
@@ -2455,11 +2752,11 @@ $r(t_1,t_2)=\frac{N(t_2)-N(t_1)}{AP[t_1,t_2]}$
 :::
 
 ::: {style="text-align: center; font-size: 1em; margin-top: 50px;"}
-$r(t)=\lim_{\Delta t \to 0}\frac{\Delta N(t)}{N(t)\Delta t}=\frac{\lim_{\Delta t \to 0}\frac{\Delta N(t)}{\Delta t}}{N(t)}=\frac{N^{'}(t)}{N(t)}=\frac{d \,ln(N(t))}{dt}$
+$r(t)=\displaystyle\lim_{\Delta t \to 0}\frac{\Delta N(t)}{N(t)\Delta t}=\frac{\displaystyle\lim_{\Delta t \to 0}\frac{\Delta N(t)}{\Delta t}}{N(t)}=\frac{N^{'}(t)}{N(t)}=\frac{d \,ln(N(t))}{dt}$
 :::
 
 ::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
-$\int_{t_1}^{t_2}r(t)dt=\int_{t_1}^{t_2}\frac{d}{dt}ln(t)dt=ln[N(t_2)]-ln[N(t1)]=\color{red}{ln\left[\frac{N(t_2)}{N(t_1)}\right]}$
+$\int_{t_1}^{t_2}r(t)dt=\int_{t_1}^{t_2}\frac{d}{dt}ln(t)dt=ln[N(t_2)]-ln[N(t_1)]=\color{red}{ln\left[\frac{N(t_2)}{N(t_1)}\right]}$
 :::
 
 ::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
@@ -2470,7 +2767,7 @@ $e^{\int_{t_1}^{t_2}r(t)dt}=\frac{N(t_2)}{N(t_1)}$
 $N(t_2)= \color{red}{N(t_1)e^{\int_{t_1}^{t_2}r(t)dt}}$
 :::
 
-::: {.callout-warning title="El diablo esta en los detalles"}
+::: {.callout-warning title="El diablo está en los detalles"}
 Despejando $N(t_2)$
 :::
 
@@ -2481,11 +2778,11 @@ $r(t_1,t_2)=\frac{N(t_2)-N(t_1)}{AP[t_1,t_2]}$
 :::
 
 ::: {style="text-align: center; font-size: 0.5em; margin-top: 50px;"}
-$r(t)=\lim_{\Delta t \to 0}\frac{\Delta N(t)}{N(t)\Delta t}=\frac{\lim_{\Delta t \to 0}\frac{\Delta N(t)}{\Delta t}}{N(t)}=\frac{N^{'}(t)}{N(t)}=\frac{d In(N(t))}{dt}$
+$r(t)=\displaystyle\lim_{\Delta t \to 0}\frac{\Delta N(t)}{N(t)\Delta t}=\frac{\displaystyle\lim_{\Delta t \to 0}\frac{\Delta N(t)}{\Delta t}}{N(t)}=\frac{N^{'}(t)}{N(t)}=\frac{d \,ln(N(t))}{dt}$
 :::
 
 ::: {style="text-align: center; font-size: 0.5em; margin-top:50px;"}
-$\int_{t_1}^{t_2}r(t)dt=\int_{t_1}^{t_2}\frac{d}{dt}In(t)dt=ln[N(t_2)]-In[N(t1)]=In\left[\frac{N(t_2)}{N(t_1)}\right]$
+$\int_{t_1}^{t_2}r(t)dt=\int_{t_1}^{t_2}\frac{d}{dt}ln(t)dt=ln[N(t_2)]-ln[N(t_1)]=ln\left[\frac{N(t_2)}{N(t_1)}\right]$
 :::
 
 ::: {style="text-align: center; font-size: 0.5em; margin-top:50px;"}
@@ -2500,7 +2797,7 @@ $N(t_2)= N(t_1)e^{\int_{t_1}^{t_2}r(t)dt}$
 $\color{red}{\overline{r}(t_1,t_2)=\frac{\int_{t_1}^{t_2}r(t)dt}{t_2-t_1}=\frac{ln\left[\frac{N(t_1)}{N(t_2)}\right]}{t_2-t_1}}$
 :::
 
-::: {.callout-warning title="El diablo esta en los detalles"}
+::: {.callout-warning title="El diablo está en los detalles"}
 -   Si $r(t)=\overline{r}(t_1,t_2)$, entonces $r(t)$ ya no depende de $t$ y es ahora una constante.
 -   Por lo tanto $\int_{t_1}^{t_2}\overline{r}(t_1,t_2)dt=\overline{r}(t_1,t_2)\int_{t_1}^{t_2}dt$
 -   Por lo tanto $\int_{t_1}^{t_2}\overline{r}(t_1,t_2)dt=\overline{r}(t_1,t_2)\int_{t_1}^{t_2}dt=\overline{r}(t_1,t_2)(t_2-t_1)$
@@ -2517,13 +2814,13 @@ $f(x) = f(0) + \frac{f'(0)}{1!}x + \frac{f''(0)}{2!}x^2 + \frac{f^{(3)}(0)}{3!}x
 O en notación de suma infinita:
 
 ::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
-$f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(0)}{n!} x^n$
+$\displaystyle f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(0)}{n!} x^n$
 :::
 
 El ejemplo particular que nos interesa es la serie de Maclaurin del logaritmo natural:
 
 ::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
-$\ln(1+x) = \sum_{n=1}^{\infty} \frac{(-1)^{n-1}}{n} x^n = x - \frac{x^2}{2} + \frac{x^3}{3} - \cdots, \quad |x| < 1$
+$\ln(1+x) = \displaystyle \sum_{n=1}^{\infty} \frac{(-1)^{n-1}}{n} x^n = x - \frac{x^2}{2} + \frac{x^3}{3} - \cdots, \quad |x| < 1$
 :::
 Asi tenemos que:
 
@@ -2544,10 +2841,10 @@ $AP[t_1,t_2]=\frac{N(t_2)-N(t_1)}{\overline{r}(t_1,t_2)}$
 :::
 
 ::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
-$\color{red}{=\frac{N(t_2)-N(t_1)}{\frac{In\left[\frac{N(t_2)}{N(t_1)}\right]}{t_2-t_1}}}$
+$\color{red}{=\frac{N(t_2)-N(t_1)}{\frac{ln\left[\frac{N(t_2)}{N(t_1)}\right]}{t_2-t_1}}}$
 :::
 
-::: { .callout-warning title="El diablo esta en los detalles"}
+::: { .callout-warning title="El diablo está en los detalles"}
 Por lo el resultado anterior cuando 
 $r(t)=\overline{r}(t_1,t_2)=\frac{ln\left[\frac{N(t_2)}{N(t_1)}\right]}{t_2-t_1}$
 :::
@@ -2566,14 +2863,14 @@ $=\frac{N(t_2)-N(t_1)}{\frac{ln[\frac{N(t_2)}{N(t_1)}]}{t_2-t_1}}$
 $\color{red}{=\frac{N(t_2)-N(t_1).[t_2-t_1]}{ln\left[\frac{N(t_2)}{N(t_1)}\right]}}$
 :::
 
-:::{ .callout-warning title="El diablo esta en los detalles"}
+:::{ .callout-warning title="El diablo está en los detalles"}
 Por la ley del "Sandwich"
 :::
 
 ## `Aproximación a los AP` {auto-animate="true"}
 
-:::{ .callout-warning title="El diablo esta en los detalles"}
-En este apartado aproximaremos $ln(\frac{N(t_2)}{N(t_1)})$
+:::{ .callout-warning title="El diablo está en los detalles"}
+En este apartado aproximaremos $ln\left[\frac{N(t_2)}{N(t_1)}\right]$
 
 * $N(t_2)=N(t_2)+0=N(t_2)+[N(t_1)-N(t_1)]=N(t_1)+[N(t_2)-N(t_1)]$
 
@@ -2585,7 +2882,7 @@ En este apartado aproximaremos $ln(\frac{N(t_2)}{N(t_1)})$
 
 * Lo que implica que cuando $t_1\to t_2$ se tiene que $N(t_1)\approx N(t_2)$
 
-* Por lo tanto $|x| \leq \left|\frac{N(t_2)-N(t_1)}{N(t_1)}\right|\leq \left|\frac{1}{N(t_1)}\right| = \frac{1}{N(t_1)} < 1$
+* Por lo tanto $|x| = \left|\frac{N(t_2)-N(t_1)}{N(t_1)}\right|\leq \left|\frac{1}{N(t_1)}\right| = \frac{1}{N(t_1)} < 1$
 
 * Se cumplen las hipótesis para aproximar $ln(1+x)$ por su serie de Maclaurin
 
@@ -2611,7 +2908,7 @@ $=\frac{N(t_2)-N(t_1).[t_2-t_1]}{ln\left[\frac{N(t_2)}{N(t_1)}\right]}$
 $AP[t_1,t_2]=\frac{N(t_2)-N(t_1).[t_2-t_1]}{\color{red}{\frac{N(t_2)-N(t_1)}{N(t_1)}}}$
 :::
 
-:::{ .callout-warning title="El diablo esta en los detalles"}
+:::{ .callout-warning title="El diablo está en los detalles"}
 Por el apartado anterior 
 :::
 
@@ -2637,7 +2934,7 @@ $AP[t_1,t_2]=\frac{N(t_2)-N(t_1).[t_2-t_1]}{{\frac{N(t_2)-N(t_1)}{N(t_1)}}}$
 $AP[t_1,t_2]=\color{red}{N(t_1)}.[t_2-t_1]$
 :::
 
-:::{ .callout-warning title="El diablo esta en los detalles"}
+:::{ .callout-warning title="El diablo está en los detalles"}
 Pues
 $\frac{N(t_2)-N(t_1).[t_2-t_1]}{{\frac{N(t_2)-N(t_1)}{N(t_1)}}} = \frac{N(t_2)-N(t_1)}{N(t_2)-N(t_1)}.N(t_1)[t_2-t_1]=N(t_1)[t_2-t_1]$
 :::
@@ -2665,15 +2962,15 @@ $AP[t_1,t_2]=N(t_1).[t_2-t_1]$
 :::
 
 ::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
-$AP[t_1,t_2]=\color{red}{\hat{N}(t_1)}.[t_2-t_1]$ donde $\hat{N}(t_1)$ es la población a mitad de periodo entre $t_1$ y $t_2$
+$AP[t_1,t_2]=\color{red}{\bar{N}(t_1)}.[t_2-t_1]$ donde $\bar{N}(t_1)$ es la población a mitad de periodo entre $t_1$ y $t_2$
 :::
 
-:::{ .callout-warning title="El diablo esta en los detalles"}
+:::{ .callout-warning title="El diablo está en los detalles"}
 Sabemos que: 
 
-* $N(t_1)\leq \hat{N}(t_1)\leq N(t_2)$
+* $N(t_1)\leq \bar{N}(t_1)\leq N(t_2)$
 
-* Cuando $t_1\to t_2$ tenemos que $N(t_1)\approx \hat{N}(t_1)\approx N(t_2)$
+* Cuando $t_1\to t_2$ tenemos que $N(t_1)\approx \bar{N}(t_1)\approx N(t_2)$
 
 :::
 
@@ -3836,7 +4133,7 @@ polygons <- data.frame(
                 "1903-01-01", "1904-01-01", "1904-01-01",    # siebter 
                 "1904-01-01", "1904-01-01", "1905-01-01",    # achter
                 "1904-01-01", "1905-01-01", "1905-01-01",    # neunter
-                "1905-01-01", "190-01-01", "1906-01-01")),  # zehnter
+                "1905-01-01", "19006-01-01","1906-01-01")),  # zehnter
   y = c(0, 0, 1, # erster
         0, 1, 1, # zweiter
         1, 1, 2, # dritter
@@ -3889,14 +4186,31 @@ ggplot() +
   xlim(as.Date("1900-01-01"), as.Date("1910-01-01")) +  # x-axis limits
   ylim(0, 5)  # y-axis limits
 ```
+## `Diagrama de Lexis-Probabilidades cohorte por edad`{auto-animate="true"}
+
+::: {style="text-align: center; font-size: 2em; margin-top:50px;"}
+${}_mq_n^{\text{C}} = \frac{{}_mD_n^{\text{C}}}{B_n^{\text{C}}}$
+:::
+${}_{\color{green}m}q_{\color{red}n}^{\text{C}}$ probabilidad de que un individuo que pertenecea la 
+cohorte $\color{blue}{C}$, que llega vivo a la $\color{red}{edad \,n}$, muera antes de alcanzar la  
+edad $\color{green}m$
+
+
 ## `Diagrama de Lexis-Probabilidades cohorte por edad` 
 
-::: {style="text-align: center; font-size: 2em; margin-top:200px;"}
+::: {style="text-align: center; font-size: 2em; margin-top:50px;"}
 ${}_1q_0^{\text{C1980}} = \frac{{}_1D_0^{\text{C1980}}}{B_0^{\text{C1980}}}$
 :::
 
 ::: {style="text-align: center; font-size: 2em; margin-top:50px;"}
 ${}_5q_{25}^{\text{C1980}} = \frac{{}_5D_{25}^{\text{C1980}}}{{}_5N_{25}^{\text{C1980}}}$
+:::
+
+::: {.callout-note style="text-align: center; font-size: 2em; margin-top:50px;"}
+### Donde
+* $B_0$ Nacimientos en el año 0
+* $$
+
 :::
 
 ## `Tasa especificas por edad de periodo` 
@@ -3920,51 +4234,64 @@ Usualmente $t_2 - t_1 = n$
 :::
 :::
 
-## `Estandarización` {auto-animate="true"}
+## `Estandarización` 
 
-::: {style="text-align: center; font-size: 1.2em; margin-top:100px;"}
-$\text{tbm}=\frac{D}{N}=\frac{\sum_{x=0}^\omega {}_nD_x}{N}$
+::: {style="text-align: center; font-size: 0.7em; margin-top:30px;"}
+
+\begin{align}
+
+\text{tbm}=\frac{D}{N}=\frac{\displaystyle\sum_{x=0}^\omega {}_nD_x}{N}
+
+\end{align}
+
 :::
 
 ## `Estandarización` {auto-animate="true"}
 
-::: {style="text-align: center; font-size: 1.2em; margin-top:100px;"}
-$\text{tbm}=\frac{D}{N}=\frac{\sum_{x=0}^\omega {}_nD_x}{N}$
+::: {style="text-align: center; font-size: 0.7em; margin-top:30px;"}
+\begin{align}
+  \text{tbm}=\frac{D}{N}=\frac{\displaystyle\sum_{x=0}^\omega {}_nD_x}{N} \\
+  
+=\displaystyle\displaystyle\sum_{x=0}^{\omega}\frac{{}_nD_x}{N}\frac{{}_nN_x}{{}_nN_x}  
+\end{align}
+
 :::
 
-::: {style="text-align: center; font-size: 1.2em; margin-top:100px;"}
-$\hspace{3.5cm}= \sum_{x=0}^{\omega}\frac{{}_nD_x}{N}\frac{{}_nN_x}{{}_nN_x}$
+## `Estandarización` 
+
+::: {style="text-align: center; font-size: 0.7em; margin-top:30px;"}
+\begin{align}
+\text{tbm}=\frac{D}{N}=\frac{\displaystyle\sum_{x=0}^\omega {}_nD_x}{N} \\
+
+
+=\displaystyle \displaystyle\sum_{x=0}^{\omega}\frac{{}_nD_x}{N}\frac{{}_nN_x}{{}_nN_x} \\
+
+= \displaystyle\sum_{x=0}^{\omega} \frac{{}_nD_x}{{}_nN_x} \frac{{}_nN_x}{N} 
+\end{align}
 :::
 
 ## `Estandarización` {auto-animate="true"}
 
-::: {style="text-align: center; font-size: 1.2em; margin-top:100px;"}
-$\text{tbm}=\frac{D}{N}=\frac{\sum_{x=0}^\omega {}_nD_x}{N}$
-:::
+::: {style="text-align: center; font-size: 0.7em; margin-top:30px;"}
+\begin{align}
+\text{tbm}=\frac{D}{N}=\frac{\displaystyle\sum_{x=0}^\omega {}_nD_x}{N} \\
 
-::: {style="text-align: center; font-size: 1.2em; margin-top:100px;"}
-$=\hspace{3.5cm}\sum_{x=0}^{\omega}\frac{{}_nD_x}{N}\frac{{}_nN_x}{{}_nN_x}$
-:::
 
-::: {style="text-align: center; font-size: 1.2em; margin-top:100px;"}
-$=\hspace{3.5cm} \sum_{x=0}^{\omega} \frac{{}_nD_x}{{}_nN_x} \frac{{}_nN_x}{N}$
-:::
+=\displaystyle \displaystyle\sum_{x=0}^{\omega}\frac{{}_nD_x}{N}\frac{{}_nN_x}{{}_nN_x} \\
 
-::: {style="text-align: center; font-size: 1.2em; margin-top:100px;"}
-$=\hspace{3.5cm}\sum_{x=0}^{\omega} {}_nM_x \hspace{0.5cm} {}_nC_x$
+
+
+= \displaystyle\sum_{x=0}^{\omega} \frac{{}_nD_x}{{}_nN_x} \frac{{}_nN_x}{N} \\
+
+
+=\displaystyle\displaystyle\sum_{x=0}^{\omega} {}_nM_x \hspace{0.5cm} {}_nC_x \\
+
+\end{align}
 :::
 
 ::: {.callout-note title="donde"}
 ::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
-$\sum_{x=0}^{\omega} {}_nC_x = \frac{\sum_{x=0}^{\omega +} {}_nN_x}{N}=1$
-:::
-:::
-
-## `Estandarización` {auto-animate="true"}
-
-::: {.callout-note title="Tomando la ${}_nC_x de Europa$"}
-::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
-$tbm^*=\sum_{x=0}^{\omega} {}_nM^{Africa}_x \hspace{0.5cm} {}_nC^{Europa}_x$
+$\displaystyle\sum_{x=0}^{\omega} {}_nC_x = \frac{\displaystyle\sum_{x=0}^{\omega +} {}_nN_x}{N}=1$
 :::
 :::
 
@@ -3972,35 +4299,431 @@ $tbm^*=\sum_{x=0}^{\omega} {}_nM^{Africa}_x \hspace{0.5cm} {}_nC^{Europa}_x$
 
 ::: {.callout-note title="Tomando la ${}_nC_x$ de Europa"}
 ::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
-$tbm^*=\sum_{x=0}^{\omega} {}_nM^{Africa}_x \hspace{0.5cm} {}_nC^{Europa}_x$
+$tbm^*=\displaystyle\sum_{x=0}^{\omega} {}_nM^{Africa}_x{}_nC^{Europa}_x$
+:::
+:::
+
+## `Estandarización` {auto-animate="true"}
+
+::: {.callout-note title="Tomando la ${}_nC_x$ de Europa"}
+::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
+$tbm^*=\displaystyle\sum_{x=0}^{\omega} {}_nM^{Africa}_x  {}_nC^{Europa}_x$
 :::
 :::
 
 ::: {.callout-note title="En general"}
 ::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
-$ASCDR^j= \sum_{x=0}^{\omega}  {}_nM_x^{j}\,{}_nC_x^S$
+$ASCDR^j= \displaystyle\sum_{x=0}^{\omega}  {}_nM_x^{j}\,{}_nC_x^S$
 :::
-:::
-
 para $j=A,B$ y
 
 ::: {style="text-align: center; font-size: 1.5em; margin-top:50px;"}
 ${}_nC_x^S = \frac{{}_nC_x^A+{}_nC_x^B}{2}$
 :::
 
+:::
+
 ## `Estandarización`
+<!-- Bloque 1 -->
 ::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
 Limpieza de la base de datos `WPP2024 MORT F01 1 DEATHS SINGLE AGE BOTH_SEXES`
 :::
 
 ```{r}
 #| code-fold: true
+#| echo: true
 library(DT)
 load("Databases/base0_raw.RData")
 base0 <- base0_raw
+```
+```{r}
+#| echo: false
+#| code-fold: false
 datatable(head(base0,1000), options = list(scrollX = TRUE, scrollY = "500px"))
 ```
 
+## `Estandarización`
+<!-- Bloque 2 -->
+
+
+```{r}
+#| code-fold: true
+#| echo: true
+library(DT)
+load("Databases/base0_raw.RData")
+base0 <- base0_raw %>% 
+  filter(is.na(`...1`)==F) 
+```
+```{r}
+#| echo: false
+#| code-fold: false
+datatable(head(base0,1000), options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+## `Estandarización`
+<!-- Bloque 3 -->
+
+```{r}
+#| code-fold: true
+#| echo: true
+library(tidyverse)
+library(readxl)
+library(janitor)
+library(dplyr)
+library(tidyr)
+library(readr)
+library(stringr)
+load("Databases/base0_raw.RData")
+base0 <- base0_raw %>% 
+  filter(is.na(`...1`)==F) %>% 
+  row_to_names(row_number = 1) 
+```
+```{r}
+#| echo: false
+#| code-fold: false
+ library(DT)
+datatable(head(base0,1000), options = list(scrollX = TRUE, scrollY = "500px"))
+```
+## `Estandarización`
+<!-- Bloque 4 -->
+
+```{r}
+#| code-fold: true
+#| echo: true
+library(DT)
+load("Databases/base0_raw.RData")
+base0 <- base0_raw %>% 
+  filter(is.na(`...1`)==F) %>% 
+  row_to_names(row_number = 1)  %>% 
+  select( -c("Index", "Variant","Notes","Location code","ISO3 Alpha-code",
+             "ISO2 Alpha-code","SDMX code**","Type","Parent code"))
+```
+```{r}
+#| echo: false
+#| code-fold: false
+datatable(head(base0,1000), options = list(scrollX = TRUE, scrollY = "500px"))
+```
+## `Estandarización`
+<!-- Bloque 5 -->
+
+```{r}
+#| code-fold: true
+#| echo: true
+library(DT)
+load("Databases/base0_raw.RData")
+base0 <- base0_raw %>% 
+  filter(is.na(`...1`)==F) %>% 
+  row_to_names(row_number = 1)  %>% 
+  select( -c("Index", "Variant","Notes","Location code","ISO3 Alpha-code",
+             "ISO2 Alpha-code","SDMX code**","Type","Parent code")) %>% 
+  filter(`Region, subregion, country or area *`%in% c("World","Africa","Europe","Latin
+                                                       America and the Caribbean","Mexico"))
+```
+```{r}
+#| echo: false
+#| code-fold: false
+datatable(head(base0,1000), options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+## `Estandarización`
+<!-- Bloque 5 -->
+
+```{r}
+#| code-fold: true
+#| echo: true
+library(DT)
+load("Databases/base0_raw.RData")
+base0 <- base0_raw %>% 
+  filter(is.na(`...1`)==F) %>% 
+  row_to_names(row_number = 1)  %>% 
+  select( -c("Index", "Variant","Notes","Location code","ISO3 Alpha-code",
+             "ISO2 Alpha-code","SDMX code**","Type","Parent code")) %>% 
+  filter(`Region, subregion, country or area *`%in% c("World","Africa","Europe","Latin
+                                                       America and the Caribbean","Mexico")) %>% 
+  gather(key = "age",value = "deaths",-`Region, subregion, country or area *`, -Year)
+```
+```{r}
+#| echo: false
+#| code-fold: false
+datatable(head(base0,1000), options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+## `Estandarización`
+<!-- Bloque 6 -->
+
+```{r}
+#| code-fold: true
+#| echo: true
+library(DT)
+load("Databases/base0_raw.RData")
+base0 <- base0_raw %>% 
+  filter(is.na(`...1`)==F) %>% 
+  row_to_names(row_number = 1)  %>% 
+  select( -c("Index", "Variant","Notes","Location code","ISO3 Alpha-code",
+             "ISO2 Alpha-code","SDMX code**","Type","Parent code")) %>% 
+  filter(`Region, subregion, country or area *`%in% c("World","Africa","Europe","Latin
+                                                       America and the Caribbean","Mexico")) %>% 
+  gather(key = "age",value = "deaths",-`Region, subregion, country or area *`, -Year)%>% 
+  rename(region = 'Region, subregion, country or area *', year = Year)
+```
+```{r}
+#| echo: false
+#| code-fold: false
+datatable(head(base0,1000), options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+
+## `Estandarización`
+<!-- Bloque 7 -->
+
+```{r}
+#| code-fold: true
+#| echo: true
+library(DT)
+load("Databases/base0_raw.RData")
+base0 <- base0_raw %>% 
+  filter(is.na(`...1`)==F) %>% 
+  row_to_names(row_number = 1)  %>% 
+  select( -c("Index", "Variant","Notes","Location code","ISO3 Alpha-code",
+             "ISO2 Alpha-code","SDMX code**","Type","Parent code")) %>% 
+  filter(`Region, subregion, country or area *`%in% c("World","Africa","Europe","Latin
+                                                       America and the Caribbean","Mexico")) %>% 
+  gather(key = "age",value = "deaths",-`Region, subregion, country or area *`, -Year)%>% 
+  rename(region = 'Region, subregion, country or area *', year = Year) %>% 
+  arrange(year, region)
+```
+```{r}
+#| echo: false
+#| code-fold: false
+datatable(head(base0,1000), options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+## `Estandarización`
+<!-- Bloque 8 -->
+
+```{r}
+#| code-fold: true
+#| echo: true
+library(DT)
+load("Databases/base0_raw.RData")
+base0 <- base0_raw %>% 
+  filter(is.na(`...1`)==F) %>% 
+  row_to_names(row_number = 1)  %>% 
+  select( -c("Index", "Variant","Notes","Location code","ISO3 Alpha-code",
+             "ISO2 Alpha-code","SDMX code**","Type","Parent code")) %>% 
+  filter(`Region, subregion, country or area *`%in% c("World","Africa","Europe","Latin
+                                                       America and the Caribbean","Mexico")) %>% 
+  gather(key = "age",value = "deaths",-`Region, subregion, country or area *`, -Year)%>% 
+  rename(region = 'Region, subregion, country or area *', year = Year) %>% 
+  arrange(year, region) %>% 
+  mutate(id = paste(region,year, age,sep = '-'))
+```
+```{r}
+#| echo: false
+#| code-fold: false
+datatable(head(base0,1000), options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+## `Estandarización`
+<!-- Bloque 1 -->
+::: {style="font-size: 1.2em; color: gray; margin-top: -10px;"}
+Limpieza de la base de datos `WPP2024 POP F01 1 POPULATION SINGLE AGE BOTH SEXES`
+:::
+
+```{r}
+#| code-fold: true
+#| echo: true
+library(DT)
+load("Databases/base1_raw.RData")
+base1 <- base1_raw
+```
+```{r}
+#| echo: false
+#| code-fold: false
+datatable(head(base1,1000), options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+## `Estandarización`
+<!-- Bloque 2 -->
+
+```{r}
+#| code-fold: true
+#| echo: true
+library(DT)
+load("Databases/base1_raw.RData")
+base1 <- base1_raw %>% 
+  filter(is.na(`...1`)==F) 
+```
+```{r}
+#| echo: false
+#| code-fold: false
+datatable(head(base1,1000), options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+## `Estandarización`
+<!-- Bloque 3 -->
+
+```{r}
+#| code-fold: true
+#| echo: true
+library(tidyverse)
+library(readxl)
+library(janitor)
+library(dplyr)
+library(tidyr)
+library(readr)
+library(stringr)
+load("Databases/base1_raw.RData")
+base1 <- base1_raw %>% 
+  filter(is.na(`...1`) == F) %>% 
+  row_to_names(row_number = 1)
+```
+```{r}
+#| echo: false
+#| code-fold: false
+ library(DT)
+datatable(head(base1,1000), options = list(scrollX = TRUE, scrollY = "500px"))
+```
+## `Estandarización`
+<!-- Bloque 4 -->
+
+```{r}
+#| code-fold: true
+#| echo: true
+load("Databases/base1_raw.RData")
+base1 <- base1_raw %>% 
+  filter(is.na(`...1`) == F) %>% 
+  row_to_names(row_number = 1) %>% 
+  select(-c("Index", "Variant", "Notes", "Location code", "ISO3 Alpha-code", "ISO2 Alpha-code",
+            "SDMX code**", "Parent code")) 
+  
+```
+```{r}
+#| echo: false
+#| code-fold: false
+library(DT)
+datatable(head(base1,1000), options = list(scrollX = TRUE, scrollY = "500px"))
+```
+## `Estandarización`
+<!-- Bloque 5 -->
+
+```{r}
+#| code-fold: true
+#| echo: true
+library(DT)
+load("Databases/base1_raw.RData")
+base1 <- base1_raw %>% 
+  filter(is.na(`...1`) == F) %>% 
+  row_to_names(row_number = 1) %>% 
+  select(-c("Index", "Variant", "Notes", "Location code", "ISO3 Alpha-code", "ISO2 Alpha-code",
+            "SDMX code**", "Parent code")) %>% 
+  filter(Type %in% c("Region", "World"), `Region, subregion, country or area *` %in%
+           c("World", "Africa", "Europe", "Latin America and the Caribbean")) 
+```
+```{r}
+#| echo: false
+#| code-fold: false
+datatable(head(base1,1000), options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+## `Estandarización`
+<!-- Bloque 5 -->
+
+```{r}
+#| code-fold: true
+#| echo: true
+library(DT)
+load("Databases/base1_raw.RData")
+base1 <- base1_raw %>% 
+  filter(is.na(`...1`) == F) %>% 
+  row_to_names(row_number = 1) %>% 
+  select(-c("Index", "Variant", "Notes", "Location code", "ISO3 Alpha-code", "ISO2 Alpha-code",
+            "SDMX code**", "Parent code")) %>% 
+  filter(Type %in% c("Region", "World"), `Region, subregion, country or area *` %in%
+           c("World", "Africa", "Europe", "Latin America and the Caribbean")) %>% 
+  gather(key = "age", value = "pob", -`Region, subregion, country or area *`, -Year, -Type)
+```
+```{r}
+#| echo: false
+#| code-fold: false
+datatable(head(base1,1000), options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+## `Estandarización`
+<!-- Bloque 6 -->
+
+```{r}
+#| code-fold: true
+#| echo: true
+library(DT)
+load("Databases/base1_raw.RData")
+base1 <- base1_raw %>% 
+  filter(is.na(`...1`) == F) %>% 
+  row_to_names(row_number = 1) %>% 
+  select(-c("Index", "Variant", "Notes", "Location code", "ISO3 Alpha-code", "ISO2 Alpha-code",
+            "SDMX code**", "Parent code")) %>% 
+  filter(Type %in% c("Region", "World"), `Region, subregion, country or area *` %in%
+           c("World", "Africa", "Europe", "Latin America and the Caribbean")) %>% 
+  gather(key = "age", value = "pob", -`Region, subregion, country or area *`, -Year, -Type) %>% 
+  rename(region = `Region, subregion, country or area *`, year = Year)
+```
+```{r}
+#| echo: false
+#| code-fold: false
+datatable(head(base1,1000), options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+
+## `Estandarización`
+<!-- Bloque 7 -->
+
+```{r}
+#| code-fold: true
+#| echo: true
+library(DT)
+load("Databases/base1_raw.RData")
+base1 <- base1_raw %>% 
+  filter(is.na(`...1`) == F) %>% 
+  row_to_names(row_number = 1) %>% 
+  select(-c("Index", "Variant", "Notes", "Location code", "ISO3 Alpha-code", "ISO2 Alpha-code",
+            "SDMX code**", "Parent code")) %>% 
+  filter(Type %in% c("Region", "World"), `Region, subregion, country or area *` %in%
+           c("World", "Africa", "Europe", "Latin America and the Caribbean")) %>% 
+  gather(key = "age", value = "pob", -`Region, subregion, country or area *`, -Year, -Type) %>% 
+  rename(region = `Region, subregion, country or area *`, year = Year) %>% 
+  arrange(year, region)
+```
+```{r}
+#| echo: false
+#| code-fold: false
+datatable(head(base1,1000), options = list(scrollX = TRUE, scrollY = "500px"))
+```
+
+## `Estandarización`
+<!-- Bloque 8 -->
+
+```{r}
+#| code-fold: true
+#| echo: true
+library(DT)
+load("Databases/base1_raw.RData")
+base1 <- base1_raw %>% 
+  filter(is.na(`...1`) == F) %>% 
+  row_to_names(row_number = 1) %>% 
+  select(-c("Index", "Variant", "Notes", "Location code", "ISO3 Alpha-code", "ISO2 Alpha-code",
+            "SDMX code**", "Parent code")) %>% 
+  filter(Type %in% c("Region", "World"), `Region, subregion, country or area *` %in%
+           c("World", "Africa", "Europe", "Latin America and the Caribbean")) %>% 
+  gather(key = "age", value = "pob", -`Region, subregion, country or area *`, -Year, -Type) %>% 
+  rename(region = `Region, subregion, country or area *`, year = Year) %>% 
+  arrange(year, region) %>% 
+  mutate(id = paste(region, year, age, sep = "-"))
+```
+```{r}
+#| echo: false
+#| code-fold: false
+datatable(head(base1,1000), options = list(scrollX = TRUE, scrollY = "500px"))
+```
 ## `La Tabla de Mortalidad` {auto-animate="true"}
 
 ::: {.callout-note title="Datos observados"}
@@ -4413,7 +5136,7 @@ $e_x^0=\frac{T_x}{l_x}$
 <!-- Primer bloque bloque -->
 
 ::: {.callout-note title="Tasa instantánea de mortalidad"}
-$\mu(x)= \lim_{n\to 0}{}_nm_x$
+$\mu(x)= \displaystyle\lim_{n\to 0}{}_nm_x$
 :::
 
 ## `Relaciones básicas de la mortalidad` {auto-animate="true" background-image=Background/bim1.png}
@@ -4421,13 +5144,13 @@ $\mu(x)= \lim_{n\to 0}{}_nm_x$
 <!-- Segundo bloque bloque -->
 
 ::: {.callout-note title="Tasa instantánea de mortalidad"}
-$\mu(x)= \lim_{n\to 0}{}_nm_x = \lim_{n\to 0}\frac{{}_nd_x}{{}_nL_x}$
+$\mu(x)= \displaystyle \lim_{n\to 0}{}_nm_x = \lim_{n\to 0}\frac{{}_nd_x}{{}_nL_x}$
 :::
 
 ## `Relaciones básicas de la mortalidad` {auto-animate="true" background-image=Background/bim1.png}
 
 ::: {.callout-note title="Tasa instantánea de mortalidad"}
-$\mu(x)= \lim_{n\to 0}{}_nm_x = \lim_{n\to 0}\frac{{}_nd_x}{{}_nL_x} = \lim_{n\to 0}\frac{l_x-l_{x+n}}{nL_x}$
+$\mu(x)=\displaystyle \lim_{n\to 0}{}_nm_x = \lim_{n\to 0}\frac{{}_nd_x}{{}_nL_x} = \lim_{n\to 0}\frac{l_x-l_{x+n}}{nL_x}$
 :::
 
 ## `Relaciones básicas de la mortalidad` {auto-animate="true" background-image=Background/bim1.png}
@@ -4435,13 +5158,13 @@ $\mu(x)= \lim_{n\to 0}{}_nm_x = \lim_{n\to 0}\frac{{}_nd_x}{{}_nL_x} = \lim_{n\t
 <!-- Tercer bloque  -->
 
 ::: {.callout-note title="Tasa instantánea de mortalidad"}
-$\mu(x)= \lim_{n\to 0}{}_nm_x = \lim_{n\to 0}\frac{{}_nd_x}{{}_nL_x} = \lim_{n\to 0}\frac{l_x-l_{x+n}}{nL_x}=\color{red}{-\frac{dl(x)}{l(x)dx}}$
+$\mu(x)= \displaystyle\lim_{n\to 0}{}_nm_x = \lim_{n\to 0}\frac{{}_nd_x}{{}_nL_x} = \lim_{n\to 0}\frac{l_x-l_{x+n}}{nL_x}=\color{red}{-\frac{dl(x)}{l(x)dx}}$
 :::
 
 ::: {.callout-warning title="La trampa esta en los pormenores "}
 Aplicamos la definición de la **derivada**:
 
-$\lim_{n\to 0}\frac{l_x - l_{x+n}}{nl_x}=\lim_{n\to 0}-\frac{l_{x+n}-l_x}{nl_x}$
+$\displaystyle \lim_{n\to 0}\frac{l_x - l_{x+n}}{nl_x}=\lim_{n\to 0}-\frac{l_{x+n}-l_x}{nl_x}$
 :::
 
 ## `Relaciones básicas de la mortalidad` {auto-animate="true" background-image=Background/bim1.png}
@@ -4449,13 +5172,13 @@ $\lim_{n\to 0}\frac{l_x - l_{x+n}}{nl_x}=\lim_{n\to 0}-\frac{l_{x+n}-l_x}{nl_x}$
 <!-- Cuarto bloque  -->
 
 ::: {.callout-note title="Tasa instantánea de mortalidad"}
-$\mu(x)= \lim_{n\to 0}{}_nm_x = \lim_{n\to 0}\frac{{}_nd_x}{{}_nL_x} = \lim_{n\to 0}\frac{l_x-l_{x+n}}{nL_x}=\color{red}{-\frac{dl(x)}{l(x)dx}}$
+$\mu(x)= \displaystyle\lim_{n\to 0}{}_nm_x = \lim_{n\to 0}\frac{{}_nd_x}{{}_nL_x} = \lim_{n\to 0}\frac{l_x-l_{x+n}}{nL_x}=\color{red}{-\frac{dl(x)}{l(x)dx}}$
 :::
 
 ::: {.callout-warning title="La trampa esta en los pormenores "}
 Aplicamos la definición de la **derivada**:
 
-$\lim_{n\to 0}\frac{l_x - l_{x+n}}{nl_x}=\lim_{n\to 0}-\frac{l_{x+n}-l_x}{nl_x}$ factorizando un signo negativo
+$\displaystyle\lim_{n\to 0}\frac{l_x - l_{x+n}}{nl_x}=\lim_{n\to 0}-\frac{l_{x+n}-l_x}{nl_x}$ factorizando un signo negativo
 :::
 
 ## `Relaciones básicas de la mortalidad` {auto-animate="true" background-image=Background/bim1.png}
@@ -4463,13 +5186,13 @@ $\lim_{n\to 0}\frac{l_x - l_{x+n}}{nl_x}=\lim_{n\to 0}-\frac{l_{x+n}-l_x}{nl_x}$
 <!-- Quinto bloque  -->
 
 ::: {.callout-note title="Tasa instantánea de mortalidad"}
-$\mu(x)= \lim_{n\to 0}{}_nm_x = \lim_{n\to 0}\frac{{}_nd_x}{{}_nL_x} = \lim_{n\to 0}\frac{l_x-l_{x+n}}{nL_x}=\color{red}{-\frac{dl(x)}{l(x)dx}}$
+$\mu(x)= \displaystyle\lim_{n\to 0}{}_nm_x = \lim_{n\to 0}\frac{{}_nd_x}{{}_nL_x} = \lim_{n\to 0}\frac{l_x-l_{x+n}}{nL_x}=\color{red}{-\frac{dl(x)}{l(x)dx}}$
 :::
 
 ::: {.callout-warning title="La trampa esta en los pormenores "}
 Aplicamos la definición de la **derivada**:
 
-$\lim_{n\to 0}\frac{l_x - l_{x+n}}{nl_x}=\lim_{n\to 0}-\frac{l_{x+n}-l_x}{nl_x}= -\frac{1}{l_x}\lim_{x\to 0}\frac{l_{x+n-l_x}}{n}$ pues el factor $-\frac{1}{l_x}$ no depende de n y lo podemos sacar del límite.
+$\displaystyle\lim_{n\to 0}\frac{l_x - l_{x+n}}{nl_x}=\lim_{n\to 0}-\frac{l_{x+n}-l_x}{nl_x}= -\frac{1}{l_x}\lim_{x\to 0}\frac{l_{x+n-l_x}}{n}$ pues el factor $-\frac{1}{l_x}$ no depende de n y lo podemos sacar del límite.
 :::
 
 ## `Relaciones básicas de la mortalidad` {auto-animate="true" background-image=Background/bim1.png}
@@ -4477,13 +5200,13 @@ $\lim_{n\to 0}\frac{l_x - l_{x+n}}{nl_x}=\lim_{n\to 0}-\frac{l_{x+n}-l_x}{nl_x}=
 <!-- Sexto bloque  -->
 
 ::: {.callout-note title="Tasa instantánea de mortalidad"}
-$\mu(x)= \lim_{n\to 0}{}_nm_x = \lim_{n\to 0}\frac{{}_nd_x}{{}_nL_x} = \lim_{n\to 0}\frac{l_x-l_{x+n}}{nL_x}=\color{red}{-\frac{dl(x)}{l(x)dx}}$
+$\mu(x)= \displaystyle\lim_{n\to 0}{}_nm_x = \lim_{n\to 0}\frac{{}_nd_x}{{}_nL_x} = \lim_{n\to 0}\frac{l_x-l_{x+n}}{nL_x}=\color{red}{-\frac{dl(x)}{l(x)dx}}$
 :::
 
 ::: {.callout-warning title="La trampa esta en los pormenores "}
 Aplicamos la definición de la **derivada**:
 
-$\lim_{n\to 0}\frac{l_x - l_{x+n}}{nl_x}=\lim_{n\to 0}-\frac{l_{x+n}-l_x}{nl_x}= -\frac{1}{l_x}\lim_{x\to 0}\frac{l_{x+n-l_x}}{n}=-\frac{1}{l(x)}\frac{d}{dx}l(x)$ aplicando la definición de la **derivada**
+$\displaystyle\lim_{n\to 0}\frac{l_x - l_{x+n}}{nl_x}=\lim_{n\to 0}-\frac{l_{x+n}-l_x}{nl_x}= -\frac{1}{l_x}\lim_{x\to 0}\frac{l_{x+n-l_x}}{n}=-\frac{1}{l(x)}\frac{d}{dx}l(x)$ aplicando la definición de la **derivada**
 :::
 
 ## `Relaciones básicas de la mortalidad` {auto-animate="true" background-image=Background/bim1.png}
@@ -4491,7 +5214,7 @@ $\lim_{n\to 0}\frac{l_x - l_{x+n}}{nl_x}=\lim_{n\to 0}-\frac{l_{x+n}-l_x}{nl_x}=
 <!-- Septimo bloque  -->
 
 ::: {.callout-note title="Tasa instantánea de mortalidad"}
-$\mu(x)= \lim_{n\to 0}{}_nm_x = \lim_{n\to 0}\frac{{}_nd_x}{{}_nL_x} = \lim_{n\to 0}\frac{l_x-l_{x+n}}{nL_x}=-\frac{dl(x)}{l(x)dx}=\color{red}{-\frac{dInl(x)}{dx}}$
+$\mu(x)= \displaystyle\lim_{n\to 0}{}_nm_x = \lim_{n\to 0}\frac{{}_nd_x}{{}_nL_x} = \lim_{n\to 0}\frac{l_x-l_{x+n}}{nL_x}=-\frac{dl(x)}{l(x)dx}=\color{red}{-\frac{dInl(x)}{dx}}$
 :::
 
 ::: {.callout-warning title="La trampa esta en los pormenores "}
@@ -4505,7 +5228,7 @@ $\frac{d}{dx}In[l(x)]=\frac{\frac{d}{dx}l(x)}{l(x)}=\frac{dl(x)}{l(x)dx}$
 <!-- Octavo bloque  -->
 
 ::: {.callout-note title="Tasa instantánea de mortalidad"}
-$\mu(x)= \lim_{n\to 0}{}_nm_x = \lim_{n\to 0}\frac{{}_nd_x}{{}_nL_x} = \lim_{n\to 0}\frac{l_x-l_{x+n}}{nL_x}=-\frac{dl(x)}{l(x)dx}=\color{red}{-\frac{dInl(x)}{dx}}$
+$\mu(x)= \displaystyle\lim_{n\to 0}{}_nm_x = \lim_{n\to 0}\frac{{}_nd_x}{{}_nL_x} = \lim_{n\to 0}\frac{l_x-l_{x+n}}{nL_x}=-\frac{dl(x)}{l(x)dx}=\color{red}{-\frac{dInl(x)}{dx}}$
 :::
 
 ::: {.callout-note title="Función de supervivencia"}
@@ -4517,7 +5240,7 @@ $-\int_y^z\mu(x)dx=$
 <!-- Noveno bloque  -->
 
 ::: {.callout-note title="Tasa instantánea de mortalidad"}
-$\mu(x)= \lim_{n\to 0}{}_nm_x = \lim_{n\to 0}\frac{{}_nd_x}{{}_nL_x} = \lim_{n\to 0}\frac{l_x-l_{x+n}}{nL_x}=-\frac{dl(x)}{l(x)dx}=\color{red}{-\frac{dInl(x)}{dx}}$
+$\mu(x)= \displaystyle\lim_{n\to 0}{}_nm_x = \lim_{n\to 0}\frac{{}_nd_x}{{}_nL_x} = \lim_{n\to 0}\frac{l_x-l_{x+n}}{nL_x}=-\frac{dl(x)}{l(x)dx}=\color{red}{-\frac{dInl(x)}{dx}}$
 :::
 
 ::: {.callout-note title="Función de supervivencia"}
@@ -4533,7 +5256,7 @@ Sustituyendo $\mu(x)$ del bloque de **Tasa instantánea de mortalidad**
 <!-- Noveno bloque  -->
 
 ::: {.callout-note title="Tasa instantánea de mortalidad"}
-$\mu(x)= \lim_{n\to 0}{}_nm_x = \lim_{n\to 0}\frac{{}_nd_x}{{}_nL_x} = \lim_{n\to 0}\frac{l_x-l_{x+n}}{nL_x}=-\frac{dl(x)}{l(x)dx}=\color{red}{-\frac{dInl(x)}{dx}}$
+$\mu(x)= \displaystyle\lim_{n\to 0}{}_nm_x = \lim_{n\to 0}\frac{{}_nd_x}{{}_nL_x} = \lim_{n\to 0}\frac{l_x-l_{x+n}}{nL_x}=-\frac{dl(x)}{l(x)dx}=\color{red}{-\frac{dInl(x)}{dx}}$
 :::
 
 ::: {.callout-note title="Función de supervivencia"}
@@ -4549,7 +5272,7 @@ Por **Teorema Fundamental del Cálculo**
 <!-- Decimo bloque  -->
 
 ::: {.callout-note title="Tasa instantánea de mortalidad"}
-$\mu(x)= \lim_{n\to 0}{}_nm_x = \lim_{n\to 0}\frac{{}_nd_x}{{}_nL_x} = \lim_{n\to 0}\frac{l_x-l_{x+n}}{nL_x}=-\frac{dl(x)}{l(x)dx}=\color{red}{-\frac{dInl(x)}{dx}}$
+$\mu(x)=\displaystyle \lim_{n\to 0}{}_nm_x = \lim_{n\to 0}\frac{{}_nd_x}{{}_nL_x} = \lim_{n\to 0}\frac{l_x-l_{x+n}}{nL_x}=-\frac{dl(x)}{l(x)dx}=\color{red}{-\frac{dInl(x)}{dx}}$
 :::
 
 ::: {.callout-note title="Función de supervivencia"}
@@ -4565,7 +5288,7 @@ Por **Leyes de los logaritmos**. Para cualquiera números $a,b$, tenemos que $In
 <!-- Onceavo bloque  -->
 
 ::: {.callout-note title="Tasa instantánea de mortalidad"}
-$\mu(x)= \lim_{n\to 0}{}_nm_x = \lim_{n\to 0}\frac{{}_nd_x}{{}_nL_x} = \lim_{n\to 0}\frac{l_x-l_{x+n}}{nL_x}=-\frac{dl(x)}{l(x)dx}=-\frac{dInl(x)}{dx}$
+$\mu(x)= \displaystyle\lim_{n\to 0}{}_nm_x = \lim_{n\to 0}\frac{{}_nd_x}{{}_nL_x} = \lim_{n\to 0}\frac{l_x-l_{x+n}}{nL_x}=-\frac{dl(x)}{l(x)dx}=-\frac{dInl(x)}{dx}$
 :::
 
 ::: {.callout-note title="Función de supervivencia"}
@@ -4589,7 +5312,7 @@ Despejando $l(z)$:
 <!-- Doceavo bloque  -->
 
 ::: {.callout-note title="Tasa instantánea de mortalidad"}
-$\mu(x)= \lim_{n\to 0}{}_nm_x = \lim_{n\to 0}\frac{{}_nd_x}{{}_nL_x} = \lim_{n\to 0}\frac{l_x-l_{x+n}}{nL_x}=-\frac{dl(x)}{l(x)dx}=-\frac{dInl(x)}{dx}$
+$\mu(x)= \displaystyle\lim_{n\to 0}{}_nm_x = \lim_{n\to 0}\frac{{}_nd_x}{{}_nL_x} = \lim_{n\to 0}\frac{l_x-l_{x+n}}{nL_x}=-\frac{dl(x)}{l(x)dx}=-\frac{dInl(x)}{dx}$
 :::
 
 ::: {.callout-note title="Función de supervivencia"}
@@ -4609,7 +5332,7 @@ Si tomamos en cuenta $y=x$ y $z=0$
 <!-- 13 bloque  -->
 
 ::: {.callout-note title="Tasa instantánea de mortalidad"}
-$\mu(x)= \lim_{n\to 0}{}_nm_x = \lim_{n\to 0}\frac{{}_nd_x}{{}_nL_x} = \lim_{n\to 0}\frac{l_x-l_{x+n}}{nL_x}=-\frac{dl(x)}{l(x)dx}=-\frac{dInl(x)}{dx}$
+$\mu(x)= \displaystyle \lim_{n\to 0}{}_nm_x = \lim_{n\to 0}\frac{{}_nd_x}{{}_nL_x} = \lim_{n\to 0}\frac{l_x-l_{x+n}}{nL_x}=-\frac{dl(x)}{l(x)dx}=-\frac{dInl(x)}{dx}$
 :::
 
 ::: {.callout-note title="Función de supervivencia"}
@@ -4631,7 +5354,7 @@ $l(x)=e^{-\int_0^x\mu(t)dt}$
 Definamos a $X$ como al evento de que una persona muere en un tiempo $t$. Entoces tenemos que:
 
 ::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
-$q(X)= \lim_{\Delta t \to 0}\frac{P(X\in(x,x+\Delta))}{\Delta t}$
+$q(X)= \displaystyle \lim_{\Delta t \to 0}\frac{P(X\in(x,x+\Delta))}{\Delta t}$
 :::
 
 es una **función de densidad**. Y
@@ -4659,7 +5382,7 @@ Vayamos con calma en este bloque. Una **función de densidad** o **función de p
 Definamos a $X$ como al evento de que una persona muere en un tiempo $t$. Entoces tenemos que:
 
 ::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
-$q(X)= \lim_{\Delta t \to 0}\frac{P(X\in(x,x+\Delta t))}{\Delta t}$
+$q(X)= \displaystyle \lim_{\Delta t \to 0}\frac{P(X\in(x,x+\Delta t))}{\Delta t}$
 :::
 
 es una **función de densidad**. Y
@@ -4685,7 +5408,7 @@ Porque son importantes las **funciones de probabilidad**?
 Definamos a $X$ como al evento de que una persona muere en un tiempo $t$. Entoces tenemos que:
 
 ::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
-$q(X)= \lim_{\Delta t \to 0}\frac{P(X\in(x,x+\Delta t))}{\Delta t}$
+$q(X)= \displaystyle\lim_{\Delta t \to 0}\frac{P(X\in(x,x+\Delta t))}{\Delta t}$
 :::
 
 es una **función de densidad**. Y
@@ -4697,11 +5420,11 @@ $Q(x)=P(X\leq x)= \int q(x)dx$
 es una **función de distribución**
 
 ::: {.callout-note title="Tasa instantanea de mortalidad"}
-$\mu(X)= \lim_{\Delta x \to0} \frac{P(X\in (x,x+\Delta x)|Se\,llegó\, con \,vida\, al\, tiempo\,x )}{\Delta x}$
+$\mu(X)= \displaystyle\lim_{\Delta x \to0} \frac{P(X\in (x,x+\Delta x)|Se\,llegó\, con \,vida\, al\, tiempo\,x )}{\Delta x}$
 :::
 
-::: {.callout-warning title="El diablo esta en los detalles"}
-$\mu(X)= \lim_{\Delta x \to0} \frac{P(X\in (x,x+\Delta x)|Se\,llegó\, con \,vida\, al\, tiempo\,x )}{\Delta x}$
+::: {.callout-warning title="El diablo está en los detalles"}
+$\mu(X)= \displaystyle\lim_{\Delta x \to0} \frac{P(X\in (x,x+\Delta x)|Se\,llegó\, con \,vida\, al\, tiempo\,x )}{\Delta x}$
 :::
 
 <!-- Explicacion de la probabilidad condicional un bloque-->
@@ -4713,7 +5436,7 @@ $\mu(X)= \lim_{\Delta x \to0} \frac{P(X\in (x,x+\Delta x)|Se\,llegó\, con \,vid
 Definamos a $X$ como al evento de que una persona muere en un tiempo $t$. Entoces tenemos que:
 
 ::: {style="text-align: center; font-size: 1em; margin-top:50px;"}
-$q(X)= \lim_{\Delta t \to 0}\frac{P(X\in(x,x+\Delta t))}{\Delta t}$
+$q(X)=\displaystyle \lim_{\Delta t \to 0}\frac{P(X\in(x,x+\Delta t))}{\Delta t}$
 :::
 
 es una **función de densidad**. Y
@@ -4725,11 +5448,11 @@ $Q(x)=P(X\leq x)= \int q(x)dx$
 es una **función de distribución**
 
 ::: {.callout-note title="Tasa instantanea de mortalidad"}
-$\mu(X)= \lim_{\Delta x \to0} \frac{P(X\in (x,x+\Delta x)|Se\,llegó\, con \,vida\, al\, tiempo\,x )}{\Delta x}$
+$\mu(X)= \displaystyle\lim_{\Delta x \to0} \frac{P(X\in (x,x+\Delta x)|Se\,llegó\, con \,vida\, al\, tiempo\,x )}{\Delta x}$
 :::
 
-::: {.callout-warning title="El diablo esta en los detalles"}
-$\mu(X)= \lim_{\Delta x \to0} \frac{P(X\in (x,x+\Delta x)|Se\,llegó\, con \,vida\, al\, tiempo\,x )}{\Delta x}$
+::: {.callout-warning title="El diablo está en los detalles"}
+$\mu(X)= \displaystyle\lim_{\Delta x \to0} \frac{P(X\in (x,x+\Delta x)|Se\,llegó\, con \,vida\, al\, tiempo\,x )}{\Delta x}$
 
 $\frac{q(X)}{1-Q(X)}=\frac{q(X)}{l(X)}$
 :::
